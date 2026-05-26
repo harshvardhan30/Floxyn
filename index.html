@@ -310,8 +310,67 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,136,255,0.08);pad
   transition:all .25s;pointer-events:none;font-family:'Space Grotesk',sans-serif;font-weight:600}
 .wa-btn:hover .wa-tooltip{opacity:1;transform:translateX(0)}
 
+/* ══ PAGE TRANSITION OVERLAY ══ */
+#page-transition{position:fixed;inset:0;z-index:99999;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.pt-panel{position:absolute;inset:0;background:linear-gradient(135deg,var(--dark2),var(--dark));transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.76,0,.24,1)}
+.pt-logo{font-family:'Orbitron',sans-serif;font-weight:900;font-size:28px;letter-spacing:8px;
+  background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  opacity:0;transform:translateY(20px);transition:all .3s .2s;position:relative;z-index:1}
+#page-transition.active .pt-panel{transform:scaleY(1)}
+#page-transition.active .pt-logo{opacity:1;transform:translateY(0)}
+#page-transition.exit .pt-panel{transform-origin:top;transform:scaleY(0);transition-delay:.1s}
+#page-transition.exit .pt-logo{opacity:0}
+
+/* ══ LINK CLICK RIPPLE ══ */
+.ripple-effect{position:fixed;border-radius:50%;background:rgba(0,255,136,0.15);pointer-events:none;z-index:9997;
+  width:10px;height:10px;transform:scale(0);animation:rippleAnim .6s ease forwards}
+@keyframes rippleAnim{to{transform:scale(60);opacity:0}}
+
+/* ══ NAV LINK UNDERLINE ANIMATION ══ */
+.nlinks a{position:relative}
+.nlinks a:not(.ncta)::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--c1);transition:width .3s ease;box-shadow:0 0 8px var(--c1)}
+.nlinks a:not(.ncta):hover::after{width:100%}
+
+/* ══ FOUNDER ══ */
+.founder-card{display:flex;gap:56px;align-items:center;margin-top:56px;background:var(--dark2);border:1px solid rgba(0,255,136,0.12);
+  border-radius:24px;padding:48px;position:relative;overflow:hidden;text-align:left}
+.founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3))}
+.founder-card::after{content:'';position:absolute;bottom:-60px;right:-60px;width:200px;height:200px;
+  background:radial-gradient(circle,rgba(0,255,136,0.08),transparent 70%);pointer-events:none}
+.founder-avatar{position:relative;flex-shrink:0;width:140px;height:140px}
+.founder-avatar-inner{width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--c2));
+  display:flex;align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:36px;font-weight:900;color:var(--dark);
+  box-shadow:0 0 40px rgba(0,255,136,0.3)}
+.founder-ring{position:absolute;inset:-12px;border-radius:50%;border:1px solid rgba(0,255,136,0.2);animation:fring 4s linear infinite}
+.founder-ring2{position:absolute;inset:-22px;border-radius:50%;border:1px dashed rgba(0,136,255,0.15);animation:fring 8s linear infinite reverse}
+@keyframes fring{to{transform:rotate(360deg)}}
+.founder-name{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:#fff;margin-bottom:6px;
+  background:linear-gradient(135deg,#fff,var(--c1));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.founder-role{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--c1);margin-bottom:20px;font-family:'JetBrains Mono',monospace}
+.founder-bio{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:24px}
+.founder-bio strong{color:rgba(255,255,255,0.7)}
+.founder-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.ftag{font-size:12px;padding:6px 14px;border-radius:100px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.15);color:rgba(255,255,255,0.6)}
+.founder-socials{display:flex;gap:12px;flex-wrap:wrap}
+.fsocial{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;border:1px solid rgba(0,255,136,0.2);
+  color:var(--c1);text-decoration:none;font-size:13px;font-weight:600;transition:all .25s;background:rgba(0,255,136,0.04)}
+.fsocial:hover{background:rgba(0,255,136,0.12);border-color:rgba(0,255,136,0.4);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,255,136,0.15)}
+
+/* ══ SCROLL PROGRESS BAR ══ */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));z-index:10000;width:0%;transition:width .1s;box-shadow:0 0 8px var(--c1)}
+
+/* ══ SECTION REVEAL NUMBERS ══ */
+.sec-number{position:absolute;right:0;top:0;font-family:'Orbitron',sans-serif;font-size:120px;font-weight:900;
+  color:rgba(0,255,136,0.03);line-height:1;pointer-events:none;user-select:none;z-index:0}
+
+/* ══ BUTTON HOVER MAGNETIC ══ */
+.btn-p,.btn-s,.fsub{display:inline-block}
+
 /* Responsive */
 @media(max-width:960px){
+  .founder-card{flex-direction:column;text-align:center}
+  .founder-avatar{margin:0 auto}
+  .founder-tags,.founder-socials{justify-content:center}
   nav{padding:14px 20px}.nlinks{display:none}
   .sec{padding:60px 20px}
   #hero{padding:110px 20px 80px}
@@ -333,9 +392,14 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,136,255,0.08);pad
 <div id="cur-trail"></div>
 <canvas id="particles"></canvas>
 <div class="gbg"></div>
+<div id="progress-bar"></div>
+<div id="page-transition">
+  <div class="pt-panel"></div>
+  <div class="pt-logo">FLOXYN</div>
+</div>
 
 <!-- WhatsApp -->
-<a href="https://wa.me/919876543210?text=Hi%20Floxyn!%20I%20want%20to%20automate%20my%20workflow." class="wa-btn" target="_blank">
+<a href="https://wa.me/917303897496?text=Hi%20Floxyn!%20I%20want%20to%20automate%20my%20workflow." class="wa-btn" target="_blank">
   <span>💬</span>
   <div class="wa-tooltip">Chat on WhatsApp</div>
 </a>
@@ -628,7 +692,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,136,255,0.08);pad
       <p>Tell us your biggest manual pain point. We'll do a free audit and show you exactly what can be automated — no commitment needed.</p>
       <div class="cinfo">
         <div class="crow"><div class="crico">📧</div>hello@floxyn.in</div>
-        <div class="crow"><div class="crico">📱</div>+91 98765 43210</div>
+        <div class="crow"><div class="crico">📱</div>+91 73038 97496</div>
         <div class="crow"><div class="crico">💬</div>WhatsApp available</div>
         <div class="crow"><div class="crico">📍</div>India (Remote-first)</div>
         <div class="crow"><div class="crico">⏱️</div>Response within 24 hours</div>
@@ -658,20 +722,97 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(0,136,255,0.08);pad
   </div>
 </section>
 
+<!-- FOUNDER SECTION -->
+<div class="fdiv"></div>
+<section class="sec" id="founder" style="max-width:900px;margin:0 auto;text-align:center">
+  <span class="stag">Meet the Founder</span>
+  <h2 class="stitle">The Brain Behind Floxyn</h2>
+  <div class="founder-card">
+    <div class="founder-avatar">
+      <div class="founder-avatar-inner">HV</div>
+      <div class="founder-ring"></div>
+      <div class="founder-ring2"></div>
+    </div>
+    <div class="founder-info">
+      <div class="founder-name">Harsh Vardhan</div>
+      <div class="founder-role">Founder & CEO · Floxyn</div>
+      <p class="founder-bio">Passionate about eliminating manual work from businesses using the power of Python, Machine Learning, and intelligent automation. Harsh started Floxyn with one mission — <strong>give every Indian business access to enterprise-grade automation at startup-friendly prices.</strong></p>
+      <div class="founder-tags">
+        <span class="ftag">🐍 Python Expert</span>
+        <span class="ftag">🤖 ML Engineer</span>
+        <span class="ftag">⚡ Automation Architect</span>
+        <span class="ftag">🇮🇳 Made in India</span>
+      </div>
+      <div class="founder-socials">
+        <a href="https://wa.me/917303897496" class="fsocial" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:hello@floxyn.in" class="fsocial">📧 Email</a>
+        <a href="https://linkedin.com/in/harshvardhan" class="fsocial" target="_blank">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="flogo">FLOXYN</div>
-  <div class="fcopy">© 2025 Floxyn. All rights reserved.</div>
+  <div class="fcopy">© 2025 Floxyn · Founded by <strong style="color:var(--c1)">Harsh Vardhan</strong> · All rights reserved.</div>
   <div class="flinks">
     <a href="#services">Services</a>
     <a href="#work">Work</a>
     <a href="#testimonials">Reviews</a>
     <a href="#faq">FAQ</a>
+    <a href="#founder">Founder</a>
     <a href="#contact">Contact</a>
   </div>
 </footer>
 
 <script>
+// ── PAGE TRANSITION ON LOAD ──
+const pt=document.getElementById('page-transition');
+window.addEventListener('load',()=>{
+  pt.classList.add('active');
+  setTimeout(()=>{pt.classList.add('exit');setTimeout(()=>{pt.classList.remove('active','exit')},500)},600);
+});
+
+// ── SCROLL PROGRESS BAR ──
+const pbar=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const pct=(window.scrollY/(document.body.scrollHeight-window.innerHeight))*100;
+  pbar.style.width=pct+'%';
+});
+
+// ── LINK CLICK RIPPLE ──
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click',function(e){
+    const ripple=document.createElement('div');
+    ripple.className='ripple-effect';
+    ripple.style.left=(e.clientX-5)+'px';
+    ripple.style.top=(e.clientY-5)+'px';
+    document.body.appendChild(ripple);
+    setTimeout(()=>ripple.remove(),700);
+    // Smooth section flash
+    const target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      setTimeout(()=>{
+        target.style.transition='background .4s';
+        target.style.background='rgba(0,255,136,0.02)';
+        setTimeout(()=>{target.style.background=''},600);
+      },300);
+    }
+  });
+});
+
+// ── MAGNETIC BUTTONS ──
+document.querySelectorAll('.btn-p,.btn-s,.fsub,.ncta').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    const x=(e.clientX-r.left-r.width/2)*.2;
+    const y=(e.clientY-r.top-r.height/2)*.2;
+    btn.style.transform=`translate(${x}px,${y}px) translateY(-2px)`;
+  });
+  btn.addEventListener('mouseleave',()=>{btn.style.transform=''});
+});
+
 // ── CURSOR ──
 const cur=document.getElementById('cur'),trail=document.getElementById('cur-trail');
 let mx=0,my=0,tx=0,ty=0;
