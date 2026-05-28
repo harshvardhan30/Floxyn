@@ -692,6 +692,109 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   .hero-btns{padding:0}
 }
 
+
+/* ── LIGHT MODE ── */
+body.light-mode{
+  --bg:#f0f4fa;--bg2:#e8edf7;--bg3:#dde4f0;--bg4:#d2dcea;
+  --txt:#1a2640;--muted:#5a7090;--border:rgba(0,100,200,0.1);
+  background:var(--bg);color:var(--txt)
+}
+body.light-mode .grid-bg{background-image:linear-gradient(rgba(0,100,200,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,100,200,0.04) 1px,transparent 1px)}
+body.light-mode nav{background:rgba(240,244,250,0.88)}
+body.light-mode .ml-card,body.light-mode .scard,body.light-mode .wcard,body.light-mode .job-card,body.light-mode .val-card,body.light-mode .culture-card,body.light-mode .perk-card,body.light-mode .faq-item,body.light-mode .tcard,body.light-mode .wypt{background:#fff;border-color:rgba(0,100,200,0.12)}
+body.light-mode .cinner{background:#fff;border-color:rgba(0,255,163,0.15)}
+body.light-mode .founder-card{background:#fff}
+body.light-mode .terminal{background:rgba(20,30,50,0.92)}
+body.light-mode .ff input,body.light-mode .ff textarea,body.light-mode .ff select{background:#f5f7fc;border-color:rgba(0,100,200,0.15);color:#1a2640}
+body.light-mode footer{background:#e4eaf5}
+body.light-mode .hstat{background:rgba(255,255,255,0.8)}
+body.light-mode #particles{opacity:0.25}
+body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
+
+/* ── THEME TOGGLE BTN ── */
+.theme-toggle{background:rgba(0,255,163,0.05);border:1px solid rgba(0,255,163,0.2);border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all .2s;padding:0;color:var(--txt);margin-right:6px}
+.theme-toggle:hover{background:rgba(0,255,163,0.12);border-color:rgba(0,255,163,0.4)}
+@media(max-width:900px){.theme-toggle{margin-right:8px;width:32px;height:32px;font-size:14px}}
+
+/* ── ROI CALCULATOR ── */
+.roi-section{padding:96px 72px;max-width:1280px;margin:0 auto}
+.roi-card{background:var(--bg2);border:1px solid rgba(0,255,163,0.12);border-radius:24px;overflow:hidden;position:relative}
+.roi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3))}
+.roi-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.roi-inputs{padding:44px;border-right:1px solid rgba(0,255,163,0.07)}
+.roi-results{padding:44px;background:rgba(0,255,163,0.02)}
+.roi-label{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:var(--font-mono);margin-bottom:7px;display:block}
+.roi-input-row{margin-bottom:22px}
+.roi-range{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:rgba(255,255,255,0.08);border-radius:2px;outline:none;cursor:pointer}
+.roi-range::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--g2));cursor:pointer;box-shadow:0 0 10px rgba(0,255,163,0.4)}
+.roi-val-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.roi-field-val{font-family:var(--font-display);font-size:18px;font-weight:800;color:var(--g1)}
+.roi-res-num{font-family:var(--font-display);font-size:36px;font-weight:800;background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.roi-res-lbl{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-family:var(--font-mono);margin-bottom:24px}
+.roi-breakdown{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.roi-row{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(0,0,0,0.2);border-radius:8px;border:1px solid rgba(255,255,255,0.04)}
+.roi-row-lbl{font-size:12px;color:var(--muted)}
+.roi-row-val{font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff}
+.roi-cta{margin-top:24px;width:100%;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--bg);border:none;padding:14px;border-radius:10px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;box-shadow:0 0 24px rgba(0,255,163,0.15)}
+.roi-cta:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(0,255,163,0.3)}
+@media(max-width:900px){
+  .roi-section{padding:52px 16px}
+  .roi-inner{grid-template-columns:1fr}
+  .roi-inputs{border-right:none;border-bottom:1px solid rgba(0,255,163,0.07);padding:28px 20px}
+  .roi-results{padding:28px 20px}
+  .roi-res-num{font-size:28px}
+}
+
+/* ── EXIT INTENT POPUP ── */
+#exit-popup{position:fixed;inset:0;z-index:10002;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s}
+#exit-popup.show{opacity:1;pointer-events:all}
+.ep-card{background:var(--bg2);border:1px solid rgba(0,255,163,0.2);border-radius:24px;padding:44px;max-width:480px;width:90%;position:relative;text-align:center;transform:scale(0.92);transition:transform .35s}
+#exit-popup.show .ep-card{transform:scale(1)}
+.ep-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3))}
+.ep-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;transition:color .2s}
+.ep-close:hover{color:var(--g1)}
+.ep-icon{font-size:42px;margin-bottom:14px;display:block}
+.ep-title{font-family:var(--font-display);font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.25}
+.ep-title span{background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ep-sub{font-size:14.5px;color:var(--muted);line-height:1.7;margin-bottom:24px}
+.ep-form{display:flex;flex-direction:column;gap:10px}
+.ep-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:12px 14px;color:var(--txt);font-family:var(--font-body);font-size:13px;outline:none;transition:border-color .2s}
+.ep-input:focus{border-color:rgba(0,255,163,0.35)}
+.ep-btn{background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--bg);border:none;padding:14px;border-radius:9px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.ep-btn:hover{transform:translateY(-2px);box-shadow:0 0 28px rgba(0,255,163,0.3)}
+.ep-skip{margin-top:10px;background:none;border:none;color:var(--muted);font-size:12.5px;cursor:pointer;padding:6px;font-family:var(--font-body);transition:color .2s}
+.ep-skip:hover{color:var(--txt)}
+
+/* ── BLOG / INSIGHTS ── */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.blog-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all .3s;cursor:pointer}
+.blog-card:hover{border-color:rgba(0,255,163,0.2);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+.blog-thumb{height:130px;position:relative;display:flex;align-items:center;justify-content:center;font-size:40px;overflow:hidden}
+.bt1{background:linear-gradient(135deg,#020c14,#041222)}
+.bt2{background:linear-gradient(135deg,#040c07,#071510)}
+.bt3{background:linear-gradient(135deg,#0c0414,#18082a)}
+.blog-body{padding:20px}
+.blog-cat{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--g1);font-family:var(--font-mono);margin-bottom:7px}
+.blog-title{font-family:var(--font-display);font-size:13.5px;font-weight:700;color:#fff;line-height:1.4;margin-bottom:8px}
+.blog-excerpt{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:12px}
+.blog-meta{display:flex;justify-content:space-between;align-items:center}
+.blog-date{font-size:10px;font-family:var(--font-mono);color:rgba(255,255,255,0.2)}
+.blog-read{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--g1);font-family:var(--font-mono)}
+@media(max-width:900px){
+  .blog-grid{grid-template-columns:1fr;gap:12px;margin-top:28px}
+  .blog-thumb{height:100px}
+}
+
+/* ── LANGUAGE SELECTOR ── */
+.lang-sel{position:relative;margin-right:4px}
+.lang-btn{background:rgba(0,255,163,0.05);border:1px solid rgba(0,255,163,0.15);border-radius:8px;padding:6px 10px;font-size:11px;font-family:var(--font-mono);color:var(--g1);cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .2s;height:36px}
+.lang-btn:hover{background:rgba(0,255,163,0.12)}
+.lang-dropdown{position:absolute;top:calc(100% + 6px);right:0;background:var(--bg2);border:1px solid rgba(0,255,163,0.15);border-radius:10px;padding:6px;min-width:130px;z-index:999;display:none;box-shadow:0 12px 32px rgba(0,0,0,0.5)}
+.lang-dropdown.open{display:block}
+.lang-opt{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;cursor:pointer;font-size:12px;font-family:var(--font-mono);color:var(--txt);transition:all .2s;border:none;background:none;width:100%;text-align:left}
+.lang-opt:hover,.lang-opt.active{background:rgba(0,255,163,0.07);color:var(--g1)}
+@media(max-width:900px){.lang-sel{display:none}}
+
 </style>
 </head>
 <body>
@@ -726,8 +829,21 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
     <li><a href="#" onclick="return showPage('home','work')">Work</a></li>
     <li><a href="#" id="nav-about" onclick="return showPage('about')">About</a></li>
     <li><a href="#" id="nav-careers" onclick="return showPage('careers')">Careers</a></li>
+    <li>
+      <div class="lang-sel">
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn"> EN ▾</button>
+        <div class="lang-dropdown" id="langDrop">
+          <button class="lang-opt active" onclick="setLang('en',event)">🇬🇧 English</button>
+          <button class="lang-opt" onclick="setLang('ar',event)">🇦🇪 العربية</button>
+          <button class="lang-opt" onclick="setLang('ms',event)">🇸🇬 Bahasa</button>
+        </div>
+      </div>
+    </li>
+    <li><a href="#" onclick="return showPage('home','roi-calc')">ROI Calc</a></li>
+    <li><a href="#" onclick="return showPage('home','blog')">Insights</a></li>
     <li><a href="#" class="ncta-btn" onclick="return showPage('home','contact')">Get a Demo →</a></li>
   </ul>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">&#9790;</button>
   <button class="ham-btn" id="hamBtn" onclick="toggleMobileNav()" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
@@ -737,8 +853,10 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
 <div class="mobile-nav" id="mobileNav">
   <a href="#" onclick="mobileGo('home')">Home</a>
   <a href="#" onclick="mobileGo('home','services')">Services</a>
+  <a href="#" onclick="mobileGo('home','roi-calc')">ROI Calculator</a>
   <a href="#" onclick="mobileGo('home','ml-analytics')">ML Analytics</a>
   <a href="#" onclick="mobileGo('home','work')">Work</a>
+  <a href="#" onclick="mobileGo('home','blog')">Insights</a>
   <a href="#" onclick="mobileGo('about')">About</a>
   <a href="#" onclick="mobileGo('careers')">Careers</a>
   <button class="mn-cta" onclick="mobileGo('home','contact')">Get a Demo →</button>
@@ -746,7 +864,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
 
 <!-- WHATSAPP FLOATING BUTTON -->
 <div id="wa-float">
-  <div class="wa-tooltip">Chat on WhatsApp 💬</div>
+  <div class="wa-tooltip">Chat on WhatsApp</div>
   <a href="https://wa.me/917303897496" target="_blank" style="position:relative;display:block">
     <div class="wa-voice-ring"></div>
     <div class="wa-voice-ring2"></div>
@@ -768,7 +886,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <canvas id="heroCanvas"></canvas>
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="badge"><span class="badge-dot"></span> AI-Powered · Global Automation Platform · Est. 2024</div>
+    <div class="badge"><span class="badge-dot"></span>AI-Powered · Global Automation Platform · Est. 2024</div>
     <h1 class="hero-title">
       <span class="ht-white">Automate the Mundane.</span>
       <span class="ht-grad">Amplify the Possible.</span>
@@ -883,15 +1001,15 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
     <div class="ml-card reveal">
       <div class="ml-card-head">Automation Pipeline Flow <span class="ml-card-badge">ORCHESTRATOR</span></div>
       <div class="pipeline-flow">
-        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(0,255,163,0.08);border-color:rgba(0,255,163,0.3)">📥</div><div class="pipe-lbl">Ingest</div></div>
+        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(0,255,163,0.08);border-color:rgba(0,255,163,0.3)">&#9660;</div><div class="pipe-lbl">Ingest</div></div>
         <div class="pipe-connector"></div>
-        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(0,170,255,0.08);border-color:rgba(0,170,255,0.3)">🔬</div><div class="pipe-lbl">Preprocess</div></div>
+        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(0,170,255,0.08);border-color:rgba(0,170,255,0.3)">&#9670;</div><div class="pipe-lbl">Preprocess</div></div>
         <div class="pipe-connector"></div>
-        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.3)">🧠</div><div class="pipe-lbl">ML Model</div></div>
+        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.3)">&#9675;</div><div class="pipe-lbl">ML Model</div></div>
         <div class="pipe-connector"></div>
-        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.3)">📊</div><div class="pipe-lbl">Validate</div></div>
+        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.3)">&#9671;</div><div class="pipe-lbl">Validate</div></div>
         <div class="pipe-connector"></div>
-        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(0,255,163,0.08);border-color:rgba(0,255,163,0.3)">🚀</div><div class="pipe-lbl">Deploy</div></div>
+        <div class="pipe-node"><div class="pipe-icon pipe-active" style="background:rgba(0,255,163,0.08);border-color:rgba(0,255,163,0.3)">&#9650;</div><div class="pipe-lbl">Deploy</div></div>
       </div>
       <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
         <div style="flex:1;background:rgba(0,255,163,0.04);border:1px solid rgba(0,255,163,0.1);border-radius:8px;padding:12px;text-align:center">
@@ -929,18 +1047,79 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
 
 <div class="fdiv"></div>
 
+
+<div class="fdiv"></div>
+
+<!-- ROI CALCULATOR -->
+<section class="roi-section reveal" id="roi-calc">
+  <span class="sec-tag">ROI Calculator</span>
+  <h2 class="sec-title">See Your Exact Savings<br>Before You Even Start</h2>
+  <p class="sec-desc" style="margin-bottom:40px">Enter your current numbers — we'll show you exactly how much time and money Floxyn automation will save your business.</p>
+  <div class="roi-card reveal">
+    <div class="roi-inner">
+      <div class="roi-inputs">
+        <div class="roi-input-row">
+          <div class="roi-val-row">
+            <span class="roi-label">Documents / Invoices per Month</span>
+            <span class="roi-field-val" id="docs-val">300</span>
+          </div>
+          <input type="range" class="roi-range" id="roi-docs" min="50" max="5000" step="50" value="300" oninput="calcROI()">
+          <div style="display:flex;justify-content:space-between;margin-top:4px"><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">50</span><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">5,000</span></div>
+        </div>
+        <div class="roi-input-row">
+          <div class="roi-val-row">
+            <span class="roi-label">Time per Document (minutes)</span>
+            <span class="roi-field-val" id="time-val">8 min</span>
+          </div>
+          <input type="range" class="roi-range" id="roi-time" min="1" max="30" step="1" value="8" oninput="calcROI()">
+          <div style="display:flex;justify-content:space-between;margin-top:4px"><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">1 min</span><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">30 min</span></div>
+        </div>
+        <div class="roi-input-row">
+          <div class="roi-val-row">
+            <span class="roi-label">Staff Hourly Cost (₹)</span>
+            <span class="roi-field-val" id="cost-val">₹200/hr</span>
+          </div>
+          <input type="range" class="roi-range" id="roi-cost" min="100" max="1500" step="50" value="200" oninput="calcROI()">
+          <div style="display:flex;justify-content:space-between;margin-top:4px"><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">₹100</span><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">₹1,500</span></div>
+        </div>
+        <div class="roi-input-row">
+          <div class="roi-val-row">
+            <span class="roi-label">Error Rate (manual)</span>
+            <span class="roi-field-val" id="err-val">5%</span>
+          </div>
+          <input type="range" class="roi-range" id="roi-err" min="1" max="25" step="1" value="5" oninput="calcROI()">
+          <div style="display:flex;justify-content:space-between;margin-top:4px"><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">1%</span><span style="font-size:9px;font-family:var(--font-mono);color:var(--muted)">25%</span></div>
+        </div>
+      </div>
+      <div class="roi-results">
+        <span class="roi-label" style="margin-bottom:4px">Annual Savings Estimate</span>
+        <div class="roi-res-num" id="roi-savings">₹0</div>
+        <div class="roi-res-lbl">per year with Floxyn</div>
+        <div class="roi-breakdown">
+          <div class="roi-row"><span class="roi-row-lbl">Hours saved / month</span><span class="roi-row-val" id="roi-hrs">0 hrs</span></div>
+          <div class="roi-row"><span class="roi-row-lbl">Labour cost saved / yr</span><span class="roi-row-val" id="roi-labour">₹0</span></div>
+          <div class="roi-row"><span class="roi-row-lbl">Error rework saved / yr</span><span class="roi-row-val" id="roi-rework">₹0</span></div>
+          <div class="roi-row"><span class="roi-row-lbl">Payback period</span><span class="roi-row-val" id="roi-payback">~0 months</span></div>
+          <div class="roi-row" style="border-color:rgba(0,255,163,0.15)"><span class="roi-row-lbl" style="color:var(--g1);font-weight:600">Floxyn accuracy</span><span class="roi-row-val" style="color:var(--g1)">99.8%</span></div>
+        </div>
+        <button class="roi-cta" onclick="showPage('home','contact')">Get This Saving →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section class="sec" id="services">
   <span class="sec-tag">What We Build</span>
   <h2 class="sec-title">Full-Stack Automation Services</h2>
   <p class="sec-desc">From intelligent document processing to full ML pipeline deployment — we cover the entire automation stack.</p>
   <div class="sgrid">
-    <div class="scard reveal"><div class="scard-top"><div class="scard-icon">🧠</div><span class="scard-arr">↗</span></div><div class="scard-name">ML Demand Forecasting</div><div class="scard-desc">LSTM + XGBoost models with 30/60/90-day horizons. Integrates with your ERP or warehouse data automatically.</div><div class="scard-tags"><span class="stag2">scikit-learn</span><span class="stag2">PyTorch</span><span class="stag2">LSTM</span></div></div>
-    <div class="scard reveal"><div class="scard-top"><div class="scard-icon">📄</div><span class="scard-arr">↗</span></div><div class="scard-name">Intelligent OCR & Extraction</div><div class="scard-desc">Extract structured data from invoices, PDFs, scanned documents with 99.8% accuracy using vision models.</div><div class="scard-tags"><span class="stag2">Tesseract</span><span class="stag2">BERT</span><span class="stag2">PaddleOCR</span></div></div>
-    <div class="scard reveal"><div class="scard-top"><div class="scard-icon">⚡</div><span class="scard-arr">↗</span></div><div class="scard-name">Workflow Orchestration</div><div class="scard-desc">End-to-end pipeline automation — from data ingestion to report delivery. Cron-scheduled, event-driven, or API-triggered.</div><div class="scard-tags"><span class="stag2">Airflow</span><span class="stag2">FastAPI</span><span class="stag2">Celery</span></div></div>
-    <div class="scard reveal"><div class="scard-top"><div class="scard-icon">🔍</div><span class="scard-arr">↗</span></div><div class="scard-name">Anomaly Detection</div><div class="scard-desc">Isolation Forest & LSTM autoencoder models that flag financial, operational, or supply-chain anomalies in real-time.</div><div class="scard-tags"><span class="stag2">IForest</span><span class="stag2">Autoencoder</span><span class="stag2">SHAP</span></div></div>
-    <div class="scard reveal"><div class="scard-top"><div class="scard-icon">📊</div><span class="scard-arr">↗</span></div><div class="scard-name">Auto Reporting Engines</div><div class="scard-desc">Automated Excel, PDF, and BI dashboards generated daily from your live data — zero manual effort required.</div><div class="scard-tags"><span class="stag2">openpyxl</span><span class="stag2">Pandas</span><span class="stag2">Plotly</span></div></div>
-    <div class="scard reveal"><div class="scard-top"><div class="scard-icon">🤖</div><span class="scard-arr">↗</span></div><div class="scard-name">AI-Powered Bots</div><div class="scard-desc">Custom LLM-powered bots for customer support, internal Q&A, and intelligent process automation across channels.</div><div class="scard-tags"><span class="stag2">LangChain</span><span class="stag2">OpenAI</span><span class="stag2">RAG</span></div></div>
+    <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">ML Demand Forecasting</div><div class="scard-desc">LSTM + XGBoost models with 30/60/90-day horizons. Integrates with your ERP or warehouse data automatically.</div><div class="scard-tags"><span class="stag2">scikit-learn</span><span class="stag2">PyTorch</span><span class="stag2">LSTM</span></div></div>
+    <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">Intelligent OCR & Extraction</div><div class="scard-desc">Extract structured data from invoices, PDFs, scanned documents with 99.8% accuracy using vision models.</div><div class="scard-tags"><span class="stag2">Tesseract</span><span class="stag2">BERT</span><span class="stag2">PaddleOCR</span></div></div>
+    <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">Workflow Orchestration</div><div class="scard-desc">End-to-end pipeline automation — from data ingestion to report delivery. Cron-scheduled, event-driven, or API-triggered.</div><div class="scard-tags"><span class="stag2">Airflow</span><span class="stag2">FastAPI</span><span class="stag2">Celery</span></div></div>
+    <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">Anomaly Detection</div><div class="scard-desc">Isolation Forest & LSTM autoencoder models that flag financial, operational, or supply-chain anomalies in real-time.</div><div class="scard-tags"><span class="stag2">IForest</span><span class="stag2">Autoencoder</span><span class="stag2">SHAP</span></div></div>
+    <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">Auto Reporting Engines</div><div class="scard-desc">Automated Excel, PDF, and BI dashboards generated daily from your live data — zero manual effort required.</div><div class="scard-tags"><span class="stag2">openpyxl</span><span class="stag2">Pandas</span><span class="stag2">Plotly</span></div></div>
+    <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 2a3 3 0 0 1 3 3v6H9V5a3 3 0 0 1 3-3z"/><circle cx="9" cy="16" r="1" fill="currentColor"/><circle cx="15" cy="16" r="1" fill="currentColor"/><line x1="12" y1="11" x2="12" y2="2"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">AI-Powered Bots</div><div class="scard-desc">Custom LLM-powered bots for customer support, internal Q&A, and intelligent process automation across channels.</div><div class="scard-tags"><span class="stag2">LangChain</span><span class="stag2">OpenAI</span><span class="stag2">RAG</span></div></div>
   </div>
 </section>
 
@@ -953,18 +1132,18 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <div class="ba-grid">
     <div class="ba-col before reveal">
       <div class="ba-label">⛔ Before Floxyn</div>
-      <div class="ba-item"><div class="ba-ico">😩</div><div class="ba-text"><h4>Manual data entry taking 8+ hours/day</h4><p>Teams copy-pasting from PDFs, invoices, and spreadsheets — error-prone and exhausting.</p></div></div>
-      <div class="ba-item"><div class="ba-ico">📉</div><div class="ba-text"><h4>No forecasting capability</h4><p>Demand planning done on gut-feel and Excel formulas with no statistical grounding.</p></div></div>
-      <div class="ba-item"><div class="ba-ico">🐌</div><div class="ba-text"><h4>Monthly reports take 3+ days</h4><p>Finance teams spending days consolidating data instead of analysing it.</p></div></div>
-      <div class="ba-item"><div class="ba-ico">🔥</div><div class="ba-text"><h4>Anomalies discovered too late</h4><p>Fraud, errors, and supply disruptions detected weeks after occurrence.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:#ef4444;font-size:13px;font-weight:700;font-family:var(--font-mono)">&minus;</div><div class="ba-text"><h4>Manual data entry taking 8+ hours/day</h4><p>Teams copy-pasting from PDFs, invoices, and spreadsheets — error-prone and exhausting.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:#ef4444;font-size:13px;font-weight:700;font-family:var(--font-mono)">&minus;</div><div class="ba-text"><h4>No forecasting capability</h4><p>Demand planning done on gut-feel and Excel formulas with no statistical grounding.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:#ef4444;font-size:13px;font-weight:700;font-family:var(--font-mono)">&minus;</div><div class="ba-text"><h4>Monthly reports take 3+ days</h4><p>Finance teams spending days consolidating data instead of analysing it.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:#ef4444;font-size:13px;font-weight:700;font-family:var(--font-mono)">&minus;</div><div class="ba-text"><h4>Anomalies discovered too late</h4><p>Fraud, errors, and supply disruptions detected weeks after occurrence.</p></div></div>
     </div>
     <div class="ba-mid"><div class="ba-arr">→</div></div>
     <div class="ba-col after reveal">
-      <div class="ba-label">✅ After Floxyn</div>
-      <div class="ba-item"><div class="ba-ico">⚡</div><div class="ba-text"><h4>Fully automated extraction pipelines</h4><p>99.8% accuracy OCR extracting 247+ records per minute, 24/7, zero manual effort.</p></div></div>
-      <div class="ba-item"><div class="ba-ico">📈</div><div class="ba-text"><h4>ML-powered 30/60/90 day forecasts</h4><p>LSTM models with R²=0.94 driving inventory, staffing, and revenue decisions.</p></div></div>
-      <div class="ba-item"><div class="ba-ico">🚀</div><div class="ba-text"><h4>Reports auto-delivered in seconds</h4><p>Scheduled pipelines push formatted reports to email/Slack/Drive every morning.</p></div></div>
-      <div class="ba-item"><div class="ba-ico">🛡️</div><div class="ba-text"><h4>Real-time anomaly detection</h4><p>Isolation Forest models flag suspicious patterns the moment they appear in your data.</p></div></div>
+      <div class="ba-label"> After Floxyn</div>
+      <div class="ba-item"><div class="ba-ico" style="color:var(--g1);font-size:13px;font-weight:700;font-family:var(--font-mono)">+</div><div class="ba-text"><h4>Fully automated extraction pipelines</h4><p>99.8% accuracy OCR extracting 247+ records per minute, 24/7, zero manual effort.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:var(--g1);font-size:13px;font-weight:700;font-family:var(--font-mono)">+</div><div class="ba-text"><h4>ML-powered 30/60/90 day forecasts</h4><p>LSTM models with R²=0.94 driving inventory, staffing, and revenue decisions.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:var(--g1);font-size:13px;font-weight:700;font-family:var(--font-mono)">+</div><div class="ba-text"><h4>Reports auto-delivered in seconds</h4><p>Scheduled pipelines push formatted reports to email/Slack/Drive every morning.</p></div></div>
+      <div class="ba-item"><div class="ba-ico" style="color:var(--g1);font-size:13px;font-weight:700;font-family:var(--font-mono)">+</div><div class="ba-text"><h4>Real-time anomaly detection</h4><p>Isolation Forest models flag suspicious patterns the moment they appear in your data.</p></div></div>
     </div>
   </div>
 </section>
@@ -991,12 +1170,12 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <span class="sec-tag">Case Studies</span>
   <h2 class="sec-title">Real Projects, Real Results</h2>
   <div class="wgrid">
-    <div class="wcard reveal"><div class="wprev wp1"><div class="wico">🏦</div></div><div class="winfo"><div class="wcat">NBFC · India</div><div class="wname">Invoice Extraction Automation System</div><div class="wdesc">OCR pipeline processing 247 invoices/minute with 99.8% accuracy, replacing 3 full-time data entry staff.</div><div class="wimp"><div><div class="winum">99.8%</div><div class="wilbl">Accuracy</div></div><div><div class="winum">247/min</div><div class="wilbl">Throughput</div></div></div></div></div>
-    <div class="wcard reveal"><div class="wprev wp2"><div class="wico">📦</div></div><div class="winfo"><div class="wcat">Logistics · UAE</div><div class="wname">Demand Forecasting ML Pipeline</div><div class="wdesc">LSTM model forecasting 30-day demand across 500 SKUs with R²=0.94, reducing overstock by 31%.</div><div class="wimp"><div><div class="winum">R²=0.94</div><div class="wilbl">Model Fit</div></div><div><div class="winum">-31%</div><div class="wilbl">Overstock</div></div></div></div></div>
-    <div class="wcard reveal"><div class="wprev wp3"><div class="wico">📊</div></div><div class="winfo"><div class="wcat">D2C Brand · Singapore</div><div class="wname">Automated Monthly Reporting Engine</div><div class="wdesc">Full dashboard + PDF report pipeline delivering 22 reports daily across 6 departments, zero manual effort.</div><div class="wimp"><div><div class="winum">22</div><div class="wilbl">Reports/day</div></div><div><div class="winum">96hrs</div><div class="wilbl">Saved/mo</div></div></div></div></div>
-    <div class="wcard reveal"><div class="wprev wp4"><div class="wico">🔍</div></div><div class="winfo"><div class="wcat">CA Firm · India</div><div class="wname">Anomaly Detection in GST Filings</div><div class="wdesc">Isolation Forest model catching GST mismatches and duplicate entries across 2,000+ clients in real-time.</div><div class="wimp"><div><div class="winum">97%</div><div class="wilbl">Recall</div></div><div><div class="winum">2k+</div><div class="wilbl">Clients</div></div></div></div></div>
-    <div class="wcard reveal"><div class="wprev wp5"><div class="wico">🏭</div></div><div class="winfo"><div class="wcat">Manufacturing · UK</div><div class="wname">Production Quality Control Bot</div><div class="wdesc">Computer vision + NLP pipeline classifying defect types from inspection notes and sensor data in real-time.</div><div class="wimp"><div><div class="winum">-44%</div><div class="wilbl">Defect Rate</div></div><div><div class="winum">3hr→4min</div><div class="wilbl">Cycle Time</div></div></div></div></div>
-    <div class="wcard reveal"><div class="wprev wp6"><div class="wico">👥</div></div><div class="winfo"><div class="wcat">HR Tech · Canada</div><div class="wname">Resume Screening & Matching Engine</div><div class="wdesc">NLP-powered JD-to-resume matching with BERT embeddings, reducing screening time from 3 hours to 8 minutes per role.</div><div class="wimp"><div><div class="winum">91%</div><div class="wilbl">Accuracy</div></div><div><div class="winum">95%</div><div class="wilbl">Time Saved</div></div></div></div></div>
+    <div class="wcard reveal"><div class="wprev wp1"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(0,255,163,0.6)" stroke-width="1"><rect x="3" y="10" width="18" height="11" rx="1"/><path d="M12 3L2 10h20L12 3z"/><line x1="9" y1="14" x2="9" y2="18"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="15" y1="14" x2="15" y2="18"/></svg></div></div><div class="winfo"><div class="wcat">NBFC · India</div><div class="wname">Invoice Extraction Automation System</div><div class="wdesc">OCR pipeline processing 247 invoices/minute with 99.8% accuracy, replacing 3 full-time data entry staff.</div><div class="wimp"><div><div class="winum">99.8%</div><div class="wilbl">Accuracy</div></div><div><div class="winum">247/min</div><div class="wilbl">Throughput</div></div></div></div></div>
+    <div class="wcard reveal"><div class="wprev wp2"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(0,170,255,0.6)" stroke-width="1"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div></div><div class="winfo"><div class="wcat">Logistics · UAE</div><div class="wname">Demand Forecasting ML Pipeline</div><div class="wdesc">LSTM model forecasting 30-day demand across 500 SKUs with R²=0.94, reducing overstock by 31%.</div><div class="wimp"><div><div class="winum">R²=0.94</div><div class="wilbl">Model Fit</div></div><div><div class="winum">-31%</div><div class="wilbl">Overstock</div></div></div></div></div>
+    <div class="wcard reveal"><div class="wprev wp3"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(0,255,163,0.6)" stroke-width="1"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div></div><div class="winfo"><div class="wcat">D2C Brand · Singapore</div><div class="wname">Automated Monthly Reporting Engine</div><div class="wdesc">Full dashboard + PDF report pipeline delivering 22 reports daily across 6 departments, zero manual effort.</div><div class="wimp"><div><div class="winum">22</div><div class="wilbl">Reports/day</div></div><div><div class="winum">96hrs</div><div class="wilbl">Saved/mo</div></div></div></div></div>
+    <div class="wcard reveal"><div class="wprev wp4"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(124,58,237,0.6)" stroke-width="1"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="15.65" y2="15.65"/></svg></div></div><div class="winfo"><div class="wcat">CA Firm · India</div><div class="wname">Anomaly Detection in GST Filings</div><div class="wdesc">Isolation Forest model catching GST mismatches and duplicate entries across 2,000+ clients in real-time.</div><div class="wimp"><div><div class="winum">97%</div><div class="wilbl">Recall</div></div><div><div class="winum">2k+</div><div class="wilbl">Clients</div></div></div></div></div>
+    <div class="wcard reveal"><div class="wprev wp5"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.6)" stroke-width="1"><path d="M2 20V9l7-5v5l7-5v5l4-2v13H2z"/><rect x="9" y="14" width="2" height="6"/><rect x="13" y="14" width="2" height="6"/></svg></div></div><div class="winfo"><div class="wcat">Manufacturing · UK</div><div class="wname">Production Quality Control Bot</div><div class="wdesc">Computer vision + NLP pipeline classifying defect types from inspection notes and sensor data in real-time.</div><div class="wimp"><div><div class="winum">-44%</div><div class="wilbl">Defect Rate</div></div><div><div class="winum">3hr→4min</div><div class="wilbl">Cycle Time</div></div></div></div></div>
+    <div class="wcard reveal"><div class="wprev wp6"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(0,170,255,0.6)" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div></div><div class="winfo"><div class="wcat">HR Tech · Canada</div><div class="wname">Resume Screening & Matching Engine</div><div class="wdesc">NLP-powered JD-to-resume matching with BERT embeddings, reducing screening time from 3 hours to 8 minutes per role.</div><div class="wimp"><div><div class="winum">91%</div><div class="wilbl">Accuracy</div></div><div><div class="winum">95%</div><div class="wilbl">Time Saved</div></div></div></div></div>
   </div>
 </section>
 
@@ -1007,18 +1186,18 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <span class="sec-tag">Technology Stack</span>
   <h2 class="sec-title">Built on World-Class Open Source</h2>
   <div class="tgrid">
-    <div class="tchip reveal"><span class="temi">🐍</span><div class="tname">Python</div></div>
-    <div class="tchip reveal"><span class="temi">🔥</span><div class="tname">PyTorch</div></div>
-    <div class="tchip reveal"><span class="temi">🤗</span><div class="tname">HuggingFace</div></div>
-    <div class="tchip reveal"><span class="temi">⚗️</span><div class="tname">scikit-learn</div></div>
-    <div class="tchip reveal"><span class="temi">📊</span><div class="tname">Pandas</div></div>
-    <div class="tchip reveal"><span class="temi">🔢</span><div class="tname">NumPy</div></div>
-    <div class="tchip reveal"><span class="temi">⚡</span><div class="tname">FastAPI</div></div>
-    <div class="tchip reveal"><span class="temi">🔁</span><div class="tname">Airflow</div></div>
-    <div class="tchip reveal"><span class="temi">📈</span><div class="tname">MLflow</div></div>
-    <div class="tchip reveal"><span class="temi">🗄️</span><div class="tname">PostgreSQL</div></div>
-    <div class="tchip reveal"><span class="temi">📦</span><div class="tname">Docker</div></div>
-    <div class="tchip reveal"><span class="temi">☁️</span><div class="tname">AWS / GCP</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s0 3 4 3 4-3 4-3"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></span><div class="tname">Python</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.5 14.5A2.5 2.5 0 0011 17c.55 0 1.07-.17 1.5-.46V17a2.5 2.5 0 005 0V7l-4-3-5 3.5V14.5z"/></svg></span><div class="tname">PyTorch</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span><div class="tname">HuggingFace</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></span><div class="tname">scikit-learn</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="tname">Pandas</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7l2-4h12l2 4M4 7h16M4 7l2 14h12l2-14"/></svg></span><div class="tname">NumPy</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="tname">FastAPI</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span><div class="tname">Airflow</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><div class="tname">MLflow</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span><div class="tname">PostgreSQL</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span><div class="tname">Docker</div></div>
+    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><div class="tname">AWS / GCP</div></div>
   </div>
 </section>
 
@@ -1030,11 +1209,11 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <h2 class="sec-title">Not Just Scripts.<br>Intelligent Systems.</h2>
   <div class="wygrid">
     <div class="wypts">
-      <div class="wypt reveal"><div class="wyico">🔬</div><div class="wytt"><h4>Research-Backed ML</h4><p>We apply peer-reviewed techniques — LSTM, Isolation Forest, SHAP explainability — not toy models.</p></div></div>
-      <div class="wypt reveal"><div class="wyico">⚡</div><div class="wytt"><h4>Production-Grade, Not Notebooks</h4><p>Every delivery is dockerised, scheduled, monitored, and retrainable. No Jupyter notebooks in prod.</p></div></div>
-      <div class="wypt reveal"><div class="wyico">🌍</div><div class="wytt"><h4>Built for Global Scale</h4><p>Multi-currency, multi-timezone, multi-language — our pipelines handle it from day one.</p></div></div>
-      <div class="wypt reveal"><div class="wyico">🎯</div><div class="wytt"><h4>Outcome Contracts</h4><p>We define success metrics upfront and guarantee them. You pay for results, not effort.</p></div></div>
-      <div class="wypt reveal"><div class="wyico">🔒</div><div class="wytt"><h4>NDA & Secure by Default</h4><p>Every engagement starts with an NDA. Your data never leaves your infrastructure unless you want it to.</p></div></div>
+      <div class="wypt reveal"><div class="wyico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></div><div class="wytt"><h4>Research-Backed ML</h4><p>We apply peer-reviewed techniques — LSTM, Isolation Forest, SHAP explainability — not toy models.</p></div></div>
+      <div class="wypt reveal"><div class="wyico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="wytt"><h4>Production-Grade, Not Notebooks</h4><p>Every delivery is dockerised, scheduled, monitored, and retrainable. No Jupyter notebooks in prod.</p></div></div>
+      <div class="wypt reveal"><div class="wyico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="wytt"><h4>Built for Global Scale</h4><p>Multi-currency, multi-timezone, multi-language — our pipelines handle it from day one.</p></div></div>
+      <div class="wypt reveal"><div class="wyico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div class="wytt"><h4>Outcome Contracts</h4><p>We define success metrics upfront and guarantee them. You pay for results, not effort.</p></div></div>
+      <div class="wypt reveal"><div class="wyico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="wytt"><h4>NDA & Secure by Default</h4><p>Every engagement starts with an NDA. Your data never leaves your infrastructure unless you want it to.</p></div></div>
     </div>
     <div class="wyvis reveal">
       <div class="terminal">
@@ -1058,6 +1237,45 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
 
 <div class="fdiv"></div>
 
+
+<div class="fdiv"></div>
+
+<!-- BLOG / INSIGHTS -->
+<section class="sec" id="blog">
+  <span class="sec-tag">Automation Insights</span>
+  <h2 class="sec-title">Learn From Our Projects</h2>
+  <p class="sec-desc">Real case studies and technical deep-dives from 50+ automation projects across the globe.</p>
+  <div class="blog-grid">
+    <div class="blog-card reveal">
+      <div class="blog-thumb bt1"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,255,163,0.5)" stroke-width="1"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="blog-body">
+        <div class="blog-cat">OCR · Case Study</div>
+        <div class="blog-title">How We Reduced Invoice Processing from 8 Hours to 2 Minutes</div>
+        <div class="blog-excerpt">A deep dive into building a PaddleOCR + BERT pipeline that processes 247 invoices per minute with 99.8% accuracy for an NBFC.</div>
+        <div class="blog-meta"><span class="blog-date">Jan 2025 · 8 min read</span><span class="blog-read">Read →</span></div>
+      </div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-thumb bt2"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,170,255,0.5)" stroke-width="1"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      <div class="blog-body">
+        <div class="blog-cat">ML · Technical</div>
+        <div class="blog-title">LSTM vs XGBoost for Demand Forecasting: A Practical Comparison</div>
+        <div class="blog-excerpt">We tested both architectures on the same dataset. LSTM won on accuracy (R²=0.94 vs 0.86), but XGBoost wins on explainability. Here's when to use which.</div>
+        <div class="blog-meta"><span class="blog-date">Feb 2025 · 12 min read</span><span class="blog-read">Read →</span></div>
+      </div>
+    </div>
+    <div class="blog-card reveal">
+      <div class="blog-thumb bt3"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(124,58,237,0.5)" stroke-width="1"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 2a3 3 0 0 1 3 3v6H9V5a3 3 0 0 1 3-3z"/><circle cx="9" cy="16" r="1" fill="rgba(124,58,237,0.5)"/><circle cx="15" cy="16" r="1" fill="rgba(124,58,237,0.5)"/></svg></div>
+      <div class="blog-body">
+        <div class="blog-cat">Automation · Guide</div>
+        <div class="blog-title">The 5 Most Common Automation Mistakes (And How We Fixed Them)</div>
+        <div class="blog-excerpt">From hardcoded paths to missing error handling — the patterns we see break automation projects every time, and the production-grade fixes for each.</div>
+        <div class="blog-meta"><span class="blog-date">Mar 2025 · 6 min read</span><span class="blog-read">Read →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="sec" id="faq">
   <span class="sec-tag">Questions</span>
@@ -1078,12 +1296,12 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <div class="cinner">
     <div class="cleft">
       <h3>Start Your Automation Journey</h3>
-      <p>Tell us about your workflow challenge. Harsh will personally review it and respond within 24 hours with a concrete plan.</p>
+      
       <div class="cinfo">
-        <div class="crow"><div class="crico">📞</div>+91 73038 97496</div>
-        <div class="crow"><div class="crico">📧</div>hello@floxyn.in</div>
-        <div class="crow"><div class="crico">💬</div><a href="https://wa.me/917303897496" style="color:var(--txt);text-decoration:none" target="_blank">WhatsApp Chat</a></div>
-        <div class="crow"><div class="crico">🌍</div>India · UAE · Singapore · UK · Worldwide</div>
+        <div class="crow"><div class="crico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.95-.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>+91 73038 97496</div>
+        <div class="crow"><div class="crico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>hello@floxyn.in</div>
+        <div class="crow"><div class="crico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><a href="https://wa.me/917303897496" style="color:var(--txt);text-decoration:none" target="_blank">WhatsApp Chat</a></div>
+        <div class="crow"><div class="crico"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>India · UAE · Singapore · UK · Worldwide</div>
       </div>
     </div>
     <form class="cform" onsubmit="handleForm(event)">
@@ -1104,7 +1322,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
       <div class="ff"><label>Describe your challenge</label>
         <textarea rows="3" placeholder="e.g. We manually process 300 invoices every month from multiple vendors..." required></textarea>
       </div>
-      <button type="submit" class="fsub" id="submitBtn">Send to Harsh →</button>
+      <button type="submit" class="fsub" id="submitBtn">Submit Request →</button>
     </form>
   </div>
 </section>
@@ -1138,12 +1356,12 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   </div>
 
   <div class="values-grid">
-    <div class="val-card reveal"><div class="val-icon">🔬</div><div class="val-title">Research-Driven</div><div class="val-desc">We apply cutting-edge ML research — LSTM, Isolation Forest, SHAP — to build automation that's genuinely intelligent.</div></div>
-    <div class="val-card reveal"><div class="val-icon">🌍</div><div class="val-title">Global First</div><div class="val-desc">We build automation that works across borders, currencies, languages, and compliance requirements from day one.</div></div>
-    <div class="val-card reveal"><div class="val-icon">🎯</div><div class="val-title">Results Obsessed</div><div class="val-desc">We measure success by hours saved and errors eliminated — not by lines of code written or models trained.</div></div>
-    <div class="val-card reveal"><div class="val-icon">🔒</div><div class="val-title">Trust & Security</div><div class="val-desc">NDAs, secure deployments, and data privacy — non-negotiable on every single project we take on.</div></div>
-    <div class="val-card reveal"><div class="val-icon">⚡</div><div class="val-title">Move Fast</div><div class="val-desc">Most projects delivered in 1–3 weeks. We move at startup speed without ever sacrificing quality or reliability.</div></div>
-    <div class="val-card reveal"><div class="val-icon">🤝</div><div class="val-title">Partners, Not Vendors</div><div class="val-desc">We invest in understanding your business deeply and stay with you as you scale and grow — long-term relationships.</div></div>
+    <div class="val-card reveal"><div class="val-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></div><div class="val-title">Research-Driven</div><div class="val-desc">We apply cutting-edge ML research — LSTM, Isolation Forest, SHAP — to build automation that's genuinely intelligent.</div></div>
+    <div class="val-card reveal"><div class="val-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="val-title">Global First</div><div class="val-desc">We build automation that works across borders, currencies, languages, and compliance requirements from day one.</div></div>
+    <div class="val-card reveal"><div class="val-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><div class="val-title">Results Obsessed</div><div class="val-desc">We measure success by hours saved and errors eliminated — not by lines of code written or models trained.</div></div>
+    <div class="val-card reveal"><div class="val-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="val-title">Trust & Security</div><div class="val-desc">NDAs, secure deployments, and data privacy — non-negotiable on every single project we take on.</div></div>
+    <div class="val-card reveal"><div class="val-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="val-title">Move Fast</div><div class="val-desc">Most projects delivered in 1–3 weeks. We move at startup speed without ever sacrificing quality or reliability.</div></div>
+    <div class="val-card reveal"><div class="val-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="val-title">Partners, Not Vendors</div><div class="val-desc">We invest in understanding your business deeply and stay with you as you scale and grow — long-term relationships.</div></div>
   </div>
 
   <!-- FOUNDER -->
@@ -1185,18 +1403,18 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
         </div>
 
         <div class="founder-tags">
-          <span class="ftag">🐍 Python Expert</span>
-          <span class="ftag">🤖 ML Engineer</span>
-          <span class="ftag">⚡ Automation Architect</span>
-          <span class="ftag">🌍 Global Builder</span>
-          <span class="ftag">🔬 Research-Driven</span>
-          <span class="ftag">📊 Data Scientist</span>
+          <span class="ftag">Python Expert</span>
+          <span class="ftag">ML Engineer</span>
+          <span class="ftag">Automation Architect</span>
+          <span class="ftag">Global Builder</span>
+          <span class="ftag">Research-Driven</span>
+          <span class="ftag">Data Scientist</span>
         </div>
         <div class="founder-socials">
-          <a href="https://wa.me/917303897496" class="fsocial" target="_blank">💬 WhatsApp</a>
-          <a href="mailto:hello@floxyn.in" class="fsocial">📧 Email</a>
-          <a href="https://linkedin.com" class="fsocial" target="_blank">🔗 LinkedIn</a>
-          <a href="https://github.com" class="fsocial" target="_blank">🐙 GitHub</a>
+          <a href="https://wa.me/917303897496" class="fsocial" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+          <a href="mailto:hello@floxyn.in" class="fsocial"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Email</a>
+          <a href="https://linkedin.com" class="fsocial" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+          <a href="https://github.com" class="fsocial" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub</a>
         </div>
       </div>
     </div>
@@ -1207,11 +1425,11 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
     <span class="sec-tag">Journey</span>
     <h2 class="sec-title">How Floxyn Was Built</h2>
     <div class="timeline">
-      <div class="tl-item reveal"><div class="tl-dot">🌱</div><div class="tl-body"><div class="tl-year">2021 · The Beginning</div><div class="tl-title">First Automation Script</div><div class="tl-desc">Built a Python script that automated monthly Excel reporting for a CA firm — saving them 40 hours/month. Realized the massive opportunity in business automation.</div></div></div>
-      <div class="tl-item reveal"><div class="tl-dot">🔬</div><div class="tl-body"><div class="tl-year">2022 · Going Deeper</div><div class="tl-title">Entered the ML World</div><div class="tl-desc">Deep-dived into machine learning — built first demand forecasting model using XGBoost for a logistics client. Achieved MAPE of 12%, then improved to 8.7% with LSTM.</div></div></div>
-      <div class="tl-item reveal"><div class="tl-dot">🌍</div><div class="tl-body"><div class="tl-year">2023 · Going Global</div><div class="tl-title">First International Clients</div><div class="tl-desc">Expanded beyond India — secured first UAE and Singapore clients. Built multi-currency, multi-timezone automation pipelines. Delivered 20+ projects across 4 countries.</div></div></div>
-      <div class="tl-item reveal"><div class="tl-dot">🚀</div><div class="tl-body"><div class="tl-year">2024 · Floxyn Founded</div><div class="tl-title">A Company Is Born</div><div class="tl-desc">Formally founded Floxyn to scale the automation mission globally. Built the core ML stack, assembled the first team, and launched services across India, UAE, Singapore, and UK.</div></div></div>
-      <div class="tl-item reveal"><div class="tl-dot">🔭</div><div class="tl-body"><div class="tl-year">2025 → Future</div><div class="tl-title">Building the Automation OS</div><div class="tl-desc">Expanding into AI-powered bot systems, LLM-based workflow orchestration, and a SaaS platform that lets any business deploy production ML automation with no code.</div></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9zM12 12c0-5 5-9 10-9-0 5-4 9-10 9z"/></svg></div><div class="tl-body"><div class="tl-year">2021 · The Beginning</div><div class="tl-title">First Automation Script</div><div class="tl-desc">Built a Python script that automated monthly Excel reporting for a CA firm — saving them 40 hours/month. Realized the massive opportunity in business automation.</div></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></div><div class="tl-body"><div class="tl-year">2022 · Going Deeper</div><div class="tl-title">Entered the ML World</div><div class="tl-desc">Deep-dived into machine learning — built first demand forecasting model using XGBoost for a logistics client. Achieved MAPE of 12%, then improved to 8.7% with LSTM.</div></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="tl-body"><div class="tl-year">2023 · Going Global</div><div class="tl-title">First International Clients</div><div class="tl-desc">Expanded beyond India — secured first UAE and Singapore clients. Built multi-currency, multi-timezone automation pipelines. Delivered 20+ projects across 4 countries.</div></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M12 2L8.5 8.5 2 9.27l5 4.87-1.18 6.88L12 17.77l6.18 3.25L17 14.14l5-4.87-6.5-.77z"/></svg></div><div class="tl-body"><div class="tl-year">2024 · Floxyn Founded</div><div class="tl-title">A Company Is Born</div><div class="tl-desc">Formally founded Floxyn to scale the automation mission globally. Built the core ML stack, assembled the first team, and launched services across India, UAE, Singapore, and UK.</div></div></div>
+      <div class="tl-item reveal"><div class="tl-dot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="tl-body"><div class="tl-year">2025 → Future</div><div class="tl-title">Building the Automation OS</div><div class="tl-desc">Expanding into AI-powered bot systems, LLM-based workflow orchestration, and a SaaS platform that lets any business deploy production ML automation with no code.</div></div></div>
     </div>
   </div>
 
@@ -1231,12 +1449,12 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
   <!-- GLOBAL BANNER -->
   <div class="careers-section-wrap">
     <div class="global-banner">
-      <h2>🌍 We Target <span>Worldwide Automation</span></h2>
+      <h2> We Target <span>Worldwide Automation</span></h2>
       <p>Floxyn serves clients across continents — our systems run in offices from Mumbai to Dubai, Singapore to London. When you join Floxyn, you're building for a global audience.</p>
       <div class="country-flags">
-        <div class="cflag">🇮🇳 India</div><div class="cflag">🇦🇪 UAE</div><div class="cflag">🇸🇬 Singapore</div>
-        <div class="cflag">🇬🇧 UK</div><div class="cflag">🇺🇸 USA</div><div class="cflag">🇦🇺 Australia</div>
-        <div class="cflag">🇨🇦 Canada</div><div class="cflag">+ More</div>
+        <div class="cflag">India</div><div class="cflag">UAE</div><div class="cflag">Singapore</div>
+        <div class="cflag">UK</div><div class="cflag">USA</div><div class="cflag">Australia</div>
+        <div class="cflag">Canada</div><div class="cflag">+ More</div>
       </div>
     </div>
   </div>
@@ -1246,19 +1464,19 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
     <span class="sec-tag" style="display:block;text-align:center">Our Culture</span>
     <h2 class="sec-title" style="text-align:center">How We Work & Think</h2>
     <div class="culture-grid">
-      <div class="culture-card reveal"><span class="cc-icon">🔬</span><div class="cc-title">Research-First</div><div class="cc-desc">We read papers, experiment constantly, and apply state-of-the-art techniques — not just tutorials.</div></div>
-      <div class="culture-card reveal"><span class="cc-icon">🌏</span><div class="cc-title">Fully Remote</div><div class="cc-desc">Work from anywhere. Async-first culture. Results over presence, always.</div></div>
-      <div class="culture-card reveal"><span class="cc-icon">🚀</span><div class="cc-title">Ship Real Things</div><div class="cc-desc">Every project ships to real clients in real production environments. No fake demos.</div></div>
-      <div class="culture-card reveal"><span class="cc-icon">📈</span><div class="cc-title">Grow Fast</div><div class="cc-desc">Early team gets equity, mentorship, and the chance to lead global projects from day one.</div></div>
+      <div class="culture-card reveal"><span class="cc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></span><div class="cc-title">Research-First</div><div class="cc-desc">We read papers, experiment constantly, and apply state-of-the-art techniques — not just tutorials.</div></div>
+      <div class="culture-card reveal"><span class="cc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><div class="cc-title">Fully Remote</div><div class="cc-desc">Work from anywhere. Async-first culture. Results over presence, always.</div></div>
+      <div class="culture-card reveal"><span class="cc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><path d="M12 2L8.5 8.5 2 9.27l5 4.87-1.18 6.88L12 17.77l6.18 3.25L17 14.14l5-4.87-6.5-.77L12 2z"/></svg></span><div class="cc-title">Ship Real Things</div><div class="cc-desc">Every project ships to real clients in real production environments. No fake demos.</div></div>
+      <div class="culture-card reveal"><span class="cc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><div class="cc-title">Grow Fast</div><div class="cc-desc">Early team gets equity, mentorship, and the chance to lead global projects from day one.</div></div>
     </div>
   </div>
 
   <!-- PERKS -->
   <div class="perks-grid">
-    <div class="perk-card reveal"><div class="perk-icon">🌏</div><div class="perk-title">100% Remote</div><div class="perk-desc">Work from anywhere in the world. No office requirements, no attendance tracking.</div></div>
-    <div class="perk-card reveal"><div class="perk-icon">📈</div><div class="perk-title">Equity & Growth</div><div class="perk-desc">Early team members get equity. Grow with the company as we scale globally.</div></div>
-    <div class="perk-card reveal"><div class="perk-icon">🔬</div><div class="perk-title">Cutting-Edge Stack</div><div class="perk-desc">Work with latest ML frameworks, Python tooling, LLMs, and production automation systems.</div></div>
-    <div class="perk-card reveal"><div class="perk-icon">🧠</div><div class="perk-title">Learn & Research</div><div class="perk-desc">Dedicated time for research, learning, and building. We invest in your growth.</div></div>
+    <div class="perk-card reveal"><div class="perk-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="perk-title">100% Remote</div><div class="perk-desc">Work from anywhere in the world. No office requirements, no attendance tracking.</div></div>
+    <div class="perk-card reveal"><div class="perk-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="perk-title">Equity & Growth</div><div class="perk-desc">Early team members get equity. Grow with the company as we scale globally.</div></div>
+    <div class="perk-card reveal"><div class="perk-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.2"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></div><div class="perk-title">Cutting-Edge Stack</div><div class="perk-desc">Work with latest ML frameworks, Python tooling, LLMs, and production automation systems.</div></div>
+    <div class="perk-card reveal"><div class="perk-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g2)" stroke-width="1.2"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></div><div class="perk-title">Learn & Research</div><div class="perk-desc">Dedicated time for research, learning, and building. We invest in your growth.</div></div>
   </div>
 
   <!-- JOB LISTINGS -->
@@ -1267,34 +1485,34 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
     <h2 class="sec-title" style="margin-bottom:36px">We're Hiring</h2>
     <div class="jobs-grid">
       <div class="job-card reveal">
-        <div class="job-type">🔥 Hiring · Full-time / Contract</div>
+        <div class="job-type">Hiring · Full-time / Contract</div>
         <div class="job-title">Python Automation Engineer</div>
         <div class="job-desc">Build Python scripts, automation pipelines, and integrations for clients across India, UAE, Singapore, and the UK. Own the full delivery lifecycle — from discovery to production deployment.</div>
-        <div class="job-meta"><div class="jmeta">🌏 Remote · Worldwide</div><div class="jmeta">⏱️ Full-time / Contract</div><div class="jmeta">💰 Market + Equity</div></div>
+        <div class="job-meta"><div class="jmeta">Remote · Worldwide</div><div class="jmeta">Full-time / Contract</div><div class="jmeta">Market + Equity</div></div>
         <div class="job-tags"><span class="jtag">Python</span><span class="jtag">pandas</span><span class="jtag">FastAPI</span><span class="jtag">SQL</span><span class="jtag">APIs</span><span class="jtag">Docker</span></div>
         <button class="job-apply" onclick="showPage('home','contact')">Apply Now →</button>
       </div>
       <div class="job-card reveal">
-        <div class="job-type">🔥 Hiring · Full-time</div>
+        <div class="job-type">Hiring · Full-time</div>
         <div class="job-title">ML Engineer</div>
         <div class="job-desc">Build production-grade ML models for demand forecasting, anomaly detection, document classification. Deploy models integrated with real business workflows. MLflow, SHAP, and statistical rigor required.</div>
-        <div class="job-meta"><div class="jmeta">🌏 Remote · Worldwide</div><div class="jmeta">⏱️ Full-time</div><div class="jmeta">💰 Market + Equity</div></div>
+        <div class="job-meta"><div class="jmeta">Remote · Worldwide</div><div class="jmeta">Full-time</div><div class="jmeta">Market + Equity</div></div>
         <div class="job-tags"><span class="jtag">scikit-learn</span><span class="jtag">PyTorch</span><span class="jtag">HuggingFace</span><span class="jtag">MLflow</span><span class="jtag">SHAP</span></div>
         <button class="job-apply" onclick="showPage('home','contact')">Apply Now →</button>
       </div>
       <div class="job-card reveal">
-        <div class="job-type">🔥 Hiring · Part-time / Contract</div>
+        <div class="job-type">Hiring · Part-time / Contract</div>
         <div class="job-title">Business Development Manager</div>
         <div class="job-desc">Drive global client acquisition across India, UAE, USA, UK. Identify target companies, run outreach campaigns, and close deals for automation and ML projects. Commission-heavy, high-upside role.</div>
-        <div class="job-meta"><div class="jmeta">🌏 Remote · Global Focus</div><div class="jmeta">⏱️ Part-time / Contract</div><div class="jmeta">💰 Commission + Base</div></div>
+        <div class="job-meta"><div class="jmeta">Remote · Global Focus</div><div class="jmeta">Part-time / Contract</div><div class="jmeta">Commission + Base</div></div>
         <div class="job-tags"><span class="jtag">Sales</span><span class="jtag">LinkedIn</span><span class="jtag">Outreach</span><span class="jtag">B2B</span><span class="jtag">SaaS</span></div>
         <button class="job-apply" onclick="showPage('home','contact')">Apply Now →</button>
       </div>
       <div class="job-card reveal">
-        <div class="job-type">🔥 Hiring · Internship</div>
+        <div class="job-type">Hiring · Internship</div>
         <div class="job-title">Automation Intern (Python)</div>
         <div class="job-desc">Learn by doing — build real automation scripts for real clients. Perfect for CS students or self-taught developers who want hands-on Python + ML experience on live production projects.</div>
-        <div class="job-meta"><div class="jmeta">🌏 Remote · India preferred</div><div class="jmeta">⏱️ 3–6 months</div><div class="jmeta">💰 Stipend + Certificate</div></div>
+        <div class="job-meta"><div class="jmeta">Remote · India preferred</div><div class="jmeta">3–6 months</div><div class="jmeta">Stipend + Certificate</div></div>
         <div class="job-tags"><span class="jtag">Python</span><span class="jtag">Excel</span><span class="jtag">Learning</span><span class="jtag">Pandas</span></div>
         <button class="job-apply" onclick="showPage('home','contact')">Apply Now →</button>
       </div>
@@ -1309,7 +1527,7 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
 <!-- FOOTER -->
 <footer>
   <div class="flogo">FLOXYN</div>
-  <div class="fcopy">© 2025 Floxyn · Founded by <strong style="color:var(--g1)">Harsh Vardhan</strong> · +91 73038 97496 · hello@floxyn.in</div>
+  <div class="fcopy">© 2025 Floxyn. All rights reserved.</div><div style="font-size:11px;color:rgba(58,79,106,0.55);margin-top:5px;font-family:var(--font-mono)">hello@floxyn.in · +91 73038 97496 · Registered in India · NDA on every project</div>
   <div class="flinks">
     <button onclick="showPage('home')">Home</button>
     <button onclick="showPage('home','services')">Services</button>
@@ -1320,6 +1538,24 @@ footer{background:var(--bg2);border-top:1px solid rgba(0,255,163,0.05);padding:5
     <button onclick="showPage('home','contact')">Contact</button>
   </div>
 </footer>
+<!-- EXIT INTENT POPUP -->
+<div id="exit-popup">
+  <div class="ep-card">
+    <button class="ep-close" onclick="closeExitPopup()">&times;</button>
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(0,255,163,0.08);border:1px solid rgba(0,255,163,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+    <div class="ep-title">Get a Free<br><span>Automation Audit</span></div>
+    <p class="ep-sub">Before you go — let us analyse your workflow for free. We'll identify exactly where automation can save you time and money. No commitment, no sales pitch.</p>
+    <div class="ep-form">
+      <input type="text" class="ep-input" id="ep-name" placeholder="Your name">
+      <input type="email" class="ep-input" id="ep-email" placeholder="Work email">
+      <input type="tel" class="ep-input" id="ep-phone" placeholder="WhatsApp / Phone">
+      <button class="ep-btn" onclick="submitAudit()">Book Free Audit →</button>
+      <button class="ep-skip" onclick="closeExitPopup()">No thanks, maybe later</button>
+    </div>
+  </div>
+</div>
+
+
 
 <script>
 // ── PAGE SYSTEM ──
@@ -1549,10 +1785,10 @@ const expWrap=document.querySelector('.founder-expertise');if(expWrap)expObs.obs
 // ── TESTIMONIALS ──
 const testimonials=[
   {text:"Floxyn automated our entire invoice processing — from PDF to ERP in under 2 seconds. The accuracy is genuinely better than our human team.",name:"Priya Mehta",role:"CFO · NBFC · Mumbai",star:5},
-  {text:"The demand forecasting model Harsh built runs daily and saves our ops team 3 hours every morning. ROI was clear in week two.",name:"Ahmed Al-Rashidi",role:"Head of Ops · Logistics · Dubai",star:5},
+  {text:"The demand forecasting model runs daily and saves our ops team 3 hours every morning. ROI was clear in week two.",name:"Ahmed Al-Rashidi",role:"Head of Ops · Logistics · Dubai",star:5},
   {text:"We went from 3-day monthly reports to automated daily dashboards. Our finance team now analyses instead of copy-pastes.",name:"Wei Ling",role:"Finance Director · D2C · Singapore",star:5},
   {text:"The anomaly detection is catching GST mismatches we'd been missing for months. Floxyn found ₹12L in discrepancies in week one.",name:"Rajesh Sharma",role:"Partner · CA Firm · Delhi",star:5},
-  {text:"Best automation investment we've made. The code is production-grade, well-documented, and Harsh is incredibly responsive.",name:"Tom Harrison",role:"CTO · Manufacturing · London",star:5},
+  {text:"Best automation investment we've made. The code is production-grade, well-documented, and the team is incredibly responsive.",name:"Tom Harrison",role:"CTO · Manufacturing · London",star:5},
   {text:"Resume screening that used to take my team 3 hours per role now takes 8 minutes. The matching accuracy is remarkable.",name:"Sarah Chen",role:"VP HR · HR Tech · Toronto",star:5},
 ];
 const ttrack=document.getElementById('ttrack');
@@ -1593,6 +1829,105 @@ function addTL(){
 const tObs=new IntersectionObserver(e=>{if(e[0].isIntersecting){addTL();tObs.disconnect();}},{threshold:.3});
 const wyv=document.querySelector('.wyvis');if(wyv)tObs.observe(wyv);
 
+
+// ── LIGHT / DARK THEME TOGGLE ──
+function toggleTheme(){
+  document.body.classList.toggle('light-mode');
+  const btn=document.getElementById('themeToggle');
+  btn.textContent=document.body.classList.contains('light-mode')?'☀️':'🌙';
+  localStorage.setItem('floxyn-theme',document.body.classList.contains('light-mode')?'light':'dark');
+}
+(function(){
+  if(localStorage.getItem('floxyn-theme')==='light'){
+    document.body.classList.add('light-mode');
+    const btn=document.getElementById('themeToggle');
+    if(btn)btn.textContent='☀️';
+  }
+})();
+
+// ── LANGUAGE SELECTOR ──
+const translations={
+  en:{hero1:'Automate the Mundane.',hero2:'Amplify the Possible.',herosub:'We eliminate repetitive work from your business using ML-powered automation pipelines — so your team can focus on what actually matters.',cta1:'Start Automating →',cta2:'Explore ML Analytics'},
+  ar:{hero1:'أتمتة المهام الروتينية.',hero2:'تضخيم الممكن.',herosub:'نحن نزيل الأعمال المتكررة من عملك باستخدام خطوط أتمتة مدعومة بالذكاء الاصطناعي.',cta1:'ابدأ الأتمتة ←',cta2:'استكشف تحليلات ML'},
+  ms:{hero1:'Automatikkan Tugas Berulang.',hero2:'Perkuatkan Potensi.',herosub:'Kami menghapus kerja berulang dari perniagaan anda menggunakan saluran paip automasi berkuasa ML.',cta1:'Mula Mengautomasikan →',cta2:'Jelajahi ML Analytics'}
+};
+let currentLang='en';
+function toggleLang(){document.getElementById('langDrop').classList.toggle('open')}
+function setLang(lang,ev){
+  currentLang=lang;
+  document.getElementById('langDrop').classList.remove('open');
+  const t=translations[lang];
+  const labels={en:'EN',ar:'AR',ms:'MS'};
+  document.getElementById('langBtn').textContent=' '+labels[lang]+' ▾';
+  document.querySelectorAll('.lang-opt').forEach(el=>el.classList.remove('active'));
+  if(ev&&ev.target)ev.target.classList.add('active');
+  // Apply translations to hero
+  const htElems=document.querySelectorAll('.ht-white');
+  const hgElems=document.querySelectorAll('.ht-grad');
+  const hsubElems=document.querySelectorAll('.hero-sub');
+  if(htElems[0])htElems[0].textContent=t.hero1;
+  if(hgElems[0])hgElems[0].textContent=t.hero2;
+  if(hsubElems[0])hsubElems[0].innerHTML=t.herosub;
+  document.body.style.direction=lang==='ar'?'rtl':'ltr';
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.lang-sel'))document.getElementById('langDrop')?.classList.remove('open');
+});
+
+// ── ROI CALCULATOR ──
+function calcROI(){
+  const docs=parseInt(document.getElementById('roi-docs').value)||300;
+  const mins=parseInt(document.getElementById('roi-time').value)||8;
+  const costPerHr=parseInt(document.getElementById('roi-cost').value)||200;
+  const errRate=parseInt(document.getElementById('roi-err').value)||5;
+  document.getElementById('docs-val').textContent=docs.toLocaleString('en-IN');
+  document.getElementById('time-val').textContent=mins+' min';
+  document.getElementById('cost-val').textContent='₹'+costPerHr+'/hr';
+  document.getElementById('err-val').textContent=errRate+'%';
+  const hrsPerMonth=(docs*mins)/60;
+  const labourPerYear=Math.round(hrsPerMonth*12*costPerHr);
+  const reworkSaved=Math.round(docs*12*(errRate/100)*0.5*costPerHr);
+  const totalSavings=labourPerYear+reworkSaved;
+  const floxynCost=35000;
+  const paybackMonths=Math.max(1,Math.round(floxynCost/((totalSavings)/12)));
+  const fmt=v=>v>=100000?'₹'+Math.round(v/100000*10)/10+'L':'₹'+Math.round(v/1000)+'K';
+  document.getElementById('roi-savings').textContent=fmt(totalSavings);
+  document.getElementById('roi-hrs').textContent=Math.round(hrsPerMonth)+' hrs';
+  document.getElementById('roi-labour').textContent=fmt(labourPerYear);
+  document.getElementById('roi-rework').textContent=fmt(reworkSaved);
+  document.getElementById('roi-payback').textContent='~'+paybackMonths+' months';
+}
+setTimeout(calcROI,400);
+
+// ── EXIT INTENT POPUP ──
+let exitShown=false,exitDismissed=false;
+document.addEventListener('mouseleave',e=>{
+  if(e.clientY<10&&!exitShown&&!exitDismissed){
+    exitShown=true;
+    setTimeout(()=>document.getElementById('exit-popup').classList.add('show'),300);
+  }
+});
+// Mobile: show after 45s scroll
+setTimeout(()=>{
+  if(!exitShown&&!exitDismissed&&window.innerWidth<900){
+    exitShown=true;
+    document.getElementById('exit-popup').classList.add('show');
+  }
+},45000);
+function closeExitPopup(){
+  document.getElementById('exit-popup').classList.remove('show');
+  exitDismissed=true;
+}
+function submitAudit(){
+  const btn=document.querySelector('.ep-btn');
+  btn.textContent="Booked! Our team will reach out within 24hrs";
+  btn.style.background='linear-gradient(135deg,#00cc66,#00aa55)';
+  setTimeout(closeExitPopup,2500);
+}
+document.getElementById('exit-popup').addEventListener('click',e=>{
+  if(e.target===document.getElementById('exit-popup'))closeExitPopup();
+});
+
 // ── MOBILE NAV ──
 function toggleMobileNav(){
   const btn=document.getElementById('hamBtn');
@@ -1609,6 +1944,7 @@ function mobileGo(page,section){
   showPage(page,section);
 }
 
+
 // ── FAQ ──
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
 
@@ -1616,7 +1952,7 @@ document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.
 function handleForm(e){
   e.preventDefault();
   const btn=document.getElementById('submitBtn');
-  btn.textContent='✓ Sent! Harsh will reply within 24hrs';
+  btn.textContent='✓ Sent! Our team will reply within 24hrs';
   btn.style.background='linear-gradient(135deg,#00ffa3,#00cc66)';
   btn.style.color='#04060d';
 }
