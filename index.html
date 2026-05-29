@@ -249,9 +249,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;display:flex;al
 
 /* ── TECH STACK ── */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;margin-top:52px}
-.tchip{background:rgba(7,12,24,0.9);border:1px solid var(--border);border-radius:12px;padding:18px 10px;text-align:center;transition:all .25s}
+.tchip{background:rgba(7,12,24,0.9);border:1px solid var(--border);border-radius:14px;padding:20px 10px 14px;text-align:center;transition:all .25s}
 .tchip:hover{border-color:rgba(0,255,163,0.28);transform:translateY(-3px) scale(1.04)}
 .temi{font-size:22px;margin-bottom:6px;display:block}
+.tlogo-img{width:46px;height:46px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.3))}
+.tchip:hover .tlogo-img{filter:drop-shadow(0 4px 14px rgba(0,200,255,0.35))}
 .tname{font-size:9px;letter-spacing:1.5px;font-weight:700;color:var(--muted);text-transform:uppercase;font-family:var(--font-mono)}
 
 /* ── WHY US / TERMINAL ── */
@@ -795,7 +797,203 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 .lang-opt:hover,.lang-opt.active{background:rgba(0,255,163,0.07);color:var(--g1)}
 @media(max-width:900px){.lang-sel{display:none}}
 
+
+/* ═══════════════════════════
+   VISUAL WOW FEATURES
+═══════════════════════════ */
+/* Magnetic cursor trail */
+.trail-dot{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:9996;background:var(--g1);opacity:0;transition:opacity .3s}
+
+/* Scroll-triggered word reveal */
+.reveal-words .word{display:inline-block;opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s ease}
+.reveal-words.vis .word{opacity:1;transform:translateY(0)}
+.reveal-words.vis .word:nth-child(1){transition-delay:.05s}
+.reveal-words.vis .word:nth-child(2){transition-delay:.1s}
+.reveal-words.vis .word:nth-child(3){transition-delay:.15s}
+.reveal-words.vis .word:nth-child(4){transition-delay:.2s}
+.reveal-words.vis .word:nth-child(5){transition-delay:.25s}
+.reveal-words.vis .word:nth-child(6){transition-delay:.3s}
+.reveal-words.vis .word:nth-child(7){transition-delay:.35s}
+.reveal-words.vis .word:nth-child(8){transition-delay:.4s}
+.reveal-words.vis .word:nth-child(9){transition-delay:.45s}
+.reveal-words.vis .word:nth-child(10){transition-delay:.5s}
+
+/* Glassmorphism upgrade for cards */
+.scard,.wcard,.ml-card,.job-card,.val-card,.perk-card,.culture-card,.blog-card,.tcard{
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)
+}
+
+/* ═══════════════════════════
+   AI FEATURES
+═══════════════════════════ */
+/* AI Chat Widget */
+#ai-chat-btn{position:fixed;bottom:92px;right:24px;z-index:8999;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--g3),var(--g2));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(124,58,237,0.45);transition:transform .2s}
+#ai-chat-btn:hover{transform:scale(1.1)}
+#ai-chat-btn svg{width:24px;height:24px;fill:white}
+#ai-chat-win{position:fixed;bottom:156px;right:24px;z-index:8998;width:340px;background:var(--bg2);border:1px solid rgba(124,58,237,0.25);border-radius:18px;overflow:hidden;display:none;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,0.7)}
+#ai-chat-win.open{display:flex}
+.aic-head{background:linear-gradient(135deg,rgba(124,58,237,0.2),rgba(0,170,255,0.15));padding:14px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(124,58,237,0.15)}
+.aic-head-l{display:flex;align-items:center;gap:9px}
+.aic-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--g3),var(--g2));display:flex;align-items:center;justify-content:center}
+.aic-av svg{width:16px;height:16px;fill:white}
+.aic-name{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff}
+.aic-status{font-size:9px;font-family:var(--font-mono);color:var(--g1);letter-spacing:1px}
+.aic-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:2px 6px;border-radius:4px;transition:color .2s}
+.aic-close:hover{color:#fff}
+.aic-msgs{height:260px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(124,58,237,0.3) transparent}
+.aic-msg{max-width:88%;padding:10px 13px;border-radius:12px;font-size:12.5px;line-height:1.6}
+.aic-msg.bot{background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.15);color:var(--txt);align-self:flex-start;border-radius:4px 12px 12px 12px}
+.aic-msg.user{background:linear-gradient(135deg,rgba(0,255,163,0.12),rgba(0,170,255,0.1));border:1px solid rgba(0,255,163,0.15);color:#fff;align-self:flex-end;border-radius:12px 4px 12px 12px}
+.aic-typing{display:flex;gap:4px;padding:10px 14px;align-self:flex-start}
+.aic-typing span{width:6px;height:6px;border-radius:50%;background:var(--g3);animation:aictype 1.2s ease-in-out infinite}
+.aic-typing span:nth-child(2){animation-delay:.2s}
+.aic-typing span:nth-child(3){animation-delay:.4s}
+@keyframes aictype{0%,80%,100%{transform:scale(0.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.aic-input-row{display:flex;gap:8px;padding:10px 14px;border-top:1px solid rgba(255,255,255,0.05)}
+.aic-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:8px;padding:9px 12px;color:var(--txt);font-family:var(--font-body);font-size:12px;outline:none}
+.aic-input:focus{border-color:rgba(124,58,237,0.4)}
+.aic-send{background:linear-gradient(135deg,var(--g3),var(--g2));border:none;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:opacity .2s}
+.aic-send:hover{opacity:.85}
+.aic-send svg{width:14px;height:14px;fill:white}
+.aic-quick{display:flex;flex-wrap:wrap;gap:5px;padding:0 14px 10px}
+.aic-qbtn{font-size:10.5px;padding:5px 10px;border-radius:100px;background:rgba(124,58,237,0.07);border:1px solid rgba(124,58,237,0.2);color:rgba(200,216,236,0.7);cursor:pointer;font-family:var(--font-mono);transition:all .2s}
+.aic-qbtn:hover{background:rgba(124,58,237,0.18);color:#fff}
+@media(max-width:900px){
+  #ai-chat-btn{bottom:80px;right:14px;width:46px;height:46px}
+  #ai-chat-win{width:calc(100vw - 28px);right:14px;bottom:140px}
+}
+
+/* AI Workflow Analyser */
+.workflow-analyser{padding:96px 72px;max-width:1280px;margin:0 auto}
+.wa-card{background:var(--bg2);border:1px solid rgba(124,58,237,0.15);border-radius:24px;padding:52px;position:relative;overflow:hidden}
+.wa-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--g3),var(--g2),var(--g1))}
+.wa-inner{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.wa-left h3{font-family:var(--font-display);font-size:22px;font-weight:800;color:#fff;margin-bottom:10px}
+.wa-left h3 span{background:linear-gradient(135deg,var(--g3),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wa-left p{color:var(--muted);font-size:14px;line-height:1.75;margin-bottom:22px}
+.wa-textarea{width:100%;background:rgba(0,0,0,0.3);border:1px solid rgba(124,58,237,0.2);border-radius:12px;padding:16px;color:var(--txt);font-family:var(--font-body);font-size:13.5px;line-height:1.7;outline:none;resize:vertical;min-height:140px;transition:border-color .25s}
+.wa-textarea:focus{border-color:rgba(124,58,237,0.5)}
+.wa-examples{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.wa-ex{font-size:10.5px;padding:5px 12px;border-radius:100px;background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.18);color:rgba(200,216,236,0.55);cursor:pointer;font-family:var(--font-mono);transition:all .2s}
+.wa-ex:hover{background:rgba(124,58,237,0.14);color:var(--txt)}
+.wa-btn{background:linear-gradient(135deg,var(--g3),var(--g2));color:white;border:none;padding:13px 28px;border-radius:10px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:14px}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(124,58,237,0.35)}
+.wa-results{display:none}
+.wa-results.show{display:block}
+.wa-result-head{font-family:var(--font-display);font-size:13px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.wa-step{background:rgba(0,0,0,0.25);border:1px solid rgba(124,58,237,0.12);border-radius:12px;padding:16px;margin-bottom:10px;border-left:3px solid var(--g3)}
+.wa-step-num{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--g3);font-family:var(--font-mono);margin-bottom:5px}
+.wa-step-title{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff;margin-bottom:5px}
+.wa-step-desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+.wa-saving{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.wa-sav-item{flex:1;min-width:100px;background:rgba(0,255,163,0.04);border:1px solid rgba(0,255,163,0.12);border-radius:10px;padding:12px;text-align:center}
+.wa-sav-num{font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--g1)}
+.wa-sav-lbl{font-size:9px;font-family:var(--font-mono);letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:3px}
+@media(max-width:900px){
+  .workflow-analyser{padding:52px 16px}
+  .wa-inner{grid-template-columns:1fr}
+}
+
+/* ═══════════════════════════
+   TRUST & CONVERT
+═══════════════════════════ */
+/* Social proof notification */
+#social-proof-notif{position:fixed;bottom:24px;left:24px;z-index:8900;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.sp-toast{background:var(--bg2);border:1px solid rgba(0,255,163,0.18);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:11px;max-width:280px;pointer-events:all;opacity:0;transform:translateX(-20px);transition:all .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.sp-toast.show{opacity:1;transform:translateX(0)}
+.sp-toast.hide{opacity:0;transform:translateX(-20px)}
+.sp-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--g2));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--bg);font-family:var(--font-display);flex-shrink:0}
+.sp-text{font-size:12px;line-height:1.5;color:var(--txt)}
+.sp-text strong{color:#fff;display:block;font-size:12.5px}
+.sp-time{font-size:9.5px;font-family:var(--font-mono);color:var(--muted);margin-top:2px}
+@media(max-width:900px){#social-proof-notif{bottom:80px;left:12px}.sp-toast{max-width:240px}}
+
+/* Trust Badges */
+.trust-badges{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:48px}
+.tbadge{display:flex;align-items:center;gap:9px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:10px 18px;transition:border-color .25s}
+.tbadge:hover{border-color:rgba(0,255,163,0.2)}
+.tbadge-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:rgba(0,255,163,0.08);flex-shrink:0}
+.tbadge-icon svg{width:14px;height:14px}
+.tbadge-text{font-size:11px;font-weight:600;color:rgba(255,255,255,0.6);font-family:var(--font-mono);letter-spacing:1px}
+
+/* Calendly button */
+.calendly-btn{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,rgba(0,255,163,0.06),rgba(0,170,255,0.06));border:1px solid rgba(0,255,163,0.2);border-radius:10px;padding:12px 22px;color:var(--g1);font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;margin-top:18px}
+.calendly-btn:hover{background:linear-gradient(135deg,rgba(0,255,163,0.12),rgba(0,170,255,0.12));transform:translateY(-2px)}
+.calendly-btn svg{width:16px;height:16px;stroke:var(--g1)}
+#calendly-modal{position:fixed;inset:0;z-index:10003;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center}
+#calendly-modal.open{display:flex}
+.cal-card{background:var(--bg2);border:1px solid rgba(0,255,163,0.2);border-radius:20px;padding:44px;max-width:420px;width:90%;text-align:center;position:relative}
+.cal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3))}
+.cal-title{font-family:var(--font-display);font-size:20px;font-weight:800;color:#fff;margin-bottom:10px}
+.cal-sub{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:28px}
+.cal-slots{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.cal-slot{background:rgba(0,255,163,0.04);border:1px solid rgba(0,255,163,0.12);border-radius:10px;padding:12px;cursor:pointer;transition:all .25s;text-align:left}
+.cal-slot:hover,.cal-slot.sel{background:rgba(0,255,163,0.1);border-color:rgba(0,255,163,0.35)}
+.cal-slot-time{font-family:var(--font-display);font-size:13px;font-weight:700;color:#fff}
+.cal-slot-date{font-size:10px;font-family:var(--font-mono);color:var(--muted);margin-top:2px}
+.cal-book{width:100%;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--bg);border:none;padding:13px;border-radius:10px;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.cal-book:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,255,163,0.3)}
+.cal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;padding:4px 8px}
+.cal-close:hover{color:#fff}
+
+/* ═══════════════════════════
+   PERFORMANCE
+═══════════════════════════ */
+/* Live ops counter ticker */
+.live-ops-bar{background:rgba(0,0,0,0.4);border-top:1px solid rgba(0,255,163,0.06);border-bottom:1px solid rgba(0,255,163,0.06);padding:14px 0;overflow:hidden;position:relative;z-index:1}
+.live-ops-track{display:flex;gap:60px;width:max-content;animation:opsTick 30s linear infinite}
+.live-ops-track:hover{animation-play-state:paused}
+@keyframes opsTick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.lop-item{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.lop-dot{width:5px;height:5px;border-radius:50%;background:var(--g1);box-shadow:0 0 6px var(--g1);animation:pulse 2s ease-in-out infinite}
+.lop-label{font-size:10.5px;font-family:var(--font-mono);color:rgba(200,216,236,0.4);letter-spacing:1.5px}
+.lop-val{font-size:10.5px;font-family:var(--font-mono);color:var(--g1);font-weight:600;letter-spacing:1px}
+
+/* SEO Schema (injected in head) */
+/* PWA meta tags */
+
+/* Industry selector */
+.industry-selector{margin-top:36px;animation:fadeu .6s ease .45s both}
+.is-label{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);font-family:var(--font-mono);margin-bottom:12px;display:block}
+.is-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.is-pill{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:100px;padding:8px 18px;font-size:11.5px;color:rgba(200,216,236,0.4);cursor:pointer;font-family:var(--font-body);transition:all .25s;font-weight:500}
+.is-pill:hover{border-color:rgba(0,255,163,0.25);color:rgba(200,216,236,0.8)}
+.is-pill.active{background:rgba(0,255,163,0.08);border-color:rgba(0,255,163,0.35);color:var(--g1);font-weight:600}
+
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "name":"Floxyn",
+      "url":"https://floxyn.in",
+      "description":"ML-powered automation and workflow intelligence company serving businesses globally.",
+      "telephone":"+917303897496",
+      "email":"hello@floxyn.in",
+      "foundingDate":"2024",
+      "areaServed":["IN","AE","SG","GB","US","AU","CA"],
+      "serviceType":["ML Demand Forecasting","OCR Document Extraction","Workflow Automation","Anomaly Detection","Auto Reporting","AI Bots"]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"How long does a typical automation project take?","acceptedAnswer":{"@type":"Answer","text":"Most projects are delivered in 1-3 weeks from kickoff."}},
+        {"@type":"Question","name":"Do you work with international clients?","acceptedAnswer":{"@type":"Answer","text":"Yes, we serve clients across India, UAE, Singapore, UK, USA, Canada, and Australia."}},
+        {"@type":"Question","name":"What ML frameworks do you use?","acceptedAnswer":{"@type":"Answer","text":"We use Python, PyTorch, scikit-learn, HuggingFace, FastAPI, Airflow, MLflow, Docker and AWS/GCP."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="manifest" href="data:application/json,{%22name%22:%22Floxyn%22,%22short_name%22:%22Floxyn%22,%22theme_color%22:%2200ffa3%22,%22background_color%22:%2204060d%22,%22display%22:%22standalone%22,%22icons%22:[{%22src%22:%22https://via.placeholder.com/192%22,%22sizes%22:%22192x192%22,%22type%22:%22image/png%22}]}">
+<meta name="theme-color" content="#04060d">
+<meta name="description" content="Floxyn — ML-powered automation for businesses worldwide. Invoice OCR, demand forecasting, workflow automation, anomaly detection.">
+<meta property="og:title" content="Floxyn — Automate the Mundane. Amplify the Possible.">
+<meta property="og:description" content="We eliminate repetitive work using ML-powered automation pipelines. 50+ projects. 8 countries.">
+<meta name="robots" content="index,follow">
 </head>
 <body>
 <div id="cur"></div>
@@ -888,7 +1086,7 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
   <div class="hero-inner">
     <div class="badge"><span class="badge-dot"></span>AI-Powered · Global Automation Platform · Est. 2024</div>
     <h1 class="hero-title">
-      <span class="ht-white">Automate the Mundane.</span>
+      <span class="ht-white" class="reveal-words"><span class="word">Automate</span> <span class="word">the</span> <span class="word">Mundane.</span></span>
       <span class="ht-grad">Amplify the Possible.</span>
     </h1>
     <p class="hero-sub">We eliminate repetitive work from your business using <strong>ML-powered automation pipelines</strong> — so your team can focus on what actually matters.</p>
@@ -911,8 +1109,40 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
       <div class="hstat"><div class="hstat-num" data-target="10" data-suffix="k+ hrs">0</div><div class="hstat-lbl">Hours Saved</div></div>
     </div>
   </div>
+  <div class="industry-selector">
+      <span class="is-label">I am a...</span>
+      <div class="is-pills">
+        <button class="is-pill active" onclick="setIndustry('all',this)">All Industries</button>
+        <button class="is-pill" onclick="setIndustry('ca',this)">CA / Tax Firm</button>
+        <button class="is-pill" onclick="setIndustry('logistics',this)">Logistics / Supply Chain</button>
+        <button class="is-pill" onclick="setIndustry('d2c',this)">D2C / E-commerce</button>
+        <button class="is-pill" onclick="setIndustry('nbfc',this)">NBFC / Finance</button>
+        <button class="is-pill" onclick="setIndustry('mfg',this)">Manufacturing</button>
+        <button class="is-pill" onclick="setIndustry('hr',this)">HR / Staffing</button>
+      </div>
+    </div>
   <div class="scroll-cue"><div class="scroll-line"></div></div>
 </section>
+
+
+<div class="live-ops-bar">
+  <div class="live-ops-track" id="liveOpsTrack">
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Records Processed Today</span><span class="lop-val" id="lopRec">14,892</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Active Pipelines</span><span class="lop-val">7</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Model Accuracy</span><span class="lop-val">99.8%</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Hours Saved This Month</span><span class="lop-val" id="lopHrs">843</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Avg Latency</span><span class="lop-val">28ms</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Uptime SLA</span><span class="lop-val">99.9%</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Countries Served</span><span class="lop-val">8</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Records Processed Today</span><span class="lop-val">14,892</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Active Pipelines</span><span class="lop-val">7</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Model Accuracy</span><span class="lop-val">99.8%</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Hours Saved This Month</span><span class="lop-val">843</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Avg Latency</span><span class="lop-val">28ms</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Uptime SLA</span><span class="lop-val">99.9%</span></div>
+    <div class="lop-item"><div class="lop-dot"></div><span class="lop-label">Countries Served</span><span class="lop-val">8</span></div>
+  </div>
+</div>
 
 <div class="fdiv"></div>
 
@@ -920,7 +1150,7 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 <section class="ml-section" id="ml-analytics">
   <div>
     <span class="sec-tag">ML Intelligence Engine</span>
-    <h2 class="sec-title">Research-Grade Analytics<br>Built for Real Business</h2>
+    <h2 class="sec-title" class="reveal-words"><span class="word">Research-Grade</span> <span class="word">Analytics</span><br>Built for Real Business</h2>
     <p class="sec-desc">Our proprietary ML stack delivers production-ready models for forecasting, anomaly detection, classification, and intelligent pipeline orchestration — all integrated into your workflows.</p>
   </div>
 
@@ -1053,7 +1283,7 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 <!-- ROI CALCULATOR -->
 <section class="roi-section reveal" id="roi-calc">
   <span class="sec-tag">ROI Calculator</span>
-  <h2 class="sec-title">See Your Exact Savings<br>Before You Even Start</h2>
+  <h2 class="sec-title" class="reveal-words"><span class="word">See</span> <span class="word">Your</span> <span class="word">Exact</span> <span class="word">Savings</span><br>Before You Even Start</h2>
   <p class="sec-desc" style="margin-bottom:40px">Enter your current numbers — we'll show you exactly how much time and money Floxyn automation will save your business.</p>
   <div class="roi-card reveal">
     <div class="roi-inner">
@@ -1111,7 +1341,7 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 <!-- SERVICES -->
 <section class="sec" id="services">
   <span class="sec-tag">What We Build</span>
-  <h2 class="sec-title">Full-Stack Automation Services</h2>
+  <h2 class="sec-title" class="reveal-words"><span class="word">Full-Stack</span> <span class="word">Automation</span> <span class="word">Services</span></h2>
   <p class="sec-desc">From intelligent document processing to full ML pipeline deployment — we cover the entire automation stack.</p>
   <div class="sgrid">
     <div class="scard reveal"><div class="scard-top"><div class="scard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div><span class="scard-arr">&#8599;</span></div><div class="scard-name">ML Demand Forecasting</div><div class="scard-desc">LSTM + XGBoost models with 30/60/90-day horizons. Integrates with your ERP or warehouse data automatically.</div><div class="scard-tags"><span class="stag2">scikit-learn</span><span class="stag2">PyTorch</span><span class="stag2">LSTM</span></div></div>
@@ -1168,7 +1398,7 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 <!-- WORK -->
 <section class="sec" id="work">
   <span class="sec-tag">Case Studies</span>
-  <h2 class="sec-title">Real Projects, Real Results</h2>
+  <h2 class="sec-title" class="reveal-words"><span class="word">Real</span> <span class="word">Projects,</span> <span class="word">Real</span> <span class="word">Results</span></h2>
   <div class="wgrid">
     <div class="wcard reveal"><div class="wprev wp1"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(0,255,163,0.6)" stroke-width="1"><rect x="3" y="10" width="18" height="11" rx="1"/><path d="M12 3L2 10h20L12 3z"/><line x1="9" y1="14" x2="9" y2="18"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="15" y1="14" x2="15" y2="18"/></svg></div></div><div class="winfo"><div class="wcat">NBFC · India</div><div class="wname">Invoice Extraction Automation System</div><div class="wdesc">OCR pipeline processing 247 invoices/minute with 99.8% accuracy, replacing 3 full-time data entry staff.</div><div class="wimp"><div><div class="winum">99.8%</div><div class="wilbl">Accuracy</div></div><div><div class="winum">247/min</div><div class="wilbl">Throughput</div></div></div></div></div>
     <div class="wcard reveal"><div class="wprev wp2"><div class="wico"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(0,170,255,0.6)" stroke-width="1"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div></div><div class="winfo"><div class="wcat">Logistics · UAE</div><div class="wname">Demand Forecasting ML Pipeline</div><div class="wdesc">LSTM model forecasting 30-day demand across 500 SKUs with R²=0.94, reducing overstock by 31%.</div><div class="wimp"><div><div class="winum">R²=0.94</div><div class="wilbl">Model Fit</div></div><div><div class="winum">-31%</div><div class="wilbl">Overstock</div></div></div></div></div>
@@ -1184,20 +1414,144 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 <!-- TECH STACK -->
 <section class="sec" id="tech">
   <span class="sec-tag">Technology Stack</span>
-  <h2 class="sec-title">Built on World-Class Open Source</h2>
+  <h2 class="sec-title" class="reveal-words"><span class="word">Built</span> <span class="word">on</span> <span class="word">World-Class</span> <span class="word">Open</span> <span class="word">Source</span></h2>
   <div class="tgrid">
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s0 3 4 3 4-3 4-3"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></span><div class="tname">Python</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8.5 14.5A2.5 2.5 0 0011 17c.55 0 1.07-.17 1.5-.46V17a2.5 2.5 0 005 0V7l-4-3-5 3.5V14.5z"/></svg></span><div class="tname">PyTorch</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span><div class="tname">HuggingFace</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></span><div class="tname">scikit-learn</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div class="tname">Pandas</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7l2-4h12l2 4M4 7h16M4 7l2 14h12l2-14"/></svg></span><div class="tname">NumPy</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><div class="tname">FastAPI</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span><div class="tname">Airflow</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span><div class="tname">MLflow</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span><div class="tname">PostgreSQL</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span><div class="tname">Docker</div></div>
-    <div class="tchip reveal"><span class="temi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></span><div class="tname">AWS / GCP</div></div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <linearGradient id="py1" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#5A9FD4"/><stop offset="1" stop-color="#306998"/></linearGradient>
+          <linearGradient id="py2" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientUnits="userSpaceOnUse" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FFE873"/></linearGradient>
+          <path fill="url(#py1)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"/>
+          <path fill="url(#py2)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"/>
+        </svg>
+      </div>
+      <div class="tname">Python</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <path fill="#EE4C2C" d="M 100 25 C 73 25 51 47 51 74 C 51 91 59 106 72 116 L 72 138 L 88 138 L 88 126 C 92 127 96 128 100 128 C 104 128 108 127 112 126 L 112 138 L 128 138 L 128 116 C 141 106 149 91 149 74 C 149 47 127 25 100 25 Z"/>
+          <circle fill="white" cx="84" cy="74" r="8"/>
+          <circle fill="white" cx="116" cy="74" r="8"/>
+          <circle fill="#EE4C2C" cx="84" cy="72" r="4"/>
+          <circle fill="#EE4C2C" cx="116" cy="72" r="4"/>
+          <path fill="white" d="M 78 95 Q 100 112 122 95" stroke="white" stroke-width="2" fill="none"/>
+          <rect fill="#EE4C2C" x="68" y="138" width="15" height="35" rx="4"/>
+          <rect fill="#EE4C2C" x="117" y="138" width="15" height="35" rx="4"/>
+        </svg>
+      </div>
+      <div class="tname">PyTorch</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <text y="55" font-size="60" text-anchor="middle" x="50">&#129303;</text>
+        </svg>
+      </div>
+      <div class="tname">HuggingFace</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <path fill="#F7931E" d="M 12 65 L 65 10 L 118 65 L 65 120 Z"/>
+          <path fill="#29ABE2" d="M 30 65 L 65 28 L 100 65 L 65 102 Z"/>
+          <path fill="#FFFFFF" d="M 47 65 L 65 45 L 83 65 L 65 85 Z"/>
+        </svg>
+      </div>
+      <div class="tname">scikit-learn</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <rect width="128" height="128" rx="8" fill="#130654"/>
+          <path fill="#FFCA00" d="M 20 40 L 20 90 L 35 90 L 35 70 L 55 70 L 55 58 L 35 58 L 35 52 L 60 52 L 60 40 Z"/>
+          <path fill="white" d="M 65 40 L 65 90 L 108 90 L 108 78 L 80 78 L 80 70 L 105 70 L 105 58 L 80 58 L 80 52 L 108 52 L 108 40 Z"/>
+        </svg>
+      </div>
+      <div class="tname">Pandas</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <path fill="#4DABCF" d="M 64 10 L 118 42 L 118 86 L 64 118 L 10 86 L 10 42 Z"/>
+          <path fill="#4D77CF" d="M 64 30 L 98 50 L 98 78 L 64 98 L 30 78 L 30 50 Z"/>
+          <path fill="#ffffff" d="M 64 50 L 80 60 L 80 78 L 64 88 L 48 78 L 48 60 Z"/>
+        </svg>
+      </div>
+      <div class="tname">NumPy</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <rect width="128" height="128" rx="8" fill="#009688"/>
+          <path fill="white" d="M 22 48 L 22 80 L 34 80 L 34 66 L 52 66 L 52 54 L 34 54 L 34 48 Z M 56 48 L 56 80 L 106 80 L 106 68 L 68 68 L 68 60 L 106 60 L 106 48 Z"/>
+          <path fill="white" d="M 92 35 L 106 35 L 92 20 Z M 78 35 L 106 20 L 106 35 Z" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="tname">FastAPI</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <rect width="128" height="128" rx="8" fill="#017CEE"/>
+          <circle fill="white" cx="64" cy="64" r="28"/>
+          <circle fill="#017CEE" cx="64" cy="64" r="14"/>
+          <line stroke="white" stroke-width="6" x1="64" y1="10" x2="64" y2="36"/>
+          <line stroke="white" stroke-width="6" x1="64" y1="92" x2="64" y2="118"/>
+          <line stroke="white" stroke-width="6" x1="10" y1="64" x2="36" y2="64"/>
+          <line stroke="white" stroke-width="6" x1="92" y1="64" x2="118" y2="64"/>
+        </svg>
+      </div>
+      <div class="tname">Airflow</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <rect width="128" height="128" rx="8" fill="#0194E2"/>
+          <path fill="white" d="M 20 80 L 52 30 L 64 52 L 76 30 L 108 80 Z M 48 80 L 64 56 L 80 80 Z"/>
+        </svg>
+      </div>
+      <div class="tname">MLflow</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <rect width="128" height="128" rx="8" fill="#336791"/>
+          <path fill="white" d="M 64 18 C 42 18 24 30 24 48 C 24 58 30 67 40 72 L 40 88 L 52 88 L 52 78 C 56 79 60 80 64 80 C 68 80 72 79 76 78 L 76 88 L 88 88 L 88 72 C 98 67 104 58 104 48 C 104 30 86 18 64 18 Z"/>
+          <ellipse fill="#336791" cx="64" cy="46" rx="24" ry="18"/>
+          <ellipse fill="white" cx="56" cy="44" rx="5" ry="6"/>
+          <ellipse fill="white" cx="72" cy="44" rx="5" ry="6"/>
+          <circle fill="#336791" cx="56" cy="44" r="2.5"/>
+          <circle fill="#336791" cx="72" cy="44" r="2.5"/>
+          <path fill="white" d="M 52 56 Q 64 66 76 56" stroke="white" stroke-width="2" fill="none"/>
+          <rect fill="#336791" x="48" y="88" width="12" height="22" rx="3"/>
+          <rect fill="#336791" x="68" y="88" width="12" height="22" rx="3"/>
+        </svg>
+      </div>
+      <div class="tname">PostgreSQL</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <rect width="128" height="128" rx="8" fill="#1D63ED"/>
+          <path fill="white" d="M 18 75 L 18 55 L 26 55 L 26 65 L 36 55 L 46 55 L 36 65 L 46 75 L 36 75 L 26 65 L 26 75 Z"/>
+          <path fill="white" d="M 48 55 L 110 55 L 110 63 L 80 63 L 80 75 L 70 75 L 70 63 L 48 63 Z"/>
+          <rect fill="white" x="82" y="55" width="10" height="20"/>
+        </svg>
+      </div>
+      <div class="tname">Docker</div>
+    </div>
+    <div class="tchip reveal">
+      <div class="tlogo-img">
+        <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" width="38" height="38">
+          <defs><linearGradient id="awsg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9900"/><stop offset="100%" stop-color="#FF6600"/></linearGradient></defs>
+          <rect width="128" height="128" rx="8" fill="url(#awsg)"/>
+          <path fill="white" d="M 64 30 L 96 46 L 96 82 L 64 98 L 32 82 L 32 46 Z M 64 42 L 42 54 L 42 76 L 64 88 L 86 76 L 86 54 Z"/>
+          <path fill="white" opacity="0.5" d="M 64 54 L 76 60 L 76 74 L 64 80 L 52 74 L 52 60 Z"/>
+        </svg>
+      </div>
+      <div class="tname">AWS / GCP</div>
+    </div>
   </div>
 </section>
 
@@ -1206,7 +1560,7 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
 <!-- WHY FLOXYN -->
 <section class="sec" id="why">
   <span class="sec-tag">Why Floxyn</span>
-  <h2 class="sec-title">Not Just Scripts.<br>Intelligent Systems.</h2>
+  <h2 class="sec-title" class="reveal-words"><span class="word">Not</span> <span class="word">Just</span> <span class="word">Scripts.</span><br>Intelligent Systems.</h2>
   <div class="wygrid">
     <div class="wypts">
       <div class="wypt reveal"><div class="wyico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3h6l1 7-4 11L8 10l1-7z"/><path d="M6 10h12"/></svg></div><div class="wytt"><h4>Research-Backed ML</h4><p>We apply peer-reviewed techniques — LSTM, Isolation Forest, SHAP explainability — not toy models.</p></div></div>
@@ -1276,6 +1630,38 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
   </div>
 </section>
 
+
+<div class="fdiv"></div>
+
+<!-- AI WORKFLOW ANALYSER -->
+<section class="workflow-analyser" id="workflow-analyser">
+  <span class="sec-tag">AI Workflow Intelligence</span>
+  <h2 class="sec-title">Describe Your Process.<br>We Find the Automation.</h2>
+  <div class="wa-card reveal" style="margin-top:44px">
+    <div class="wa-inner">
+      <div class="wa-left">
+        <h3>Your <span>Workflow Analyser</span></h3>
+        <p>Describe what your team does manually every day. Our AI will identify which steps can be automated, estimate time savings, and recommend the right Floxyn services.</p>
+        <div class="wa-examples">
+          <button class="wa-ex" onclick="fillWAExample(this)">Invoice processing</button>
+          <button class="wa-ex" onclick="fillWAExample(this)">Monthly Excel reports</button>
+          <button class="wa-ex" onclick="fillWAExample(this)">GST reconciliation</button>
+          <button class="wa-ex" onclick="fillWAExample(this)">Demand forecasting</button>
+          <button class="wa-ex" onclick="fillWAExample(this)">Resume screening</button>
+        </div>
+        <textarea class="wa-textarea" id="waInput" placeholder="e.g. Every month our team manually downloads 300 invoices from email, enters them into Excel, cross-checks with purchase orders, and creates a summary report. This takes 3 people about 2 days..."></textarea>
+        <button class="wa-btn" onclick="analyseWorkflow()">Analyse My Workflow</button>
+      </div>
+      <div class="wa-results" id="waResults">
+        <div class="wa-result-head">Automation Opportunities Found</div>
+        <div id="waSteps"></div>
+        <div class="wa-saving" id="waSavings"></div>
+        <button class="roi-cta" onclick="showPage('home','contact')" style="margin-top:20px;width:100%">Get This Automated →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="sec" id="faq">
   <span class="sec-tag">Questions</span>
@@ -1324,6 +1710,14 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
       </div>
       <button type="submit" class="fsub" id="submitBtn">Submit Request →</button>
     </form>
+  </div>
+  <div class="trust-badges">
+    <div class="tbadge"><div class="tbadge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span class="tbadge-text">NDA Protected</span></div>
+    <div class="tbadge"><div class="tbadge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="tbadge-text">GDPR Compliant</span></div>
+    <div class="tbadge"><div class="tbadge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg></div><span class="tbadge-text">99.8% Accuracy Guarantee</span></div>
+    <div class="tbadge"><div class="tbadge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="tbadge-text">24hr Response SLA</span></div>
+    <div class="tbadge"><div class="tbadge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><span class="tbadge-text">ISO 27001 Aligned</span></div>
+    <div class="tbadge"><div class="tbadge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--g1)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><span class="tbadge-text">Deployed in Your Infra</span></div>
   </div>
 </section>
 
@@ -1538,6 +1932,50 @@ body.light-mode .hero{background:linear-gradient(135deg,#eef2fc,#e8f0fa)}
     <button onclick="showPage('home','contact')">Contact</button>
   </div>
 </footer>
+
+<!-- AI CHAT BUTTON -->
+<button id="ai-chat-btn" onclick="toggleAIChat()" aria-label="AI Assistant">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.86 2 10.5c0 1.98.75 3.8 2 5.24V20l3.5-2.1A10.68 10.68 0 0012 19c5.52 0 10-3.86 10-8.5S17.52 2 12 2zm-1 12H7v-2h4v2zm6 0h-4v-2h4v2zm0-4H7V8h10v2z"/></svg>
+</button>
+
+<!-- AI CHAT WINDOW -->
+<div id="ai-chat-win">
+  <div class="aic-head">
+    <div class="aic-head-l">
+      <div class="aic-av"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.86 2 10.5c0 1.98.75 3.8 2 5.24V20l3.5-2.1A10.68 10.68 0 0012 19c5.52 0 10-3.86 10-8.5S17.52 2 12 2z"/></svg></div>
+      <div><div class="aic-name">Floxyn AI</div><div class="aic-status">Online &mdash; Automation Expert</div></div>
+    </div>
+    <button class="aic-close" onclick="toggleAIChat()">&times;</button>
+  </div>
+  <div class="aic-msgs" id="aicMsgs">
+    <div class="aic-msg bot">Hi! I am Floxyn AI. Ask me anything about automation, ML, or how we can help your business save time and money.</div>
+  </div>
+  <div class="aic-quick" id="aicQuick">
+    <button class="aic-qbtn" onclick="aicAsk(this)">Can you automate invoices?</button>
+    <button class="aic-qbtn" onclick="aicAsk(this)">What is demand forecasting?</button>
+    <button class="aic-qbtn" onclick="aicAsk(this)">How long does it take?</button>
+    <button class="aic-qbtn" onclick="aicAsk(this)">Do you work with UAE clients?</button>
+  </div>
+  <div class="aic-input-row">
+    <input class="aic-input" id="aicInput" placeholder="Ask about automation..." onkeydown="if(event.key==='Enter')aicSend()">
+    <button class="aic-send" onclick="aicSend()"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg></button>
+  </div>
+</div>
+
+<!-- CALENDLY MODAL -->
+<div id="calendly-modal" onclick="if(event.target===this)closeCalendly()">
+  <div class="cal-card">
+    <button class="cal-close" onclick="closeCalendly()">&times;</button>
+    <div class="cal-title">Schedule a Free Call</div>
+    <div class="cal-sub">Pick a slot that works for you. We will discuss your automation needs, no sales pressure, just a conversation.</div>
+    <div class="cal-slots" id="calSlots"></div>
+    <button class="cal-book" onclick="bookSlot()">Confirm Booking</button>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF NOTIFICATIONS -->
+<div id="social-proof-notif"></div>
+
 <!-- EXIT INTENT POPUP -->
 <div id="exit-popup">
   <div class="ep-card">
@@ -1960,6 +2398,230 @@ function handleForm(e){
 function initAll(){
   initPageAnimations();
 }
+
+// ── MAGNETIC CURSOR + TRAIL ──
+const trailCount = 10;
+const trails = [];
+for(let i=0;i<trailCount;i++){
+  const d=document.createElement('div');
+  d.className='trail-dot';
+  d.style.cssText=`width:${6-i*0.4}px;height:${6-i*0.4}px;opacity:0;position:fixed;pointer-events:none;z-index:9996;border-radius:50%;background:rgba(0,255,163,${0.5-i*0.04});transform:translate(-50%,-50%)`;
+  document.body.appendChild(d);
+  trails.push({el:d,x:0,y:0});
+}
+const trailPos=[];for(let i=0;i<trailCount;i++)trailPos.push({x:0,y:0});
+document.addEventListener('mousemove',e=>{trailPos.unshift({x:e.clientX,y:e.clientY});trailPos.length=trailCount+1});
+(function animTrail(){
+  for(let i=0;i<trailCount;i++){
+    if(!trailPos[i])continue;
+    const t=trails[i];
+    t.x+=(trailPos[i].x-t.x)*(0.4-i*0.03);
+    t.y+=(trailPos[i].y-t.y)*(0.4-i*0.03);
+    t.el.style.left=t.x+'px';t.el.style.top=t.y+'px';
+    t.el.style.opacity=window.innerWidth>900?String(0.55-i*0.05):'0';
+  }
+  requestAnimationFrame(animTrail);
+})();
+
+// Magnetic buttons
+document.querySelectorAll('.btn-primary,.btn-outline,.roi-cta,.wa-btn,.fsub,.job-apply,.calendly-btn').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    const x=e.clientX-r.left-r.width/2;
+    const y=e.clientY-r.top-r.height/2;
+    btn.style.transform=`translate(${x*0.18}px,${y*0.18}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>btn.style.transform='');
+});
+
+// ── WORD REVEAL SCROLL OBSERVER ──
+const wordObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:0.3});
+document.querySelectorAll('.reveal-words').forEach(el=>wordObs.observe(el));
+
+// ── INDUSTRY SELECTOR ──
+const industryData={
+  all:{stat1:'50+',stat2:'99.8%',stat3:'8 Countries',stat4:'10k+ hrs',sub:'We eliminate repetitive work from your business using ML-powered automation pipelines — so your team can focus on what actually matters.'},
+  ca:{stat1:'2k+',stat2:'97%',stat3:'CA Firms',stat4:'GST Saved',sub:'We automate GST reconciliation, invoice matching, and monthly TDS reports for CA firms — saving 40+ hours per client per month.'},
+  logistics:{stat1:'500+',stat2:'R²=0.94',stat3:'SKUs Forecast',stat4:'-31% Overstock',sub:'LSTM demand forecasting and automated inventory reports for logistics and supply chain businesses across India and UAE.'},
+  d2c:{stat1:'22',stat2:'Daily',stat3:'Auto Reports',stat4:'96hrs/mo',sub:'Automated sales dashboards, return analytics, and inventory alerts for D2C brands — delivered to your inbox every morning.'},
+  nbfc:{stat1:'247/min',stat2:'99.8%',stat3:'OCR Accuracy',stat4:'3 FTE Saved',sub:'Invoice and document extraction pipelines for NBFCs and financial firms. Process 247+ documents per minute with 99.8% accuracy.'},
+  mfg:{stat1:'-44%',stat2:'4min',stat3:'Defect Rate',stat4:'Cycle Time',sub:'Computer vision and NLP pipelines for quality control, defect classification, and production reporting in manufacturing.'},
+  hr:{stat1:'95%',stat2:'8min',stat3:'Time Saved',stat4:'Per Role',sub:'NLP-powered resume screening and JD-to-candidate matching. Reduce hiring screening from 3 hours to 8 minutes per role.'}
+};
+function setIndustry(id, btn){
+  document.querySelectorAll('.is-pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  const d=industryData[id];
+  if(!d)return;
+  const nums=document.querySelectorAll('.hstat-num');
+  const lbls=document.querySelectorAll('.hstat-lbl');
+  const sub=document.querySelector('.hero-sub');
+  const vals=[d.stat1,d.stat2,d.stat3,d.stat4];
+  nums.forEach((n,i)=>{n.textContent=vals[i];n.style.animation='none';requestAnimationFrame(()=>n.style.animation='')});
+  if(sub)sub.innerHTML=d.sub;
+}
+
+// ── AI CHAT WIDGET ──
+const aicResponses={
+  'invoice':['We build OCR pipelines using PaddleOCR + BERT NER that extract data from invoices, PDFs and scanned documents with 99.8% accuracy. The system processes 247+ records/minute and delivers structured JSON or Excel output automatically.','Typical turnaround: 7-10 days. We handle multi-vendor formats, multi-language invoices, and direct ERP integration.'],
+  'demand':'Our LSTM demand forecasting models achieve R²=0.94 on real client data. We build 30/60/90-day forecasts integrated with your ERP or warehouse system, with daily automated refresh.',
+  'forecast':'Our LSTM demand forecasting models achieve R²=0.94 on real client data. We build 30/60/90-day forecasts integrated with your ERP or warehouse system, with daily automated refresh.',
+  'how long':'Most automation projects are delivered in 1-3 weeks from kickoff. A single pipeline (e.g. invoice OCR or auto-reporting) takes 5-10 days. Complex multi-model ML systems take 2-4 weeks. We timeline everything in writing before starting.',
+  'price':'We work on fixed-scope project pricing. A typical automation project starts from ₹25,000-40,000 for a single pipeline. Contact us for a custom quote based on your specific requirements.',
+  'uae':'Yes! We actively serve clients across India, UAE, Singapore, UK, USA, Canada and Australia. All work is remote and cloud-deployable. We handle multi-currency, multi-timezone requirements from day one.',
+  'international':'Yes! We actively serve clients across India, UAE, Singapore, UK, USA, Canada and Australia. All work is remote and cloud-deployable.',
+  'report':'We build automated reporting pipelines that generate Excel, PDF, and BI dashboards from your live data on a schedule — delivered to email, Slack, or Google Drive every morning. Zero manual effort.',
+  'anomaly':'We use Isolation Forest and LSTM Autoencoder models for real-time anomaly detection in financial data, GST filings, supply chain, and operations. The system flags issues the moment they appear.',
+  'default':'That is a great question! I can help you understand how Floxyn can automate your specific workflow. Could you tell me a bit more about what your team does manually? Or you can reach out directly at hello@floxyn.in or schedule a free call.'
+};
+function getAICResponse(msg){
+  const m=msg.toLowerCase();
+  for(const [k,v] of Object.entries(aicResponses)){
+    if(k!=='default'&&m.includes(k)){return Array.isArray(v)?v[Math.floor(Math.random()*v.length)]:v}
+  }
+  return aicResponses.default;
+}
+function toggleAIChat(){document.getElementById('ai-chat-win').classList.toggle('open')}
+function aicAsk(btn){
+  const q=btn.textContent;
+  addAICMsg(q,'user');
+  document.getElementById('aicQuick').style.display='none';
+  setTimeout(()=>{
+    showTyping();
+    setTimeout(()=>{removeTyping();addAICMsg(getAICResponse(q),'bot')},900+Math.random()*600);
+  },300);
+}
+function aicSend(){
+  const inp=document.getElementById('aicInput');
+  const q=inp.value.trim();if(!q)return;
+  inp.value='';
+  addAICMsg(q,'user');
+  document.getElementById('aicQuick').style.display='none';
+  showTyping();
+  setTimeout(()=>{removeTyping();addAICMsg(getAICResponse(q),'bot')},900+Math.random()*700);
+}
+function addAICMsg(text,role){
+  const msgs=document.getElementById('aicMsgs');
+  const d=document.createElement('div');
+  d.className='aic-msg '+role;d.textContent=text;
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+}
+function showTyping(){
+  const msgs=document.getElementById('aicMsgs');
+  const d=document.createElement('div');d.className='aic-typing';d.id='aic-typing';
+  d.innerHTML='<span></span><span></span><span></span>';
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+}
+function removeTyping(){const t=document.getElementById('aic-typing');if(t)t.remove();}
+
+// ── WORKFLOW ANALYSER ──
+const waExamples={
+  'Invoice processing':'Every month we manually download 300+ invoices from email, enter them into Excel, cross-check with purchase orders, and create a summary report. This takes 3 people about 2 days.',
+  'Monthly Excel reports':'Our finance team spends 3 days every month pulling data from 5 different systems, formatting it in Excel, and emailing reports to 8 department heads.',
+  'GST reconciliation':'We manually reconcile GST data across 200+ clients every quarter, checking GSTR-1 vs GSTR-2A mismatches and flagging discrepancies for review.',
+  'Demand forecasting':'Our ops team manually reviews past sales data in Excel every week to decide how much stock to order. We often over-order or run out of stock.',
+  'Resume screening':'HR team manually reads 50-100 resumes per job posting, copying relevant information to a spreadsheet and ranking candidates. Takes 3-4 hours per role.'
+};
+const waOutputs={
+  'invoice':['Automated Email OCR Ingestion','Auto-extract all invoice data using PaddleOCR + BERT NER with 99.8% accuracy.','Invoice-PO Cross-Check Pipeline','Automatically match invoices against purchase orders and flag mismatches instantly.','Scheduled Summary Report','Auto-generate and email the Excel summary every day at 8am.'],
+  'report':['Multi-Source Data Connector','Auto-pull data from all 5 systems via API or scheduled queries.','Automated Report Generator','Build formatted Excel/PDF reports from live data with zero manual work.','Smart Delivery Pipeline','Deliver personalised reports to each department head every morning.'],
+  'gst':['GST Data Sync Pipeline','Automatically pull GSTR-1 and GSTR-2A data for all clients.','Anomaly Detection Engine','Flag mismatches using Isolation Forest in real-time as data arrives.','Automated Alert System','Instantly notify clients of discrepancies via email or WhatsApp.'],
+  'demand':['Historical Data Pipeline','Auto-ingest and clean your past sales data from ERP or warehouse.','LSTM Forecasting Model','30/60/90-day demand forecasts per SKU with R²=0.94 accuracy.','Automated Order Recommendations','Generate daily reorder suggestions delivered to your ops team.'],
+  'resume':['JD Parser','Extract key requirements from job descriptions automatically.','Resume Matching Engine','BERT embeddings rank candidates by match score in seconds.','Screening Report Delivery','Auto-generate shortlist with scores and send to hiring manager.'],
+};
+function fillWAExample(btn){
+  document.getElementById('waInput').value=waExamples[btn.textContent]||'';
+}
+function analyseWorkflow(){
+  const txt=document.getElementById('waInput').value.toLowerCase();
+  let key='invoice';
+  if(txt.includes('report')||txt.includes('excel')||txt.includes('finance'))key='report';
+  else if(txt.includes('gst')||txt.includes('tax')||txt.includes('reconcil'))key='gst';
+  else if(txt.includes('demand')||txt.includes('stock')||txt.includes('inventory')||txt.includes('forecast'))key='demand';
+  else if(txt.includes('resume')||txt.includes('cv')||txt.includes('hiring')||txt.includes('screening'))key='resume';
+  const out=waOutputs[key];
+  const steps=document.getElementById('waSteps');steps.innerHTML='';
+  for(let i=0;i<9;i+=3){
+    const d=document.createElement('div');d.className='wa-step';
+    d.innerHTML=`<div class="wa-step-num">Step ${i/3+1}</div><div class="wa-step-title">${out[i]}</div><div class="wa-step-desc">${out[i+1]}</div>`;
+    steps.appendChild(d);
+  }
+  const savings=document.getElementById('waSavings');
+  savings.innerHTML=`
+    <div class="wa-sav-item"><div class="wa-sav-num">40+ hrs</div><div class="wa-sav-lbl">Saved / Month</div></div>
+    <div class="wa-sav-item"><div class="wa-sav-num">99.8%</div><div class="wa-sav-lbl">Accuracy</div></div>
+    <div class="wa-sav-item"><div class="wa-sav-num">7-10 days</div><div class="wa-sav-lbl">Delivery</div></div>`;
+  document.getElementById('waResults').classList.add('show');
+  document.getElementById('waResults').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// ── CALENDLY MODAL ──
+function openCalendly(){
+  const days=['Mon','Tue','Wed','Thu','Fri'];
+  const times=['10:00 AM','11:30 AM','2:00 PM','4:30 PM','6:00 PM','7:30 PM'];
+  const slots=document.getElementById('calSlots');slots.innerHTML='';
+  const today=new Date();
+  for(let i=0;i<6;i++){
+    const d=new Date(today);d.setDate(today.getDate()+i+1);
+    if(d.getDay()===0||d.getDay()===6){i--;continue}
+    const day=days[d.getDay()-1];
+    const date=d.getDate()+'/'+(d.getMonth()+1);
+    const time=times[i];
+    const slot=document.createElement('div');slot.className='cal-slot';
+    slot.innerHTML=`<div class="cal-slot-time">${time}</div><div class="cal-slot-date">${day}, ${date}</div>`;
+    slot.onclick=()=>{document.querySelectorAll('.cal-slot').forEach(s=>s.classList.remove('sel'));slot.classList.add('sel')};
+    slots.appendChild(slot);
+  }
+  document.getElementById('calendly-modal').classList.add('open');
+}
+function closeCalendly(){document.getElementById('calendly-modal').classList.remove('open')}
+function bookSlot(){
+  const sel=document.querySelector('.cal-slot.sel');
+  if(!sel){alert('Please select a time slot');return}
+  const btn=document.querySelector('.cal-book');
+  btn.textContent='Booked! Check your WhatsApp for confirmation';
+  btn.style.background='linear-gradient(135deg,#00cc66,#00aa55)';
+  setTimeout(closeCalendly,2200);
+}
+
+// ── SOCIAL PROOF NOTIFICATIONS ──
+const spNotifs=[
+  {name:'Ahmed R.',loc:'Dubai',msg:'just requested an automation audit',init:'A'},
+  {name:'Priya M.',loc:'Mumbai',msg:'started a new OCR pipeline project',init:'P'},
+  {name:'Wei L.',loc:'Singapore',msg:'got their reporting engine live',init:'W'},
+  {name:'Tom H.',loc:'London',msg:'signed up for demand forecasting',init:'T'},
+  {name:'Rajesh S.',loc:'Delhi',msg:'scheduled a free discovery call',init:'R'},
+  {name:'Sarah C.',loc:'Toronto',msg:'enquired about ML model deployment',init:'S'},
+  {name:'Farhan A.',loc:'UAE',msg:'just booked a free audit',init:'F'},
+  {name:'Meera K.',loc:'Bangalore',msg:'started workflow automation project',init:'M'},
+];
+let spIdx=0;
+function showSPNotif(){
+  const container=document.getElementById('social-proof-notif');
+  if(!container)return;
+  const n=spNotifs[spIdx%spNotifs.length];spIdx++;
+  const mins=Math.floor(Math.random()*55)+2;
+  const toast=document.createElement('div');toast.className='sp-toast';
+  toast.innerHTML=`<div class="sp-av">${n.init}</div><div class="sp-text"><strong>${n.name} from ${n.loc}</strong>${n.msg}<div class="sp-time">${mins} minutes ago</div></div>`;
+  container.appendChild(toast);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>toast.classList.add('show')));
+  setTimeout(()=>{toast.classList.add('hide');setTimeout(()=>toast.remove(),500)},4500);
+}
+setTimeout(()=>{showSPNotif();setInterval(showSPNotif,9000)},8000);
+
+// ── LIVE OPS COUNTER ──
+let lopRec=14892,lopHrs=843;
+setInterval(()=>{
+  lopRec+=Math.floor(Math.random()*8)+2;
+  lopHrs=Math.floor(lopRec/17.6);
+  const r=document.getElementById('lopRec');
+  const hr=document.getElementById('lopHrs');
+  if(r)r.textContent=lopRec.toLocaleString('en-IN');
+  if(hr)hr.textContent=lopHrs.toLocaleString('en-IN');
+},3200);
+
 </script>
 </body>
 </html>
