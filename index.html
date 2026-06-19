@@ -88,10 +88,10 @@ body{
 .logo-mark{width:38px;height:38px;flex-shrink:0}
 .logo-text{font-size:18px;letter-spacing:-0.5px;line-height:1}
 .logo-text span{display:block;font-size:9px;color:var(--muted);font-weight:500;letter-spacing:3px;margin-top:3px;font-family:var(--font-mono)}
-.nav-links{display:flex;gap:6px;align-items:center}
+.nav-links{display:flex;gap:2px;align-items:center}
 .nav-links a{
-  color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;
-  padding:8px 16px;border-radius:8px;transition:all 0.25s ease;position:relative;
+  color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500;
+  padding:8px 12px;border-radius:8px;transition:all 0.25s ease;position:relative;white-space:nowrap;
 }
 .nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.04)}
 .nav-cta{
@@ -369,6 +369,10 @@ body{
 .reveal.show{opacity:1;transform:translateY(0)}
 
 /* RESPONSIVE */
+@media (max-width:1180px) and (min-width:901px){
+  .nav-links a:not(.nav-cta){padding:8px 9px;font-size:12.5px}
+  .logo-text span{display:none}
+}
 @media (max-width:900px){
   .nav-links{display:none}
   .hamb{display:block}
@@ -429,7 +433,9 @@ body{
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#work">Work</a>
+    <a href="#why">Why Us</a>
     <a href="#careers">Careers</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact" class="nav-cta">Get Started →</a>
   </div>
   <button class="hamb" id="hambBtn" aria-label="Open menu">☰</button>
