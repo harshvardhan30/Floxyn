@@ -3,381 +3,515 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-<meta name="description" content="Auto Solution — Global workflow automation & ML intelligence. Python, Excel, OCR, ML pipelines that eliminate manual work." />
-<meta name="theme-color" content="#020408" />
-<title>Auto Solution — Workflow Automation & ML Intelligence</title>
+<meta name="description" content="Auto Solution — AI & analytics-driven workflow automation. Python, Excel, OCR and ML pipelines that turn manual work into live, self-running systems." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://www.autosolution.com/" />
+<meta name="theme-color" content="#f6f7fb" />
+<title>Auto Solution — AI Automation & Analytics Studio</title>
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Auto Solution" />
+<meta property="og:title" content="Auto Solution — AI Automation & Analytics Studio" />
+<meta property="og:description" content="We turn manual workflows into ML-powered systems — Excel, Python, OCR and analytics automation for teams worldwide." />
+<meta property="og:url" content="https://www.autosolution.com/" />
+<meta property="og:image" content="https://www.autosolution.com/og-cover.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Auto Solution — AI Automation & Analytics Studio" />
+<meta name="twitter:description" content="We turn manual workflows into ML-powered systems — Excel, Python, OCR and analytics automation for teams worldwide." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-<!-- Unique SVG logo as favicon -->
+<!-- Logo unchanged -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ff8a00'/><stop offset='1' stop-color='%23ff3d68'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='%23020408'/><path d='M14 46 L26 18 L38 46 M18 38 L34 38' stroke='url(%23g)' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/><circle cx='48' cy='22' r='5' fill='url(%23g)'/><path d='M42 22 L48 28 L54 22' stroke='url(%23g)' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Auto Solution",
+  "url": "https://www.autosolution.com",
+  "description": "AI and analytics-driven workflow automation studio — Python, Excel, OCR and ML pipelines.",
+  "founder": [{"@type":"Person","name":"Harsh Vardhan"},{"@type":"Person","name":"Anurag Maurya"}],
+  "sameAs": ["https://wa.me/917303897496"]
+}
+</script>
 
 <style>
 :root{
-  --bg:#020408;
-  --bg2:#0a0f1c;
-  --surface:rgba(255,255,255,0.03);
-  --border:rgba(255,255,255,0.08);
-  --text:#ffffff;
-  --muted:rgba(255,255,255,0.6);
-  --c1:#ff8a00;
-  --c2:#ff3d68;
-  --c3:#7c3aed;
-  --c1-soft:rgba(255,138,0,0.5);
-  --c2-soft:rgba(255,61,104,0.5);
-  --c3-soft:rgba(124,58,237,0.5);
-  --grad:linear-gradient(135deg,#ff8a00 0%,#ff3d68 100%);
-  --grad2:linear-gradient(135deg,#ff3d68 0%,#7c3aed 100%);
-  --grad3:linear-gradient(135deg,#7c3aed 0%,#ff8a00 100%);
-  --font-sans:'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --font-mono:'JetBrains Mono', ui-monospace, monospace;
-  --shadow-glow:0 0 80px rgba(255,138,0,0.15);
+  --bg:#f6f7fb;
+  --bg-alt:#eef1f7;
+  --panel:#ffffff;
+  --ink:#0b1220;
+  --muted:#5b6577;
+  --muted-2:#8891a0;
+  --line:rgba(11,18,32,0.09);
+  --line-strong:rgba(11,18,32,0.16);
+  --accent:#2f6fed;
+  --accent-2:#00b8a0;
+  --accent-3:#7b5cff;
+  --accent-soft:rgba(47,111,237,0.08);
+  --accent2-soft:rgba(0,184,160,0.1);
+  --grad:linear-gradient(135deg,#2f6fed 0%,#00b8a0 100%);
+  --grad2:linear-gradient(135deg,#7b5cff 0%,#2f6fed 100%);
+  --grad3:linear-gradient(135deg,#00b8a0 0%,#7b5cff 100%);
+  --dark:#0a0f1e;
+  --dark-2:#111a30;
+  --dark-line:rgba(255,255,255,0.09);
+  --dark-muted:rgba(255,255,255,0.6);
+  --font-display:'Sora',system-ui,-apple-system,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --shadow:0 24px 64px rgba(11,18,32,0.09);
+  --shadow-sm:0 10px 28px rgba(11,18,32,0.07);
+  --radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:var(--font-sans);
+  font-family:var(--font-body);
   background:var(--bg);
-  color:var(--text);
+  color:var(--ink);
   overflow-x:hidden;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
-::selection{background:var(--c1);color:#000}
+::selection{background:var(--accent);color:#fff}
+img{max-width:100%}
+a{color:inherit}
 
-/* Animated gradient background */
+.skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;border-radius:0 0 10px 0;z-index:10000}
+.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Dot-grid backdrop */
 .gbg{
   position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 10%,rgba(255,138,0,0.10),transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 30%,rgba(255,61,104,0.10),transparent 60%),
-    radial-gradient(ellipse 70% 50% at 50% 90%,rgba(124,58,237,0.08),transparent 60%);
-  animation:bgshift 18s ease-in-out infinite alternate;
+  background-image:radial-gradient(circle,rgba(11,18,32,0.09) 1px,transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000 40%,transparent 90%);
 }
-@keyframes bgshift{
-  0%{transform:translate(0,0) scale(1)}
-  100%{transform:translate(-3%,2%) scale(1.05)}
-}
-.grain{
-  position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0.04;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-}
+.glow-a{position:fixed;top:-10%;left:-8%;width:46vw;height:46vw;background:radial-gradient(circle,rgba(47,111,237,0.10),transparent 65%);z-index:0;pointer-events:none;filter:blur(10px)}
+.glow-b{position:fixed;top:20%;right:-12%;width:40vw;height:40vw;background:radial-gradient(circle,rgba(0,184,160,0.09),transparent 65%);z-index:0;pointer-events:none;filter:blur(10px)}
 
-/* Progress bar */
 #pbar{
-  position:fixed;top:0;left:0;height:2px;width:0;
+  position:fixed;top:0;left:0;height:3px;width:0;
   background:var(--grad);z-index:9999;
   transition:width 0.1s linear;
-  box-shadow:0 0 12px rgba(255,138,0,0.6);
 }
 
 /* NAV */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  padding:18px 5vw;
+  padding:14px 5vw;
   display:flex;align-items:center;justify-content:space-between;
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  background:rgba(2,4,8,0.65);
-  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:rgba(246,247,251,0.78);
+  border-bottom:1px solid var(--line);
 }
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:700}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:700}
 .logo-mark{width:38px;height:38px;flex-shrink:0}
-.logo-text{font-size:18px;letter-spacing:-0.5px;line-height:1}
-.logo-text span{display:block;font-size:9px;color:var(--muted);font-weight:500;letter-spacing:3px;margin-top:3px;font-family:var(--font-mono)}
+.logo-text{font-family:var(--font-display);font-size:18px;letter-spacing:-0.5px;line-height:1}
+.logo-text span{display:block;font-size:9px;color:var(--muted);font-weight:600;letter-spacing:3px;margin-top:3px;font-family:var(--font-mono)}
 .nav-links{display:flex;gap:2px;align-items:center}
 .nav-links a{
-  color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500;
-  padding:8px 12px;border-radius:8px;transition:all 0.25s ease;position:relative;white-space:nowrap;
+  color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:600;
+  padding:9px 12px;border-radius:8px;transition:all 0.2s ease;white-space:nowrap;
 }
-.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.04)}
+.nav-links a:hover{color:var(--ink);background:rgba(11,18,32,0.05)}
 .nav-cta{
-  background:var(--grad);color:#000 !important;font-weight:600 !important;
+  background:var(--ink) !important;color:#fff !important;font-weight:700 !important;
   padding:10px 20px !important;border-radius:24px !important;
 }
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,138,0,0.3)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(11,18,32,0.25);color:#fff !important;background:var(--ink) !important}
 
-/* Hamburger */
-.hamb{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:8px;font-size:24px}
+.hamb{display:none;background:none;border:0;color:var(--ink);cursor:pointer;padding:8px;font-size:24px}
 
-/* Mobile menu */
 .mmenu{
-  position:fixed;top:0;right:0;bottom:0;width:80%;max-width:320px;z-index:200;
-  background:rgba(10,15,28,0.98);backdrop-filter:blur(20px);
-  border-left:1px solid var(--border);padding:80px 28px 28px;
+  position:fixed;top:0;right:0;bottom:0;width:82%;max-width:340px;z-index:200;
+  background:#ffffff;
+  border-left:1px solid var(--line);padding:80px 28px 28px;
   transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  display:flex;flex-direction:column;gap:6px;
+  display:flex;flex-direction:column;gap:6px;box-shadow:-20px 0 60px rgba(11,18,32,0.15);
 }
 .mmenu.open{transform:translateX(0)}
-.mmenu a{color:var(--text);text-decoration:none;font-size:18px;font-weight:500;padding:14px 16px;border-radius:10px;transition:background 0.2s}
-.mmenu a:hover{background:rgba(255,255,255,0.04)}
-.mmenu .nav-cta{margin-top:16px;text-align:center}
-.mclose{position:absolute;top:20px;right:20px;background:none;border:0;color:var(--text);font-size:28px;cursor:pointer}
-.mbackdrop{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:150;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.mmenu a{color:var(--ink);text-decoration:none;font-size:17px;font-weight:600;padding:14px 16px;border-radius:10px;transition:background 0.2s}
+.mmenu a:hover{background:var(--bg-alt)}
+.mmenu .nav-cta{margin-top:16px;text-align:center;background:var(--ink) !important}
+.mclose{position:absolute;top:20px;right:20px;background:none;border:0;color:var(--ink);font-size:28px;cursor:pointer}
+.mbackdrop{position:fixed;inset:0;background:rgba(11,18,32,0.4);z-index:150;opacity:0;pointer-events:none;transition:opacity 0.3s}
 .mbackdrop.open{opacity:1;pointer-events:auto}
 
-/* WhatsApp floating button */
+/* WhatsApp fab + scroll-top */
+.fab-stack{position:fixed;bottom:24px;right:24px;z-index:90;display:flex;flex-direction:column;gap:12px;align-items:center}
 .wa-fab{
-  position:fixed;bottom:24px;right:24px;z-index:90;
-  width:60px;height:60px;border-radius:50%;
+  width:58px;height:58px;border-radius:50%;
   background:#25d366;color:#fff;display:grid;place-items:center;
-  text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,0.5);
-  transition:transform 0.3s;
+  text-decoration:none;box-shadow:0 10px 30px rgba(37,211,102,0.4);
+  transition:transform 0.3s;position:relative;
 }
-.wa-fab:hover{transform:scale(1.1)}
-.wa-fab::before,.wa-fab::after{
-  content:'';position:absolute;inset:-4px;border-radius:50%;
-  border:2px solid #25d366;opacity:0;animation:pulse 2.5s infinite;
+.wa-fab:hover{transform:scale(1.08)}
+.totop{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line-strong);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm);opacity:0;pointer-events:none;transition:all 0.3s;font-size:16px}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Cookie banner */
+.cookie{
+  position:fixed;left:20px;bottom:20px;z-index:9998;max-width:380px;
+  background:var(--dark);color:#fff;border-radius:16px;padding:20px 22px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.35);
+  transform:translateY(140%);transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);
 }
-.wa-fab::after{animation-delay:1.25s}
-@keyframes pulse{
-  0%{transform:scale(1);opacity:0.7}
-  100%{transform:scale(1.6);opacity:0}
-}
+.cookie.show{transform:translateY(0)}
+.cookie p{font-size:13px;color:var(--dark-muted);line-height:1.6;margin-bottom:14px}
+.cookie-btns{display:flex;gap:10px}
+.cookie-btns button{font-family:inherit;font-size:12.5px;font-weight:700;padding:9px 16px;border-radius:9px;cursor:pointer;border:0}
+.cbtn-accept{background:var(--grad);color:#fff}
+.cbtn-deny{background:transparent;border:1px solid var(--dark-line) !important;color:#fff}
 
 /* Common section */
-.sec{padding:90px 5vw;max-width:1280px;margin:0 auto;position:relative;z-index:2}
-.stag{
-  display:inline-block;padding:6px 14px;border-radius:30px;
-  background:rgba(255,138,0,0.08);color:var(--c1);
-  font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  border:1px solid rgba(255,138,0,0.2);margin-bottom:18px;font-family:var(--font-mono);
+.sec{padding:100px 5vw;max-width:1280px;margin:0 auto;position:relative;z-index:2}
+.sec-head{max-width:660px;margin-bottom:52px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:30px;
+  background:var(--accent-soft);color:var(--accent);
+  font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;
+  border:1px solid rgba(47,111,237,0.18);margin-bottom:18px;font-family:var(--font-mono);
 }
-.stag.c-coral{background:rgba(255,61,104,0.08);color:var(--c2);border-color:rgba(255,61,104,0.22)}
-.stag.c-violet{background:rgba(124,58,237,0.1);color:#b794f6;border-color:rgba(124,58,237,0.28)}
-.stitle{font-size:clamp(28px,4.5vw,52px);font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px}
-.sdesc{color:var(--muted);font-size:clamp(14px,1.5vw,17px);max-width:640px;line-height:1.75;margin-bottom:48px}
+.eyebrow .pd{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.eyebrow.e-teal{background:var(--accent2-soft);color:#00806e;border-color:rgba(0,184,160,0.22)}
+.eyebrow.e-teal .pd{background:var(--accent-2)}
+.eyebrow.e-violet{background:rgba(123,92,255,0.09);color:#5b3fd6;border-color:rgba(123,92,255,0.22)}
+.eyebrow.e-violet .pd{background:var(--accent-3)}
+.stitle{font-family:var(--font-display);font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-1.2px;line-height:1.12;margin-bottom:14px}
+.sdesc{color:var(--muted);font-size:clamp(14px,1.4vw,16.5px);max-width:600px;line-height:1.75}
 .gradient-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* HERO */
-.hero{
-  position:relative;min-height:100vh;display:flex;align-items:center;
-  padding:120px 5vw 80px;overflow:hidden;
-}
-#heroCanvas{position:absolute;inset:0;z-index:1;opacity:0.8}
-.hero-content{position:relative;z-index:3;max-width:1280px;margin:0 auto;width:100%}
+.hero{position:relative;padding:150px 5vw 0;overflow:hidden}
+.hero-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;position:relative;z-index:3}
 .hero-badge{
-  display:inline-flex;align-items:center;gap:10px;padding:8px 16px;
-  background:rgba(255,138,0,0.06);border:1px solid rgba(255,138,0,0.18);
-  border-radius:30px;font-size:12px;font-weight:500;color:var(--c1);
-  margin-bottom:24px;font-family:var(--font-mono);letter-spacing:0.5px;
+  display:inline-flex;align-items:center;gap:10px;padding:7px 15px;
+  background:#fff;border:1px solid var(--line-strong);
+  border-radius:30px;font-size:12px;font-weight:600;color:var(--ink);
+  margin-bottom:22px;font-family:var(--font-mono);letter-spacing:0.3px;box-shadow:var(--shadow-sm);
 }
-.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--c1);box-shadow:0 0 12px var(--c1);animation:blink 1.6s infinite}
-@keyframes blink{50%{opacity:0.3}}
-.htitle{font-size:clamp(34px,7vw,84px);font-weight:700;letter-spacing:-2.5px;line-height:0.98;margin-bottom:24px}
-.htitle .l1{display:block}
-.htitle .l2{display:block;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hsub{font-size:clamp(15px,1.8vw,20px);color:var(--muted);max-width:680px;line-height:1.7;margin-bottom:36px}
-.hsub strong{color:var(--text);font-weight:600}
-.hbtns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
-.btn{padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;border:0;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s}
-.btn-primary{background:var(--grad);color:#000;box-shadow:0 6px 24px rgba(255,138,0,0.25)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(255,138,0,0.4)}
-.btn-secondary{background:rgba(255,255,255,0.05);color:var(--text);border:1px solid var(--border)}
-.btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)}
-.hpills{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
-.hpill{padding:7px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:30px;font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono)}
-.hpill .pdot{width:5px;height:5px;border-radius:50%;background:var(--c1)}
-.hstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:24px;max-width:720px}
-.hstat{padding:20px 0;border-top:1px solid var(--border)}
-.hsnum{font-size:clamp(28px,3.5vw,40px);font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.hslbl{font-size:12px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:6px;font-family:var(--font-mono)}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 3px var(--accent2-soft);animation:blink 1.8s infinite}
+@keyframes blink{50%{opacity:0.35}}
+.htitle{font-family:var(--font-display);font-size:clamp(32px,5.4vw,62px);font-weight:700;letter-spacing:-1.8px;line-height:1.04;margin-bottom:22px}
+.htitle .l2{display:inline;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hsub{font-size:clamp(15px,1.3vw,17.5px);color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:30px}
+.hsub strong{color:var(--ink);font-weight:700}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.btn{padding:14px 26px;border-radius:12px;font-size:14.5px;font-weight:700;cursor:pointer;border:0;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;font-family:var(--font-body)}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 28px rgba(11,18,32,0.22)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(11,18,32,0.3)}
+.btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--line-strong)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-grad{background:var(--grad);color:#fff}
+.btn-grad:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(47,111,237,0.3)}
+.hero-trust{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.avstack{display:flex}
+.avstack span{width:30px;height:30px;border-radius:50%;background:var(--grad2);border:2px solid var(--bg);display:grid;place-items:center;font-size:12px;color:#fff;margin-left:-8px;font-weight:700}
+.avstack span:first-child{margin-left:0}
+.hero-trust small{font-size:12.5px;color:var(--muted);font-weight:600}
+
+/* Hero dashboard mock */
+.dash{
+  background:var(--dark);border-radius:22px;padding:22px;box-shadow:0 40px 90px rgba(11,18,32,0.28);
+  border:1px solid rgba(255,255,255,0.06);position:relative;
+}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.dash-title{font-family:var(--font-mono);font-size:11px;color:var(--dark-muted);letter-spacing:1.5px;text-transform:uppercase}
+.dash-dots{display:flex;gap:6px}
+.dash-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.15)}
+.dash-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:rgba(255,255,255,0.04);border:1px solid var(--dark-line);border-radius:14px;padding:14px}
+.kpi-lbl{font-size:10px;color:var(--dark-muted);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-mono);margin-bottom:6px}
+.kpi-val{font-family:var(--font-display);font-size:20px;font-weight:700;color:#fff}
+.kpi-val small{font-size:11px;color:var(--accent-2);font-weight:700}
+.dash-chart{background:rgba(255,255,255,0.04);border:1px solid var(--dark-line);border-radius:14px;padding:16px;margin-bottom:12px}
+.dchart-hdr{display:flex;justify-content:space-between;font-size:11px;color:var(--dark-muted);font-family:var(--font-mono);margin-bottom:10px}
+.dbars{display:flex;align-items:end;gap:6px;height:70px}
+.dbars .b{flex:1;border-radius:4px 4px 0 0;background:var(--grad)}
+.dash-row{display:flex;gap:12px}
+.dring{flex:0 0 auto;width:74px;height:74px;position:relative}
+.dring svg{transform:rotate(-90deg)}
+.dring-lbl{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-mono);font-size:14px;font-weight:700;color:#fff}
+.dlog{flex:1;background:rgba(255,255,255,0.04);border:1px solid var(--dark-line);border-radius:14px;padding:12px 14px;font-family:var(--font-mono);font-size:11px;color:var(--dark-muted);display:flex;flex-direction:column;gap:5px;justify-content:center}
+.dlog b{color:var(--accent-2)}
+
+/* Ticker */
+.ticker-wrap{margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--dark);overflow:hidden;position:relative;z-index:3}
+.ticker{display:flex;white-space:nowrap;animation:tick 32s linear infinite}
+@media (prefers-reduced-motion: reduce){.ticker{animation:none}}
+.ticker:hover{animation-play-state:paused}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker span{display:inline-flex;align-items:center;gap:10px;padding:16px 34px;font-family:var(--font-mono);font-size:12.5px;color:var(--dark-muted);border-right:1px solid var(--dark-line)}
+.ticker span b{color:#fff;font-weight:700}
+.ticker span::before{content:'●';color:var(--accent-2);font-size:8px}
+
+/* Trust / industries bar */
+.trustbar{padding:56px 5vw;max-width:1280px;margin:0 auto;text-align:center;position:relative;z-index:2}
+.trustbar p{font-size:11.5px;color:var(--muted-2);letter-spacing:2px;text-transform:uppercase;font-family:var(--font-mono);margin-bottom:26px}
+.trust-row{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.trust-chip{padding:10px 20px;border:1px solid var(--line);border-radius:12px;font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--muted-2);background:#fff}
+
+/* Cards common */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);transition:all 0.3s;box-shadow:var(--shadow-sm)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(47,111,237,0.25)}
 
 /* ML Cards */
-.ml-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.ml-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:20px;padding:24px;position:relative;overflow:hidden;
-  transition:all 0.3s;
-}
-.ml-card:hover{border-color:rgba(255,138,0,0.3);transform:translateY(-4px)}
-.ml-title{font-size:13px;color:var(--muted);font-family:var(--font-mono);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.ml-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.ml-card{padding:26px}
+.ml-title{font-size:12.5px;color:var(--muted);font-family:var(--font-mono);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:18px;font-weight:600}
 .mbars{display:flex;align-items:end;gap:10px;height:140px;margin-bottom:14px}
 .mbar{flex:1;background:var(--grad);border-radius:6px 6px 0 0;transition:height 1.5s cubic-bezier(0.34,1.56,0.64,1);min-height:8px}
-.mlbls{display:flex;justify-content:space-between;font-size:9px;color:var(--muted);font-family:var(--font-mono);letter-spacing:1px;flex-wrap:wrap;gap:4px}
+.mlbls{display:flex;justify-content:space-between;font-size:9.5px;color:var(--muted-2);font-family:var(--font-mono);letter-spacing:0.6px;flex-wrap:wrap;gap:4px}
 
 .ring-wrap{display:flex;align-items:center;gap:24px}
 .ring-svg{flex-shrink:0;position:relative;width:100px;height:100px}
 .ring-svg svg{transform:rotate(-90deg)}
 .ring-lbl{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
-.ring-pct{font-size:22px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.ring-sub{font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;font-family:var(--font-mono)}
-.ring-stats{flex:1;display:flex;flex-direction:column;gap:10px}
-.rstat-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:1px}
-.rstat-val{color:var(--c1);font-weight:600}
-.rstat-bar{height:4px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden;margin-top:4px}
-.rstat-fill{height:100%;background:var(--grad);border-radius:2px;transition:width 1.4s ease}
+.ring-pct{font-size:22px;font-weight:700;font-family:var(--font-display);background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ring-sub{font-size:9px;color:var(--muted-2);letter-spacing:1.4px;text-transform:uppercase;font-family:var(--font-mono)}
+.ring-stats{flex:1;display:flex;flex-direction:column;gap:11px}
+.rstat-row{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.8px}
+.rstat-val{color:var(--accent);font-weight:700}
+.rstat-bar{height:5px;background:var(--bg-alt);border-radius:3px;overflow:hidden;margin-top:5px}
+.rstat-fill{height:100%;background:var(--grad);border-radius:3px;transition:width 1.4s ease}
 
 /* Before/After */
 .ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:stretch}
-.ba-col{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:28px}
-.ba-col.before{border-color:rgba(255,80,80,0.2)}
-.ba-col.after{border-color:rgba(255,138,0,0.25)}
-.ba-label{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px;font-family:var(--font-mono)}
-.ba-col.before .ba-label{color:#ff7070}
-.ba-col.after .ba-label{color:var(--c1)}
-.ba-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.ba-col{padding:28px}
+.ba-col.before{border-color:rgba(220,60,60,0.2)}
+.ba-col.after{border-color:rgba(0,184,160,0.28)}
+.ba-label{font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:22px;font-family:var(--font-mono)}
+.ba-col.before .ba-label{color:#d64545}
+.ba-col.after .ba-label{color:#00806e}
+.ba-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
 .ba-item:last-child{border-bottom:0}
 .ba-ico{font-size:22px;flex-shrink:0;width:36px;text-align:center}
-.ba-text h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.ba-text h4{font-size:14px;font-weight:700;margin-bottom:4px}
 .ba-text p{font-size:13px;color:var(--muted);line-height:1.6}
-.ba-mid{display:grid;place-items:center;font-size:32px;color:var(--c1);font-weight:700}
+.ba-mid{display:grid;place-items:center;font-size:28px;color:var(--accent);font-weight:700}
 
 /* Services */
 .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
-.scard{
-  background:var(--surface);border:1px solid var(--border);border-radius:20px;
-  padding:24px;transition:all 0.35s;position:relative;overflow:hidden;
-}
-.scard::before{
-  content:'';position:absolute;inset:0;background:var(--grad);
-  opacity:0;transition:opacity 0.35s;z-index:-1;
-}
-.scard:hover{border-color:rgba(255,138,0,0.3);transform:translateY(-6px);box-shadow:0 20px 60px rgba(255,138,0,0.1)}
+.scard{padding:24px;position:relative}
 .s-top{display:flex;justify-content:space-between;align-items:start;margin-bottom:16px}
-.sicon{font-size:32px}
-.sarr{color:var(--c1);font-size:18px;transition:transform 0.3s}
+.sicon{font-size:30px}
+.sarr{color:var(--accent);font-size:18px;transition:transform 0.3s}
 .scard:hover .sarr{transform:translate(4px,-4px)}
-.sname{font-size:18px;font-weight:600;margin-bottom:8px;letter-spacing:-0.3px}
+.sname{font-size:17.5px;font-weight:700;margin-bottom:8px;letter-spacing:-0.2px;font-family:var(--font-display)}
 .sdesc2{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
 .stags{display:flex;flex-wrap:wrap;gap:6px}
-.stag2{font-size:10px;padding:4px 10px;background:rgba(255,138,0,0.06);color:var(--c1);border-radius:20px;font-family:var(--font-mono);letter-spacing:0.5px}
+.stag2{font-size:10px;padding:4px 10px;background:var(--accent-soft);color:var(--accent);border-radius:20px;font-family:var(--font-mono);letter-spacing:0.4px;font-weight:600}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{padding:30px;display:flex;flex-direction:column}
+.price-card.feat{border-color:var(--accent);box-shadow:0 20px 50px rgba(47,111,237,0.14);position:relative}
+.price-tag{position:absolute;top:-13px;left:26px;background:var(--grad);color:#fff;font-size:10.5px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:0.6px;font-family:var(--font-mono)}
+.price-name{font-family:var(--font-display);font-size:19px;font-weight:700;margin-bottom:6px}
+.price-for{font-size:12.5px;color:var(--muted-2);margin-bottom:18px}
+.price-amt{font-family:var(--font-display);font-size:32px;font-weight:800;margin-bottom:4px}
+.price-amt span{font-size:13px;color:var(--muted-2);font-weight:500}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:11px;margin:20px 0 26px;flex-grow:1}
+.price-list li{font-size:13.5px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
+.price-list li::before{content:'✓';color:var(--accent-2);font-weight:700;flex-shrink:0}
+.price-btn{text-align:center}
 
 /* Process */
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
-.pstep{padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:18px;transition:all 0.3s;position:relative}
-.pstep:hover{border-color:rgba(255,138,0,0.3);transform:translateY(-4px)}
-.pnum{font-family:var(--font-mono);font-size:36px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:12px}
-.ptitle{font-size:16px;font-weight:600;margin-bottom:8px}
+.pstep{padding:26px}
+.pnum{font-family:var(--font-mono);font-size:34px;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px}
+.ptitle{font-size:16px;font-weight:700;margin-bottom:8px;font-family:var(--font-display)}
 .pdesc{font-size:12.5px;color:var(--muted);line-height:1.6}
 
-/* Tech grid */
-.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:32px}
-.tchip{padding:18px 14px;background:var(--surface);border:1px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.3s}
-.tchip:hover{border-color:rgba(255,138,0,0.3);transform:translateY(-3px);background:rgba(255,138,0,0.04)}
-.temi{font-size:24px}
-.tname{font-size:12px;font-weight:500;color:var(--muted);font-family:var(--font-mono)}
+/* Testimonials */
+.tgrid-t{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.t-card{padding:26px;display:flex;flex-direction:column;gap:16px}
+.t-stars{color:#f5a623;font-size:14px;letter-spacing:2px}
+.t-quote{font-size:14.5px;color:var(--ink);line-height:1.7}
+.t-person{display:flex;align-items:center;gap:12px;margin-top:auto}
+.t-av{width:42px;height:42px;border-radius:50%;background:var(--grad2);display:grid;place-items:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0}
+.t-name{font-weight:700;font-size:13.5px}
+.t-role{font-size:11.5px;color:var(--muted-2);font-family:var(--font-mono)}
 
-/* Why */
-.wygrid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
-.wypt{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
-.wyico{font-size:26px;flex-shrink:0;width:48px;height:48px;background:rgba(255,138,0,0.06);border-radius:12px;display:grid;place-items:center}
-.wytt h4{font-size:16px;font-weight:600;margin-bottom:6px}
+/* Tech grid */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:8px}
+.tchip{padding:18px 14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all 0.3s}
+.tchip:hover{border-color:var(--accent);transform:translateY(-3px);background:var(--accent-soft)}
+.temi{font-size:24px}
+.tname{font-size:12px;font-weight:600;color:var(--muted);font-family:var(--font-mono)}
+
+/* Integrations */
+.int-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.int-chip{padding:22px 14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;text-align:center;font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--ink);transition:all 0.3s}
+.int-chip:hover{border-color:var(--accent-2);transform:translateY(-3px)}
+.int-chip small{display:block;font-family:var(--font-mono);font-size:9.5px;color:var(--muted-2);font-weight:500;letter-spacing:0.6px;margin-top:5px}
+
+/* Security */
+.sec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.sec-card{padding:24px;text-align:left}
+.sec-ico{width:44px;height:44px;background:var(--accent-soft);border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:14px}
+.sec-card h4{font-size:14.5px;font-weight:700;margin-bottom:6px;font-family:var(--font-display)}
+.sec-card p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* Why / terminal */
+.wygrid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:start}
+.wypt{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.wyico{font-size:24px;flex-shrink:0;width:48px;height:48px;background:var(--accent-soft);border-radius:12px;display:grid;place-items:center}
+.wytt h4{font-size:15.5px;font-weight:700;margin-bottom:6px;font-family:var(--font-display)}
 .wytt p{font-size:13.5px;color:var(--muted);line-height:1.6}
-.terminal{background:#0a0f1c;border:1px solid var(--border);border-radius:14px;overflow:hidden;font-family:var(--font-mono);font-size:13px;box-shadow:0 20px 60px rgba(0,0,0,0.4)}
-.term-bar{padding:12px;background:rgba(255,255,255,0.03);display:flex;gap:6px;border-bottom:1px solid var(--border)}
+.terminal{background:var(--dark);border-radius:16px;overflow:hidden;font-family:var(--font-mono);font-size:13px;box-shadow:0 24px 60px rgba(11,18,32,0.25)}
+.term-bar{padding:12px;background:rgba(255,255,255,0.03);display:flex;gap:6px;border-bottom:1px solid var(--dark-line)}
 .td{width:11px;height:11px;border-radius:50%}
 .td1{background:#ff5f57}.td2{background:#febc2e}.td3{background:#28c840}
-.term-body{padding:18px;min-height:260px;line-height:1.8;color:var(--muted)}
+.term-body{padding:18px;min-height:260px;line-height:1.8;color:var(--dark-muted)}
 .term-body .line{display:flex;gap:8px;margin-bottom:4px}
-.term-body .prompt{color:var(--c1)}
-.term-body .out{color:var(--text)}
+.term-body .prompt{color:var(--accent-2)}
+.term-body .out{color:#fff}
 .term-body .cmt{color:rgba(255,255,255,0.35)}
-.cursor{display:inline-block;width:8px;height:14px;background:var(--c1);animation:blink2 1s steps(2) infinite;vertical-align:middle}
+.cursor{display:inline-block;width:8px;height:14px;background:var(--accent-2);animation:blink2 1s steps(2) infinite;vertical-align:middle}
 @keyframes blink2{50%{opacity:0}}
 
 /* About */
 .about-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:48px;margin-bottom:56px}
 .about-text p{color:var(--muted);font-size:14.5px;line-height:1.85;margin-bottom:16px}
-.about-stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
-.about-stat-num{font-size:30px;font-weight:700;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.about-stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-top:6px;font-family:var(--font-mono)}
+.about-stats{display:flex;gap:32px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.about-stat-num{font-size:28px;font-weight:800;font-family:var(--font-display);background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.about-stat-lbl{font-size:11px;color:var(--muted-2);text-transform:uppercase;letter-spacing:1.4px;margin-top:6px;font-family:var(--font-mono)}
 .founders{display:flex;flex-direction:column;gap:16px}
-.founder-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:all 0.3s}
-.founder-card:hover{border-color:rgba(124,58,237,0.35);transform:translateY(-4px)}
-.founder-avatar{width:50px;height:50px;border-radius:14px;background:var(--grad3);display:grid;place-items:center;font-size:20px;flex-shrink:0;color:#000;font-weight:700}
-.founder-name{font-weight:700;font-size:15.5px}
-.founder-role{font-size:11.5px;color:#b794f6;font-family:var(--font-mono);margin:3px 0 8px;letter-spacing:0.5px}
+.founder-card{padding:22px;display:flex;gap:16px;align-items:flex-start}
+.founder-avatar{width:48px;height:48px;border-radius:14px;background:var(--grad2);display:grid;place-items:center;font-size:18px;flex-shrink:0;color:#fff;font-weight:700}
+.founder-name{font-weight:700;font-size:15px;font-family:var(--font-display)}
+.founder-role{font-size:11.5px;color:var(--accent-3);font-family:var(--font-mono);margin:3px 0 8px;letter-spacing:0.5px;font-weight:600}
 .founder-bio{color:var(--muted);font-size:13px;line-height:1.65}
 .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.value-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center;transition:all 0.3s}
-.value-card:hover{border-color:rgba(124,58,237,0.3);transform:translateY(-5px);box-shadow:0 16px 44px rgba(124,58,237,0.1)}
-.value-ico{font-size:28px;margin-bottom:14px}
-.value-title{font-weight:700;font-size:15px;margin-bottom:8px}
+.value-card{padding:26px;text-align:center}
+.value-ico{font-size:26px;margin-bottom:14px}
+.value-title{font-weight:700;font-size:15px;margin-bottom:8px;font-family:var(--font-display)}
 .value-desc{color:var(--muted);font-size:13px;line-height:1.6}
+
+/* Blog/Insights */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.blog-card{overflow:hidden}
+.blog-cover{height:140px;background:var(--grad);position:relative;display:flex;align-items:flex-end;padding:16px}
+.blog-cover.b2{background:var(--grad2)}
+.blog-cover.b3{background:var(--grad3)}
+.blog-cat{background:rgba(255,255,255,0.25);color:#fff;font-size:10.5px;font-weight:700;padding:5px 12px;border-radius:20px;font-family:var(--font-mono);backdrop-filter:blur(6px)}
+.blog-body{padding:22px}
+.blog-body h4{font-size:15.5px;font-weight:700;margin-bottom:8px;line-height:1.4;font-family:var(--font-display)}
+.blog-body p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.blog-meta{font-size:11px;color:var(--muted-2);font-family:var(--font-mono);display:flex;justify-content:space-between}
 
 /* Careers */
 .careers-perks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
+.hpill{padding:7px 14px;background:var(--panel);border:1px solid var(--line);border-radius:30px;font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono)}
+.hpill .pdot{width:5px;height:5px;border-radius:50%;background:var(--accent)}
 .jobs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-bottom:36px}
-.job-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;display:flex;flex-direction:column;transition:all 0.3s}
-.job-card:hover{border-color:rgba(255,61,104,0.32);transform:translateY(-5px);box-shadow:0 18px 48px rgba(255,61,104,0.1)}
+.job-card{padding:24px;display:flex;flex-direction:column}
 .job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
-.job-title{font-size:16.5px;font-weight:700;letter-spacing:-0.2px}
-.job-type{font-size:10px;padding:4px 10px;background:rgba(124,58,237,0.1);color:#b794f6;border-radius:20px;font-family:var(--font-mono);white-space:nowrap;flex-shrink:0}
-.job-meta{font-size:11.5px;color:var(--c2);font-family:var(--font-mono);letter-spacing:0.5px;margin-bottom:12px}
+.job-title{font-size:16px;font-weight:700;letter-spacing:-0.2px;font-family:var(--font-display)}
+.job-type{font-size:10px;padding:4px 10px;background:rgba(123,92,255,0.1);color:#5b3fd6;border-radius:20px;font-family:var(--font-mono);white-space:nowrap;flex-shrink:0;font-weight:600}
+.job-meta{font-size:11.5px;color:var(--accent);font-family:var(--font-mono);letter-spacing:0.4px;margin-bottom:12px}
 .job-desc{color:var(--muted);font-size:13px;line-height:1.7;margin-bottom:18px;flex-grow:1}
-.job-apply{align-self:flex-start;font-size:13px;font-weight:600;color:var(--c2);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.25s}
+.job-apply{align-self:flex-start;font-size:13px;font-weight:700;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:gap 0.25s}
 .job-apply:hover{gap:10px}
-.careers-cta{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.careers-cta{padding:26px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .careers-cta p{color:var(--muted);font-size:13.5px;max-width:480px}
-.careers-cta h4{font-size:16px;font-weight:700;margin-bottom:4px}
+.careers-cta h4{font-size:16px;font-weight:700;margin-bottom:4px;font-family:var(--font-display)}
 
-@media (max-width:860px){
-  .about-grid{grid-template-columns:1fr}
-}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}}
 
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:10px}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s}
-.faq-item.active{border-color:rgba(255,138,0,0.25);background:rgba(255,138,0,0.03)}
-.faq-q{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:500;font-size:15px;user-select:none}
-.faq-icon{width:24px;height:24px;display:grid;place-items:center;color:var(--c1);font-size:20px;transition:transform 0.3s}
+.faq-item{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:all 0.3s}
+.faq-item.active{border-color:var(--accent);background:var(--accent-soft)}
+.faq-q{padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-size:15px;user-select:none}
+.faq-icon{width:24px;height:24px;display:grid;place-items:center;color:var(--accent);font-size:20px;transition:transform 0.3s;flex-shrink:0}
 .faq-item.active .faq-icon{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
 .faq-item.active .faq-a{max-height:300px}
 .faq-a p{padding:0 22px 18px;color:var(--muted);font-size:14px;line-height:1.7}
 
+/* Newsletter */
+.news-strip{background:var(--dark);border-radius:24px;padding:44px 5vw;max-width:1280px;margin:0 auto 20px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;position:relative;z-index:2}
+.news-strip h3{color:#fff;font-family:var(--font-display);font-size:22px;font-weight:700;margin-bottom:6px}
+.news-strip p{color:var(--dark-muted);font-size:13.5px;max-width:420px}
+.news-form{display:flex;gap:10px;flex-wrap:wrap}
+.news-form input{padding:13px 16px;border-radius:10px;border:1px solid var(--dark-line);background:rgba(255,255,255,0.06);color:#fff;font-family:inherit;font-size:13.5px;min-width:220px}
+.news-form input::placeholder{color:var(--dark-muted)}
+.news-form button{padding:13px 22px;border-radius:10px;background:var(--grad);color:#fff;border:0;font-weight:700;font-size:13.5px;cursor:pointer;font-family:inherit}
+.news-note{font-size:11px;color:var(--dark-muted);margin-top:8px;font-family:var(--font-mono)}
+
 /* Contact */
 .cinner{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
-.cleft h3{font-size:clamp(24px,3vw,36px);font-weight:700;margin:14px 0 12px;letter-spacing:-1px}
+.cleft h3{font-family:var(--font-display);font-size:clamp(24px,3vw,34px);font-weight:700;margin:14px 0 12px;letter-spacing:-1px}
 .cleft p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:28px}
 .cinfo{display:flex;flex-direction:column;gap:14px}
 .crow{display:flex;align-items:center;gap:14px;font-size:14px}
-.crico{width:38px;height:38px;background:rgba(255,138,0,0.06);border-radius:10px;display:grid;place-items:center;flex-shrink:0;font-size:16px}
-.cform{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.crico{width:38px;height:38px;background:var(--accent-soft);border-radius:10px;display:grid;place-items:center;flex-shrink:0;font-size:16px}
+.cform{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px;box-shadow:var(--shadow-sm)}
 .frow2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ff{display:flex;flex-direction:column;gap:6px}
-.ff label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:var(--font-mono)}
+.ff label{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted-2);font-family:var(--font-mono);font-weight:600}
 .ff input,.ff select,.ff textarea{
-  background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:10px;
-  padding:12px 14px;color:var(--text);font-family:inherit;font-size:14px;
+  background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;
+  padding:12px 14px;color:var(--ink);font-family:inherit;font-size:14px;
   transition:border-color 0.2s;resize:vertical;
 }
-.ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--c1)}
+.ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--accent);background:#fff}
 .ff select{cursor:pointer}
-.ff select option{background:#0a0f1c}
 .fsub{
-  background:var(--grad);color:#000;border:0;padding:14px 28px;border-radius:10px;
-  font-weight:600;font-size:15px;cursor:pointer;transition:all 0.3s;margin-top:6px;
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--ink);color:#fff;border:0;padding:14px 28px;border-radius:10px;
+  font-weight:700;font-size:15px;cursor:pointer;transition:all 0.3s;margin-top:6px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:inherit;
 }
-.fsub:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(255,138,0,0.3)}
+.fsub:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(11,18,32,0.28)}
 .fsub:disabled{opacity:0.6;cursor:wait}
-.fnote{font-size:11px;color:var(--muted);text-align:center;margin-top:4px;font-family:var(--font-mono)}
+.fnote{font-size:11px;color:var(--muted-2);text-align:center;margin-top:4px;font-family:var(--font-mono)}
 
 /* Footer */
-.footer{padding:48px 5vw 32px;border-top:1px solid var(--border);background:rgba(0,0,0,0.3);text-align:center;position:relative;z-index:2}
-.fcol{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:18px;align-items:center}
-.fcopy{color:var(--muted);font-size:13px;font-family:var(--font-mono)}
-.fcopy a{color:var(--c1);text-decoration:none}
+.footer{padding:64px 5vw 32px;border-top:1px solid var(--line);background:var(--panel);position:relative;z-index:2}
+.foot-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.foot-brand p{color:var(--muted);font-size:13px;line-height:1.7;margin:16px 0 18px;max-width:280px}
+.foot-social{display:flex;gap:10px}
+.foot-social a{width:34px;height:34px;border-radius:9px;background:var(--bg-alt);display:grid;place-items:center;text-decoration:none;color:var(--muted);font-size:14px;transition:all 0.2s}
+.foot-social a:hover{background:var(--ink);color:#fff}
+.foot-col h5{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted-2);font-family:var(--font-mono);margin-bottom:16px;font-weight:600}
+.foot-col a{display:block;color:var(--muted);text-decoration:none;font-size:13.5px;margin-bottom:11px;transition:color 0.2s}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{max-width:1280px;margin:24px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fcopy{color:var(--muted-2);font-size:12.5px;font-family:var(--font-mono)}
+.foot-legal{display:flex;gap:18px;flex-wrap:wrap}
+.foot-legal a{color:var(--muted-2);font-size:12.5px;text-decoration:none}
+.foot-legal a:hover{color:var(--accent)}
 
-/* Reveal animations */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.show{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* RESPONSIVE */
 @media (max-width:1180px) and (min-width:901px){
   .nav-links a:not(.nav-cta){padding:8px 9px;font-size:12.5px}
   .logo-text span{display:none}
 }
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
 @media (max-width:900px){
   .nav-links{display:none}
   .hamb{display:block}
-  .sec{padding:64px 5vw}
-  .hero{padding:100px 5vw 60px;min-height:auto}
+  .sec{padding:70px 5vw}
+  .hero{padding:120px 5vw 0}
   .ba-grid{grid-template-columns:1fr;gap:18px}
   .ba-mid{transform:rotate(90deg);padding:8px 0}
   .wygrid{grid-template-columns:1fr;gap:32px}
@@ -385,24 +519,32 @@ body{
   .frow2{grid-template-columns:1fr}
   .hbtns{flex-direction:column;align-items:stretch}
   .btn{justify-content:center}
+  .price-grid{grid-template-columns:1fr}
+  .dash-kpis{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:520px){
   .nav{padding:14px 4vw}
   .logo-text{font-size:16px}
   .logo-mark{width:34px;height:34px}
-  .sec{padding:54px 4vw}
-  .hero{padding:90px 4vw 50px}
-  .hstats{grid-template-columns:repeat(2,1fr);gap:16px}
-  .wa-fab{width:54px;height:54px;bottom:18px;right:18px}
+  .sec{padding:58px 4vw}
+  .hero{padding:110px 4vw 0}
+  .fab-stack{bottom:18px;right:18px}
+  .wa-fab{width:54px;height:54px}
   .cform{padding:20px}
-  .stag{font-size:10px;padding:5px 12px}
+  .eyebrow{font-size:10px;padding:5px 12px}
+  .foot-grid{grid-template-columns:1fr}
+  .news-strip{padding:32px 6vw}
+  .cookie{left:12px;right:12px;bottom:12px;max-width:none}
 }
 </style>
 </head>
 <body>
 
+<a href="#main" class="skip-link">Skip to content</a>
 <div class="gbg"></div>
-<div class="grain"></div>
+<div class="glow-a"></div>
+<div class="glow-b"></div>
 <div id="pbar"></div>
 
 <!-- NAV -->
@@ -420,9 +562,7 @@ body{
         </linearGradient>
       </defs>
       <rect width="64" height="64" rx="14" fill="#0a0f1c" stroke="url(#lgrad)" stroke-width="1.5"/>
-      <!-- Stylized "A" -->
       <path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#lgrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- Automation gear / S indicator -->
       <circle cx="48" cy="22" r="6" fill="none" stroke="url(#lgrad2)" stroke-width="2.5"/>
       <circle cx="48" cy="22" r="2" fill="url(#lgrad2)"/>
       <path d="M42 30 Q48 36 54 30" stroke="url(#lgrad2)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -432,8 +572,9 @@ body{
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
     <a href="#work">Work</a>
-    <a href="#why">Why Us</a>
+    <a href="#insights">Insights</a>
     <a href="#careers">Careers</a>
     <a href="#faq">FAQ</a>
     <a href="#contact" class="nav-cta">Get Started →</a>
@@ -446,59 +587,125 @@ body{
   <button class="mclose" id="mcloseBtn" aria-label="Close menu">×</button>
   <a href="#about" class="mlink">About</a>
   <a href="#services" class="mlink">Services</a>
+  <a href="#pricing" class="mlink">Pricing</a>
   <a href="#process" class="mlink">Process</a>
   <a href="#work" class="mlink">Work</a>
-  <a href="#tech" class="mlink">Tech Stack</a>
-  <a href="#why" class="mlink">Why Us</a>
+  <a href="#insights" class="mlink">Insights</a>
   <a href="#careers" class="mlink">Careers</a>
   <a href="#faq" class="mlink">FAQ</a>
   <a href="#contact" class="mlink nav-cta">Get Started →</a>
 </div>
 
-<!-- WhatsApp FAB -->
-<a class="wa-fab" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%20want%20a%20free%20automation%20audit." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#fff" style="position:relative;z-index:1">
-    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zM224 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-  </svg>
-</a>
+<!-- FAB stack -->
+<div class="fab-stack">
+  <button class="totop" id="totopBtn" aria-label="Back to top">↑</button>
+  <a class="wa-fab" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%20want%20a%20free%20automation%20audit." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="26" height="26" fill="#fff"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zM224 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+  </a>
+</div>
 
+<!-- Cookie banner -->
+<div class="cookie" id="cookieBanner" role="dialog" aria-label="Cookie notice">
+  <p>We use minimal cookies to understand site traffic and improve your experience. No data is sold to third parties.</p>
+  <div class="cookie-btns">
+    <button class="cbtn-accept" id="cookieAccept">Accept</button>
+    <button class="cbtn-deny" id="cookieDeny">Decline</button>
+  </div>
+</div>
+
+<main id="main">
 <!-- HERO -->
 <section class="hero" id="home">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-content reveal">
-    <div class="hero-badge"><span class="dot"></span>Global Workflow Automation · ML Intelligence</div>
-    <h1 class="htitle">
-      <span class="l1">Automate the Mundane.</span>
-      <span class="l2">Amplify the Possible.</span>
-    </h1>
-    <p class="hsub">We eliminate <strong>repetitive manual work</strong> worldwide using Python, Excel automation &amp; ML-powered workflows — cutting hours to seconds, zero errors, unlimited scale.</p>
-    <div class="hbtns">
-      <a href="#contact" class="btn btn-primary">Start Automating →</a>
-      <a href="#work" class="btn btn-secondary">See Our Work</a>
+  <div class="hero-grid">
+    <div class="reveal">
+      <div class="hero-badge"><span class="dot"></span>AI Automation &amp; Analytics Studio</div>
+      <h1 class="htitle">Turn manual workflows into <span class="l2">live intelligent systems.</span></h1>
+      <p class="hsub">We design Python, Excel, OCR and ML pipelines that <strong>replace repetitive work with automation and real-time analytics</strong> — built for finance, logistics, D2C and manufacturing teams worldwide.</p>
+      <div class="hbtns">
+        <a href="#contact" class="btn btn-grad">Get a Free Audit →</a>
+        <a href="#work" class="btn btn-secondary">See Our Work</a>
+      </div>
+      <div class="hero-trust">
+        <div class="avstack"><span>HV</span><span>AM</span><span>+</span></div>
+        <small>Trusted by teams across 15+ countries</small>
+      </div>
     </div>
-    <div class="hpills">
-      <div class="hpill"><span class="pdot"></span>Excel Automation</div>
-      <div class="hpill"><span class="pdot"></span>Python Scripts</div>
-      <div class="hpill"><span class="pdot"></span>ML Models</div>
-      <div class="hpill"><span class="pdot"></span>PDF / OCR</div>
-      <div class="hpill"><span class="pdot"></span>API Integration</div>
-      <div class="hpill"><span class="pdot"></span>Live Dashboards</div>
+    <div class="reveal">
+      <div class="dash">
+        <div class="dash-top">
+          <div class="dash-title">Live Automation Console</div>
+          <div class="dash-dots"><span></span><span></span><span></span></div>
+        </div>
+        <div class="dash-kpis">
+          <div class="kpi"><div class="kpi-lbl">Time Saved</div><div class="kpi-val">80% <small>↑</small></div></div>
+          <div class="kpi"><div class="kpi-lbl">Accuracy</div><div class="kpi-val">99.9% <small>↑</small></div></div>
+          <div class="kpi"><div class="kpi-lbl">Uptime</div><div class="kpi-val">99.98%</div></div>
+        </div>
+        <div class="dash-chart">
+          <div class="dchart-hdr"><span>Reports Auto-Generated</span><span>7d</span></div>
+          <div class="dbars">
+            <div class="b" style="height:45%"></div><div class="b" style="height:62%"></div>
+            <div class="b" style="height:38%"></div><div class="b" style="height:80%"></div>
+            <div class="b" style="height:70%"></div><div class="b" style="height:92%"></div>
+            <div class="b" style="height:66%"></div>
+          </div>
+        </div>
+        <div class="dash-row">
+          <div class="dring">
+            <svg width="74" height="74" viewBox="0 0 74 74">
+              <circle cx="37" cy="37" r="31" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6"/>
+              <circle cx="37" cy="37" r="31" fill="none" stroke="url(#hgrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="195" stroke-dashoffset="18"/>
+              <defs><linearGradient id="hgrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
+            </svg>
+            <div class="dring-lbl">91%</div>
+          </div>
+          <div class="dlog">
+            <div><b>[✓]</b> GST reconciliation — 4.2s</div>
+            <div><b>[✓]</b> Anomaly scan — 0 issues</div>
+            <div><b>[…]</b> Forecast model refreshing</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hstats">
-      <div class="hstat"><div class="hsnum" data-target="80" data-suffix="%">0%</div><div class="hslbl">Time Saved</div></div>
-      <div class="hstat"><div class="hsnum" data-target="99" data-suffix=".9%">0%</div><div class="hslbl">Accuracy</div></div>
-      <div class="hstat"><div class="hsnum" data-target="50" data-suffix="+">0</div><div class="hslbl">Projects</div></div>
-      <div class="hstat"><div class="hsnum" data-target="15" data-suffix="+">0</div><div class="hslbl">Countries</div></div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker" aria-hidden="true">
+      <span>GST reconciliation <b>3hr → 4.2s</b></span>
+      <span>Invoice OCR accuracy <b>99.9%</b></span>
+      <span>Demand forecasting <b>23% less overstock</b></span>
+      <span>Shipment tracking <b>500+ / day</b></span>
+      <span>Payroll automation <b>250 employees</b></span>
+      <span>Reporting cycle <b>days → minutes</b></span>
+      <span>GST reconciliation <b>3hr → 4.2s</b></span>
+      <span>Invoice OCR accuracy <b>99.9%</b></span>
+      <span>Demand forecasting <b>23% less overstock</b></span>
+      <span>Shipment tracking <b>500+ / day</b></span>
+      <span>Payroll automation <b>250 employees</b></span>
+      <span>Reporting cycle <b>days → minutes</b></span>
     </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<section class="trustbar">
+  <p>Built for teams in</p>
+  <div class="trust-row reveal">
+    <span class="trust-chip">Finance &amp; CA</span>
+    <span class="trust-chip">Logistics</span>
+    <span class="trust-chip">D2C &amp; Retail</span>
+    <span class="trust-chip">NBFC</span>
+    <span class="trust-chip">Manufacturing</span>
+    <span class="trust-chip">HR &amp; Payroll</span>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="sec" id="about">
-  <div class="reveal">
-    <span class="stag c-violet">Who We Are</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow e-violet"><span class="pd"></span>Who We Are</span>
     <h2 class="stitle">About <span class="gradient-text">Auto Solution</span></h2>
-    <p class="sdesc">A remote-first automation studio on a simple mission: give people back the hours they lose to repetitive, manual work.</p>
+    <p class="sdesc">A remote-first automation and analytics studio on a simple mission: give people back the hours they lose to repetitive, manual work.</p>
   </div>
   <div class="about-grid">
     <div class="about-text reveal">
@@ -512,32 +719,32 @@ body{
       </div>
     </div>
     <div class="founders reveal">
-      <div class="founder-card">
+      <div class="founder-card card">
         <div class="founder-avatar">👤</div>
         <div><div class="founder-name">Harsh Vardhan</div><div class="founder-role">FOUNDER</div><div class="founder-bio">Leads engineering and ML strategy — obsessed with turning messy manual workflows into automation that just works.</div></div>
       </div>
-      <div class="founder-card">
+      <div class="founder-card card">
         <div class="founder-avatar">👤</div>
         <div><div class="founder-name">Anurag Maurya</div><div class="founder-role">CO-FOUNDER</div><div class="founder-bio">Owns client delivery and global partnerships — makes sure every automation fits the way a business actually works.</div></div>
       </div>
     </div>
   </div>
   <div class="values-grid">
-    <div class="value-card reveal"><div class="value-ico">🎯</div><div class="value-title">Outcome-Obsessed</div><div class="value-desc">We're judged by hours saved and errors removed — not lines of code shipped.</div></div>
-    <div class="value-card reveal"><div class="value-ico">🤝</div><div class="value-title">Radical Transparency</div><div class="value-desc">Clear timelines, honest scoping, NDA-backed — no surprises, no overselling.</div></div>
-    <div class="value-card reveal"><div class="value-ico">🌍</div><div class="value-title">Remote, Global, Senior</div><div class="value-desc">A small team of senior builders working with clients across time zones.</div></div>
+    <div class="value-card card reveal"><div class="value-ico">🎯</div><div class="value-title">Outcome-Obsessed</div><div class="value-desc">We're judged by hours saved and errors removed — not lines of code shipped.</div></div>
+    <div class="value-card card reveal"><div class="value-ico">🤝</div><div class="value-title">Radical Transparency</div><div class="value-desc">Clear timelines, honest scoping, NDA-backed — no surprises, no overselling.</div></div>
+    <div class="value-card card reveal"><div class="value-ico">🌍</div><div class="value-title">Remote, Global, Senior</div><div class="value-desc">A small team of senior builders working with clients across time zones.</div></div>
   </div>
 </section>
 
 <!-- ML ANALYTICS -->
 <section class="sec" id="analytics">
-  <div class="reveal">
-    <span class="stag">ML Analytics & Intelligence</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow"><span class="pd"></span>ML Analytics &amp; Intelligence</span>
     <h2 class="stitle">Data-Driven <span class="gradient-text">Automation</span></h2>
     <p class="sdesc">Real-time ML analytics powering every automation decision — from forecasting to anomaly detection.</p>
   </div>
   <div class="ml-grid">
-    <div class="ml-card reveal">
+    <div class="ml-card card reveal">
       <div class="ml-title">📊 Automation ROI by Industry</div>
       <div class="mbars" id="barChart">
         <div class="mbar" data-h="85"></div><div class="mbar" data-h="72"></div>
@@ -546,14 +753,14 @@ body{
       </div>
       <div class="mlbls"><span>CA</span><span>Logistics</span><span>D2C</span><span>NBFC</span><span>Mfg</span><span>HR</span></div>
     </div>
-    <div class="ml-card reveal">
+    <div class="ml-card card reveal">
       <div class="ml-title">🎯 Model Performance</div>
       <div class="ring-wrap">
         <div class="ring-svg">
           <svg width="100" height="100" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="7"/>
+            <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(11,18,32,0.06)" stroke-width="7"/>
             <circle cx="50" cy="50" r="42" fill="none" stroke="url(#rgrad)" stroke-width="7" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="26"/>
-            <defs><linearGradient id="rgrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff3d68"/></linearGradient></defs>
+            <defs><linearGradient id="rgrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
           </svg>
           <div class="ring-lbl"><div><div class="ring-pct">99%</div><div class="ring-sub">Accuracy</div></div></div>
         </div>
@@ -570,13 +777,13 @@ body{
 
 <!-- BEFORE/AFTER -->
 <section class="sec" id="compare">
-  <div class="reveal">
-    <span class="stag">The Transformation</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow e-teal"><span class="pd"></span>The Transformation</span>
     <h2 class="stitle">Before vs <span class="gradient-text">After Auto Solution</span></h2>
     <p class="sdesc">See how automation changes everything for your business operations — globally.</p>
   </div>
   <div class="ba-grid">
-    <div class="ba-col before reveal">
+    <div class="ba-col before card reveal">
       <div class="ba-label">❌ Before Automation</div>
       <div class="ba-item"><div class="ba-ico">⏳</div><div class="ba-text"><h4>Hours of Manual Work</h4><p>3–8 hours daily on repetitive data entry, copy-paste, and Excel reports.</p></div></div>
       <div class="ba-item"><div class="ba-ico">⚠️</div><div class="ba-text"><h4>Human Errors Everywhere</h4><p>Wrong formulas, missed cells, incorrect data — costly mistakes.</p></div></div>
@@ -584,7 +791,7 @@ body{
       <div class="ba-item"><div class="ba-ico">💸</div><div class="ba-text"><h4>High Manpower Cost</h4><p>Paying multiple people for tasks a single script handles in seconds.</p></div></div>
     </div>
     <div class="ba-mid reveal">→</div>
-    <div class="ba-col after reveal">
+    <div class="ba-col after card reveal">
       <div class="ba-label">✅ After Auto Solution</div>
       <div class="ba-item"><div class="ba-ico">⚡</div><div class="ba-text"><h4>Seconds, Not Hours</h4><p>Same work done in 4–30 seconds automatically, every single time.</p></div></div>
       <div class="ba-item"><div class="ba-ico">🎯</div><div class="ba-text"><h4>Zero Errors · 99.9% Accuracy</h4><p>Machines don't make typos — data is always correct and consistent.</p></div></div>
@@ -596,62 +803,136 @@ body{
 
 <!-- SERVICES -->
 <section class="sec" id="services">
-  <div class="reveal">
-    <span class="stag c-coral">What We Do</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow e-teal"><span class="pd"></span>What We Do</span>
     <h2 class="stitle">Our Core <span class="gradient-text">Services</span></h2>
     <p class="sdesc">From Excel macros to full ML pipelines — automation that works globally.</p>
   </div>
   <div class="sgrid">
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📊</div><div class="sarr">↗</div></div><div class="sname">Excel Automation</div><div class="sdesc2">Auto-generate reports, consolidate sheets, validate data, send scheduled emails — completely hands-free.</div><div class="stags"><span class="stag2">openpyxl</span><span class="stag2">xlwings</span><span class="stag2">pandas</span><span class="stag2">VBA</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">🐍</div><div class="sarr">↗</div></div><div class="sname">Python Scripting</div><div class="sdesc2">Custom scripts for any repetitive task — data cleaning, file processing, API calls, bulk operations.</div><div class="stags"><span class="stag2">Python</span><span class="stag2">FastAPI</span><span class="stag2">Celery</span><span class="stag2">cron</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">🤖</div><div class="sarr">↗</div></div><div class="sname">ML-Powered Automation</div><div class="sdesc2">Sales forecasting, demand prediction, anomaly detection, document classification using production ML.</div><div class="stags"><span class="stag2">scikit-learn</span><span class="stag2">HuggingFace</span><span class="stag2">LangChain</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📄</div><div class="sarr">↗</div></div><div class="sname">PDF &amp; OCR Processing</div><div class="sdesc2">Extract data from invoices, contracts, scanned docs automatically. No more manual data entry.</div><div class="stags"><span class="stag2">pdfplumber</span><span class="stag2">Tesseract</span><span class="stag2">Textract</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">🔗</div><div class="sarr">↗</div></div><div class="sname">API &amp; System Integration</div><div class="sdesc2">Connect ERP, CRM, accounting software, and third-party APIs. Build automated data bridges.</div><div class="stags"><span class="stag2">REST</span><span class="stag2">Webhooks</span><span class="stag2">SQL</span><span class="stag2">n8n</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📈</div><div class="sarr">↗</div></div><div class="sname">Dashboards &amp; Reporting</div><div class="sdesc2">Real-time dashboards and automated reporting — your team always has the data they need.</div><div class="stags"><span class="stag2">Streamlit</span><span class="stag2">Power BI</span><span class="stag2">Plotly</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">🌐</div><div class="sarr">↗</div></div><div class="sname">Web Scraping</div><div class="sdesc2">Automated data collection — competitor pricing, lead generation, market research, real-time feeds.</div><div class="stags"><span class="stag2">Selenium</span><span class="stag2">Scrapy</span><span class="stag2">Playwright</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">⚡</div><div class="sarr">↗</div></div><div class="sname">Workflow Orchestration</div><div class="sdesc2">Design, schedule and monitor end-to-end business workflows with auto-retries, alerts, full logging.</div><div class="stags"><span class="stag2">Airflow</span><span class="stag2">Prefect</span><span class="stag2">Temporal</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📊</div><div class="sarr">↗</div></div><div class="sname">Excel Automation</div><div class="sdesc2">Auto-generate reports, consolidate sheets, validate data, send scheduled emails — completely hands-free.</div><div class="stags"><span class="stag2">openpyxl</span><span class="stag2">xlwings</span><span class="stag2">pandas</span><span class="stag2">VBA</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">🐍</div><div class="sarr">↗</div></div><div class="sname">Python Scripting</div><div class="sdesc2">Custom scripts for any repetitive task — data cleaning, file processing, API calls, bulk operations.</div><div class="stags"><span class="stag2">Python</span><span class="stag2">FastAPI</span><span class="stag2">Celery</span><span class="stag2">cron</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">🤖</div><div class="sarr">↗</div></div><div class="sname">ML-Powered Automation</div><div class="sdesc2">Sales forecasting, demand prediction, anomaly detection, document classification using production ML.</div><div class="stags"><span class="stag2">scikit-learn</span><span class="stag2">HuggingFace</span><span class="stag2">LangChain</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📄</div><div class="sarr">↗</div></div><div class="sname">PDF &amp; OCR Processing</div><div class="sdesc2">Extract data from invoices, contracts, scanned docs automatically. No more manual data entry.</div><div class="stags"><span class="stag2">pdfplumber</span><span class="stag2">Tesseract</span><span class="stag2">Textract</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">🔗</div><div class="sarr">↗</div></div><div class="sname">API &amp; System Integration</div><div class="sdesc2">Connect ERP, CRM, accounting software, and third-party APIs. Build automated data bridges.</div><div class="stags"><span class="stag2">REST</span><span class="stag2">Webhooks</span><span class="stag2">SQL</span><span class="stag2">n8n</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📈</div><div class="sarr">↗</div></div><div class="sname">Dashboards &amp; Reporting</div><div class="sdesc2">Real-time dashboards and automated reporting — your team always has the data they need.</div><div class="stags"><span class="stag2">Streamlit</span><span class="stag2">Power BI</span><span class="stag2">Plotly</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">🌐</div><div class="sarr">↗</div></div><div class="sname">Web Scraping</div><div class="sdesc2">Automated data collection — competitor pricing, lead generation, market research, real-time feeds.</div><div class="stags"><span class="stag2">Selenium</span><span class="stag2">Scrapy</span><span class="stag2">Playwright</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">⚡</div><div class="sarr">↗</div></div><div class="sname">Workflow Orchestration</div><div class="sdesc2">Design, schedule and monitor end-to-end business workflows with auto-retries, alerts, full logging.</div><div class="stags"><span class="stag2">Airflow</span><span class="stag2">Prefect</span><span class="stag2">Temporal</span></div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec" id="pricing">
+  <div class="sec-head reveal">
+    <span class="eyebrow e-violet"><span class="pd"></span>Engagement Plans</span>
+    <h2 class="stitle">Simple, <span class="gradient-text">Transparent Pricing</span></h2>
+    <p class="sdesc">Fixed-scope engagements, not open-ended retainers. Every plan includes a written scope and timeline before work starts.</p>
+  </div>
+  <div class="price-grid">
+    <div class="price-card card reveal">
+      <div class="price-name">Automation Audit</div>
+      <div class="price-for">For teams exploring where to start</div>
+      <div class="price-amt">Free</div>
+      <ul class="price-list">
+        <li>60-minute workflow walkthrough</li>
+        <li>Manual-task time &amp; cost mapping</li>
+        <li>Written automation roadmap</li>
+        <li>No commitment required</li>
+      </ul>
+      <a href="#contact" class="btn btn-secondary price-btn">Book Audit</a>
+    </div>
+    <div class="price-card card feat reveal">
+      <div class="price-tag">MOST BOOKED</div>
+      <div class="price-name">Automation Sprint</div>
+      <div class="price-for">For one focused workflow, end to end</div>
+      <div class="price-amt">₹45,000<span>/ project</span></div>
+      <ul class="price-list">
+        <li>One workflow automated, fully tested</li>
+        <li>Python, Excel, OCR or ML — your pick</li>
+        <li>Deployment + team training</li>
+        <li>30 days free support included</li>
+      </ul>
+      <a href="#contact" class="btn btn-grad price-btn">Start a Sprint</a>
+    </div>
+    <div class="price-card card reveal">
+      <div class="price-name">Managed Automation</div>
+      <div class="price-for">For teams automating continuously</div>
+      <div class="price-amt">Custom</div>
+      <ul class="price-list">
+        <li>Multiple workflows &amp; dashboards</li>
+        <li>Dedicated engineer + priority support</li>
+        <li>Ongoing model &amp; pipeline maintenance</li>
+        <li>Monthly reporting on hours saved</li>
+      </ul>
+      <a href="#contact" class="btn btn-secondary price-btn">Talk to Us</a>
+    </div>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section class="sec" id="process">
-  <div class="reveal">
-    <span class="stag c-violet">How It Works</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow e-violet"><span class="pd"></span>How It Works</span>
     <h2 class="stitle">Our <span class="gradient-text">5-Step Process</span></h2>
     <p class="sdesc">Proven process delivering results fast — from first call to live automation.</p>
   </div>
   <div class="pgrid">
-    <div class="pstep reveal"><div class="pnum">01</div><div class="ptitle">Discovery</div><div class="pdesc">We understand your workflow, pain points, and manual tasks wasting your time.</div></div>
-    <div class="pstep reveal"><div class="pnum">02</div><div class="ptitle">Free Audit</div><div class="pdesc">We map what can be automated and estimate exact time &amp; cost savings.</div></div>
-    <div class="pstep reveal"><div class="pnum">03</div><div class="ptitle">Build &amp; Test</div><div class="pdesc">We build with rigorous testing — every edge case and error scenario handled.</div></div>
-    <div class="pstep reveal"><div class="pnum">04</div><div class="ptitle">Deploy &amp; Train</div><div class="pdesc">Go live with smooth handover, full documentation, and team training.</div></div>
-    <div class="pstep reveal"><div class="pnum">05</div><div class="ptitle">Support</div><div class="pdesc">Ongoing maintenance and updates as your business scales globally.</div></div>
+    <div class="pstep card reveal"><div class="pnum">01</div><div class="ptitle">Discovery</div><div class="pdesc">We understand your workflow, pain points, and manual tasks wasting your time.</div></div>
+    <div class="pstep card reveal"><div class="pnum">02</div><div class="ptitle">Free Audit</div><div class="pdesc">We map what can be automated and estimate exact time &amp; cost savings.</div></div>
+    <div class="pstep card reveal"><div class="pnum">03</div><div class="ptitle">Build &amp; Test</div><div class="pdesc">We build with rigorous testing — every edge case and error scenario handled.</div></div>
+    <div class="pstep card reveal"><div class="pnum">04</div><div class="ptitle">Deploy &amp; Train</div><div class="pdesc">Go live with smooth handover, full documentation, and team training.</div></div>
+    <div class="pstep card reveal"><div class="pnum">05</div><div class="ptitle">Support</div><div class="pdesc">Ongoing maintenance and updates as your business scales globally.</div></div>
   </div>
 </section>
 
 <!-- WORK -->
 <section class="sec" id="work">
-  <div class="reveal">
-    <span class="stag">Portfolio</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow"><span class="pd"></span>Portfolio</span>
     <h2 class="stitle">Work We've <span class="gradient-text">Delivered</span></h2>
     <p class="sdesc">Real projects. Real results. Businesses transformed worldwide.</p>
   </div>
   <div class="sgrid">
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📊</div><div class="sarr">↗</div></div><div class="sname">GST Report Auto-Generator</div><div class="sdesc2">Monthly GST reconciliation from Tally → Python → Excel, fully automated. <strong style="color:var(--c1)">3hr → 5min</strong> per report.</div><div class="stags"><span class="stag2">Excel</span><span class="stag2">CA · India</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">🔄</div><div class="sarr">↗</div></div><div class="sname">Shipment Tracking System</div><div class="sdesc2">Auto-pulls from 5 courier APIs, updates dashboard, sends WhatsApp alerts. <strong style="color:var(--c1)">500+ shipments/day</strong>.</div><div class="stags"><span class="stag2">Python</span><span class="stag2">Logistics · UAE</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">🤖</div><div class="sarr">↗</div></div><div class="sname">Demand Forecasting Engine</div><div class="sdesc2">ML model predicting SKU demand 30 days ahead — integrated into Excel. <strong style="color:var(--c1)">23% less overstock</strong>.</div><div class="stags"><span class="stag2">ML</span><span class="stag2">D2C · India</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📄</div><div class="sarr">↗</div></div><div class="sname">Invoice Data Extraction</div><div class="sdesc2">Extracts invoice data from PDFs via OCR → auto-populates accounting software. <strong style="color:var(--c1)">200+ invoices/day</strong>.</div><div class="stags"><span class="stag2">OCR</span><span class="stag2">Finance · Singapore</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📈</div><div class="sarr">↗</div></div><div class="sname">Live Production Dashboard</div><div class="sdesc2">Real-time Streamlit dashboard from ERP — shift output, downtime, reject rates. <strong style="color:var(--c1)">15% efficiency gain</strong>.</div><div class="stags"><span class="stag2">Dashboard</span><span class="stag2">Mfg · India</span></div></div>
-    <div class="scard reveal"><div class="s-top"><div class="sicon">📬</div><div class="sarr">↗</div></div><div class="sname">Payroll Email Automation</div><div class="sdesc2">Reads Excel, generates PDFs per employee, emails on 1st of every month. <strong style="color:var(--c1)">250 employees</strong>.</div><div class="stags"><span class="stag2">Automation</span><span class="stag2">HR · India</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📊</div><div class="sarr">↗</div></div><div class="sname">GST Report Auto-Generator</div><div class="sdesc2">Monthly GST reconciliation from Tally → Python → Excel, fully automated. <strong style="color:var(--accent)">3hr → 5min</strong> per report.</div><div class="stags"><span class="stag2">Excel</span><span class="stag2">CA · India</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">🔄</div><div class="sarr">↗</div></div><div class="sname">Shipment Tracking System</div><div class="sdesc2">Auto-pulls from 5 courier APIs, updates dashboard, sends WhatsApp alerts. <strong style="color:var(--accent)">500+ shipments/day</strong>.</div><div class="stags"><span class="stag2">Python</span><span class="stag2">Logistics · UAE</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">🤖</div><div class="sarr">↗</div></div><div class="sname">Demand Forecasting Engine</div><div class="sdesc2">ML model predicting SKU demand 30 days ahead — integrated into Excel. <strong style="color:var(--accent)">23% less overstock</strong>.</div><div class="stags"><span class="stag2">ML</span><span class="stag2">D2C · India</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📄</div><div class="sarr">↗</div></div><div class="sname">Invoice Data Extraction</div><div class="sdesc2">Extracts invoice data from PDFs via OCR → auto-populates accounting software. <strong style="color:var(--accent)">200+ invoices/day</strong>.</div><div class="stags"><span class="stag2">OCR</span><span class="stag2">Finance · Singapore</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📈</div><div class="sarr">↗</div></div><div class="sname">Live Production Dashboard</div><div class="sdesc2">Real-time Streamlit dashboard from ERP — shift output, downtime, reject rates. <strong style="color:var(--accent)">15% efficiency gain</strong>.</div><div class="stags"><span class="stag2">Dashboard</span><span class="stag2">Mfg · India</span></div></div>
+    <div class="scard card reveal"><div class="s-top"><div class="sicon">📬</div><div class="sarr">↗</div></div><div class="sname">Payroll Email Automation</div><div class="sdesc2">Reads Excel, generates PDFs per employee, emails on 1st of every month. <strong style="color:var(--accent)">250 employees</strong>.</div><div class="stags"><span class="stag2">Automation</span><span class="stag2">HR · India</span></div></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" id="testimonials">
+  <div class="sec-head reveal">
+    <span class="eyebrow e-teal"><span class="pd"></span>Client Feedback</span>
+    <h2 class="stitle">What Clients <span class="gradient-text">Are Saying</span></h2>
+    <p class="sdesc">Feedback shared by clients after their automation went live — quotes lightly edited for length, shared with permission.</p>
+  </div>
+  <div class="tgrid-t">
+    <div class="t-card card reveal">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Our monthly GST reconciliation used to eat an entire day. Now it runs itself before we've even had coffee.</p>
+      <div class="t-person"><div class="t-av">RM</div><div><div class="t-name">Operations Head</div><div class="t-role">CA Firm · India</div></div></div>
+    </div>
+    <div class="t-card card reveal">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">The forecasting model paid for itself in the first quarter through reduced overstock alone. Support after launch has been excellent.</p>
+      <div class="t-person"><div class="t-av">SK</div><div><div class="t-name">Supply Chain Manager</div><div class="t-role">D2C Brand · India</div></div></div>
+    </div>
+    <div class="t-card card reveal">
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">We were nervous about handing over financial workflows to a script. Zero errors since launch changed our minds fast.</p>
+      <div class="t-person"><div class="t-av">JT</div><div><div class="t-name">Finance Lead</div><div class="t-role">Logistics · UAE</div></div></div>
+    </div>
   </div>
 </section>
 
 <!-- TECH -->
 <section class="sec" id="tech" style="text-align:center">
-  <div class="reveal">
-    <span class="stag c-coral">Technology</span>
+  <div class="sec-head reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+    <span class="eyebrow e-teal"><span class="pd"></span>Technology</span>
     <h2 class="stitle">Our <span class="gradient-text">Tech Stack</span></h2>
-    <p class="sdesc" style="margin:0 auto 0">Tools we use to build reliable, scalable, global automation.</p>
+    <p class="sdesc" style="margin:0 auto">Tools we use to build reliable, scalable, global automation.</p>
   </div>
   <div class="tgrid">
     <div class="tchip reveal"><span class="temi">🐍</span><span class="tname">Python</span></div>
@@ -673,10 +954,44 @@ body{
   </div>
 </section>
 
+<!-- INTEGRATIONS -->
+<section class="sec" id="integrations">
+  <div class="sec-head reveal">
+    <span class="eyebrow"><span class="pd"></span>Integrations</span>
+    <h2 class="stitle">Plugs Into <span class="gradient-text">Your Existing Tools</span></h2>
+    <p class="sdesc">We connect to the software you already run — no rip-and-replace required.</p>
+  </div>
+  <div class="int-grid">
+    <div class="int-chip reveal">Tally<small>ERP / Accounting</small></div>
+    <div class="int-chip reveal">Zoho<small>CRM / Books</small></div>
+    <div class="int-chip reveal">Salesforce<small>CRM</small></div>
+    <div class="int-chip reveal">SAP<small>ERP</small></div>
+    <div class="int-chip reveal">QuickBooks<small>Accounting</small></div>
+    <div class="int-chip reveal">Google Sheets<small>Spreadsheets</small></div>
+    <div class="int-chip reveal">Shopify<small>D2C / E-comm</small></div>
+    <div class="int-chip reveal">Slack<small>Alerts</small></div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+<section class="sec" id="security">
+  <div class="sec-head reveal">
+    <span class="eyebrow e-violet"><span class="pd"></span>Security &amp; Trust</span>
+    <h2 class="stitle">Built With <span class="gradient-text">Data Safety in Mind</span></h2>
+    <p class="sdesc">Your workflows often touch financial and customer data. Here's how we handle that responsibly.</p>
+  </div>
+  <div class="sec-grid">
+    <div class="sec-card card reveal"><div class="sec-ico">🔒</div><h4>NDA on Every Project</h4><p>Every engagement starts with a signed NDA before we see any of your data or systems.</p></div>
+    <div class="sec-card card reveal"><div class="sec-ico">🗄️</div><h4>Runs in Your Environment</h4><p>Automation runs on your own infrastructure or approved cloud accounts — not ours.</p></div>
+    <div class="sec-card card reveal"><div class="sec-ico">🔑</div><h4>Least-Privilege Access</h4><p>We request only the access needed for the task, and revoke it once the project ships.</p></div>
+    <div class="sec-card card reveal"><div class="sec-ico">🧾</div><h4>Full Audit Trail</h4><p>Every automated run is logged — you can trace exactly what ran, when, and on what data.</p></div>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="sec" id="why">
-  <div class="reveal">
-    <span class="stag c-violet">Why Auto Solution</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow e-teal"><span class="pd"></span>Why Auto Solution</span>
     <h2 class="stitle">Built <span class="gradient-text">Different</span></h2>
   </div>
   <div class="wygrid">
@@ -696,10 +1011,45 @@ body{
   </div>
 </section>
 
+<!-- INSIGHTS / BLOG -->
+<section class="sec" id="insights">
+  <div class="sec-head reveal">
+    <span class="eyebrow"><span class="pd"></span>Insights</span>
+    <h2 class="stitle">Notes From <span class="gradient-text">the Automation Desk</span></h2>
+    <p class="sdesc">Short, practical write-ups from projects we've shipped — no fluff.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card card reveal">
+      <div class="blog-cover"><span class="blog-cat">ML</span></div>
+      <div class="blog-body">
+        <h4>Why demand forecasting fails without clean historical data</h4>
+        <p>What we check before we let a model near your inventory numbers.</p>
+        <div class="blog-meta"><span>6 min read</span><span>Analytics</span></div>
+      </div>
+    </div>
+    <div class="blog-card card reveal">
+      <div class="blog-cover b2"><span class="blog-cat">Automation</span></div>
+      <div class="blog-body">
+        <h4>The real cost of a "quick manual fix" in Excel</h4>
+        <p>A breakdown of hidden hours we've measured across five industries.</p>
+        <div class="blog-meta"><span>4 min read</span><span>Ops</span></div>
+      </div>
+    </div>
+    <div class="blog-card card reveal">
+      <div class="blog-cover b3"><span class="blog-cat">OCR</span></div>
+      <div class="blog-body">
+        <h4>Getting OCR accuracy above 99% on scanned invoices</h4>
+        <p>Preprocessing steps that matter more than the model you pick.</p>
+        <div class="blog-meta"><span>5 min read</span><span>Engineering</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CAREERS -->
 <section class="sec" id="careers">
-  <div class="reveal">
-    <span class="stag c-coral">Join Our Team</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow e-teal"><span class="pd"></span>Join Our Team</span>
     <h2 class="stitle">Careers at <span class="gradient-text">Auto Solution</span></h2>
     <p class="sdesc">We're a small, remote-first team building automation that genuinely matters to the businesses using it. Real ownership, flat hierarchy, no busywork.</p>
   </div>
@@ -711,26 +1061,26 @@ body{
     <div class="hpill"><span class="pdot"></span>Flat Hierarchy</div>
   </div>
   <div class="jobs-grid">
-    <div class="job-card reveal">
+    <div class="job-card card reveal">
       <div class="job-top"><div class="job-title">Python Automation Engineer</div><div class="job-type">Full-time</div></div>
       <div class="job-meta">Remote · 1–3 yrs experience</div>
       <div class="job-desc">Build and ship Python/Excel automation pipelines directly with clients — from scoping to deployment.</div>
       <a class="job-apply" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20apply%20for%20the%20Python%20Automation%20Engineer%20role." target="_blank" rel="noopener">Apply Now →</a>
     </div>
-    <div class="job-card reveal">
+    <div class="job-card card reveal">
       <div class="job-top"><div class="job-title">ML Engineer (NLP / OCR)</div><div class="job-type">Full-time</div></div>
       <div class="job-meta">Remote · 2+ yrs experience</div>
       <div class="job-desc">Design forecasting, classification and document-extraction models that plug straight into client workflows.</div>
       <a class="job-apply" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20apply%20for%20the%20ML%20Engineer%20role." target="_blank" rel="noopener">Apply Now →</a>
     </div>
-    <div class="job-card reveal">
+    <div class="job-card card reveal">
       <div class="job-top"><div class="job-title">Business Development (Automation)</div><div class="job-type">Full-time / Contract</div></div>
       <div class="job-meta">Remote · Global clients</div>
       <div class="job-desc">Find and close automation projects worldwide — own the conversation from first chat to signed scope.</div>
       <a class="job-apply" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20apply%20for%20the%20Business%20Development%20role." target="_blank" rel="noopener">Apply Now →</a>
     </div>
   </div>
-  <div class="careers-cta reveal">
+  <div class="careers-cta card reveal">
     <div><h4>Don't see the right role?</h4><p>We're always open to meeting good automation engineers, ML builders and closers. Send us a note anyway.</p></div>
     <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20share%20my%20resume%20for%20future%20roles." target="_blank" rel="noopener" class="btn btn-secondary">Send Resume →</a>
   </div>
@@ -738,8 +1088,8 @@ body{
 
 <!-- FAQ -->
 <section class="sec" id="faq" style="max-width:860px">
-  <div class="reveal">
-    <span class="stag">FAQ</span>
+  <div class="sec-head reveal">
+    <span class="eyebrow"><span class="pd"></span>FAQ</span>
     <h2 class="stitle">Common <span class="gradient-text">Questions</span></h2>
   </div>
   <div class="faq-list">
@@ -748,24 +1098,38 @@ body{
     <div class="faq-item reveal"><div class="faq-q"><span>Do I need technical knowledge?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Zero technical knowledge needed. We build automation that fits your existing workflow — Excel, web dashboard, or WhatsApp. Full training and documentation included.</p></div></div>
     <div class="faq-item reveal"><div class="faq-q"><span>Is my data safe?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Absolutely. We sign NDAs for all projects. Automation runs on your own systems. Your data never leaves your environment without explicit consent.</p></div></div>
     <div class="faq-item reveal"><div class="faq-q"><span>Can you integrate with Tally, SAP, Zoho, Salesforce?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>Yes! We integrate with Tally, Zoho, Salesforce, SAP, QuickBooks, and most popular software via APIs, RPA, or direct database connections.</p></div></div>
+    <div class="faq-item reveal"><div class="faq-q"><span>What does the Automation Sprint pricing actually include?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>A fixed price for one fully scoped workflow — build, testing, deployment, documentation and 30 days of free support. Anything outside scope is quoted separately before we start.</p></div></div>
+    <div class="faq-item reveal"><div class="faq-q"><span>What if the automation breaks after launch?</span><div class="faq-icon">+</div></div><div class="faq-a"><p>All projects include 30 days of free fixes. After that, Managed Automation clients get priority support; one-off clients can request paid maintenance anytime.</p></div></div>
   </div>
 </section>
+
+<!-- NEWSLETTER -->
+<div class="news-strip reveal">
+  <div>
+    <h3>Get automation ideas in your inbox</h3>
+    <p>One short email a month — real workflows we've automated and what they saved.</p>
+  </div>
+  <form class="news-form" id="newsForm">
+    <input type="email" id="newsEmail" placeholder="you@company.com" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</div>
 
 <!-- CONTACT -->
 <section class="sec" id="contact">
   <div class="cinner">
     <div class="cleft reveal">
-      <span class="stag">Let's Talk</span>
+      <span class="eyebrow"><span class="pd"></span>Let's Talk</span>
       <h3>Ready to <span class="gradient-text">Automate Your Workflow?</span></h3>
       <p>Tell us your biggest manual pain point. Free audit — no commitment needed. We serve clients worldwide.</p>
       <div class="cinfo">
         <div class="crow"><div class="crico">👤</div><div><strong>Harsh Vardhan</strong> · Founder</div></div>
         <div class="crow"><div class="crico">👤</div><div><strong>Anurag Maurya</strong> · Co-Founder</div></div>
-        <div class="crow"><div class="crico">📱</div><a href="tel:+917303897496" style="color:var(--text);text-decoration:none">+91 73038 97496</a></div>
-        <div class="crow"><div class="crico">📧</div><a href="mailto:info@autosolution.com" style="color:var(--text);text-decoration:none">info@autosolution.com</a></div>
+        <div class="crow"><div class="crico">📱</div><a href="tel:+917303897496" style="color:var(--ink);text-decoration:none">+91 73038 97496</a></div>
+        <div class="crow"><div class="crico">📧</div><a href="mailto:info@autosolution.com" style="color:var(--ink);text-decoration:none">info@autosolution.com</a></div>
         <div class="crow"><div class="crico" style="background:rgba(37,211,102,0.12)">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14" fill="#25d366"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zM224 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6z"/></svg>
-        </div><a href="https://wa.me/917303897496" target="_blank" rel="noopener" style="color:#25d366;text-decoration:none;font-weight:600">WhatsApp: +91 73038 97496</a></div>
+        </div><a href="https://wa.me/917303897496" target="_blank" rel="noopener" style="color:#1f9b57;text-decoration:none;font-weight:700">WhatsApp: +91 73038 97496</a></div>
         <div class="crow"><div class="crico">🌍</div>Worldwide · Remote-first</div>
         <div class="crow"><div class="crico">⏱️</div>Response within 24 hours</div>
       </div>
@@ -805,22 +1169,60 @@ body{
     </form>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="fcol">
-    <a href="#home" class="logo">
-      <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs><linearGradient id="fgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff3d68"/></linearGradient></defs>
-        <rect width="64" height="64" rx="14" fill="#0a0f1c" stroke="url(#fgrad)" stroke-width="1.5"/>
-        <path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#fgrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="48" cy="22" r="6" fill="none" stroke="url(#fgrad)" stroke-width="2.5"/>
-        <circle cx="48" cy="22" r="2" fill="url(#fgrad)"/>
-        <path d="M42 30 Q48 36 54 30" stroke="url(#fgrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      </svg>
-      <div class="logo-text">Auto Solution<span>AUTOMATION • ML</span></div>
-    </a>
-    <div class="fcopy">© <span id="yr">2025</span> Auto Solution · All rights reserved · <a href="https://wa.me/917303897496" target="_blank" rel="noopener">+91 73038 97496</a></div>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#home" class="logo">
+        <svg class="logo-mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="fgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff3d68"/></linearGradient></defs>
+          <rect width="64" height="64" rx="14" fill="#0a0f1c" stroke="url(#fgrad)" stroke-width="1.5"/>
+          <path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#fgrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="48" cy="22" r="6" fill="none" stroke="url(#fgrad)" stroke-width="2.5"/>
+          <circle cx="48" cy="22" r="2" fill="url(#fgrad)"/>
+          <path d="M42 30 Q48 36 54 30" stroke="url(#fgrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text">Auto Solution<span>AUTOMATION • ML</span></div>
+      </a>
+      <p>AI and analytics-driven workflow automation for finance, logistics, D2C and manufacturing teams — worldwide, remote-first.</p>
+      <div class="foot-social">
+        <a href="https://wa.me/917303897496" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+        <a href="mailto:info@autosolution.com" aria-label="Email">✉</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a href="#about">About</a>
+      <a href="#work">Portfolio</a>
+      <a href="#careers">Careers</a>
+      <a href="#insights">Insights</a>
+    </div>
+    <div class="foot-col">
+      <h5>Services</h5>
+      <a href="#services">Excel Automation</a>
+      <a href="#services">ML Automation</a>
+      <a href="#services">OCR &amp; PDF</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="foot-col">
+      <h5>Support</h5>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#security">Security</a>
+      <a href="https://wa.me/917303897496" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <div class="fcopy">© <span id="yr">2025</span> Auto Solution · All rights reserved</div>
+    <div class="foot-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="tel:+917303897496">+91 73038 97496</a>
+    </div>
   </div>
 </footer>
 
@@ -834,7 +1236,12 @@ window.addEventListener('scroll', () => {
   const h = document.documentElement;
   const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
   pbar.style.width = pct + '%';
+  totopBtn.classList.toggle('show', h.scrollTop > 500);
 }, {passive:true});
+
+// ----- Back to top -----
+const totopBtn = document.getElementById('totopBtn');
+totopBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
 
 // ----- Mobile menu -----
 const hambBtn = document.getElementById('hambBtn');
@@ -848,30 +1255,37 @@ mcloseBtn.addEventListener('click', closeMenu);
 mbackdrop.addEventListener('click', closeMenu);
 document.querySelectorAll('.mlink').forEach(a => a.addEventListener('click', closeMenu));
 
+// ----- Cookie banner -----
+const cookieBanner = document.getElementById('cookieBanner');
+const COOKIE_KEY = 'as_cookie_choice';
+try{
+  if(!localStorage.getItem(COOKIE_KEY)){
+    setTimeout(() => cookieBanner.classList.add('show'), 800);
+  }
+}catch(e){}
+function setCookieChoice(val){
+  try{ localStorage.setItem(COOKIE_KEY, val); }catch(e){}
+  cookieBanner.classList.remove('show');
+}
+document.getElementById('cookieAccept').addEventListener('click', () => setCookieChoice('accepted'));
+document.getElementById('cookieDeny').addEventListener('click', () => setCookieChoice('declined'));
+
+// ----- Newsletter (demo) -----
+document.getElementById('newsForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const email = document.getElementById('newsEmail').value;
+  const btn = e.target.querySelector('button');
+  const original = btn.textContent;
+  btn.textContent = '✓ Subscribed';
+  e.target.reset();
+  setTimeout(() => btn.textContent = original, 2500);
+});
+
 // ----- Reveal on scroll -----
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);}});
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// ----- Counter animation -----
-const counters = document.querySelectorAll('.hsnum');
-const cIO = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(!e.isIntersecting) return;
-    const el = e.target;
-    const target = +el.dataset.target;
-    const suffix = el.dataset.suffix || '';
-    let cur = 0; const step = target / 60;
-    const t = setInterval(() => {
-      cur += step;
-      if(cur >= target){ cur = target; clearInterval(t);}
-      el.textContent = Math.floor(cur) + suffix;
-    }, 20);
-    cIO.unobserve(el);
-  });
-},{threshold:0.4});
-counters.forEach(c => cIO.observe(c));
 
 // ----- Animate bars / rings -----
 const aIO = new IntersectionObserver((entries) => {
@@ -898,59 +1312,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
     if(!wasActive) item.classList.add('active');
   });
 });
-
-// ----- Hero canvas: particle network -----
-(function(){
-  const canvas = document.getElementById('heroCanvas');
-  const ctx = canvas.getContext('2d');
-  let w, h, particles = [];
-  function resize(){
-    w = canvas.width = canvas.offsetWidth * devicePixelRatio;
-    h = canvas.height = canvas.offsetHeight * devicePixelRatio;
-  }
-  function init(){
-    resize();
-    const count = Math.min(70, Math.floor((w*h)/30000));
-    particles = Array.from({length:count}, () => ({
-      x: Math.random()*w, y: Math.random()*h,
-      vx: (Math.random()-0.5)*0.4*devicePixelRatio,
-      vy: (Math.random()-0.5)*0.4*devicePixelRatio,
-      r: (Math.random()*1.5+0.6)*devicePixelRatio
-    }));
-  }
-  function step(){
-    ctx.clearRect(0,0,w,h);
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if(p.x<0||p.x>w) p.vx*=-1;
-      if(p.y<0||p.y>h) p.vy*=-1;
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle = 'rgba(255,138,0,0.55)';
-      ctx.fill();
-    });
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx = particles[i].x-particles[j].x;
-        const dy = particles[i].y-particles[j].y;
-        const d = Math.hypot(dx,dy);
-        const limit = 130*devicePixelRatio;
-        if(d < limit){
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x,particles[i].y);
-          ctx.lineTo(particles[j].x,particles[j].y);
-          ctx.strokeStyle = `rgba(255,61,104,${0.25*(1-d/limit)})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(step);
-  }
-  init();
-  step();
-  window.addEventListener('resize', init);
-})();
 
 // ----- Terminal typing -----
 (function(){
