@@ -7,7 +7,7 @@ Static site: plain HTML, CSS and JavaScript. No build step, no dependencies.
 
 ```
 .
-├── index.html              # Main page (Home + Sectors / Analytics / AI Dashboard tabs)
+├── index.html              # Single landing page
 ├── privacy.html            # Privacy policy
 ├── 404.html                # Not-found page
 ├── favicon.svg
@@ -16,9 +16,10 @@ Static site: plain HTML, CSS and JavaScript. No build step, no dependencies.
 ├── sitemap.xml
 ├── .nojekyll               # Lets GitHub Pages serve files as-is
 └── assets/
-    ├── css/style.css       # All styles (light + dark theme)
-    ├── js/main.js          # Navigation, routing, FAQ, forms, popups
-    ├── js/dashboard.js     # Live dashboard demo (runs only when that tab is open)
+    ├── css/style.css       # All styles
+    ├── js/field.js         # Hero 3D particle field (plain WebGL, no libraries)
+    ├── js/main.js          # Header, scroll story, counters, savings estimate, forms
+    ├── fonts/              # Self-hosted Unbounded + Geist (no Google Fonts call)
     └── img/                # OG share image, app icons
 ```
 
@@ -31,20 +32,19 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Pages & routing
+## Page structure
 
-Everything lives in `index.html`. Hash links switch views:
+Hero (3D field) → integrations strip → scroll-driven automation run → results
+with case studies → AI agent demo → savings estimate → services → industries →
+engagement models → process → team & security → founder note & time zones →
+quotes → FAQ → contact.
 
-| URL | Shows |
-|---|---|
-| `/#about`, `/#services`, `/#contact` … | Home page, scrolled to that section |
-| `/#sectors` | Industries we serve |
-| `/#analytics` | Analytics dashboard demo |
-| `/#dashboard` | AI live dashboard demo |
+The 3D field pauses when off-screen, and everything falls back to a static
+layout for visitors who set "reduce motion" in their OS.
 
 ## How the forms work
 
-The contact form and checklist form don't use a backend. Submitting opens
+The contact form and savings estimate don't use a backend. Submitting opens
 WhatsApp (`wa.me/917303897496`) with the details pre-filled. To change the
 number, edit `WA_NUMBER` at the top of `assets/js/main.js` and the `wa.me`
 links in `index.html`.
@@ -68,10 +68,15 @@ These need a decision from the team; the code can't verify them:
 - [ ] **Email address:** site uses `info@autosoluation.com` (note "solu**a**tion")
       but the domain is `autosolution.com`. Confirm which is correct, then
       find-and-replace across `index.html` and `privacy.html`.
-- [ ] **Numbers that don't match each other:** "100+ automations" vs "50+ projects";
-      "Analytics: 142 active automations"; GST case "3 hr → 5 min" (Work section)
-      vs "3 hr → 4.2 s" (ticker, Sectors).
-- [ ] **Team size:** "small team" in About vs "20 senior engineers" in Team.
+- [ ] **Savings estimate assumption:** assumes 60% of repetitive work is automatable
+      (`SHARE` in `assets/js/main.js`). Adjust to what your projects actually show.
+- [ ] **Founder note** is a draft written in Harsh's voice. Edit it so it sounds like him.
+- [ ] **Case study wording** ("The problem / What we built / The result") expands the
+      original one-line project descriptions. Check each matches what really happened.
+- [ ] **AI agent demo** uses a made-up property company ("Skyline Homes") and is labelled
+      "Example". Swap in a real (anonymised) conversation if you have one.
+- [ ] **"Recommended" badge** on the Project plan: change or remove if another plan suits most clients.
+- [ ] **Sample GST run figures** (1,247 / 1,238 / 9) are illustrative; swap in a real run if you have one.
 - [ ] **Claims to be able to back up:** IIT/NIT/BITS alumni, PayPal/Paytm/Pine Labs
       experience, 15+ countries, 99.9% accuracy, 98% retention.
 - [ ] **Social links:** add real LinkedIn / X URLs in the footer (`.foot-social`).

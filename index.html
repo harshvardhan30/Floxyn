@@ -1,46 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Auto Solution — AI Automation, Chatbots &amp; Workflow Automation Studio</title>
-<meta name="description" content="Auto Solution is an AI automation and analytics studio. Custom AI chatbots, workflow automation, OCR, lead scraping and CRM setup for local businesses and global teams.">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Auto Solution — AI agents &amp; workflow automation for busy teams</title>
+<meta name="description" content="Auto Solution builds AI agents and automations that take repetitive work off your team: reports, reconciliations, invoices and follow-ups. Book a free 15-minute automation audit.">
 <link rel="canonical" href="https://www.autosolution.com/">
-<meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0f1e" media="(prefers-color-scheme: dark)">
-<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0a0f2c">
+<meta name="color-scheme" content="dark">
 
-<!-- Open Graph / Social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Auto Solution">
 <meta property="og:locale" content="en_IN">
-<meta property="og:title" content="Auto Solution — AI Automation & Analytics Studio">
-<meta property="og:description" content="Custom AI bots and smart automations for local businesses and global teams: workflow automation, AI chatbots, OCR, lead scraping and CRM setup.">
+<meta property="og:title" content="Auto Solution — your busywork, running on its own">
+<meta property="og:description" content="AI agents and automations for reports, reconciliations, invoices and follow-ups. Free 15-minute audit.">
 <meta property="og:url" content="https://www.autosolution.com/">
 <meta property="og:image" content="https://www.autosolution.com/assets/img/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Auto Solution — AI Automation & Analytics Studio">
-<meta name="twitter:description" content="Custom AI bots and smart automations for local businesses and global teams.">
 <meta name="twitter:image" content="https://www.autosolution.com/assets/img/og-cover.png">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
-
-<!-- Theme before paint (prevents a white flash in dark mode) -->
-<script>
-(function(){var t=null;try{t=localStorage.getItem('as-theme')}catch(e){}
-if(!t&&window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';
-document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');})();
-</script>
 
 <script type="application/ld+json">
 {
@@ -50,1141 +36,440 @@ document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');})
   "url": "https://www.autosolution.com/",
   "logo": "https://www.autosolution.com/favicon.svg",
   "image": "https://www.autosolution.com/assets/img/og-cover.png",
-  "description": "AI automation studio: custom AI chatbots, workflow automation, OCR, lead scraping and CRM setup for local businesses and global teams.",
+  "description": "AI agents and workflow automation: chatbots, Excel and Python automation, OCR, integrations and dashboards.",
   "foundingDate": "2022",
   "founder": [{"@type":"Person","name":"Harsh Vardhan"},{"@type":"Person","name":"Anurag Maurya"}],
   "email": "info@autosoluation.com",
   "telephone": "+91-7303897496",
-  "areaServed": "Worldwide",
-  "sameAs": ["https://wa.me/917303897496"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"How long does it take to build an automation?","acceptedAnswer":{"@type":"Answer","text":"Simple scripts take 3–7 days. Medium projects such as integrations and dashboards take 1–2 weeks. Complex ML pipelines take 2–4 weeks. We give a clear timeline upfront."}},
-    {"@type":"Question","name":"Do you work with clients outside India?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work remotely with clients in the UAE, Singapore, the UK, the USA and elsewhere."}},
-    {"@type":"Question","name":"Do I need technical knowledge?","acceptedAnswer":{"@type":"Answer","text":"No. We build automation that fits your existing workflow, whether that is Excel, a web dashboard or WhatsApp. Training and documentation are included."}},
-    {"@type":"Question","name":"Is my data safe?","acceptedAnswer":{"@type":"Answer","text":"We sign an NDA for every project, and automation runs on your own systems. Your data does not leave your environment without your explicit consent."}},
-    {"@type":"Question","name":"What happens after the free automation audit?","acceptedAnswer":{"@type":"Answer","text":"We send a written scope and timeline within 3 business days. Nothing is billed until you approve that scope."}}
-  ]
+  "areaServed": "Worldwide"
 }
 </script>
 </head>
 <body>
 
-<!-- ============ ICON SPRITE ============ -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></symbol>
-  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
-  <symbol id="i-sheet" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
-  <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
-  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16v5M16.5 18.5h5"/></symbol>
-  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
-  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"/></symbol>
-  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
-  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-  <symbol id="i-flow" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M9 6h6M6 9v3a3 3 0 0 0 3 3h6"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
-  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2"/></symbol>
-  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></symbol>
-  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
-  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-  <symbol id="i-trend" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
-  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
-  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
-  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
-  <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></symbol>
-  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
-  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
-  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
-  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
-  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0"/><path d="M5 12v9h14v-9"/></symbol>
-  <symbol id="i-building" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
-  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
-  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
-  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></symbol>
-  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M12 2 2 7h20zM5 10v8M9.5 10v8M14.5 10v8M19 10v8M2 21h20"/></symbol>
-  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14v4M8 18h.01M12 18h.01"/></symbol>
-  <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 20V8l6 4V8l6 4V4h8v16z"/><path d="M7 16h1M12 16h1M17 16h1"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/><path d="M3.2 12H8l1.5-3 3 6 1.5-3h6.8"/></symbol>
-  <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
-  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
-  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10M3 7h18M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
-  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6"/></symbol>
-  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
-  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.7-9h1.8a4.5 4.5 0 1 1 0 9z"/></symbol>
-  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></symbol>
-  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
-  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9 17h6M2 13h2M20 13h2"/><circle cx="12" cy="3" r="1"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
-  <symbol id="i-arrow-ne" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
-  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
-  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
-  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
-  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
-  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 448 512"><path class="ic-fill" style="fill:currentColor;stroke:none" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zM224 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 448 512"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67-157zM224 438.7c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
-<a href="#main" class="skip-link">Skip to content</a>
-<div class="gbg" aria-hidden="true"></div>
-<div class="glow-a" aria-hidden="true"></div>
-<div class="glow-b" aria-hidden="true"></div>
-<div id="pbar" aria-hidden="true"></div>
+<a href="#main" class="skip">Skip to content</a>
 
-<!-- ============ NAV ============ -->
-<header>
-<nav class="nav" aria-label="Main">
-  <a href="#home" class="logo" aria-label="Auto Solution home">
-    <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
-      <defs>
-        <linearGradient id="lgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff3d68"/></linearGradient>
-        <linearGradient id="lgrad2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ff3d68"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="14" fill="#0a0f1c" stroke="url(#lgrad)" stroke-width="1.5"/>
-      <path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#lgrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="48" cy="22" r="6" fill="none" stroke="url(#lgrad2)" stroke-width="2.5"/>
-      <circle cx="48" cy="22" r="2" fill="url(#lgrad2)"/>
-      <path d="M42 30 Q48 36 54 30" stroke="url(#lgrad2)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    </svg>
-    <span class="logo-text">Auto Solution<span>AUTOMATION • ML</span></span>
-  </a>
-
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <div class="navdd">
-      <button class="navdd-btn" type="button" aria-expanded="false" aria-controls="dd-services">Services <svg class="ic"><use href="#i-chev"/></svg></button>
-      <div class="navdd-panel" id="dd-services">
-        <a href="#services">Workflow automation</a>
-        <a href="#services">Custom AI chatbots</a>
-        <a href="#services">Web scraping &amp; leads</a>
-        <a href="#services">API &amp; CRM integration</a>
-      </div>
-    </div>
-    <div class="navdd">
-      <button class="navdd-btn" type="button" aria-expanded="false" aria-controls="dd-solutions">Solutions <svg class="ic"><use href="#i-chev"/></svg></button>
-      <div class="navdd-panel" id="dd-solutions">
-        <div class="navdd-lbl">By client</div>
-        <a href="#segments">Local businesses</a>
-        <a href="#segments">International teams</a>
-        <div class="navdd-lbl">By industry</div>
-        <a href="#sectors" data-tab="sectors">All sectors</a>
-      </div>
-    </div>
-    <a href="#work">Work</a>
-    <a href="#analytics" data-tab="analytics">Analytics</a>
-    <a href="#dashboard" data-tab="dashboard">AI Dashboard</a>
-    <a href="#faq">FAQ</a>
-    <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false">
-      <svg class="ic ic-sun"><use href="#i-sun"/></svg><svg class="ic ic-moon"><use href="#i-moon"/></svg>
-    </button>
-    <a href="#contact" class="nav-cta">Book free AI audit</a>
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <div class="hdr-in">
+    <a href="#top" class="brand" aria-label="Auto Solution home">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a00"/><stop offset="1" stop-color="#ff3d68"/></linearGradient></defs>
+        <rect width="64" height="64" rx="14" fill="#0a0f2c" stroke="url(#lg)" stroke-width="1.5"/>
+        <path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#lg)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="48" cy="22" r="6" fill="none" stroke="url(#lg)" stroke-width="2.6"/><circle cx="48" cy="22" r="2" fill="url(#lg)"/>
+        <path d="M42 30 Q48 36 54 30" stroke="url(#lg)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span>Auto Solution</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#results">Results</a>
+      <a href="#agents">AI agents</a>
+      <a href="#services">Services</a>
+      <a href="#estimate">Savings estimate</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary btn-sm hdr-cta">Book a free audit</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg width="22" height="22"><use href="#i-menu"/></svg></button>
   </div>
-  <button class="hamb" id="hambBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><svg class="ic"><use href="#i-menu"/></svg></button>
-</nav>
 </header>
-
-<div class="mbackdrop" id="mbackdrop" aria-hidden="true"></div>
-<div class="mmenu" id="mmenu" aria-label="Mobile menu">
-  <button class="mclose" id="mcloseBtn" type="button" aria-label="Close menu"><svg class="ic"><use href="#i-x"/></svg></button>
-  <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" style="align-self:flex-end;margin-bottom:8px">
-    <svg class="ic ic-sun"><use href="#i-sun"/></svg><svg class="ic ic-moon"><use href="#i-moon"/></svg>
-  </button>
-  <a href="#about" class="mlink">About</a>
-  <a href="#services" class="mlink">Services</a>
-  <a href="#segments" class="mlink">Solutions by client</a>
-  <a href="#sectors" data-tab="sectors" class="mlink">Sectors</a>
-  <a href="#work" class="mlink">Work</a>
-  <a href="#process" class="mlink">Process</a>
-  <a href="#analytics" data-tab="analytics" class="mlink">Analytics</a>
-  <a href="#dashboard" data-tab="dashboard" class="mlink">AI Dashboard</a>
-  <a href="#team" class="mlink">Our team</a>
-  <a href="#careers" class="mlink">Careers</a>
-  <a href="#faq" class="mlink">FAQ</a>
-  <a href="#contact" class="mlink nav-cta">Book free AI audit</a>
-</div>
-
-<!-- ============ FLOATING ACTIONS ============ -->
-<div class="fab-stack">
-  <button class="totop" id="totopBtn" type="button" aria-label="Back to top"><svg class="ic"><use href="#i-arrow-up"/></svg></button>
-  <div class="wa-widget" id="waWidget">
-    <div class="wa-panel" id="waPanel">
-      <div class="wa-panel-head">
-        <div class="wa-panel-av" aria-hidden="true">AS</div>
-        <div><div class="wa-panel-name">Auto Solution</div><div class="wa-panel-status"><span></span>Usually replies within minutes</div></div>
-      </div>
-      <div class="wa-panel-typing" id="waTyping" aria-hidden="true"><span></span><span></span><span></span></div>
-      <div class="wa-panel-msg" id="waMsg" hidden>Hi! Have a workflow you'd like to automate? Message our team on WhatsApp.</div>
-      <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%20want%20a%20free%20automation%20audit." target="_blank" rel="noopener" class="wa-panel-btn">Open WhatsApp chat</a>
-    </div>
-    <button class="wa-fab" id="waFabBtn" type="button" aria-label="Chat on WhatsApp" aria-expanded="false" aria-controls="waPanel">
-      <svg class="ic wa-ic-chat"><use href="#i-wa"/></svg>
-      <svg class="ic wa-ic-close"><use href="#i-x"/></svg>
-    </button>
-  </div>
-</div>
-
-<!-- Cookie notice -->
-<div class="cookie" id="cookieBanner" role="region" aria-label="Cookie notice">
-  <p>We store a couple of preferences on your device (theme, this notice). No data is sold to third parties. <a href="privacy.html">Privacy policy</a></p>
-  <div class="cookie-btns">
-    <button class="cbtn-accept" id="cookieAccept" type="button">Accept</button>
-    <button class="cbtn-deny" id="cookieDeny" type="button">Decline</button>
-  </div>
-</div>
-
-<!-- Exit-intent offer -->
-<div class="exit-backdrop" id="exitBackdrop" aria-hidden="true"></div>
-<div class="exit-popup" id="exitPopup" role="dialog" aria-modal="true" aria-labelledby="exitTitle" aria-hidden="true">
-  <button class="exit-close" id="exitClose" type="button" aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button>
-  <div class="exit-ico" aria-hidden="true"><svg class="ic"><use href="#i-bot"/></svg></div>
-  <h2 class="exit-title" id="exitTitle">Before you go — get a free automation audit</h2>
-  <p class="exit-desc">No commitment. In 15 minutes we'll map your manual workflows and show what can be automated.</p>
-  <div class="exit-btns">
-    <a href="#contact" class="btn btn-grad exit-cta" id="exitCta">Book free audit</a>
-    <button class="exit-skip" id="exitSkip" type="button">No thanks, keep browsing</button>
-  </div>
-</div>
 
 <main id="main">
 
-<!-- ================================================= HOME -->
-<div class="tab-panel active" id="tab-home">
-
-<section class="hero" id="home" aria-labelledby="hero-title">
-  <div class="hero-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
-  <div class="hero-grid">
-    <div class="reveal">
-      <div class="hero-badge"><span class="dot" aria-hidden="true"></span>AI automation &amp; analytics studio</div>
-      <h1 class="htitle" id="hero-title">Automate workflows. Deploy custom AI. <span class="l2">Scale your business globally.</span></h1>
-      <p class="hsub">We help local businesses and international teams <strong>save 20+ hours a week</strong> with custom AI bots and smart automations — built for finance, logistics, D2C, real estate and manufacturing.</p>
-      <div class="hbtns">
-        <a href="#contact" class="btn btn-grad">Book a free 15-min strategy call <svg class="ic"><use href="#i-arrow"/></svg></a>
-        <a href="#work" class="btn btn-secondary">See our work</a>
-      </div>
-      <div class="hero-trust">
-        <div class="avstack" aria-hidden="true"><span>HV</span><span>AM</span><span>+</span></div>
-        <small>Trusted by teams across 15+ countries</small>
-      </div>
-      <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%20have%20a%20question." target="_blank" rel="noopener" class="hero-chat-badge">
-        <span class="hero-chat-dot" aria-hidden="true"></span> Questions? Chat with our team on WhatsApp
-      </a>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <canvas class="field" id="field" aria-hidden="true"></canvas>
+  <div class="hero-fallback" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="hero-kicker"><span class="pulse" aria-hidden="true"></span>AI automation studio for finance, logistics, D2C and manufacturing teams</p>
+    <h1 class="hero-h" id="hero-h">
+      <span class="line"><span>Your busywork,</span></span>
+      <span class="line"><span>running on its own.</span></span>
+    </h1>
+    <p class="hero-sub">We build AI agents and automations that take repetitive work off your team: reports, reconciliations, invoices, follow-ups. Most clients get back 20+ hours a week.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary magnetic">Book a free 15-min audit</a>
+      <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%27d%20like%20to%20automate%20some%20work." class="btn btn-ghost" target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
     </div>
-    <div class="reveal" aria-hidden="true">
-      <div class="dash">
-        <div class="dash-top">
-          <div class="dash-title">Live automation console</div>
-          <div class="dash-dots"><span></span><span></span><span></span></div>
-        </div>
-        <div class="dash-kpis">
-          <div class="kpi"><div class="kpi-lbl">Time saved</div><div class="kpi-val">80% <small>↑</small></div></div>
-          <div class="kpi"><div class="kpi-lbl">Accuracy</div><div class="kpi-val">99.9% <small>↑</small></div></div>
-          <div class="kpi"><div class="kpi-lbl">Uptime</div><div class="kpi-val">99.98%</div></div>
-        </div>
-        <div class="dash-chart">
-          <div class="dchart-hdr"><span>Reports auto-generated</span><span>7 days</span></div>
-          <div class="dbars">
-            <div class="b" style="height:45%"></div><div class="b" style="height:62%"></div>
-            <div class="b" style="height:38%"></div><div class="b" style="height:80%"></div>
-            <div class="b" style="height:70%"></div><div class="b" style="height:92%"></div>
-            <div class="b" style="height:66%"></div>
-          </div>
-        </div>
-        <div class="dash-row">
-          <div class="dring">
-            <svg width="74" height="74" viewBox="0 0 74 74">
-              <defs><linearGradient id="hgrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
-              <circle cx="37" cy="37" r="31" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="6"/>
-              <circle cx="37" cy="37" r="31" fill="none" stroke="url(#hgrad)" stroke-width="6" stroke-linecap="round" stroke-dasharray="195" stroke-dashoffset="18"/>
-            </svg>
-            <div class="dring-lbl">91%</div>
-          </div>
-          <div class="dlog">
-            <div><b>[ok]</b> GST reconciliation: 4.2s</div>
-            <div><b>[ok]</b> Anomaly scan: 0 issues</div>
-            <div><b>[..]</b> Forecast model refreshing</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <p class="hero-proof">50+ projects delivered for teams in India, the UAE, Singapore, the UK and the US.</p>
   </div>
+  <p class="scroll-hint" aria-hidden="true">Scroll to watch an automation run</p>
+</section>
 
-  <div class="ticker-wrap" aria-hidden="true">
-    <div class="ticker">
-      <span>GST reconciliation <b>3 hr → 4.2 s</b></span>
-      <span>Invoice OCR accuracy <b>99.9%</b></span>
-      <span>Demand forecasting <b>23% less overstock</b></span>
-      <span>Shipment tracking <b>500+ / day</b></span>
-      <span>Payroll automation <b>250 employees</b></span>
-      <span>Reporting cycle <b>days → minutes</b></span>
-      <span>GST reconciliation <b>3 hr → 4.2 s</b></span>
-      <span>Invoice OCR accuracy <b>99.9%</b></span>
-      <span>Demand forecasting <b>23% less overstock</b></span>
-      <span>Shipment tracking <b>500+ / day</b></span>
-      <span>Payroll automation <b>250 employees</b></span>
-      <span>Reporting cycle <b>days → minutes</b></span>
+<!-- ============ INTEGRATIONS ============ -->
+<section class="stack" aria-label="Tools we integrate with">
+  <p class="stack-lbl">Plugs into the tools your team already runs on</p>
+  <div class="stack-mq">
+    <ul class="stack-track">
+      <li>Tally</li><li>SAP</li><li>Salesforce</li><li>Zoho</li><li>HubSpot</li><li>QuickBooks</li><li>Shopify</li><li>Google Sheets</li><li>Slack</li><li>WhatsApp</li><li>OpenAI</li><li>Claude</li><li>n8n</li><li>Make</li><li>Zapier</li><li>Python</li>
+      <li aria-hidden="true">Tally</li><li aria-hidden="true">SAP</li><li aria-hidden="true">Salesforce</li><li aria-hidden="true">Zoho</li><li aria-hidden="true">HubSpot</li><li aria-hidden="true">QuickBooks</li><li aria-hidden="true">Shopify</li><li aria-hidden="true">Google Sheets</li><li aria-hidden="true">Slack</li><li aria-hidden="true">WhatsApp</li><li aria-hidden="true">OpenAI</li><li aria-hidden="true">Claude</li><li aria-hidden="true">n8n</li><li aria-hidden="true">Make</li><li aria-hidden="true">Zapier</li><li aria-hidden="true">Python</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PINNED STORY: a real run ============ -->
+<section class="story" id="how" aria-labelledby="story-h">
+  <div class="story-pin">
+    <div class="wrap story-grid">
+      <div class="story-copy">
+        <h2 class="h2" id="story-h">Watch a month-end GST reconciliation finish itself.</h2>
+        <p class="lede">The kind of job that used to take someone three hours, every month. Scroll to run it.</p>
+        <ol class="steps" id="steps">
+          <li class="step"><span class="step-n">1</span><div><h3>Pull the books</h3><p>Every transaction for the month comes straight out of Tally. No exports, no copy-paste.</p></div></li>
+          <li class="step"><span class="step-n">2</span><div><h3>Match against the GST portal</h3><p>Each entry is checked against GSTR-2B, line by line.</p></div></li>
+          <li class="step"><span class="step-n">3</span><div><h3>Flag only what needs a human</h3><p>Mismatches go to a short review list. Everything else is cleared.</p></div></li>
+          <li class="step"><span class="step-n">4</span><div><h3>File-ready reports, delivered</h3><p>GSTR-1 and GSTR-3B drafts land on WhatsApp and email.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="console glow" aria-label="Sample automation run">
+        <div class="console-top">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Sample run: gst_reconciliation</span>
+          <span class="mono timer" id="timer">0.0s</span>
+        </div>
+        <svg class="pipe" viewBox="0 0 520 120" aria-hidden="true">
+          <path id="pipePath" d="M30 60 C 110 60, 110 60, 180 60 S 270 60, 340 60 S 430 60, 490 60" fill="none" stroke="rgba(160,180,255,.18)" stroke-width="2"/>
+          <path id="pipeLit" d="M30 60 C 110 60, 110 60, 180 60 S 270 60, 340 60 S 430 60, 490 60" fill="none" stroke="url(#pg)" stroke-width="3" stroke-linecap="round"/>
+          <defs><linearGradient id="pg" gradientUnits="userSpaceOnUse" x1="30" y1="0" x2="490" y2="0"><stop offset="0" stop-color="#4fe3ff"/><stop offset="1" stop-color="#ff7a1a"/></linearGradient></defs>
+          <g class="pnode" data-at="0"><circle cx="30" cy="60" r="16"/><text x="30" y="100">Tally</text></g>
+          <g class="pnode" data-at=".3"><circle cx="180" cy="60" r="16"/><text x="180" y="100">Match</text></g>
+          <g class="pnode" data-at=".58"><circle cx="340" cy="60" r="16"/><text x="340" y="100">Review</text></g>
+          <g class="pnode" data-at=".86"><circle cx="490" cy="60" r="16"/><text x="490" y="100">Deliver</text></g>
+          <circle id="packet" r="6" cx="30" cy="60" fill="#fff"/>
+        </svg>
+        <dl class="readout">
+          <div><dt>Transactions loaded</dt><dd class="mono" data-to="1247" data-from="0" data-at="0">0</dd></div>
+          <div><dt>Matched automatically</dt><dd class="mono" data-to="1238" data-at=".3">0</dd></div>
+          <div><dt>Sent for review</dt><dd class="mono warn" data-to="9" data-at=".58">0</dd></div>
+          <div><dt>Reports ready</dt><dd class="mono ok" data-text="GSTR-1, GSTR-3B" data-at=".86">–</dd></div>
+        </dl>
+        <p class="console-foot" id="consoleFoot">Waiting to start…</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="trustbar" aria-label="Highlights">
-  <div class="stat-strip reveal">
-    <div class="stat-chip"><b class="countup" data-target="100" data-suffix="+">100+</b> automations built</div>
-    <div class="stat-sep" aria-hidden="true">|</div>
-    <div class="stat-chip"><b class="countup" data-target="5000" data-suffix="+" data-comma="1">5,000+</b> hours saved</div>
-    <div class="stat-sep" aria-hidden="true">|</div>
-    <div class="stat-chip">Clients across <b>US, UK, Europe, Middle East &amp; India</b></div>
-  </div>
-  <p class="trustbar-lbl">Built with tools you already trust</p>
-  <div class="marquee">
-    <div class="marquee-track">
-      <span class="trust-chip">OpenAI</span><span class="trust-chip">Claude</span><span class="trust-chip">Make</span><span class="trust-chip">Zapier</span><span class="trust-chip">n8n</span><span class="trust-chip">WhatsApp API</span><span class="trust-chip">HubSpot</span><span class="trust-chip">Shopify</span><span class="trust-chip">Python</span>
-      <span class="trust-chip" aria-hidden="true">OpenAI</span><span class="trust-chip" aria-hidden="true">Claude</span><span class="trust-chip" aria-hidden="true">Make</span><span class="trust-chip" aria-hidden="true">Zapier</span><span class="trust-chip" aria-hidden="true">n8n</span><span class="trust-chip" aria-hidden="true">WhatsApp API</span><span class="trust-chip" aria-hidden="true">HubSpot</span><span class="trust-chip" aria-hidden="true">Shopify</span><span class="trust-chip" aria-hidden="true">Python</span>
+<!-- ============ RESULTS ============ -->
+<section class="sec" id="results" aria-labelledby="results-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="results-h">What clients got back</h2>
+      <p class="lede">Real projects. Client names stay private under NDA.</p>
     </div>
+    <ul class="results">
+      <li class="result"><p class="big">3 hrs <span class="arrow" aria-hidden="true">→</span> &lt;5 min</p><div><h3>GST reconciliation, every month</h3><p>Tally to Python to Excel, fully automated.</p></div><span class="tag">CA firm, India</span>
+        <details class="case"><summary>Read how we did it</summary>
+          <dl class="case-grid"><div><dt>The problem</dt><dd>Each month the team exported data from Tally and reconciled it against GST records by hand in Excel, about three hours per report.</dd></div><div><dt>What we built</dt><dd>A Python pipeline that pulls straight from Tally, matches every entry, flags mismatches for review and produces GSTR-1 and GSTR-3B drafts in Excel.</dd></div><div><dt>The result</dt><dd>Under five minutes per report, with people only looking at the handful of entries that actually need judgement.</dd></div></dl>
+        </details></li>
+      <li class="result"><p class="big"><span class="count" data-to="500">500</span>+<small>/day</small></p><div><h3>Shipments tracked without anyone checking</h3><p>Five courier APIs feed one dashboard, with WhatsApp alerts on delays.</p></div><span class="tag">Logistics, UAE</span>
+        <details class="case"><summary>Read how we did it</summary>
+          <dl class="case-grid"><div><dt>The problem</dt><dd>The operations team checked five different courier portals to find out where shipments were, and learned about delays when customers complained.</dd></div><div><dt>What we built</dt><dd>One service that polls all five courier APIs, updates a single dashboard and sends a WhatsApp alert the moment a shipment is delayed.</dd></div><div><dt>The result</dt><dd>500+ shipments a day tracked with nobody refreshing portals, and delays caught before the customer calls.</dd></div></dl>
+        </details></li>
+      <li class="result"><p class="big"><span class="count" data-to="23">23</span>%</p><div><h3>Less overstock</h3><p>A model forecasts SKU demand 30 days ahead, right inside their Excel.</p></div><span class="tag">D2C brand, India</span></li>
+      <li class="result"><p class="big"><span class="count" data-to="200">200</span>+<small>/day</small></p><div><h3>Invoices entered with no typing</h3><p>OCR reads PDF invoices and fills the accounting software.</p></div><span class="tag">Finance, Singapore</span>
+        <details class="case"><summary>Read how we did it</summary>
+          <dl class="case-grid"><div><dt>The problem</dt><dd>Staff typed invoice details from PDFs into the accounting software line by line.</dd></div><div><dt>What we built</dt><dd>An OCR pipeline that reads each PDF invoice, extracts vendor, amounts and dates, validates them and posts them to the accounting system.</dd></div><div><dt>The result</dt><dd>200+ invoices a day entered automatically, with exceptions routed to a person for a quick check.</dd></div></dl>
+        </details></li>
+      <li class="result"><p class="big"><span class="count" data-to="15">15</span>%</p><div><h3>Higher production efficiency</h3><p>A live dashboard from ERP shows shift output, downtime and reject rates.</p></div><span class="tag">Manufacturing, India</span></li>
+      <li class="result"><p class="big"><span class="count" data-to="250">250</span></p><div><h3>Payslips sent on the 1st, untouched</h3><p>Reads Excel, builds a PDF per employee and emails each one.</p></div><span class="tag">HR, India</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- SEGMENTS -->
-<section class="sec" id="segments" aria-labelledby="segments-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>Who we build for</span>
-    <h2 class="stitle" id="segments-title">Solutions built around <span class="gradient-text">who you are</span></h2>
-    <p class="sdesc">One playbook doesn't fit every client. Here's how we tailor automation for local businesses, global teams and specific industries.</p>
-  </div>
-  <div class="seg-grid reveal">
-    <div class="seg-card card">
-      <div class="itile lg teal"><svg class="ic"><use href="#i-store"/></svg></div>
-      <h3 class="seg-name">Local small businesses</h3>
-      <ul class="seg-list">
-        <li><svg class="ic"><use href="#i-tick"/></svg>WhatsApp marketing bots</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Google review automations</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Local lead capture</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Simple CRM setup</li>
+<!-- ============ AI AGENT DEMO ============ -->
+<section class="sec agent-sec" id="agents" aria-labelledby="agent-h">
+  <div class="wrap agent">
+    <div class="agent-copy">
+      <h2 class="h2" id="agent-h">An AI agent doesn't just reply. It gets the work done.</h2>
+      <p class="lede">Here's a property enquiry on WhatsApp at 11pm. Nobody from the team is awake. The agent checks what's available, qualifies the buyer, books the visit and updates the CRM.</p>
+      <ul class="did" id="agentDid" aria-label="What the agent did">
+        <li data-step="1"><span class="tick" aria-hidden="true"><svg width="14" height="14"><use href="#i-check"/></svg></span>Checked live inventory in Google Sheets</li>
+        <li data-step="3"><span class="tick" aria-hidden="true"><svg width="14" height="14"><use href="#i-check"/></svg></span>Qualified the lead: budget and timeline</li>
+        <li data-step="5"><span class="tick" aria-hidden="true"><svg width="14" height="14"><use href="#i-check"/></svg></span>Booked the visit in the sales calendar</li>
+        <li data-step="6"><span class="tick" aria-hidden="true"><svg width="14" height="14"><use href="#i-check"/></svg></span>Logged the lead and summary in HubSpot</li>
       </ul>
-      <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%20run%20a%20local%20business%20and%20want%20to%20automate." target="_blank" rel="noopener" class="btn btn-secondary seg-btn">Chat on WhatsApp</a>
+      <button type="button" class="btn btn-ghost btn-sm" id="agentReplay">Replay conversation</button>
     </div>
-    <div class="seg-card card feat">
-      <div class="itile lg"><svg class="ic"><use href="#i-building"/></svg></div>
-      <h3 class="seg-name">International &amp; enterprise teams</h3>
-      <ul class="seg-list">
-        <li><svg class="ic"><use href="#i-tick"/></svg>Custom LLM agents</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Complex n8n / Make workflows</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>API &amp; system integrations</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Multi-timezone support</li>
-      </ul>
-      <a href="#contact" class="btn btn-grad seg-btn">Book a strategy call</a>
-    </div>
-    <div class="seg-card card">
-      <div class="itile lg violet"><svg class="ic"><use href="#i-layers"/></svg></div>
-      <h3 class="seg-name">Industry-specific</h3>
-      <ul class="seg-list">
-        <li><svg class="ic"><use href="#i-tick"/></svg>Property inquiry bots</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Abandoned-cart flows</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Client onboarding pipelines</li>
-        <li><svg class="ic"><use href="#i-tick"/></svg>Auto-invoicing</li>
-      </ul>
-      <a href="#sectors" data-tab="sectors" class="btn btn-secondary seg-btn">See industries we serve</a>
+    <div class="chat glow" aria-label="Example conversation">
+      <div class="chat-top"><span class="chat-av" aria-hidden="true">AS</span><div><strong>Skyline Homes</strong><span class="chat-sub" id="chatSub">AI assistant, online</span></div><span class="chat-badge">Example</span></div>
+      <ol class="chat-body" id="chatBody" aria-live="off"></ol>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="sec" id="about" aria-labelledby="about-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-violet"><span class="pd"></span>Who we are</span>
-    <h2 class="stitle" id="about-title">About <span class="gradient-text">Auto Solution</span></h2>
-    <p class="sdesc">A remote-first automation and analytics studio with a simple mission: give people back the hours they lose to repetitive, manual work.</p>
-  </div>
-  <div class="about-grid reveal">
-    <div class="about-text">
-      <p>Auto Solution started when our founders kept watching skilled teams burn entire days on copy-paste reporting, manual reconciliation and Excel busywork — tasks a script could finish in seconds. So we built one. Then another. Then a studio around it.</p>
-      <p>Today we design and ship Python, Excel, OCR and ML-powered automation for businesses across India, the Middle East, Singapore and beyond — a senior, remote-first team with no bloated process.</p>
-      <p>We measure ourselves the way our clients do: hours saved, errors removed, and how fast a project goes from "manual mess" to "it just runs now."</p>
-      <div class="about-stats">
-        <div><div class="about-stat-num">2022</div><div class="about-stat-lbl">Founded</div></div>
-        <div><div class="about-stat-num">50+</div><div class="about-stat-lbl">Projects shipped</div></div>
-        <div><div class="about-stat-num">15+</div><div class="about-stat-lbl">Countries served</div></div>
-      </div>
+<!-- ============ SAVINGS ESTIMATE (lead magnet) ============ -->
+<section class="sec estimate-sec" id="estimate" aria-labelledby="est-h">
+  <div class="wrap estimate">
+    <div class="est-copy">
+      <h2 class="h2" id="est-h">How many hours could your team get back?</h2>
+      <p class="lede">Move the sliders to match your team. We assume about 60% of repetitive work can be automated; your free audit gives the real number.</p>
     </div>
-    <div class="founders">
-      <div class="founder-card card">
-        <div class="founder-avatar" aria-hidden="true">HV</div>
-        <div><h3 class="founder-name">Harsh Vardhan</h3><div class="founder-role">Founder</div><p class="founder-bio">Leads engineering and ML strategy — focused on turning messy manual workflows into automation that just works.</p></div>
+    <form class="calc glow" id="calc" aria-describedby="calcNote">
+      <div class="field-row">
+        <label for="c-people">People doing repetitive work <output class="mono" id="o-people" for="c-people">5</output></label>
+        <input type="range" id="c-people" min="1" max="50" value="5">
       </div>
-      <div class="founder-card card">
-        <div class="founder-avatar" aria-hidden="true">AM</div>
-        <div><h3 class="founder-name">Anurag Maurya</h3><div class="founder-role">Co-founder</div><p class="founder-bio">Owns client delivery and global partnerships — makes sure every automation fits the way a business actually works.</p></div>
+      <div class="field-row">
+        <label for="c-hours">Hours each, per week <output class="mono" id="o-hours" for="c-hours">10</output></label>
+        <input type="range" id="c-hours" min="1" max="40" value="10">
       </div>
-      <div class="founder-card card">
-        <div class="founder-avatar" aria-hidden="true">MC</div>
-        <div><h3 class="founder-name">Mohit Chowdhary</h3><div class="founder-role">Member of Technical Staff</div><p class="founder-bio">Works across automation builds and integrations, from scoping through deployment.</p></div>
-      </div>
-    </div>
-  </div>
-  <div class="values-grid reveal">
-    <div class="value-card card"><div class="itile md"><svg class="ic"><use href="#i-target"/></svg></div><h3 class="value-title">Outcome-obsessed</h3><p class="value-desc">We're judged by hours saved and errors removed — not lines of code shipped.</p></div>
-    <div class="value-card card"><div class="itile md teal"><svg class="ic"><use href="#i-eye"/></svg></div><h3 class="value-title">Radical transparency</h3><p class="value-desc">Clear timelines, honest scoping, NDA-backed. No surprises, no overselling.</p></div>
-    <div class="value-card card"><div class="itile md violet"><svg class="ic"><use href="#i-globe"/></svg></div><h3 class="value-title">Remote, global, senior</h3><p class="value-desc">Senior builders working with clients across time zones.</p></div>
-  </div>
-</section>
-
-<!-- ML ANALYTICS -->
-<section class="sec" id="ml-analytics" aria-labelledby="ml-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>ML analytics &amp; intelligence</span>
-    <h2 class="stitle" id="ml-title">Data-driven <span class="gradient-text">automation</span></h2>
-    <p class="sdesc">ML analytics behind every automation decision — from forecasting to anomaly detection.</p>
-  </div>
-  <div class="ml-grid reveal">
-    <div class="ml-card card">
-      <h3 class="ml-title"><svg class="ic"><use href="#i-chart"/></svg>Automation ROI by industry</h3>
-      <div class="mbars" id="barChart" role="img" aria-label="Indexed ROI: CA 85, Logistics 72, D2C 68, NBFC 90, Manufacturing 78, HR 65">
-        <div class="mbar" data-h="85"></div><div class="mbar" data-h="72"></div>
-        <div class="mbar" data-h="68"></div><div class="mbar" data-h="90"></div>
-        <div class="mbar" data-h="78"></div><div class="mbar" data-h="65"></div>
-      </div>
-      <div class="mlbls" aria-hidden="true"><span>CA</span><span>Logistics</span><span>D2C</span><span>NBFC</span><span>Mfg</span><span>HR</span></div>
-    </div>
-    <div class="ml-card card">
-      <h3 class="ml-title"><svg class="ic"><use href="#i-target"/></svg>Model performance</h3>
-      <div class="ring-wrap">
-        <div class="ring-svg">
-          <svg width="100" height="100" viewBox="0 0 100 100" aria-hidden="true">
-            <defs><linearGradient id="rgrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
-            <circle cx="50" cy="50" r="42" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="50" cy="50" r="42" fill="none" stroke="url(#rgrad)" stroke-width="7" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="26"/>
-          </svg>
-          <div class="ring-lbl"><div><div class="ring-pct">99%</div><div class="ring-sub">Accuracy</div></div></div>
-        </div>
-        <div class="ring-stats">
-          <div><div class="rstat-row"><span>ML models</span><span class="rstat-val">24</span></div><div class="rstat-bar"><div class="rstat-fill" data-w="80"></div></div></div>
-          <div><div class="rstat-row"><span>Automation rate</span><span class="rstat-val">94%</span></div><div class="rstat-bar"><div class="rstat-fill" data-w="94"></div></div></div>
-          <div><div class="rstat-row"><span>Error reduction</span><span class="rstat-val">99.9%</span></div><div class="rstat-bar"><div class="rstat-fill" data-w="99"></div></div></div>
-          <div><div class="rstat-row"><span>Client retention</span><span class="rstat-val">98%</span></div><div class="rstat-bar"><div class="rstat-fill" data-w="98"></div></div></div>
+      <div class="field-row">
+        <label for="c-rate">Cost per hour <output class="mono" id="o-rate" for="c-rate">₹400</output></label>
+        <div class="rate-row">
+          <input type="range" id="c-rate" min="100" max="3000" step="50" value="400">
+          <select id="c-cur" aria-label="Currency">
+            <option value="INR" selected>₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="AED">AED</option>
+            <option value="GBP">£ GBP</option>
+          </select>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER -->
-<section class="sec" id="compare" aria-labelledby="compare-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-teal"><span class="pd"></span>The transformation</span>
-    <h2 class="stitle" id="compare-title">Before vs <span class="gradient-text">after Auto Solution</span></h2>
-    <p class="sdesc">What changes in day-to-day operations once the manual work is automated.</p>
-  </div>
-  <div class="chart-img-wrap reveal">
-    <svg class="chart-img" viewBox="0 0 640 200" role="img" aria-labelledby="baChartTitle">
-      <title id="baChartTitle">A typical daily task drops from 8 hours of manual work to 5 minutes automated — a 99% time reduction.</title>
-      <defs>
-        <linearGradient id="chartBarBefore" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a8a"/><stop offset="100%" stop-color="#d64545"/></linearGradient>
-        <linearGradient id="chartBarAfter" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00b8a0"/><stop offset="100%" stop-color="#00806e"/></linearGradient>
-        <marker id="chartArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="var(--muted-2)"/></marker>
-      </defs>
-      <line x1="40" y1="170" x2="600" y2="170" stroke="var(--line-strong)" stroke-width="1"/>
-      <rect x="100" y="30" width="70" height="140" rx="8" fill="url(#chartBarBefore)"/>
-      <text x="135" y="22" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="var(--danger)">8 hrs</text>
-      <text x="135" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--muted)">Manual (before)</text>
-      <path d="M220 100 L300 100" stroke="var(--muted-2)" stroke-width="2" marker-end="url(#chartArrow)"/>
-      <rect x="330" y="163" width="70" height="7" rx="3.5" fill="url(#chartBarAfter)"/>
-      <text x="365" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="var(--teal-ink)">5 min</text>
-      <text x="365" y="190" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--muted)">Automated (after)</text>
-      <rect x="460" y="60" width="120" height="110" rx="10" fill="var(--accent-soft)"/>
-      <text x="520" y="108" text-anchor="middle" font-family="Sora, sans-serif" font-size="26" font-weight="800" fill="var(--accent)">99%</text>
-      <text x="520" y="130" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="var(--muted)">time reduced</text>
-    </svg>
-  </div>
-  <div class="ba-grid reveal">
-    <div class="ba-col before card">
-      <h3 class="ba-label">Before automation</h3>
-      <div class="ba-item"><div class="itile sm red"><svg class="ic"><use href="#i-hourglass"/></svg></div><div class="ba-text"><h3>Hours of manual work</h3><p>3–8 hours daily on repetitive data entry, copy-paste and Excel reports.</p></div></div>
-      <div class="ba-item"><div class="itile sm red"><svg class="ic"><use href="#i-alert"/></svg></div><div class="ba-text"><h3>Human errors everywhere</h3><p>Wrong formulas, missed cells, incorrect data — costly mistakes.</p></div></div>
-      <div class="ba-item"><div class="itile sm red"><svg class="ic"><use href="#i-clock"/></svg></div><div class="ba-text"><h3>Slow processes</h3><p>Reports take days, decisions get delayed, opportunities are missed.</p></div></div>
-      <div class="ba-item"><div class="itile sm red"><svg class="ic"><use href="#i-wallet"/></svg></div><div class="ba-text"><h3>High manpower cost</h3><p>Paying several people for tasks a script handles in seconds.</p></div></div>
-    </div>
-    <div class="ba-mid" aria-hidden="true"><svg class="ic"><use href="#i-arrow"/></svg></div>
-    <div class="ba-col after card">
-      <h3 class="ba-label">After Auto Solution</h3>
-      <div class="ba-item"><div class="itile sm teal"><svg class="ic"><use href="#i-zap"/></svg></div><div class="ba-text"><h3>Seconds, not hours</h3><p>The same work done in 4–30 seconds, automatically, every time.</p></div></div>
-      <div class="ba-item"><div class="itile sm teal"><svg class="ic"><use href="#i-check"/></svg></div><div class="ba-text"><h3>99.9% accuracy</h3><p>Rule-based checks remove typos and keep data consistent.</p></div></div>
-      <div class="ba-item"><div class="itile sm teal"><svg class="ic"><use href="#i-gauge"/></svg></div><div class="ba-text"><h3>Instant results</h3><p>Real-time dashboards and instant reports mean faster decisions.</p></div></div>
-      <div class="ba-item"><div class="itile sm teal"><svg class="ic"><use href="#i-trend"/></svg></div><div class="ba-text"><h3>Real cost savings</h3><p>One-time automation typically recovers its cost in weeks and saves lakhs a year.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="sec" id="services" aria-labelledby="services-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-teal"><span class="pd"></span>What we do</span>
-    <h2 class="stitle" id="services-title">Our core <span class="gradient-text">services</span></h2>
-    <p class="sdesc">From AI chatbots to full ML pipelines — automation that works for teams anywhere.</p>
-  </div>
-  <div class="sgrid reveal">
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-chat"/></svg></div></div><h3 class="sname">AI chatbots &amp; virtual assistants</h3><p class="sdesc2">24/7 customer support, lead qualification and appointment booking on your website or WhatsApp.</p><div class="stags"><span class="stag2">OpenAI</span><span class="stag2">Claude</span><span class="stag2">WhatsApp API</span><span class="stag2">LangChain</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-megaphone"/></svg></div></div><h3 class="sname">AI content &amp; marketing pipelines</h3><p class="sdesc2">Automated social scheduling, cold email sequences and auto-reporting.</p><div class="stags"><span class="stag2">Make</span><span class="stag2">Zapier</span><span class="stag2">HubSpot</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-sheet"/></svg></div></div><h3 class="sname">Excel automation</h3><p class="sdesc2">Auto-generate reports, consolidate sheets, validate data and send scheduled emails — hands-free.</p><div class="stags"><span class="stag2">openpyxl</span><span class="stag2">xlwings</span><span class="stag2">pandas</span><span class="stag2">VBA</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-code"/></svg></div></div><h3 class="sname">Python scripting</h3><p class="sdesc2">Custom scripts for repetitive tasks — data cleaning, file processing, API calls, bulk operations.</p><div class="stags"><span class="stag2">Python</span><span class="stag2">FastAPI</span><span class="stag2">Celery</span><span class="stag2">cron</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-spark"/></svg></div></div><h3 class="sname">ML-powered automation</h3><p class="sdesc2">Sales forecasting, demand prediction, anomaly detection and document classification in production.</p><div class="stags"><span class="stag2">scikit-learn</span><span class="stag2">HuggingFace</span><span class="stag2">LangChain</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-doc"/></svg></div></div><h3 class="sname">PDF &amp; OCR processing</h3><p class="sdesc2">Extract data from invoices, contracts and scanned documents automatically. No more manual data entry.</p><div class="stags"><span class="stag2">pdfplumber</span><span class="stag2">Tesseract</span><span class="stag2">Textract</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-plug"/></svg></div></div><h3 class="sname">API &amp; system integration</h3><p class="sdesc2">Connect ERP, CRM, accounting software and third-party APIs with automated data bridges.</p><div class="stags"><span class="stag2">REST</span><span class="stag2">Webhooks</span><span class="stag2">SQL</span><span class="stag2">n8n</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-chart"/></svg></div></div><h3 class="sname">Dashboards &amp; reporting</h3><p class="sdesc2">Real-time dashboards and automated reports, so your team always has current numbers.</p><div class="stags"><span class="stag2">Streamlit</span><span class="stag2">Power BI</span><span class="stag2">Plotly</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-globe"/></svg></div></div><h3 class="sname">Web scraping &amp; lead generation</h3><p class="sdesc2">Automated data collection — competitor pricing, lead lists, market research, live feeds.</p><div class="stags"><span class="stag2">Selenium</span><span class="stag2">Scrapy</span><span class="stag2">Playwright</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-flow"/></svg></div></div><h3 class="sname">Workflow orchestration</h3><p class="sdesc2">Design, schedule and monitor end-to-end workflows with retries, alerts and full logging.</p><div class="stags"><span class="stag2">Airflow</span><span class="stag2">Prefect</span><span class="stag2">Temporal</span></div></article>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="sec" id="process" aria-labelledby="process-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-violet"><span class="pd"></span>How it works</span>
-    <h2 class="stitle" id="process-title">Our <span class="gradient-text">engagement model</span></h2>
-    <p class="sdesc">A low-risk path from first conversation to a live, supported automation.</p>
-  </div>
-  <ol class="pgrid reveal" style="list-style:none">
-    <li class="pstep card"><div class="pnum" aria-hidden="true">01</div><h3 class="ptitle">Free automation audit</h3><p class="pdesc">We map your manual processes and find the bottlenecks — no commitment required.</p></li>
-    <li class="pstep card"><div class="pnum" aria-hidden="true">02</div><h3 class="ptitle">Scope &amp; timeline</h3><p class="pdesc">A written scope and delivery timeline within 3 business days of the audit.</p></li>
-    <li class="pstep card"><div class="pnum" aria-hidden="true">03</div><h3 class="ptitle">Development</h3><p class="pdesc">We build with leading AI models and secure API connections, with weekly progress updates.</p></li>
-    <li class="pstep card"><div class="pnum" aria-hidden="true">04</div><h3 class="ptitle">Delivery &amp; training</h3><p class="pdesc">Handover with team training and complete documentation at go-live.</p></li>
-    <li class="pstep card"><div class="pnum" aria-hidden="true">05</div><h3 class="ptitle">Post-launch support</h3><p class="pdesc">15 days of free support after go-live to catch edge cases as your team settles in.</p></li>
-  </ol>
-  <div class="center-cta reveal">
-    <p class="sdesc">Happy to arrange a presentation or pilot demo at your convenience.</p>
-    <a href="#contact" class="btn btn-grad">Book a free audit <svg class="ic"><use href="#i-arrow"/></svg></a>
-  </div>
-</section>
-
-<!-- WORK -->
-<section class="sec" id="work" aria-labelledby="work-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>Portfolio</span>
-    <h2 class="stitle" id="work-title">Work we've <span class="gradient-text">delivered</span></h2>
-    <p class="sdesc">Real projects, measurable results. Client names withheld under NDA.</p>
-  </div>
-  <div class="sgrid reveal">
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-calc"/></svg></div></div><h3 class="sname">GST report auto-generator</h3><p class="sdesc2">Monthly GST reconciliation from Tally → Python → Excel, fully automated. <strong>3 hours → 5 minutes</strong> per report.</p><div class="stags"><span class="stag2">Excel</span><span class="stag2">CA firm, India</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-truck"/></svg></div></div><h3 class="sname">Shipment tracking system</h3><p class="sdesc2">Pulls from 5 courier APIs, updates a dashboard and sends WhatsApp alerts. <strong>500+ shipments/day</strong>.</p><div class="stags"><span class="stag2">Python</span><span class="stag2">Logistics, UAE</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-trend"/></svg></div></div><h3 class="sname">Demand forecasting engine</h3><p class="sdesc2">ML model predicting SKU demand 30 days ahead, integrated into Excel. <strong>23% less overstock</strong>.</p><div class="stags"><span class="stag2">ML</span><span class="stag2">D2C, India</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-doc"/></svg></div></div><h3 class="sname">Invoice data extraction</h3><p class="sdesc2">OCR extracts invoice data from PDFs and fills the accounting software. <strong>200+ invoices/day</strong>.</p><div class="stags"><span class="stag2">OCR</span><span class="stag2">Finance, Singapore</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-factory"/></svg></div></div><h3 class="sname">Live production dashboard</h3><p class="sdesc2">Real-time Streamlit dashboard from ERP — shift output, downtime, reject rates. <strong>15% efficiency gain</strong>.</p><div class="stags"><span class="stag2">Dashboard</span><span class="stag2">Manufacturing, India</span></div></article>
-    <article class="scard card card-hover"><div class="s-top"><div class="itile md"><svg class="ic"><use href="#i-mail"/></svg></div></div><h3 class="sname">Payroll email automation</h3><p class="sdesc2">Reads Excel, generates a PDF per employee and emails them on the 1st of every month. <strong>250 employees</strong>.</p><div class="stags"><span class="stag2">Automation</span><span class="stag2">HR, India</span></div></article>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="sec" id="testimonials" aria-labelledby="testi-title">
-  <div class="sec-head center reveal">
-    <span class="eyebrow e-teal"><span class="pd"></span>Client feedback</span>
-    <h2 class="stitle" id="testi-title">What clients <span class="gradient-text">are saying</span></h2>
-    <p class="sdesc">Shared after their automation went live. Lightly edited for length, published with permission.</p>
-  </div>
-  <div class="t-slider reveal" id="tSlider" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
-    <div class="t-slides" id="tSlides">
-      <figure class="t-card card t-slide">
-        <div class="t-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote class="t-quote">Our monthly GST reconciliation used to eat an entire day. Now it runs itself before we've even had coffee.</blockquote>
-        <figcaption class="t-person"><div class="t-av" aria-hidden="true">RM</div><div><div class="t-name">Operations Head</div><div class="t-role">CA firm, India</div></div></figcaption>
-      </figure>
-      <figure class="t-card card t-slide">
-        <div class="t-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote class="t-quote">The forecasting model paid for itself in the first quarter through reduced overstock alone. Support after launch has been excellent.</blockquote>
-        <figcaption class="t-person"><div class="t-av" aria-hidden="true">SK</div><div><div class="t-name">Supply Chain Manager</div><div class="t-role">D2C brand, India</div></div></figcaption>
-      </figure>
-      <figure class="t-card card t-slide">
-        <div class="t-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote class="t-quote">We were nervous about handing financial workflows to a script. Zero errors since launch changed our minds fast.</blockquote>
-        <figcaption class="t-person"><div class="t-av" aria-hidden="true">JT</div><div><div class="t-name">Finance Lead</div><div class="t-role">Logistics, UAE</div></div></figcaption>
-      </figure>
-    </div>
-    <div class="t-controls">
-      <button class="t-arrow" id="tPrev" type="button" aria-label="Previous testimonial"><svg class="ic"><use href="#i-chev-l"/></svg></button>
-      <div class="t-dots" id="tDots"></div>
-      <button class="t-arrow" id="tNext" type="button" aria-label="Next testimonial"><svg class="ic"><use href="#i-chev-r"/></svg></button>
-    </div>
-  </div>
-</section>
-
-<!-- TECH -->
-<section class="sec" id="tech" aria-labelledby="tech-title">
-  <div class="sec-head center reveal">
-    <span class="eyebrow e-teal"><span class="pd"></span>Technology</span>
-    <h2 class="stitle" id="tech-title">Our <span class="gradient-text">tech stack</span></h2>
-    <p class="sdesc">Tools we use to build reliable, scalable automation.</p>
-  </div>
-  <ul class="tgrid reveal" style="list-style:none">
-    <li class="tchip">Python</li><li class="tchip">pandas</li><li class="tchip">openpyxl</li><li class="tchip">scikit-learn</li>
-    <li class="tchip">HuggingFace</li><li class="tchip">LangChain</li><li class="tchip">OpenCV</li><li class="tchip">Tesseract</li>
-    <li class="tchip">AWS</li><li class="tchip">Airflow</li><li class="tchip">FastAPI</li><li class="tchip">Streamlit</li>
-    <li class="tchip">PostgreSQL</li><li class="tchip">Scrapy</li><li class="tchip">n8n</li><li class="tchip">Docker</li>
-  </ul>
-</section>
-
-<!-- INTEGRATIONS -->
-<section class="sec" id="integrations" aria-labelledby="int-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>Integrations</span>
-    <h2 class="stitle" id="int-title">Plugs into <span class="gradient-text">your existing tools</span></h2>
-    <p class="sdesc">We connect to the software you already run — no rip-and-replace.</p>
-  </div>
-  <ul class="int-grid reveal" style="list-style:none">
-    <li class="int-chip">Tally<small>ERP / accounting</small></li>
-    <li class="int-chip">Zoho<small>CRM / Books</small></li>
-    <li class="int-chip">Salesforce<small>CRM</small></li>
-    <li class="int-chip">SAP<small>ERP</small></li>
-    <li class="int-chip">QuickBooks<small>Accounting</small></li>
-    <li class="int-chip">Google Sheets<small>Spreadsheets</small></li>
-    <li class="int-chip">Shopify<small>D2C / e-commerce</small></li>
-    <li class="int-chip">Slack<small>Alerts</small></li>
-  </ul>
-</section>
-
-<!-- SECURITY -->
-<section class="sec" id="security" aria-labelledby="security-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-violet"><span class="pd"></span>Security &amp; trust</span>
-    <h2 class="stitle" id="security-title">Built with <span class="gradient-text">data safety in mind</span></h2>
-    <p class="sdesc">Your workflows often touch financial and customer data. Here's how we handle it.</p>
-  </div>
-  <div class="sec-grid reveal">
-    <div class="sec-card card"><div class="itile md violet"><svg class="ic"><use href="#i-doc"/></svg></div><h3>NDA on every project</h3><p>Every engagement starts with a signed NDA before we see any of your data or systems.</p></div>
-    <div class="sec-card card"><div class="itile md violet"><svg class="ic"><use href="#i-server"/></svg></div><h3>Runs in your environment</h3><p>Automation runs on your own infrastructure or approved cloud accounts — not ours.</p></div>
-    <div class="sec-card card"><div class="itile md violet"><svg class="ic"><use href="#i-key"/></svg></div><h3>Least-privilege access</h3><p>We request only the access a task needs, and revoke it once the project ships.</p></div>
-    <div class="sec-card card"><div class="itile md violet"><svg class="ic"><use href="#i-list"/></svg></div><h3>Full audit trail</h3><p>Every automated run is logged, so you can trace what ran, when and on what data.</p></div>
-    <div class="sec-card card"><div class="itile md violet"><svg class="ic"><use href="#i-lock"/></svg></div><h3>GDPR-aligned handling</h3><p>We follow GDPR-aligned data-handling practices for clients in every region.</p></div>
-    <div class="sec-card card"><div class="itile md violet"><svg class="ic"><use href="#i-card"/></svg></div><h3>Global operations</h3><p>Flexible payments via Stripe, PayPal or UPI, with multi-timezone support.</p></div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="sec" id="team" aria-labelledby="team-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>Our team</span>
-    <h2 class="stitle" id="team-title">20 <span class="gradient-text">senior engineers</span></h2>
-    <p class="sdesc">Our core engineering and delivery team is 20 professionals — alumni of IIT, NIT and BITS Pilani with prior experience at PayPal India, Paytm, Pine Labs, Automation Anywhere and Infosys / TCS / HCL.</p>
-  </div>
-  <div class="team-grid reveal">
-    <div class="team-card card"><div class="team-count">8</div><div class="team-role">Python &amp; backend automation engineers</div></div>
-    <div class="team-card card"><div class="team-count">4</div><div class="team-role">ML / AI engineers <small>NLP, forecasting, anomaly detection</small></div></div>
-    <div class="team-card card"><div class="team-count">2</div><div class="team-role">OCR &amp; document intelligence specialists</div></div>
-    <div class="team-card card"><div class="team-count">3</div><div class="team-role">API &amp; system integration engineers</div></div>
-    <div class="team-card card"><div class="team-count">2</div><div class="team-role">Dashboard &amp; data visualization experts</div></div>
-    <div class="team-card card"><div class="team-count">1</div><div class="team-role">Business analyst &amp; QA lead</div></div>
-  </div>
-  <p class="team-footline reveal">Average experience: <strong>4–9 years</strong> per engineer</p>
-
-  <div class="outcome-charts reveal">
-    <div class="outcome-ring">
-      <svg width="88" height="88" viewBox="0 0 88 88" aria-hidden="true">
-        <defs><linearGradient id="tgrad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
-        <circle cx="44" cy="44" r="37" fill="none" class="donut-track" stroke-width="7"/>
-        <circle class="ring-fill" cx="44" cy="44" r="37" fill="none" stroke="url(#tgrad1)" stroke-width="7" stroke-linecap="round" stroke-dasharray="232" stroke-dashoffset="232" data-offset="46" transform="rotate(-90 44 44)"/>
-      </svg>
-      <div class="outcome-lbl"><div><div class="outcome-pct countup" data-target="80" data-suffix="%+">80%+</div><div class="outcome-sub">Task time cut</div></div></div>
-    </div>
-    <div class="outcome-ring">
-      <svg width="88" height="88" viewBox="0 0 88 88" aria-hidden="true">
-        <defs><linearGradient id="tgrad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7b5cff"/><stop offset="100%" stop-color="#2f6fed"/></linearGradient></defs>
-        <circle cx="44" cy="44" r="37" fill="none" class="donut-track" stroke-width="7"/>
-        <circle class="ring-fill" cx="44" cy="44" r="37" fill="none" stroke="url(#tgrad2)" stroke-width="7" stroke-linecap="round" stroke-dasharray="232" stroke-dashoffset="232" data-offset="3" transform="rotate(-90 44 44)"/>
-      </svg>
-      <div class="outcome-lbl"><div><div class="outcome-pct countup" data-target="99.9" data-decimal="1" data-suffix="%">99.9%</div><div class="outcome-sub">Accuracy</div></div></div>
-    </div>
-    <div class="outcome-ring">
-      <svg width="88" height="88" viewBox="0 0 88 88" aria-hidden="true">
-        <defs><linearGradient id="tgrad3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00b8a0"/><stop offset="100%" stop-color="#7b5cff"/></linearGradient></defs>
-        <circle cx="44" cy="44" r="37" fill="none" class="donut-track" stroke-width="7"/>
-        <circle class="ring-fill" cx="44" cy="44" r="37" fill="none" stroke="url(#tgrad3)" stroke-width="7" stroke-linecap="round" stroke-dasharray="232" stroke-dashoffset="232" data-offset="86" transform="rotate(-90 44 44)"/>
-      </svg>
-      <div class="outcome-lbl"><div><div class="outcome-pct countup" data-target="50" data-suffix="+">50+</div><div class="outcome-sub">Projects delivered</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section class="sec" id="why" aria-labelledby="why-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-teal"><span class="pd"></span>Why Auto Solution</span>
-    <h2 class="stitle" id="why-title">Key <span class="gradient-text">differentiators</span></h2>
-  </div>
-  <div class="wygrid">
-    <div class="reveal">
-      <div class="wypt"><div class="itile md teal"><svg class="ic"><use href="#i-shield"/></svg></div><div class="wytt"><h3>Banking-grade delivery experience</h3><p>Our engineers have hands-on experience at PayPal India, Paytm and Pine Labs — teams that built systems under real regulatory and volume pressure.</p></div></div>
-      <div class="wypt"><div class="itile md teal"><svg class="ic"><use href="#i-zap"/></svg></div><div class="wytt"><h3>Speed to first value</h3><p>A free audit and a working pilot come before any commercial commitment, so you see impact before spend is approved.</p></div></div>
-      <div class="wypt"><div class="itile md teal"><svg class="ic"><use href="#i-users"/></svg></div><div class="wytt"><h3>Full-stack, in-house</h3><p>Python, ML/AI, OCR, dashboards and integration all sit within one team — no hand-offs between vendors.</p></div></div>
-      <div class="wypt"><div class="itile md teal"><svg class="ic"><use href="#i-plug"/></svg></div><div class="wytt"><h3>Built to integrate, not replace</h3><p>Solutions sit on top of your existing core-banking, CRM and ticketing systems.</p></div></div>
-      <div class="wypt"><div class="itile md teal"><svg class="ic"><use href="#i-award"/></svg></div><div class="wytt"><h3>Proven, measurable outcomes</h3><p>80%+ average reduction in task time and 99.9% accuracy across 50+ delivered projects.</p></div></div>
-    </div>
-    <div class="reveal" aria-hidden="true">
-      <div class="terminal">
-        <div class="term-bar"><div class="td td1"></div><div class="td td2"></div><div class="td td3"></div></div>
-        <div class="term-body" id="termBody"></div>
+      <div class="calc-out" aria-live="polite">
+        <div><p class="mono big-num" id="r-hours">1,560</p><p>hours back per year</p></div>
+        <div><p class="mono big-num" id="r-money">₹6,24,000</p><p>in team time, per year</p></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- INSIGHTS -->
-<section class="sec" id="insights" aria-labelledby="insights-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>Insights</span>
-    <h2 class="stitle" id="insights-title">Notes from <span class="gradient-text">the automation desk</span></h2>
-    <p class="sdesc">Short, practical write-ups from projects we've shipped. Articles coming soon.</p>
-  </div>
-  <div class="blog-grid reveal">
-    <article class="blog-card card">
-      <div class="blog-cover"><span class="blog-cat">ML</span></div>
-      <div class="blog-body"><h3>Why demand forecasting fails without clean historical data</h3><p>What we check before we let a model near your inventory numbers.</p><div class="blog-meta"><span>6 min read</span><span>Analytics</span></div></div>
-    </article>
-    <article class="blog-card card">
-      <div class="blog-cover b2"><span class="blog-cat">Automation</span></div>
-      <div class="blog-body"><h3>The real cost of a "quick manual fix" in Excel</h3><p>Hidden hours we've measured across five industries.</p><div class="blog-meta"><span>4 min read</span><span>Ops</span></div></div>
-    </article>
-    <article class="blog-card card">
-      <div class="blog-cover b3"><span class="blog-cat">OCR</span></div>
-      <div class="blog-body"><h3>Getting OCR accuracy above 99% on scanned invoices</h3><p>Preprocessing steps that matter more than the model you pick.</p><div class="blog-meta"><span>5 min read</span><span>Engineering</span></div></div>
-    </article>
-  </div>
-</section>
-
-<!-- CAREERS -->
-<section class="sec" id="careers" aria-labelledby="careers-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow e-teal"><span class="pd"></span>Join our team</span>
-    <h2 class="stitle" id="careers-title">Careers at <span class="gradient-text">Auto Solution</span></h2>
-    <p class="sdesc">A remote-first team building automation that matters to the businesses using it. Real ownership, flat hierarchy, no busywork.</p>
-  </div>
-  <ul class="careers-perks reveal">
-    <li class="hpill"><svg class="ic"><use href="#i-tick"/></svg>100% remote</li>
-    <li class="hpill"><svg class="ic"><use href="#i-tick"/></svg>Flexible hours</li>
-    <li class="hpill"><svg class="ic"><use href="#i-tick"/></svg>Real client ownership</li>
-    <li class="hpill"><svg class="ic"><use href="#i-tick"/></svg>Learning budget</li>
-    <li class="hpill"><svg class="ic"><use href="#i-tick"/></svg>Flat hierarchy</li>
-  </ul>
-  <div class="jobs-grid reveal">
-    <article class="job-card card">
-      <div class="job-top"><h3 class="job-title">Python Automation Engineer</h3><span class="job-type">Full-time</span></div>
-      <div class="job-meta">Remote · 1–3 yrs experience</div>
-      <p class="job-desc">Build and ship Python/Excel automation pipelines directly with clients, from scoping to deployment.</p>
-      <a class="job-apply" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20apply%20for%20the%20Python%20Automation%20Engineer%20role." target="_blank" rel="noopener">Apply on WhatsApp <svg class="ic"><use href="#i-arrow"/></svg></a>
-    </article>
-    <article class="job-card card">
-      <div class="job-top"><h3 class="job-title">ML Engineer (NLP / OCR)</h3><span class="job-type">Full-time</span></div>
-      <div class="job-meta">Remote · 2+ yrs experience</div>
-      <p class="job-desc">Design forecasting, classification and document-extraction models that plug straight into client workflows.</p>
-      <a class="job-apply" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20apply%20for%20the%20ML%20Engineer%20role." target="_blank" rel="noopener">Apply on WhatsApp <svg class="ic"><use href="#i-arrow"/></svg></a>
-    </article>
-    <article class="job-card card">
-      <div class="job-top"><h3 class="job-title">Business Development (Automation)</h3><span class="job-type">Full-time / contract</span></div>
-      <div class="job-meta">Remote · Global clients</div>
-      <p class="job-desc">Find and close automation projects worldwide — own the conversation from first chat to signed scope.</p>
-      <a class="job-apply" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20apply%20for%20the%20Business%20Development%20role." target="_blank" rel="noopener">Apply on WhatsApp <svg class="ic"><use href="#i-arrow"/></svg></a>
-    </article>
-  </div>
-  <div class="careers-cta card reveal">
-    <div><h3>Don't see the right role?</h3><p>We're always glad to meet good automation engineers, ML builders and closers.</p></div>
-    <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I'd%20like%20to%20share%20my%20resume%20for%20future%20roles." target="_blank" rel="noopener" class="btn btn-secondary">Send your resume</a>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="sec sec-narrow" id="faq" aria-labelledby="faq-title">
-  <div class="sec-head reveal">
-    <span class="eyebrow"><span class="pd"></span>FAQ</span>
-    <h2 class="stitle" id="faq-title">Common <span class="gradient-text">questions</span></h2>
-  </div>
-  <div class="faq-search-wrap reveal">
-    <svg class="ic faq-search-ico" aria-hidden="true"><use href="#i-search"/></svg>
-    <label for="faqSearch" class="visually-hidden">Search questions</label>
-    <input type="search" id="faqSearch" class="faq-search" placeholder="Search a question…" autocomplete="off">
-  </div>
-  <div class="faq-list reveal" id="faqList">
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span>How long does it take to build an automation?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Simple scripts take 3–7 days. Medium projects (integrations, dashboards) take 1–2 weeks. Complex ML pipelines take 2–4 weeks. We always give a clear timeline upfront.</p></div></div></div>
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>Do you work with clients outside India?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>Yes. We work remotely with clients in the UAE, Singapore, the UK, the USA and elsewhere.</p></div></div></div>
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>Do I need technical knowledge?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>No. We build automation that fits your existing workflow — Excel, a web dashboard or WhatsApp. Training and documentation are included.</p></div></div></div>
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>Is my data safe?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>We sign an NDA for every project and automation runs on your own systems. Your data doesn't leave your environment without your explicit consent.</p></div></div></div>
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>Can you integrate with Tally, SAP, Zoho or Salesforce?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>Yes. We integrate with Tally, Zoho, Salesforce, SAP, QuickBooks and most popular software via APIs, RPA or direct database connections.</p></div></div></div>
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span>What happens after the free automation audit?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>We send a written scope and timeline within 3 business days. Nothing is billed until you approve that scope — often you'll see a working pilot before any commercial conversation.</p></div></div></div>
-    <div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7"><span>What if the automation breaks after launch?</span><span class="faq-icon" aria-hidden="true">+</span></button></h3><div class="faq-a" id="faq-a7" role="region" aria-labelledby="faq-q7"><div><p>Every project includes 15 days of free support after go-live. Ongoing maintenance can be arranged after that.</p></div></div></div>
-  </div>
-  <p class="faq-empty" id="faqEmpty" hidden>No questions match your search. Try another word, or <a href="#contact">ask us directly</a>.</p>
-</section>
-
-<!-- LEAD MAGNET -->
-<section class="news-strip reveal" aria-labelledby="news-title">
-  <div>
-    <h2 id="news-title">The 2026 AI Automation Checklist</h2>
-    <p>A free PDF guide: what to automate first, how to scope it, and the mistakes to avoid.</p>
-  </div>
-  <form class="news-form" id="newsForm" novalidate>
-    <label for="newsEmail" class="visually-hidden">Work email</label>
-    <input type="email" id="newsEmail" name="email" placeholder="you@company.com" autocomplete="email" required>
-    <button type="submit">Get the checklist</button>
-    <p class="visually-hidden" id="newsStatus" role="status" aria-live="polite"></p>
-  </form>
-</section>
-
-<!-- CONTACT -->
-<section class="sec" id="contact" aria-labelledby="contact-title">
-  <div class="cinner">
-    <div class="cleft reveal">
-      <span class="eyebrow"><span class="pd"></span>Let's talk</span>
-      <h2 id="contact-title">Ready to <span class="gradient-text">automate your workflow?</span></h2>
-      <p>Tell us your biggest manual pain point. The audit is free and there's no commitment.</p>
-      <address class="cinfo">
-        <div class="crow"><div class="itile sm"><svg class="ic"><use href="#i-user"/></svg></div><div><strong>Harsh Vardhan</strong>, Founder</div></div>
-        <div class="crow"><div class="itile sm"><svg class="ic"><use href="#i-user"/></svg></div><div><strong>Anurag Maurya</strong>, Co-founder</div></div>
-        <div class="crow"><div class="itile sm"><svg class="ic"><use href="#i-phone"/></svg></div><a href="tel:+917303897496">+91 73038 97496</a></div>
-        <div class="crow"><div class="itile sm"><svg class="ic"><use href="#i-mail"/></svg></div><a href="mailto:info@autosoluation.com">info@autosoluation.com</a></div>
-        <div class="crow"><div class="itile sm teal"><svg class="ic"><use href="#i-wa"/></svg></div><a href="https://wa.me/917303897496" target="_blank" rel="noopener" class="wa-link">WhatsApp: +91 73038 97496</a></div>
-        <div class="crow"><div class="itile sm"><svg class="ic"><use href="#i-globe"/></svg></div><span>Worldwide, remote-first</span></div>
-        <div class="crow"><div class="itile sm"><svg class="ic"><use href="#i-clock"/></svg></div><span>Response within 24 hours</span></div>
-      </address>
-    </div>
-    <form class="cform reveal" id="leadForm" novalidate aria-describedby="formNote">
-      <div class="frow2">
-        <div class="ff"><label for="f-name">Your name *</label><input id="f-name" type="text" name="name" autocomplete="name" required aria-describedby="f-name-err"><span class="err" id="f-name-err"></span></div>
-        <div class="ff"><label for="f-company">Company</label><input id="f-company" type="text" name="company" autocomplete="organization"></div>
-      </div>
-      <div class="frow2">
-        <div class="ff"><label for="f-email">Email *</label><input id="f-email" type="email" name="email" autocomplete="email" required aria-describedby="f-email-err"><span class="err" id="f-email-err"></span></div>
-        <div class="ff"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="phone" autocomplete="tel" placeholder="+91 / +971 / +1 …"></div>
-      </div>
-      <div class="ff"><label for="f-country">Country</label><input id="f-country" type="text" name="country" autocomplete="country-name"></div>
-      <div class="ff"><label for="f-service">What do you need automated? *</label>
-        <select id="f-service" name="service" required aria-describedby="f-service-err">
-          <option value="">Select a service…</option>
-          <option>AI Chatbot / Virtual Assistant</option>
-          <option>Excel Automation</option>
-          <option>Python Scripting</option>
-          <option>PDF / Document Processing</option>
-          <option>ML-Powered Automation</option>
-          <option>API Integration</option>
-          <option>Dashboard &amp; Reporting</option>
-          <option>Web Scraping / Lead Generation</option>
-          <option>Full Workflow Automation</option>
-          <option>Not sure — need advice</option>
-        </select>
-        <span class="err" id="f-service-err"></span>
-      </div>
-      <div class="ff"><label for="f-message">Describe your workflow challenge *</label>
-        <textarea id="f-message" name="message" rows="4" placeholder="e.g. We manually create 50 Excel reports every month from ERP data…" required aria-describedby="f-message-err"></textarea>
-        <span class="err" id="f-message-err"></span>
-      </div>
-      <button type="submit" class="fsub" id="submitBtn"><svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg><span class="fsub-label">Send via WhatsApp</span></button>
-      <p class="fnote" id="formNote">Submitting opens WhatsApp with your message pre-filled, addressed to our team.</p>
-      <p class="fnote" id="formStatus" role="status" aria-live="polite"></p>
+      <button type="submit" class="btn btn-primary btn-block"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Send me this estimate</button>
+      <p class="note" id="calcNote">Opens WhatsApp with your numbers filled in. We reply within 24 hours with next steps.</p>
     </form>
   </div>
 </section>
 
-</div><!-- /tab-home -->
-
-<!-- ================================================= AI DASHBOARD (demo) -->
-<div class="tab-panel" id="tab-dashboard" hidden>
-<section class="page-hero" aria-labelledby="dash-title">
-  <ol class="crumb"><li><a href="#home">Home</a></li><li aria-hidden="true">/</li><li aria-current="page">AI Live Dashboard</li></ol>
-  <div class="sec-head center">
-    <span class="eyebrow"><span class="pd"></span>Live &amp; streaming</span>
-    <h1 class="stitle" id="dash-title">Your AI operations, <span class="gradient-text">in real time</span></h1>
-    <p class="sdesc">A sample of the monitoring we build for AI agents, models and infrastructure. Numbers tick and charts stream on their own.</p>
-    <p class="demo-note"><svg class="ic"><use href="#i-alert"/></svg>Demo data, refreshed every couple of seconds</p>
-  </div>
-</section>
-
-<section class="sec sec-flush" aria-label="Dashboard demo">
-  <div class="status-strip card">
-    <div class="status-strip-l">
-      <span class="status-pulse" aria-hidden="true"></span>
-      <div><div class="status-title">All systems operational</div><div class="status-sub">12 AI agents online, 4 compute nodes healthy</div></div>
+<!-- ============ SERVICES ============ -->
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="svc-h">What we build</h2>
+      <p class="lede">Everything runs on your systems and plugs into tools you already use: Tally, Zoho, Salesforce, SAP, QuickBooks, Google Sheets, Shopify, Slack.</p>
     </div>
-    <div class="status-strip-r"><div class="status-clock-lbl">Local time</div><div class="status-clock" id="liveClock">--:--:--</div></div>
-  </div>
-
-  <div class="an-toprow">
-    <div class="an-kpi card"><div class="an-kpi-lbl"><span class="livedot" aria-hidden="true"></span>AI requests / min</div><div class="an-kpi-val" id="kpiReqs">1,284</div><div class="an-kpi-delta" id="kpiReqsDelta">live</div></div>
-    <div class="an-kpi card"><div class="an-kpi-lbl"><span class="livedot" aria-hidden="true"></span>Active AI agents</div><div class="an-kpi-val" id="kpiAgents">12</div><div class="an-kpi-delta">Orchestrating 4 pipelines</div></div>
-    <div class="an-kpi card"><div class="an-kpi-lbl"><span class="livedot" aria-hidden="true"></span>Avg. model latency</div><div class="an-kpi-val" id="kpiLatency">312ms</div><div class="an-kpi-delta good-down" id="kpiLatencyDelta">live</div></div>
-    <div class="an-kpi card"><div class="an-kpi-lbl"><span class="livedot" aria-hidden="true"></span>Model confidence</div><div class="an-kpi-val" id="kpiConf">96.4%</div><div class="an-kpi-delta">Rolling average</div></div>
-  </div>
-
-  <div class="an-grid2">
-    <div class="an-panel card">
-      <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-trend"/></svg>AI inference throughput</h2><span id="chartTag">Streaming…</span></div>
-      <svg class="linechart" viewBox="0 0 560 170" preserveAspectRatio="none" role="img" aria-label="Live throughput over the last 60 seconds">
-        <defs><linearGradient id="liveAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#7b5cff" stop-opacity="0.30"/><stop offset="100%" stop-color="#7b5cff" stop-opacity="0"/></linearGradient></defs>
-        <line class="grid-line" x1="10" y1="31.7" x2="550" y2="31.7"/><line class="grid-line" x1="10" y1="75" x2="550" y2="75"/><line class="grid-line" x1="10" y1="118" x2="550" y2="118"/>
-        <polygon id="liveArea" points="" fill="url(#liveAreaGrad)"/>
-        <polyline class="line" id="liveLine" points="" style="stroke:#7b5cff"/>
-        <circle class="dot" id="liveDot" cx="550" cy="80" r="4.5" style="fill:#ff3d68"/>
-      </svg>
-      <div class="mlbls" style="margin-top:6px" aria-hidden="true"><span>-60s</span><span>-50s</span><span>-40s</span><span>-30s</span><span>-20s</span><span>-10s</span><span>Now</span></div>
-    </div>
-    <div class="an-panel card">
-      <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-target"/></svg>System health</h2><span>Live</span></div>
-      <div class="donut-row">
-        <div class="donut-item">
-          <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
-            <defs><linearGradient id="drgrad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
-            <circle cx="40" cy="40" r="34" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="40" cy="40" r="34" fill="none" stroke="url(#drgrad1)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="8.5" id="donutConf"/>
-          </svg>
-          <div class="donut-val" id="donutConfVal">96%</div><div class="donut-lbl">Confidence</div>
-        </div>
-        <div class="donut-item">
-          <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
-            <defs><linearGradient id="drgrad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7b5cff"/><stop offset="100%" stop-color="#2f6fed"/></linearGradient></defs>
-            <circle cx="40" cy="40" r="34" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="40" cy="40" r="34" fill="none" stroke="url(#drgrad2)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="59.8" id="donutGpu"/>
-          </svg>
-          <div class="donut-val" id="donutGpuVal">72%</div><div class="donut-lbl">GPU load</div>
-        </div>
-        <div class="donut-item">
-          <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
-            <defs><linearGradient id="drgrad3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00b8a0"/><stop offset="100%" stop-color="#7b5cff"/></linearGradient></defs>
-            <circle cx="40" cy="40" r="34" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="40" cy="40" r="34" fill="none" stroke="url(#drgrad3)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="181.6" id="donutQueue"/>
-          </svg>
-          <div class="donut-val" id="donutQueueVal">15%</div><div class="donut-lbl">Queue load</div>
-        </div>
+    <div class="svc-groups">
+      <div class="svc-group">
+        <h3 class="svc-title">AI agents &amp; chatbots</h3>
+        <ul class="svc-list">
+          <li><h4>Chatbots for website &amp; WhatsApp</h4><p>Answer customers 24/7, qualify leads and book appointments.</p></li>
+          <li><h4>Custom LLM agents</h4><p>Agents that read, decide and act inside your own tools.</p></li>
+          <li><h4>Content &amp; marketing pipelines</h4><p>Scheduled posts, cold email sequences and auto-reports.</p></li>
+        </ul>
+      </div>
+      <div class="svc-group">
+        <h3 class="svc-title">Workflow &amp; data automation</h3>
+        <ul class="svc-list">
+          <li><h4>Excel automation</h4><p>Reports, consolidation, validation and scheduled emails, hands-free.</p></li>
+          <li><h4>Python scripts &amp; integrations</h4><p>Bridges between ERP, CRM, accounting and any API.</p></li>
+          <li><h4>Scraping &amp; lead lists</h4><p>Competitor prices, market data and prospect lists, kept fresh.</p></li>
+          <li><h4>Workflow orchestration</h4><p>Scheduled pipelines with retries, alerts and full logs.</p></li>
+        </ul>
+      </div>
+      <div class="svc-group">
+        <h3 class="svc-title">Documents &amp; insight</h3>
+        <ul class="svc-list">
+          <li><h4>PDF &amp; OCR processing</h4><p>Invoices, contracts and scans turned into clean data.</p></li>
+          <li><h4>Forecasting &amp; anomaly detection</h4><p>ML that predicts demand and catches what looks wrong.</p></li>
+          <li><h4>Live dashboards</h4><p>The numbers your team needs, always current.</p></li>
+        </ul>
       </div>
     </div>
   </div>
-
-  <div class="sec-head" style="margin:40px 0 24px">
-    <span class="eyebrow e-violet"><span class="pd"></span>Live infrastructure</span>
-    <h2 class="stitle" style="font-size:clamp(22px,3vw,32px)">GPU &amp; <span class="gradient-text">compute nodes</span></h2>
-    <p class="sdesc">Utilization, memory and temperature for each node serving AI agents.</p>
-  </div>
-  <div class="gpu-grid" id="gpuGrid">
-    <div class="gpu-card"><div class="gpu-top"><span class="gpu-name">Node 01 · Chat agent</span><span class="gpu-status" aria-hidden="true"></span></div><div class="gpu-model">NVIDIA A10G</div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>GPU utilization</span><b id="g1u-t">76%</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill" id="g1u" style="width:76%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>VRAM</span><b id="g1v-t">14.2 / 24 GB</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill cool" id="g1v" style="width:59%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>Temp</span><b id="g1t-t">64°C</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill warm" id="g1t" style="width:64%"></div></div></div></div>
-    <div class="gpu-card"><div class="gpu-top"><span class="gpu-name">Node 02 · Doc agent</span><span class="gpu-status" aria-hidden="true"></span></div><div class="gpu-model">NVIDIA T4</div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>GPU utilization</span><b id="g2u-t">91%</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill" id="g2u" style="width:91%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>VRAM</span><b id="g2v-t">12.8 / 16 GB</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill cool" id="g2v" style="width:80%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>Temp</span><b id="g2t-t">71°C</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill warm" id="g2t" style="width:71%"></div></div></div></div>
-    <div class="gpu-card"><div class="gpu-top"><span class="gpu-name">Node 03 · Vision/OCR</span><span class="gpu-status" aria-hidden="true"></span></div><div class="gpu-model">NVIDIA L4</div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>GPU utilization</span><b id="g3u-t">48%</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill" id="g3u" style="width:48%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>VRAM</span><b id="g3v-t">6.1 / 24 GB</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill cool" id="g3v" style="width:25%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>Temp</span><b id="g3t-t">52°C</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill warm" id="g3t" style="width:52%"></div></div></div></div>
-    <div class="gpu-card"><div class="gpu-top"><span class="gpu-name">Node 04 · Forecast agent</span><span class="gpu-status" aria-hidden="true"></span></div><div class="gpu-model">CPU cluster · 32 vCPU</div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>CPU utilization</span><b id="g4u-t">63%</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill" id="g4u" style="width:63%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>RAM</span><b id="g4v-t">41 / 64 GB</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill cool" id="g4v" style="width:64%"></div></div></div>
-      <div class="gpu-metric"><div class="gpu-metric-row"><span>Queue depth</span><b id="g4t-t">3 jobs</b></div><div class="gpu-bar-track"><div class="gpu-bar-fill warm" id="g4t" style="width:20%"></div></div></div></div>
-  </div>
-
-  <div class="an-panel card">
-    <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-bot"/></svg>AI agent activity feed</h2><span>Newest first</span></div>
-    <div class="ai-feed" id="aiFeed" aria-hidden="true"></div>
-  </div>
-
-  <div class="an-cta card">
-    <div><h3>Want a live AI dashboard like this for your business?</h3><p>We wire up real-time monitoring for every AI agent and automation we deploy, built around the metrics that matter to your team.</p></div>
-    <a href="#contact" class="btn btn-grad">Get a free audit</a>
-  </div>
 </section>
-</div>
 
-<!-- ================================================= ANALYTICS (demo) -->
-<div class="tab-panel" id="tab-analytics" hidden>
-<section class="page-hero" aria-labelledby="an-title">
-  <ol class="crumb"><li><a href="#home">Home</a></li><li aria-hidden="true">/</li><li aria-current="page">Analytics</li></ol>
-  <div class="sec-head center">
-    <span class="eyebrow"><span class="pd"></span>Analytics &amp; infrastructure</span>
-    <h1 class="stitle" id="an-title">The dashboard behind <span class="gradient-text">every automation</span></h1>
-    <p class="sdesc">The kind of analytics, ML monitoring and compute dashboards we build into every automation we ship.</p>
-    <p class="demo-note"><svg class="ic"><use href="#i-alert"/></svg>Illustrative demo data</p>
+<!-- ============ SECTORS ============ -->
+<section class="sec sec-tight" aria-labelledby="sec-h">
+  <div class="wrap sectors">
+    <h2 class="h3" id="sec-h">Industries we've automated</h2>
+    <ul class="chips">
+      <li>Finance &amp; CA firms</li><li>Logistics</li><li>D2C &amp; retail</li><li>NBFC &amp; fintech</li><li>Manufacturing</li><li>HR &amp; payroll</li><li>Healthcare &amp; clinics</li><li>Real estate</li><li>EdTech</li><li>Legal &amp; compliance</li><li>Agri-business</li><li>Hospitality &amp; travel</li><li>IT &amp; SaaS</li><li>E-commerce marketplaces</li><li>Public sector</li><li>Energy &amp; utilities</li>
+    </ul>
+    <p class="muted">Not listed? If the work is repetitive and rule-based, we can probably automate it.</p>
   </div>
 </section>
 
-<section class="sec sec-flush" aria-label="Analytics demo">
-  <div class="an-toprow">
-    <div class="an-kpi card"><div class="an-kpi-lbl">Active automations</div><div class="an-kpi-val">142</div><div class="an-kpi-delta">↑ 12 this month</div></div>
-    <div class="an-kpi card"><div class="an-kpi-lbl">Reports generated today</div><div class="an-kpi-val">3,482</div><div class="an-kpi-delta">↑ 8.4% vs yesterday</div></div>
-    <div class="an-kpi card"><div class="an-kpi-lbl">ML models in production</div><div class="an-kpi-val">24</div><div class="an-kpi-delta">99% avg accuracy</div></div>
-    <div class="an-kpi card"><div class="an-kpi-lbl">Avg. processing time</div><div class="an-kpi-val">4.2s</div><div class="an-kpi-delta good-down">↓ 0.6s vs last week</div></div>
-  </div>
-
-  <div class="an-grid2">
-    <div class="an-panel card">
-      <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-trend"/></svg>Automation volume, last 12 weeks</h2><span>Reports processed / week</span></div>
-      <svg class="linechart" viewBox="0 0 560 170" preserveAspectRatio="none" role="img" aria-label="Weekly report volume rising steadily over 12 weeks">
-        <defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2f6fed" stop-opacity="0.28"/><stop offset="100%" stop-color="#2f6fed" stop-opacity="0"/></linearGradient></defs>
-        <line class="grid-line" x1="10" y1="31.7" x2="550" y2="31.7"/><line class="grid-line" x1="10" y1="75" x2="550" y2="75"/><line class="grid-line" x1="10" y1="118" x2="550" y2="118"/>
-        <polygon fill="url(#areaGrad)" points="10.0,105.1 59.1,96.8 108.2,100.3 157.3,81.4 206.4,75.5 255.5,79.0 304.5,64.9 353.6,69.6 402.7,50.7 451.8,55.4 500.9,41.2 550.0,31.7 550.0,150 10.0,150"/>
-        <polyline class="line" points="10.0,105.1 59.1,96.8 108.2,100.3 157.3,81.4 206.4,75.5 255.5,79.0 304.5,64.9 353.6,69.6 402.7,50.7 451.8,55.4 500.9,41.2 550.0,31.7"/>
-        <circle class="dot" cx="550.0" cy="31.7" r="4.5"/>
-      </svg>
-      <div class="mlbls" style="margin-top:6px" aria-hidden="true"><span>Wk 1</span><span>Wk 3</span><span>Wk 5</span><span>Wk 7</span><span>Wk 9</span><span>Wk 11</span><span>Now</span></div>
+<!-- ============ ENGAGEMENT MODELS ============ -->
+<section class="sec" id="engage" aria-labelledby="engage-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="engage-h">Three ways to work with us</h2>
+      <p class="lede">Start small and prove the value, or go straight to a full build. Every option starts with the free audit.</p>
     </div>
-    <div class="an-panel card">
-      <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-target"/></svg>Model health</h2></div>
-      <div class="donut-row">
-        <div class="donut-item">
-          <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
-            <defs><linearGradient id="angrad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#2f6fed"/><stop offset="100%" stop-color="#00b8a0"/></linearGradient></defs>
-            <circle cx="40" cy="40" r="34" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="40" cy="40" r="34" fill="none" stroke="url(#angrad1)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="19.2"/>
-          </svg>
-          <div class="donut-val">91%</div><div class="donut-lbl">Accuracy</div>
-        </div>
-        <div class="donut-item">
-          <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
-            <defs><linearGradient id="angrad2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#7b5cff"/><stop offset="100%" stop-color="#2f6fed"/></linearGradient></defs>
-            <circle cx="40" cy="40" r="34" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="40" cy="40" r="34" fill="none" stroke="url(#angrad2)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="8.5"/>
-          </svg>
-          <div class="donut-val">96%</div><div class="donut-lbl">Uptime</div>
-        </div>
-        <div class="donut-item">
-          <svg width="80" height="80" viewBox="0 0 80 80" aria-hidden="true">
-            <defs><linearGradient id="angrad3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00b8a0"/><stop offset="100%" stop-color="#7b5cff"/></linearGradient></defs>
-            <circle cx="40" cy="40" r="34" fill="none" class="donut-track" stroke-width="7"/>
-            <circle cx="40" cy="40" r="34" fill="none" stroke="url(#angrad3)" stroke-width="7" stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="12.8"/>
-          </svg>
-          <div class="donut-val">94%</div><div class="donut-lbl">Auto rate</div>
-        </div>
+    <div class="models">
+      <article class="model glow">
+        <h3 class="h3">Pilot</h3>
+        <p class="model-for">For teams trying automation for the first time</p>
+        <p>One workflow automated end to end in 1–2 weeks. You see it run on your own data before deciding on anything bigger.</p>
+        <ul class="checks sm"><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>One high-impact workflow</li><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Fixed price, agreed upfront</li><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Handover and training</li></ul>
+      </article>
+      <article class="model model-feat glow">
+        <span class="model-flag">Recommended</span>
+        <h3 class="h3">Project</h3>
+        <p class="model-for">For a set of connected workflows</p>
+        <p>A fixed-scope build across several processes, with integrations, dashboards and documentation.</p>
+        <ul class="checks sm"><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Written scope in 3 business days</li><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Weekly progress updates</li><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>15 days of free support after launch</li></ul>
+      </article>
+      <article class="model glow">
+        <h3 class="h3">Care plan</h3>
+        <p class="model-for">For automations that must never stop</p>
+        <p>Monthly monitoring, fixes and small improvements once your automations are live.</p>
+        <ul class="checks sm"><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Run monitoring and alerts</li><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Fixes when your tools change</li><li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>Small upgrades each month</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS (true sequence) ============ -->
+<section class="sec" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="proc-h">From first call to running automation</h2>
+      <p class="lede">Nothing is billed until you approve a written scope. You'll often see a working pilot before that.</p>
+    </div>
+    <ol class="timeline">
+      <li><span class="t-n mono">1</span><h3>Free 15-min audit</h3><p>We map your manual work and spot what's worth automating.</p></li>
+      <li><span class="t-n mono">2</span><h3>Scope in 3 days</h3><p>A written scope, timeline and price within three business days.</p></li>
+      <li><span class="t-n mono">3</span><h3>Build</h3><p>Usually 3 days to 4 weeks, with weekly progress updates.</p></li>
+      <li><span class="t-n mono">4</span><h3>Handover</h3><p>Training for your team and complete documentation.</p></li>
+      <li><span class="t-n mono">5</span><h3>15 days of support</h3><p>Free fixes for edge cases while your team settles in.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ TRUST: team + security ============ -->
+<section class="sec" id="team" aria-labelledby="team-h">
+  <div class="wrap trust">
+    <div>
+      <h2 class="h2" id="team-h">Senior engineers, not a call centre</h2>
+      <p class="lede">A 20-person engineering team from IIT, NIT and BITS Pilani, with prior work at PayPal India, Paytm, Pine Labs, Automation Anywhere and Infosys, TCS and HCL. Founded in 2022.</p>
+      <ul class="people">
+        <li><span class="av" aria-hidden="true">HV</span><div><h3>Harsh Vardhan</h3><p>Founder. Leads engineering and ML.</p></div></li>
+        <li><span class="av" aria-hidden="true">AM</span><div><h3>Anurag Maurya</h3><p>Co-founder. Leads client delivery and partnerships.</p></div></li>
+        <li><span class="av" aria-hidden="true">MC</span><div><h3>Mohit Chowdhary</h3><p>Member of technical staff. Automation builds and integrations.</p></div></li>
+      </ul>
+    </div>
+    <div class="safety glow">
+      <h3 class="h3">Your data stays yours</h3>
+      <ul class="checks">
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><div><strong>NDA before anything else.</strong> Signed before we see a single file.</div></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Runs in your environment.</strong> Your servers or your approved cloud, not ours.</div></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Least-privilege access.</strong> Only what the task needs, revoked at handover.</div></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Every run is logged.</strong> See exactly what ran, when, and on what data.</div></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg><div><strong>Pay your way.</strong> Stripe, PayPal or UPI, with support across time zones.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-tight" aria-labelledby="note-h">
+  <div class="wrap note-wrap">
+    <figure class="founder-note">
+      <h2 class="visually-hidden" id="note-h">A note from our founder</h2>
+      <blockquote>
+        <p>We started Auto Solution after watching skilled people lose whole days to copy-paste and spreadsheet chores. Every automation we ship is judged by one question: did someone get their time back?</p>
+        <p>If the audit shows automation isn't worth it for you, we'll say so.</p>
+      </blockquote>
+      <figcaption><span class="av" aria-hidden="true">HV</span><span><strong>Harsh Vardhan</strong><br>Founder, Auto Solution</span></figcaption>
+    </figure>
+    <div class="zones">
+      <h3 class="h3">Working hours that overlap with yours</h3>
+      <ul class="zone-list" id="zones">
+        <li data-tz="Asia/Kolkata"><span>India</span><b class="mono">--:--</b></li>
+        <li data-tz="Asia/Dubai"><span>Dubai</span><b class="mono">--:--</b></li>
+        <li data-tz="Asia/Singapore"><span>Singapore</span><b class="mono">--:--</b></li>
+        <li data-tz="Europe/London"><span>London</span><b class="mono">--:--</b></li>
+        <li data-tz="America/New_York"><span>New York</span><b class="mono">--:--</b></li>
+      </ul>
+      <p class="muted" style="font-size:var(--t-sm);margin-top:12px">Highlighted cities are in business hours right now.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTES ============ -->
+<section class="sec" aria-labelledby="q-h">
+  <div class="wrap">
+    <h2 class="h2 sec-head" id="q-h">In their words</h2>
+    <div class="quotes">
+      <figure><blockquote>Our monthly GST reconciliation used to eat an entire day. Now it runs itself before we've even had coffee.</blockquote><figcaption>Operations head, CA firm, India</figcaption></figure>
+      <figure><blockquote>The forecasting model paid for itself in the first quarter through reduced overstock alone.</blockquote><figcaption>Supply chain manager, D2C brand, India</figcaption></figure>
+      <figure><blockquote>We were nervous about handing financial workflows to a script. Zero errors since launch changed our minds fast.</blockquote><figcaption>Finance lead, logistics company, UAE</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap faq-wrap">
+    <h2 class="h2" id="faq-h">Questions people ask first</h2>
+    <div class="faq">
+      <details><summary>How long does a project take?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Simple scripts take 3–7 days. Integrations and dashboards take 1–2 weeks. ML pipelines take 2–4 weeks. You get a firm timeline in the written scope.</p></details>
+      <details><summary>What does it cost?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>It depends on what's being automated, so we quote after the free audit. You approve a fixed scope and price before any work is billed.</p></details>
+      <details><summary>Do I need anyone technical on my side?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>No. Automations fit into what your team already uses, whether that's Excel, a dashboard or WhatsApp, and we train them at handover.</p></details>
+      <details><summary>Is my data safe?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>We sign an NDA first, and the automation runs on your own systems. Your data doesn't leave your environment without your explicit consent.</p></details>
+      <details><summary>Can you work with Tally, SAP, Zoho or Salesforce?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes, along with QuickBooks, Shopify, Google Sheets and most other software, through APIs, RPA or direct database connections.</p></details>
+      <details><summary>Do you work with clients outside India?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Yes. We work remotely with teams in the UAE, Singapore, the UK, the US and elsewhere.</p></details>
+      <details><summary>What if something breaks after launch?<svg width="20" height="20" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>Every project includes 15 days of free support after go-live. Ongoing maintenance is available after that.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec contact-sec" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact">
+    <div class="contact-copy">
+      <h2 class="h2" id="contact-h">Tell us what's eating your team's time.</h2>
+      <p class="lede">Free 15-minute audit, no commitment. We reply within 24 hours.</p>
+      <ul class="contact-lines">
+        <li><a href="https://wa.me/917303897496" target="_blank" rel="noopener" class="wa-line"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp +91 73038 97496</a></li>
+        <li><a href="tel:+917303897496">Call +91 73038 97496</a></li>
+        <li><a href="mailto:info@autosoluation.com">info@autosoluation.com</a></li>
+      </ul>
+    </div>
+    <form class="form glow" id="leadForm" novalidate>
+      <div class="two">
+        <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required aria-describedby="f-name-e"><span class="err" id="f-name-e"></span></div>
+        <div class="f"><label for="f-company">Company <span class="opt">(optional)</span></label><input id="f-company" name="company" autocomplete="organization"></div>
       </div>
-    </div>
-  </div>
-
-  <div class="an-panel card mb">
-    <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-chart"/></svg>Automation ROI by sector</h2><span>Hours saved / month, indexed</span></div>
-    <div class="sector-bars">
-      <div class="sector-bar-row"><div class="sbr-name">Finance &amp; CA</div><div class="sbr-track"><div class="sbr-fill" data-w="85"></div></div><div class="sbr-val">85%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">Logistics</div><div class="sbr-track"><div class="sbr-fill" data-w="78"></div></div><div class="sbr-val">78%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">D2C &amp; Retail</div><div class="sbr-track"><div class="sbr-fill" data-w="72"></div></div><div class="sbr-val">72%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">NBFC</div><div class="sbr-track"><div class="sbr-fill" data-w="90"></div></div><div class="sbr-val">90%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">Manufacturing</div><div class="sbr-track"><div class="sbr-fill" data-w="68"></div></div><div class="sbr-val">68%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">HR &amp; Payroll</div><div class="sbr-track"><div class="sbr-fill" data-w="65"></div></div><div class="sbr-val">65%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">Healthcare</div><div class="sbr-track"><div class="sbr-fill" data-w="74"></div></div><div class="sbr-val">74%</div></div>
-      <div class="sector-bar-row"><div class="sbr-name">E-commerce</div><div class="sbr-track"><div class="sbr-fill" data-w="81"></div></div><div class="sbr-val">81%</div></div>
-    </div>
-  </div>
-
-  <div class="an-panel card">
-    <div class="an-panel-hdr"><h2 class="ml-title" style="margin:0"><svg class="ic"><use href="#i-flow"/></svg>Recent automation runs</h2></div>
-    <div class="an-table-wrap" tabindex="0" role="region" aria-label="Recent automation runs table">
-      <table class="an-table">
-        <thead><tr><th scope="col">Workflow</th><th scope="col">Sector</th><th scope="col">Status</th><th scope="col">Last run</th><th scope="col">Time saved</th></tr></thead>
-        <tbody>
-          <tr><td>GST reconciliation</td><td>Finance &amp; CA</td><td class="status-ok">✓ Completed</td><td>2 min ago</td><td>3h 12m</td></tr>
-          <tr><td>Shipment sync, 5 couriers</td><td>Logistics</td><td class="status-ok">✓ Completed</td><td>6 min ago</td><td>1h 40m</td></tr>
-          <tr><td>Demand forecast refresh</td><td>D2C &amp; Retail</td><td class="status-ok">✓ Completed</td><td>11 min ago</td><td>2h 05m</td></tr>
-          <tr><td>Invoice OCR batch #482</td><td>Finance</td><td class="status-ok">✓ Completed</td><td>14 min ago</td><td>4h 30m</td></tr>
-          <tr><td>Production dashboard sync</td><td>Manufacturing</td><td class="status-ok">✓ Completed</td><td>18 min ago</td><td>0h 55m</td></tr>
-          <tr><td>Payroll PDF generation</td><td>HR &amp; Payroll</td><td class="status-ok">✓ Completed</td><td>26 min ago</td><td>5h 20m</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="an-cta card">
-    <div><h3>Want a dashboard like this for your workflow?</h3><p>We build analytics and monitoring into every automation we ship, tailored to the metrics your team cares about.</p></div>
-    <a href="#contact" class="btn btn-grad">Get a free audit</a>
+      <div class="two">
+        <div class="f"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-e"><span class="err" id="f-email-e"></span></div>
+        <div class="f"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="f"><label for="f-msg">What do you want automated?</label><textarea id="f-msg" name="message" rows="4" placeholder="e.g. We build 50 Excel reports from ERP data every month." required aria-describedby="f-msg-e"></textarea><span class="err" id="f-msg-e"></span></div>
+      <button class="btn btn-primary btn-block" type="submit" id="submitBtn"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg><span class="lbl">Send via WhatsApp</span></button>
+      <p class="note">Opens WhatsApp with your details filled in. Press send there to reach us.</p>
+      <p class="note ok-note" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
-</div>
-
-<!-- ================================================= SECTORS -->
-<div class="tab-panel" id="tab-sectors" hidden>
-<section class="page-hero" aria-labelledby="sectors-title">
-  <ol class="crumb"><li><a href="#home">Home</a></li><li aria-hidden="true">/</li><li aria-current="page">Sectors</li></ol>
-  <div class="sec-head center">
-    <span class="eyebrow"><span class="pd"></span>Industries we serve</span>
-    <h1 class="stitle" id="sectors-title">Automation built for <span class="gradient-text">every sector</span></h1>
-    <p class="sdesc">Workflows look different in every industry — the manual pain doesn't. Here's where we've shipped automation and what it typically looks like.</p>
-  </div>
-</section>
-
-<section class="sec sec-flush" aria-label="Sectors">
-  <div class="sector-grid">
-    <article class="sector-card card"><div class="sector-top"><div class="itile md"><svg class="ic"><use href="#i-calc"/></svg></div><h2 class="sector-name">Finance &amp; CA firms</h2></div><p class="sector-desc">GST reconciliation, Tally-to-Excel automation, audit-trail generation and automated client reporting.</p><div class="sector-stat">3 hr → 4.2 s per reconciliation</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md teal"><svg class="ic"><use href="#i-truck"/></svg></div><h2 class="sector-name">Logistics &amp; supply chain</h2></div><p class="sector-desc">Multi-courier shipment tracking, ETA prediction, route optimization and automated WhatsApp status alerts.</p><div class="sector-stat">500+ shipments tracked / day</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md violet"><svg class="ic"><use href="#i-cart"/></svg></div><h2 class="sector-name">D2C &amp; retail</h2></div><p class="sector-desc">Demand forecasting, inventory sync across marketplaces, order reconciliation and return-rate analytics.</p><div class="sector-stat">23% less overstock</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md"><svg class="ic"><use href="#i-bank"/></svg></div><h2 class="sector-name">NBFC &amp; fintech</h2></div><p class="sector-desc">Loan document verification, credit-risk scoring pipelines, EMI reconciliation and compliance reporting.</p><div class="sector-stat">99.9% data accuracy</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md teal"><svg class="ic"><use href="#i-factory"/></svg></div><h2 class="sector-name">Manufacturing</h2></div><p class="sector-desc">Live production dashboards, downtime and reject-rate tracking, shift reports pulled straight from ERP.</p><div class="sector-stat">15% efficiency gain</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md violet"><svg class="ic"><use href="#i-users"/></svg></div><h2 class="sector-name">HR &amp; payroll</h2></div><p class="sector-desc">Automated payslip generation, attendance reconciliation, onboarding document checks and email dispatch.</p><div class="sector-stat">250+ employees per run</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md"><svg class="ic"><use href="#i-heart"/></svg></div><h2 class="sector-name">Healthcare &amp; clinics</h2></div><p class="sector-desc">Patient record digitization via OCR, appointment reminders, billing reconciliation and insurance claim prep.</p><div class="sector-stat">99%+ OCR accuracy</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md teal"><svg class="ic"><use href="#i-home"/></svg></div><h2 class="sector-name">Real estate</h2></div><p class="sector-desc">Lead scoring from web forms, automated follow-up sequences and rent/lease document extraction.</p><div class="sector-stat">Faster lead response</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md violet"><svg class="ic"><use href="#i-cap"/></svg></div><h2 class="sector-name">EdTech &amp; institutes</h2></div><p class="sector-desc">Student data consolidation, automated report cards, attendance analytics and fee-reminder workflows.</p><div class="sector-stat">Hours saved every week</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md"><svg class="ic"><use href="#i-scale"/></svg></div><h2 class="sector-name">Legal &amp; compliance</h2></div><p class="sector-desc">Contract clause extraction, document classification, deadline tracking and compliance checklist automation.</p><div class="sector-stat">Automated deadline tracking</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md teal"><svg class="ic"><use href="#i-leaf"/></svg></div><h2 class="sector-name">Agriculture &amp; agri-business</h2></div><p class="sector-desc">Yield and price forecasting, mandi data scraping, procurement reconciliation and farmer payment tracking.</p><div class="sector-stat">Real-time price feeds</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md violet"><svg class="ic"><use href="#i-plane"/></svg></div><h2 class="sector-name">Hospitality &amp; travel</h2></div><p class="sector-desc">Booking-channel sync, occupancy dashboards, automated guest communication and invoice generation.</p><div class="sector-stat">Multi-OTA sync</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md"><svg class="ic"><use href="#i-cloud"/></svg></div><h2 class="sector-name">IT &amp; SaaS</h2></div><p class="sector-desc">Usage-metrics dashboards, churn-risk models, support-ticket triage and automated billing reconciliation.</p><div class="sector-stat">Churn-risk models</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md teal"><svg class="ic"><use href="#i-store"/></svg></div><h2 class="sector-name">E-commerce marketplaces</h2></div><p class="sector-desc">Competitor price scraping, catalog sync, order/refund reconciliation and seller performance dashboards.</p><div class="sector-stat">Live competitor price feeds</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md violet"><svg class="ic"><use href="#i-bank"/></svg></div><h2 class="sector-name">Government &amp; public sector</h2></div><p class="sector-desc">Citizen-form digitization via OCR, scheme-disbursal tracking and grievance workflow automation.</p><div class="sector-stat">Faster processing times</div></article>
-    <article class="sector-card card"><div class="sector-top"><div class="itile md"><svg class="ic"><use href="#i-zap"/></svg></div><h2 class="sector-name">Energy &amp; utilities</h2></div><p class="sector-desc">Meter-reading data pipelines, consumption anomaly detection, billing automation and outage reporting.</p><div class="sector-stat">Anomaly detection</div></article>
-  </div>
-  <div class="center-cta" style="margin-top:44px">
-    <p class="sdesc">Don't see your sector? Most of what we build is workflow-agnostic — if it's repetitive and rule-based, we can probably automate it.</p>
-    <a href="#contact" class="btn btn-grad">Talk to us about your industry <svg class="ic"><use href="#i-arrow"/></svg></a>
-  </div>
-</section>
-</div>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <a href="#home" class="logo" aria-label="Auto Solution home">
-        <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true">
-          <defs><linearGradient id="fgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff8a00"/><stop offset="100%" stop-color="#ff3d68"/></linearGradient></defs>
-          <rect width="64" height="64" rx="14" fill="#0a0f1c" stroke="url(#fgrad)" stroke-width="1.5"/>
-          <path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#fgrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="48" cy="22" r="6" fill="none" stroke="url(#fgrad)" stroke-width="2.5"/>
-          <circle cx="48" cy="22" r="2" fill="url(#fgrad)"/>
-          <path d="M42 30 Q48 36 54 30" stroke="url(#fgrad)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-        </svg>
-        <span class="logo-text">Auto Solution<span>AUTOMATION • ML</span></span>
-      </a>
-      <p>AI and analytics-driven workflow automation for finance, logistics, D2C and manufacturing teams — worldwide, remote-first.</p>
-      <div class="foot-social">
-        <a href="https://wa.me/917303897496" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
-        <a href="mailto:info@autosoluation.com" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
-        <a href="tel:+917303897496" aria-label="Call"><svg class="ic"><use href="#i-phone"/></svg></a>
-      </div>
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div>
+      <a href="#top" class="brand"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0a0f2c" stroke="url(#lg)" stroke-width="1.5"/><path d="M14 46 L26 18 L38 46 M19 38 L33 38" stroke="url(#lg)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="22" r="6" fill="none" stroke="url(#lg)" stroke-width="2.6"/><circle cx="48" cy="22" r="2" fill="url(#lg)"/><path d="M42 30 Q48 36 54 30" stroke="url(#lg)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Auto Solution</span></a>
+      <p class="muted">AI agents and workflow automation. Remote-first, working worldwide.</p>
     </div>
-    <nav class="foot-col" aria-label="Company">
-      <h2>Company</h2>
-      <a href="#about">About</a><a href="#work">Portfolio</a><a href="#careers">Careers</a><a href="#insights">Insights</a>
-    </nav>
-    <nav class="foot-col" aria-label="Explore">
-      <h2>Explore</h2>
-      <a href="#sectors" data-tab="sectors">Sectors we serve</a><a href="#analytics" data-tab="analytics">Analytics dashboard</a><a href="#dashboard" data-tab="dashboard">AI live dashboard</a><a href="#team">Our team</a>
-    </nav>
-    <nav class="foot-col" aria-label="Support">
-      <h2>Support</h2>
-      <a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="#security">Security</a><a href="https://wa.me/917303897496" target="_blank" rel="noopener">WhatsApp us</a>
+    <nav aria-label="Footer">
+      <a href="#how">How it works</a><a href="#results">Results</a><a href="#agents">AI agents</a><a href="#engage">Ways to work</a><a href="#services">Services</a><a href="#estimate">Savings estimate</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="privacy.html">Privacy policy</a>
     </nav>
   </div>
-  <div class="foot-bottom">
-    <p class="fcopy">© <span id="yr">2026</span> Auto Solution. All rights reserved.</p>
-    <div class="foot-legal">
-      <a href="privacy.html">Privacy policy</a>
-      <a href="tel:+917303897496">+91 73038 97496</a>
-    </div>
-  </div>
+  <p class="wrap copy">© <span id="yr">2026</span> Auto Solution</p>
 </footer>
 
+<!-- Mobile CTA bar + desktop WhatsApp button -->
+<div class="mbar" id="mbar">
+  <a href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%27d%20like%20a%20free%20automation%20audit." target="_blank" rel="noopener" class="btn btn-ghost"><svg width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a href="#contact" class="btn btn-primary">Book free audit</a>
+</div>
+<a class="wa-fab" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%27d%20like%20a%20free%20automation%20audit." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg width="26" height="26"><use href="#i-wa"/></svg></a>
+
+<script src="assets/js/field.js" defer></script>
 <script src="assets/js/main.js" defer></script>
-<script src="assets/js/dashboard.js" defer></script>
 </body>
 </html>
