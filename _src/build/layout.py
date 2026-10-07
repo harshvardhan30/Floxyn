@@ -42,7 +42,7 @@ def ic(name, cls=""):
     return f'<svg class="{cls}" aria-hidden="true"><use href="#i-{name}"/></svg>'
 
 def wa_ic(size=18):
-    return f'<svg class="wa-ic" width="{size}" height="{size}" aria-hidden="true"><use href="#i-wa"/></svg>'
+    return ""  # WhatsApp logo removed site-wide by request
 
 def btn_book(label="Book a free 30-min call", cls="btn btn-primary"):
     return f'<a class="{cls}" href="{CAL}" target="_blank" rel="noopener">{e(label)}</a>'
@@ -51,6 +51,13 @@ def btn_wa(label="Chat on WhatsApp", cls="btn btn-ghost"):
     return f'<a class="{cls}" href="{WA}" target="_blank" rel="noopener">{wa_ic()}{e(label)}</a>'
 
 # ---------------- navigation data ----------------
+NAV_PRODUCTS = [
+    ("/products/paysentinel/", "PaySentinel", "Real-time payment fraud detection."),
+    ("/products/gridsentinel/", "GridSentinel", "Energy theft and loss analytics for DISCOMs."),
+    ("/products/fuelledger/", "FuelLedger", "Retail outlet integrity for fuel retail."),
+    ("/pilot/", "Pilot program", "Prove the value on your own data in 6\u20138 weeks."),
+    ("/products/", "All products", "Compare all three, and request a demo."),
+]
 NAV_SERVICES = [
     ("/services/ai-agents/", "AI agents &amp; chatbots", "Agents that answer, qualify, book and update your systems."),
     ("/services/workflow-automation/", "Workflow automation", "Excel, Python and integrations that run your busywork."),
@@ -97,24 +104,26 @@ def header(active=""):
     return f"""{SPRITE}
 <a class="skip" href="#main">Skip to content</a>
 <header class="hdr" id="hdr">
+  <a class="annc" href="/pilot/"><span class="annc-tag">New</span>GridSentinel and FuelLedger are now pilot-ready. <u>Apply for a pilot</u></a>
   <div class="hdr-in">
     <a class="brand" href="/" aria-label="Auto Solution home">{LOGO}<span>Auto Solution</span></a>
     <nav class="mainnav" aria-label="Main">
-      {mb("services","Services")}{mb("industries","Industries")}{mb("resources","Resources")}{mb("company","Company")}
+      {mb("products","Products")}{mb("services","Services")}{mb("industries","Industries")}{mb("resources","Resources")}{mb("company","Company")}
       {ln("/case-studies/","Case studies","cases")}
     </nav>
-    <div class="hdr-cta"><a class="btn btn-ghost btn-sm" href="/contact/">Contact</a>{btn_book("Book a call","btn btn-primary btn-sm")}</div>
+    <div class="hdr-cta">{btn_book("Book a call","btn btn-outline btn-sm")}<a class="btn btn-primary btn-sm" href="/request-demo/">Request a demo</a></div>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="24" height="24"><use href="#i-menu"/></svg></button>
   </div>
+  {mm_panel("mm-products", NAV_PRODUCTS, '<div class="mm-foot"><span>See any product running on sample data.</span><a class="tlink" href="/request-demo/">Request a demo</a></div>')}
   {mm_panel("mm-services", NAV_SERVICES, foot_s)}
   {mm_panel("mm-industries", NAV_INDUSTRIES, foot_i)}
   {mm_panel("mm-resources", NAV_RESOURCES)}
   {mm_panel("mm-company", NAV_COMPANY)}
 </header>
 <nav class="drawer" id="drawer" aria-label="Mobile">
-  {dsec("Services", NAV_SERVICES)}{dsec("Industries", NAV_INDUSTRIES)}{dsec("Resources", NAV_RESOURCES)}{dsec("Company", NAV_COMPANY)}
-  {btn_book()}
-  {btn_wa(cls="btn btn-ghost")}
+  {dsec("Products", NAV_PRODUCTS)}{dsec("Services", NAV_SERVICES)}{dsec("Industries", NAV_INDUSTRIES)}{dsec("Resources", NAV_RESOURCES)}{dsec("Company", NAV_COMPANY)}
+  <a class="btn btn-primary" href="/request-demo/">Request a demo</a>
+  {btn_book(cls="btn btn-outline")}
 </nav>"""
 
 def footer():
@@ -125,20 +134,19 @@ def footer():
     <div class="ftr-top">
       <div>
         <a class="brand" href="/">{LOGO}<span>Auto Solution</span></a>
-        <p>AI agents and workflow automation for teams that would rather do real work. Based in Noida, working worldwide.</p>
+        <p>AI that finds where money goes missing: payment fraud, energy theft and fuel loss. Plus custom automation for busy teams. Founded 2026, Noida.</p>
         <div class="ftr-contact">
-          <a href="{WA}" target="_blank" rel="noopener">{wa_ic(16)}WhatsApp {PHONE}</a>
+          <a href="tel:{TEL}">{ic("phone")}{PHONE}</a>
           <a href="mailto:{EMAIL}">{ic("mail")}{EMAIL}</a>
           <span style="color:var(--d-muted)">{ADDRESS}</span>
         </div>
       </div>
-      {col("Services", NAV_SERVICES)}{col("Industries", NAV_INDUSTRIES)}{col("Resources", NAV_RESOURCES)}{col("Company", NAV_COMPANY)}
+      {col("Products", NAV_PRODUCTS[:4])}{col("Services", NAV_SERVICES)}{col("Resources", NAV_RESOURCES)}{col("Company", NAV_COMPANY)}
     </div>
     <div class="ftr-bot"><span>© <span class="yr">2026</span> Auto Solution. All rights reserved.</span><span><a href="/privacy/">Privacy policy</a><a href="/terms/">Terms of use</a></span></div>
   </div>
 </footer>
-<div class="mbar" id="mbar"><a class="btn btn-ghost" href="{WA}" target="_blank" rel="noopener">{wa_ic()}WhatsApp</a>{btn_book("Book a free call")}</div>
-<a class="wa-fab" href="{WA}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg><use href="#i-wa"/></svg></a>"""
+<div class="mbar" id="mbar">{btn_book("Book a call","btn btn-ghost")}<a class="btn btn-primary" href="/request-demo/">Request a demo</a></div>"""
 
 def page(path, title, desc, body, active="", extra_js="", schema=""):
     canon = SITE + path
@@ -179,15 +187,18 @@ def phero(title, lede, crumbs, actions=True, right="", tags=None, h="h1"):
     cr = '<ol class="crumbs">' + "".join(
         (f'<li><a href="{u}">{t}</a></li>' if u else f'<li aria-current="page">{t}</li>') for t, u in crumbs) + "</ol>"
     tg = ('<ul class="tags">' + "".join(f'<li class="tag">{t}</li>' for t in tags) + "</ul>") if tags else ""
-    act = f'<div class="btns">{btn_book()}{btn_wa()}</div>' if actions else ""
+    if isinstance(actions, str):
+        act = f'<div class="btns">{actions}</div>'
+    else:
+        act = f'<div class="btns">{btn_book()}<a class="btn btn-outline" href="/request-demo/">Request a demo</a></div>' if actions else ""
     left = f'<div>{cr}<h1 class="{h}">{title}</h1><p class="lede">{lede}</p>{tg}{act}</div>'
     inner = f'<div class="duo">{left}<div>{right}</div></div>' if right else f'<div style="max-width:860px">{left}</div>'
-    return f'<section class="phero dark{" has-ui" if right else ""}"><div class="wrap">{inner}</div></section>'
+    return f'<section class="phero{" has-ui" if right else ""}"><div class="wrap">{inner}</div></section>'
 
 def cta_band(title="Find out what you could automate", lede="A free 30-minute call. We look at how your team works today and show you what\u2019s worth automating, with no obligation."):
     return f"""<section class="sec tight"><div class="wrap"><div class="cta-band rv no-mbar"><div class="row">
 <div style="max-width:620px"><h2 class="h2">{title}</h2><p class="lede">{lede}</p></div>
-<div class="btns" style="margin:0">{btn_book()}{btn_wa()}</div></div></div></div></section>"""
+<div class="btns" style="margin:0"><a class="btn btn-primary" href="/request-demo/">Request a demo</a>{btn_book("Book a free 30-min call","btn btn-ghost")}</div></div></div></div></section>"""
 
 def checks(items, cls="checks"):
     return f'<ul class="{cls}">' + "".join(f'<li>{ic("check")}<span>{t}</span></li>' for t in items) + "</ul>"
@@ -238,4 +249,25 @@ def ui_dash():
 <path d="M200 40 L230 34 L260 38 L290 24 L320 28 L320 110 L200 110 Z" fill="url(#dg)"/><path d="M200 40 L230 34 L260 38 L290 24 L320 28" fill="none" stroke="#4fe3ff" stroke-width="2.4" stroke-dasharray="5 4"/>
 <line x1="200" y1="0" x2="200" y2="110" stroke="rgba(150,170,255,.3)" stroke-dasharray="3 3"/><text x="206" y="12" fill="#a3abcf" font-size="9">forecast</text></svg></div>"""
 
-UI = {"chat": ui_chat, "flow": ui_flow, "doc": ui_doc, "dash": ui_dash}
+def ui_pay(live=False):
+    rows=[("TXN 8F21A","₹2,450","UPI","0.04","ok","Approve"),("TXN 8F21B","₹98,000","Card","0.91","bad","Decline"),
+          ("TXN 8F21C","₹14,999","Card","0.58","mid","Review"),("TXN 8F21D","₹640","UPI","0.02","ok","Approve"),("TXN 8F21E","₹49,500","Netbank","0.73","mid","Review")]
+    tr="".join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td><td class="mono">{d}</td><td><span class="dec {e}">{f}</span></td></tr>' for a,b,c,d,e,f in rows)
+    return f"""<div class="ui ui-pay" aria-hidden="true"><div class="ui-bar"><i></i><i></i><i></i><span>PaySentinel: live scoring</span><span class="r">{'<span class="livedot"></span>live demo' if live else 'sample data'}</span></div>
+<table class="utbl"><thead><tr><th>Transaction</th><th>Amount</th><th>Rail</th><th>Score</th><th>Decision</th></tr></thead><tbody{' id="liveTbl"' if live else ''}>{tr}</tbody></table>
+<div class="drift"><span>Drift</span><b class="ok">Stable</b><span>Model</span><b>v14</b><span>Latency</span><b>38 ms</b></div></div>"""
+
+def ui_grid():
+    rows=[("DT-0417","Sector 12","18.6%","high"),("DT-0233","Industrial Rd","11.2%","mid"),("DT-0891","Old Market","9.4%","mid"),("DT-0152","Green Park","2.1%","ok")]
+    tr="".join(f'<tr><td class="mono">{a}</td><td>{b}</td><td><span class="bar {d}" style="--w:{float(c[:-1])*4.5}%"></span><span class="mono">{c}</span></td></tr>' for a,b,c,d in rows)
+    return f"""<div class="ui ui-grid" aria-hidden="true"><div class="ui-bar"><i></i><i></i><i></i><span>GridSentinel: transformer balance</span><span class="r">sample data</span></div>
+<table class="utbl"><thead><tr><th>Transformer</th><th>Area</th><th>Unexplained loss</th></tr></thead><tbody>{tr}</tbody></table>
+<div class="lead"><b>Top lead</b> Consumer #44817 on DT-0417: night load with zero billed units for 3 cycles. <span>Likely bypass. Inspect meter and incoming cable.</span></div></div>"""
+
+def ui_fuel():
+    steps=[("Invoiced","12,000 L",100),("Received","11,940 L",99.5),("Sold","11,610 L",96.75),("Collected","₹11.52L",95.4)]
+    bars="".join(f'<div class="fs"><span>{a}</span><div class="ft"><i style="width:{w}%"></i></div><b class="mono">{v}</b></div>' for a,v,w in steps)
+    return f"""<div class="ui ui-fuel" aria-hidden="true"><div class="ui-bar"><i></i><i></i><i></i><span>FuelLedger: Outlet RO-2291, today</span><span class="r">sample data</span></div>
+{bars}<div class="gaps"><span class="g mid">Transit gap 60 L</span><span class="g bad">Stock gap 330 L</span><span class="g mid">Night level drop, Tank 2</span></div></div>"""
+
+UI = {"chat": ui_chat, "flow": ui_flow, "doc": ui_doc, "dash": ui_dash, "pay": ui_pay, "grid": ui_grid, "fuel": ui_fuel}

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.autosolution.com/</loc></url>
+  <url><loc>https://www.autosolution.com/products/</loc></url>
+  <url><loc>https://www.autosolution.com/products/paysentinel/</loc></url>
+  <url><loc>https://www.autosolution.com/products/gridsentinel/</loc></url>
+  <url><loc>https://www.autosolution.com/products/fuelledger/</loc></url>
+  <url><loc>https://www.autosolution.com/pilot/</loc></url>
+  <url><loc>https://www.autosolution.com/request-demo/</loc></url>
   <url><loc>https://www.autosolution.com/services/</loc></url>
   <url><loc>https://www.autosolution.com/services/ai-agents/</loc></url>
   <url><loc>https://www.autosolution.com/services/workflow-automation/</loc></url>

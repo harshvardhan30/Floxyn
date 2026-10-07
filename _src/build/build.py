@@ -3,6 +3,7 @@ import os, json
 from layout import *
 from content import SERVICES, INDUSTRIES, CASES, CASE_BY, SERVICE_BY
 from posts import POSTS
+from products import PRODUCTS, PRODUCT_BY
 
 OUT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))  # repo root
 PAGES = []
@@ -78,24 +79,205 @@ def founder_block():
 def checklist_promo():
     return f'''<section class="sec tight"><div class="wrap"><div class="card rv promo"><div><p class="kicker">Free download</p><h2 class="h2" style="font-size:clamp(1.5rem,2.6vw,2.1rem)">The AI Automation Checklist</h2><p style="margin-top:10px">Find the work worth automating first, score it in 20 minutes, and avoid the mistakes that sink most first projects. 5 pages, PDF.</p></div><a class="btn btn-primary" href="/ai-automation-checklist/">Get the free checklist</a></div></div></section>'''
 
+def stage_tag(p, light=False):
+    return f'<span class="stage">{p["stage"]}</span>' if p["stage"] else ""
+
+def prod_card(p):
+    return f'''<a class="card prod-card rv" href="/products/{p["slug"]}/">{UI[p["ui"]]()}<div class="body">
+<div class="prod-row"><span class="pname">{p["name"]}</span>{stage_tag(p)}</div><p class="ptag">{p["tagline"]}</p><p>{p["short"]}</p>
+<p style="font-size:.92rem">For {", ".join(x.split(" (")[0].lower() for x in p["for_"][:3])}</p><span class="tlink">Explore {p["name"]}</span></div></a>'''
+
+def products_grid():
+    return '<div class="grid-3">' + "".join(prod_card(p) for p in PRODUCTS) + "</div>"
+
+def demo_btn(label="Request a demo", cls="btn btn-primary", product=""):
+    q = f"?product={product}" if product else ""
+    return f'<a class="{cls}" href="/request-demo/{q}">{label}</a>'
+
+TABS = [
+ ("paysentinel","PaySentinel","pay","Real-time payment fraud detection","Stop fraud before the money moves.",["Fraud score and approve, review or decline on every transaction","Learns from your own transaction history","Drift monitoring with versioned models and rollback"],"/products/paysentinel/"),
+ ("gridsentinel","GridSentinel","grid","Energy theft and loss analytics","Find where energy goes missing.",["Transformer-level energy balance","Separates theft from faulty meters and data gaps","Explainable, ranked leads for field teams"],"/products/gridsentinel/"),
+ ("fuelledger","FuelLedger","fuel","Retail outlet integrity for fuel retail","Every litre, accounted for.",["Four-way reconciliation for every outlet, every day","Density, leak and short-dispensing checks","Transporter and fleet card scorecards"],"/products/fuelledger/"),
+ ("agents","AI agents","chat","AI agents &amp; chatbots","Agents that get the work done.",["Answer customers 24/7 on WhatsApp and web","Qualify leads and book meetings","Update your CRM and systems automatically"],"/services/ai-agents/"),
+ ("workflow","Automation","flow","Workflow automation","Your busywork, running on its own.",["Excel, Python and integration automation","Reconciliations and reports on schedule","Built around the tools you already use"],"/services/workflow-automation/"),
+]
+def simulator():
+    cats = [("groceries","Groceries"),("travel","Travel"),("electronics","Electronics"),("gaming","Gaming"),("giftcards","Gift cards"),("crypto","Crypto exchange")]
+    opts = "".join(f'<option value="{k}"{" selected" if k=="electronics" else ""}>{n}</option>' for k,n in cats)
+    return f'''<section class="sec sim-sec" id="try" aria-labelledby="sim-h"><div class="wrap">
+  <div class="sec-head center"><p class="kicker">Try it yourself</p><h2 class="h2" id="sim-h">Score a payment the way PaySentinel does</h2><p class="lede">Change the transaction and watch the fraud score, the decision and the reasons update instantly.</p></div>
+  <div class="sim">
+    <form class="sim-in" id="sim" onsubmit="return false">
+      <div><label for="s-amt">Amount <output id="so-amt">₹24,999</output></label><input type="range" id="s-amt" min="100" max="200000" step="100" value="24999"></div>
+      <div><label for="s-hr">Time of day <output id="so-hr">14:00</output></label><input type="range" id="s-hr" min="0" max="23" value="14"></div>
+      <div><label for="s-vel">Payments from this device, last hour <output id="so-vel">2</output></label><input type="range" id="s-vel" min="1" max="20" value="2"></div>
+      <div class="sim-row"><div class="f"><label for="s-cat">Merchant category</label><select id="s-cat">{opts}</select></div></div>
+      <div class="sim-toggles">
+        <label class="tg"><input type="checkbox" id="s-new"><span></span>New device</label>
+        <label class="tg"><input type="checkbox" id="s-geo"><span></span>Card country differs</label>
+      </div>
+    </form>
+    <div class="sim-out" aria-live="polite">
+      <div class="gauge"><svg viewBox="0 0 200 110" aria-hidden="true"><path d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="rgba(150,170,255,.18)" stroke-width="14" stroke-linecap="round"/><path id="gArc" d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="url(#gg)" stroke-width="14" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/><defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#25d366"/><stop offset=".5" stop-color="#ffc14d"/><stop offset="1" stop-color="#ff5a5a"/></linearGradient></defs></svg>
+        <div class="g-val"><b class="mono" id="sScore">0.12</b><span>fraud score</span></div></div>
+      <p class="sim-dec"><span class="dec ok" id="sDec">Approve</span></p>
+      <h3 class="sim-h3">Why</h3>
+      <ul class="why" id="sWhy"></ul>
+      <p class="sim-note">Simplified demo model for illustration. PaySentinel learns these patterns from your own transaction history.</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:28px"><a class="tlink" href="/products/paysentinel/">How PaySentinel works</a></p>
+</div></section>'''
+
+def architecture():
+    return f'''<section class="sec dark arch-sec" aria-labelledby="arch-h"><div class="wrap">
+  <div class="sec-head center"><p class="kicker">Under the hood</p><h2 class="h2" id="arch-h">From raw data to a decision you can trust</h2><p class="lede">Every Auto Solution product runs on the same production pipeline, built to be explainable, monitored and safe to change.</p></div>
+  <div class="arch" aria-label="Pipeline: data sources, validation, features, versioned models, decisions, monitoring and feedback">
+    <svg class="arch-wires" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M60 60 H940" class="aw"/><path d="M60 60 H940" class="aw on"/></svg>
+    <ol class="arch-nodes">
+      <li><span class="an-ic">{ic("server")}</span><b>Your data</b><span>Payments, meters, outlets, ERP</span></li>
+      <li><span class="an-ic">{ic("shield")}</span><b>Validate</b><span>Schema checks, bad-data alerts</span></li>
+      <li><span class="an-ic">{ic("flow")}</span><b>Features</b><span>Behaviour, timing, balance</span></li>
+      <li><span class="an-ic">{ic("target")}</span><b>Models</b><span>Versioned, with rollback</span></li>
+      <li><span class="an-ic">{ic("zap")}</span><b>Decisions</b><span>API, dashboards, alerts</span></li>
+      <li><span class="an-ic">{ic("eye")}</span><b>Monitor</b><span>Drift, accuracy, feedback</span></li>
+    </ol>
+    <p class="arch-loop">{ic("list")}Field outcomes and reviews feed back into the next model version</p>
+  </div>
+  <div class="grid-3 arch-cards">
+    <div class="card"><h3 class="h3">Explainable by default</h3><p>Every flag carries the reasons behind it, so analysts and field teams can check it, not just trust it.</p></div>
+    <div class="card"><h3 class="h3">Humans stay in charge</h3><p>Borderline cases go to review. You decide the thresholds, and every automated decision is logged.</p></div>
+    <div class="card"><h3 class="h3">Deploy where your data lives</h3><p>On-premise, in your own cloud account, or isolated from the internet when your security team requires it.</p></div>
+  </div>
+</div></section>'''
+
+def tabs():
+    btns = "".join(f'<button role="tab" type="button" id="t-{k}" aria-controls="tp-{k}" aria-selected="{"true" if i==0 else "false"}" tabindex="{0 if i==0 else -1}">{n}</button>' for i,(k,n,*_) in enumerate(TABS))
+    panels = ""
+    for i,(k,n,ui,cat,tag,pts,href) in enumerate(TABS):
+        st = PRODUCT_BY.get(k)
+        badge = stage_tag(st) if st else ""
+        panels += f'''<div class="tpanel" role="tabpanel" id="tp-{k}" aria-labelledby="t-{k}"{"" if i==0 else " hidden"}><div class="tp-copy"><p class="pcat">{cat}</p><h3 class="h2" style="font-size:clamp(1.6rem,2.6vw,2.2rem)">{tag}</h3><div class="prod-row" style="margin:14px 0 4px">{badge}</div><div style="margin-top:18px">{checks(pts)}</div><div class="btns">{demo_btn(product=k) if st else btn_book("Book a free call","btn btn-primary")}<a class="tlink" href="{href}">Learn more about {n}</a></div></div><div class="tp-ui">{UI[ui]()}</div></div>'''
+    return f'<div class="tabs"><div class="tablist" role="tablist" aria-label="Products and services">{btns}</div>{panels}</div>'
+
+def product_pages():
+    body = phero("AI that finds where money goes missing", "Three products that catch loss before it hits the books: payment fraud, energy theft and fuel loss. Each one learns from your own data and explains every flag it raises.", [("Home","/"),("Products",None)], actions=demo_btn() + '<a class="btn btn-outline" href="/pilot/">See the pilot program</a>')
+    body += f'<section class="sec"><div class="wrap">{products_grid()}</div></section>'
+    body += f'''<section class="sec white"><div class="wrap"><div class="sec-head"><p class="kicker">How every product works</p><h2 class="h2">Built the same careful way</h2></div><div class="grid-4">
+<div class="card rv"><div class="ico">{ic("target")}</div><h3 class="h3">Learns from your data</h3><p>Models are trained on your own history, not generic rules.</p></div>
+<div class="card rv"><div class="ico">{ic("eye")}</div><h3 class="h3">Explains every flag</h3><p>Each alert comes with reasons a person can check.</p></div>
+<div class="card rv"><div class="ico">{ic("server")}</div><h3 class="h3">Runs in your environment</h3><p>Your data stays on your servers or approved cloud.</p></div>
+<div class="card rv"><div class="ico">{ic("zap")}</div><h3 class="h3">Improves over time</h3><p>Outcomes feed back so the model gets sharper.</p></div></div></div></section>'''
+    body += architecture()
+    body += cta_band("See a product run on sample data", "Book a demo and we\u2019ll walk you through it on realistic sample data, then talk about a pilot on yours.")
+    write("/products/", page("/products/", "Products: PaySentinel, GridSentinel, FuelLedger", "AI products from Auto Solution: PaySentinel for payment fraud, GridSentinel for energy theft and losses, FuelLedger for fuel retail integrity.", body, active="products"))
+    for p in PRODUCTS:
+        hero = f'''<section class="phero has-ui"><div class="wrap"><div class="duo"><div>
+<ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/products/">Products</a></li><li aria-current="page">{p["name"]}</li></ol>
+<p class="pcat">{p["name"]}: {p["cat"]}</p><h1 class="h1">{p["tagline"]}</h1><p class="lede">{p["lede"]}</p>
+<div class="prod-row" style="margin-top:22px">{stage_tag(p)}</div>
+<div class="btns">{demo_btn(product=p["slug"])}{btn_book("Book a call","btn btn-outline")}</div></div><div>{UI[p["ui"]]()}</div></div></div></section>'''
+        feats = "".join(f'<div class="card rv"><div class="ico">{ic("check")}</div><h3 class="h3">{t}</h3><p>{d}</p></div>' for t, d in p["features"])
+        b = hero + f'<section class="sec"><div class="wrap"><div class="sec-head"><p class="kicker">Capabilities</p><h2 class="h2">What {p["name"]} does</h2></div><div class="feat">{feats}</div></div></section>'
+        how_title = "Four-way reconciliation, every outlet, every day" if p["slug"]=="fuelledger" else "How it works"
+        if p["slug"] == "paysentinel": b += simulator()
+        b += f'<section class="sec dark"><div class="wrap"><div class="sec-head"><p class="kicker">How it works</p><h2 class="h2">{how_title}</h2></div>{steps(p["how"])}</div></section>'
+        who = "".join(f"<li>{x}</li>" for x in p["for_"])
+        b += f'''<section class="sec white"><div class="wrap duo" style="align-items:start">
+<div class="rv"><p class="kicker">Built for</p><h2 class="h2">Who it\u2019s for</h2><ul class="who" style="margin-top:24px">{who}</ul></div>
+<div class="rv"><p class="kicker">Getting started</p><h2 class="h2">What a pilot looks like</h2><div style="margin-top:24px">{checks(["6\u20138 weeks on your own historical data, inside your environment","Shadow mode: no impact on live systems","Success criteria agreed upfront, with a clear go or no-go at the end","Fixed fee, credited in full if you roll out"])}</div><a class="tlink" style="margin-top:20px" href="/pilot/">See the pilot program</a></div></div></section>'''
+        b += f'<section class="sec"><div class="wrap faq-wrap"><div><p class="kicker">FAQ</p><h2 class="h2">Questions about {p["name"]}</h2></div>{faq(p["faq"])}</div></section>'
+        others = [o for o in PRODUCTS if o["slug"] != p["slug"]]
+        b += f'<section class="sec white tight"><div class="wrap"><div class="sec-head"><p class="kicker">More products</p><h2 class="h2" style="font-size:1.8rem">Also from Auto Solution</h2></div><div class="grid-2">{"".join(prod_card(o) for o in others)}</div></div></section>'
+        b += cta_band(f"See {p['name']} in action", "We\u2019ll walk you through it on sample data, then talk about a pilot on your own.")
+        prod_schema = json.dumps({"@context":"https://schema.org","@type":"SoftwareApplication","name":p["name"],"applicationCategory":"BusinessApplication","description":p["lede"],"publisher":{"@type":"Organization","name":"Auto Solution"}})
+        write(f"/products/{p['slug']}/", page(f"/products/{p['slug']}/", f"{p['name']}: {p['cat']}", p["lede"][:158], b, active="products", schema=f'<script type="application/ld+json">{prod_schema}</script>' + faq_schema(p["faq"])))
+
+# ============================ PILOT PROGRAM ============================
+PILOT = dict(
+  weeks="6\u20138 weeks",
+  phases=[("Weeks 1\u20132","Scope and data","Agree success criteria, sign the NDA, connect to a historical data extract in your environment and validate it."),
+          ("Weeks 2\u20134","Model on your data","Train and tune the model on your own history, and set thresholds with your team."),
+          ("Weeks 4\u20137","Shadow mode","Run alongside your current process without touching live decisions, and compare results case by case."),
+          ("Weeks 7\u20138","Findings and decision","Present results against the agreed criteria, with a clear go or no-go recommendation and a rollout plan.")],
+  data={"paysentinel":["12\u201324 months of transaction records","Fraud and chargeback outcomes","Device, merchant, amount and timestamp fields","Your current rules or decisions, to compare against"],
+        "gridsentinel":["12+ months of smart meter readings","Transformer-level energy input","Consumer master and billing records","Past inspection outcomes, if available"],
+        "fuelledger":["Depot dispatch and invoice records","Tank level (ATG) and density readings","Nozzle or dispenser sales","Cash deposit and fleet card records"]},
+  gets=["A findings report: what the model caught, missed and why","Ranked, explainable leads or decisions you can verify","Performance measured on your data against the agreed criteria","An estimate of the annual value at stake, based on your numbers","A go or no-go recommendation and a rollout plan if it\u2019s a go"],
+  faq=[("Is the pilot free?","No. It\u2019s a fixed-fee pilot, agreed before we start. If you go on to roll the product out, the full pilot fee is credited against your first year."),
+       ("Will it affect our live systems?","No. During the pilot the product runs in shadow mode on a copy of your data. Live approvals, billing and operations don\u2019t change."),
+       ("Where does our data go?","It stays in your environment or a cloud account you approve. At the end we return or delete any extracts, as you prefer, and revoke our access."),
+       ("What do you need from our team?","One owner on your side, a few hours a week from someone who knows the data, and a review session at each phase."),
+       ("What if the results aren\u2019t good enough?","Then the recommendation is no-go, and you\u2019re under no obligation to continue. Success criteria are agreed at the start, so there\u2019s no ambiguity."),
+       ("Can the pilot be shorter?","Sometimes. If your data is clean and easy to access, the first phases move faster. We\u2019ll give you a firm plan during scoping.")])
+
+def pilot_page():
+    P = PILOT
+    body = phero("Pilot program", "Prove the value on your own data before you commit. A fixed-scope, low-risk pilot of PaySentinel, GridSentinel or FuelLedger, run inside your environment.", [("Home","/"),("Products","/products/"),("Pilot program",None)], actions='<a class="btn btn-primary" href="/request-demo/?type=pilot">Apply for a pilot</a>' + btn_book("Talk to us first","btn btn-outline"))
+    glance = [(P["weeks"],"from kickoff to decision"),("Fixed fee","credited in full if you roll out"),("Shadow mode","no impact on live systems"),("No obligation","to continue after the pilot")]
+    body += '<section class="sec tight"><div class="wrap"><div class="stats rv" style="grid-template-columns:repeat(4,1fr)">' + "".join(f"<div><b style=\"font-size:clamp(1.5rem,2.6vw,2.2rem)\">{a}</b><span>{b}</span></div>" for a,b in glance) + "</div></div></section>"
+    ph = "".join(f'<li><span class="n">{i+1}</span><p class="ph-w">{w}</p><h3>{t}</h3><p>{d}</p></li>' for i,(w,t,d) in enumerate(P["phases"]))
+    body += f'<section class="sec dark"><div class="wrap"><div class="sec-head"><p class="kicker">How it runs</p><h2 class="h2">Four phases, one clear decision</h2></div><ol class="steps pilot-steps" style="--n:4">{ph}</ol></div></section>'
+    cards = "".join(f'<div class="card rv"><p class="pcat">{PRODUCT_BY[k]["name"]}</p><h3 class="h3">Data we\u2019ll need</h3><div style="margin-top:14px">{checks(v)}</div><a class="tlink" style="margin-top:18px" href="/request-demo/?product={k}&amp;type=pilot">Apply for a {PRODUCT_BY[k]["name"]} pilot</a></div>' for k,v in P["data"].items())
+    body += f'<section class="sec white"><div class="wrap"><div class="sec-head"><p class="kicker">What we need</p><h2 class="h2">Data for each product</h2><p class="lede">A historical extract is enough to start. We help your team prepare it, and it never has to leave your environment.</p></div><div class="grid-3">{cards}</div></div></section>'
+    body += f'''<section class="sec"><div class="wrap duo" style="align-items:start">
+<div class="rv"><p class="kicker">What you get</p><h2 class="h2">At the end of the pilot</h2><div style="margin-top:24px">{checks(P["gets"])}</div></div>
+<div class="card rv" style="padding:36px"><p class="kicker">Ground rules</p><h2 class="h3" style="font-size:1.4rem;margin-bottom:18px">How we keep it safe and fair</h2>{checks(["Success criteria agreed in writing before we start","NDA signed before any data is shared","Runs in your environment, read-only, in shadow mode","Weekly check-ins and a review at every phase","Data extracts returned or deleted at the end","Pilot fee credited in full against year one if you roll out"])}</div></div></section>'''
+    body += f'<section class="sec white"><div class="wrap faq-wrap"><div><p class="kicker">FAQ</p><h2 class="h2">Pilot questions</h2></div>{faq(P["faq"])}</div></section>'
+    body += cta_band("Ready to test it on your data?", "Tell us which product and a little about your setup. We\u2019ll come back within one business day with a pilot outline.").replace('href="/request-demo/">Request a demo', 'href="/request-demo/?type=pilot">Apply for a pilot')
+    write("/pilot/", page("/pilot/", "Pilot program", "Run a fixed-scope pilot of PaySentinel, GridSentinel or FuelLedger on your own data, in shadow mode, with the fee credited if you roll out.", body, active="products", schema=faq_schema(P["faq"])))
+
+def request_demo():
+    opts = "".join(f'<option value="{p["slug"]}">{p["name"]}: {p["cat"]}</option>' for p in PRODUCTS) + '<option value="custom">Custom automation or AI agent</option>'
+    body = phero("Request a demo", "Tell us a little about your organisation and we\u2019ll set up a walkthrough on realistic sample data. We reply within one business day.", [("Home","/"),("Request a demo",None)], actions=False)
+    body += f'''<section class="sec no-mbar"><div class="wrap duo" style="align-items:start">
+<form class="card form" id="demoForm" novalidate data-endpoint="{FORM_ENDPOINT}" style="padding:32px">
+  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+  <div class="two"><div class="f"><label for="r-type-req">I\u2019d like</label><select id="r-type-req" name="request_type"><option value="demo">A demo</option><option value="pilot">A pilot on our data</option></select></div>
+  <div class="f"><label for="r-product">Product</label><select id="r-product" name="product">{opts}</select></div></div>
+  <div class="two"><div class="f"><label for="r-name">Name</label><input id="r-name" name="name" autocomplete="name" required aria-describedby="r-name-e"><span class="err" id="r-name-e"></span></div>
+  <div class="f"><label for="r-role">Role</label><input id="r-role" name="role" autocomplete="organization-title" placeholder="e.g. Head of Risk"></div></div>
+  <div class="two"><div class="f"><label for="r-email">Work email</label><input id="r-email" name="email" type="email" autocomplete="email" required aria-describedby="r-email-e"><span class="err" id="r-email-e"></span></div>
+  <div class="f"><label for="r-phone">Phone <span class="opt">(optional)</span></label><input id="r-phone" name="phone" type="tel" autocomplete="tel"></div></div>
+  <div class="f"><label for="r-org">Organisation</label><input id="r-org" name="organisation" autocomplete="organization" required aria-describedby="r-org-e"><span class="err" id="r-org-e"></span></div>
+  <div class="f"><label for="r-type">Organisation type</label><select id="r-type" name="org_type"><option>Payment gateway or aggregator</option><option>Bank or fintech</option><option>Power distribution company (DISCOM)</option><option>Oil marketing company or fuel retailer</option><option>Fleet operator</option><option>Other</option></select></div>
+  <div class="f"><label for="r-msg">What would you like to see? <span class="opt">(optional)</span></label><textarea id="r-msg" name="message" rows="3"></textarea></div>
+  <button class="btn btn-primary btn-block" type="submit">Request demo</button>
+  <p class="ok-note" id="demoStatus" role="status" aria-live="polite"></p>
+</form>
+<div class="rv"><h2 class="h3" style="font-size:1.5rem">What happens next</h2><div style="margin-top:20px">{steps([("We reply within a day","To confirm a time and what you\u2019d like to see."),("Demo on sample data","A walkthrough of the product on realistic sample data."),("Pilot conversation","If it fits, we scope a pilot on your own data, in your environment.")])}</div>
+<p class="muted" style="margin-top:8px">Prefer to pick a time yourself? <a href="{CAL}" target="_blank" rel="noopener">Book a call on our calendar</a>.</p></div></div></section>'''
+    write("/request-demo/", page("/request-demo/", "Request a demo", "Request a demo of PaySentinel, GridSentinel or FuelLedger from Auto Solution.", body, active="products"))
+
 # ============================ HOME ============================
 def home():
     gst = CASE_BY["gst-reconciliation"]
     body = f"""
-<section class="hero dark" aria-labelledby="hero-h">
-  <canvas class="field" id="field" aria-hidden="true"></canvas>
-  <div class="wrap hero-in">
-    <p class="pill fade-up"><span class="pulse" aria-hidden="true"></span>AI automation studio, Noida &amp; worldwide</p>
-    <h1 class="display" id="hero-h"><span class="ln"><span>Your busywork,</span></span><span class="ln"><span>running on its own.</span></span></h1>
-    <p class="lede fade-up d1">We build AI agents and automations that take repetitive work off your team: reports, reconciliations, invoices, customer replies. Most clients get back 20+ hours a week.</p>
-    <div class="btns fade-up d2">{btn_book()}{btn_wa()}</div>
-    <div class="hero-proof fade-up d3"><span><b>50+</b> projects delivered</span><span><b>20</b> senior engineers</span><span>Clients in <b>India, UAE, Singapore, UK, US</b></span></div>
+<section class="hero-l" aria-labelledby="hero-h">
+  <div class="mesh" aria-hidden="true"></div>
+  <div class="wrap hero-l-in">
+    <a class="pill-l fade-up" href="/products/"><span class="pill-new">AI products</span>PaySentinel, GridSentinel and FuelLedger stop revenue leaks <span aria-hidden="true">\u2192</span></a>
+    <h1 class="display" id="hero-h">Your busywork,<br><span class="grad">running on its own.</span></h1>
+    <p class="lede fade-up d1">We build AI agents and automation that take repetitive work off your team, and AI products that catch payment fraud, energy theft and fuel loss before they hit the books.</p>
+    <div class="btns fade-up d2">{demo_btn()}{btn_book("Book a free 30-min call","btn btn-outline")}</div>
+    <p class="hero-note fade-up d3">No commitment. We reply within one business day.</p>
+    <div class="collage fade-up d3" aria-hidden="true">
+      <div class="c-side c-left">{ui_chat("WhatsApp agent")}</div>
+      <div class="c-main">{ui_pay(True)}</div>
+      <div class="c-side c-right">{ui_grid()}</div>
+    </div>
   </div>
 </section>
 {stack()}
 
-<section class="sec" aria-labelledby="svc-h"><div class="wrap">
-  <div class="split"><div class="sec-head"><p class="kicker">What we do</p><h2 class="h2" id="svc-h">Four ways we take work off your team</h2></div><a class="tlink" href="/services/">All services</a></div>
+<section class="sec" aria-labelledby="tabs-h"><div class="wrap">
+  <div class="sec-head center"><p class="kicker">What we build</p><h2 class="h2" id="tabs-h">AI products and automation, built around your data</h2><p class="lede">Three products for revenue protection, and custom AI for everything your team does by hand.</p></div>
+  {tabs()}
+</div></section>
+{simulator()}
+{architecture()}
+<section class="sec white" aria-labelledby="svc-h"><div class="wrap">
+  <div class="split"><div class="sec-head"><p class="kicker">Custom solutions</p><h2 class="h2" id="svc-h">Your busywork, automated</h2><p class="lede">Alongside our products, we build custom AI agents and automation around the tools your team already uses.</p></div><a class="tlink" href="/services/">All services</a></div>
   <div class="grid-2">{"".join(svc_card(s) for s in SERVICES)}</div>
 </div></section>
 
@@ -135,7 +317,7 @@ def home():
 
 <section class="sec white" aria-labelledby="res-h"><div class="wrap">
   <div class="sec-head"><p class="kicker">Results</p><h2 class="h2" id="res-h">Measured in hours given back</h2></div>
-  <div class="stats rv"><div><b><span class="count" data-to="50">50</span>+</b><span>automation projects delivered</span></div><div><b><span class="count" data-to="20">20</span>+</b><span>hours a week saved for most clients</span></div><div><b>99.9%</b><span>accuracy on automated reconciliations</span></div><div><b>&lt;5 min</b><span>for a GST report that took 3 hours</span></div></div>
+  <div class="stats rv"><div><b><span class="count" data-to="11">11</span>+</b><span>projects delivered since 2026</span></div><div><b>3</b><span>AI products for revenue protection</span></div><div><b><span class="count" data-to="20">20</span>+</b><span>hours a week saved for most clients</span></div><div><b>&lt;5 min</b><span>for a GST report that took 3 hours</span></div></div>
 </div></section>
 
 <section class="sec" aria-labelledby="cs-h"><div class="wrap">
@@ -158,7 +340,7 @@ def home():
     <div class="btns" style="margin-top:0"><button type="button" class="btn btn-ghost btn-sm" id="agentReplay">Replay</button><a class="tlink" href="/services/ai-agents/">How we build AI agents</a></div>
   </div>
   <div class="chat" aria-label="Example WhatsApp conversation">
-    <div class="chat-top"><span class="chat-av">{ic("wa")}</span><div><strong>Skyline Homes</strong><span class="chat-sub" id="chatSub">AI assistant, online</span></div><span class="chat-badge">Example</span></div>
+    <div class="chat-top"><span class="chat-av">{ic("bot")}</span><div><strong>Skyline Homes</strong><span class="chat-sub" id="chatSub">AI assistant, online</span></div><span class="chat-badge">Example</span></div>
     <ol class="chat-body" id="chatBody"></ol>
   </div>
 </div></section>
@@ -186,10 +368,10 @@ def home():
 <section class="sec"><div class="wrap">{founder_block()}</div></section>
 {checklist_promo()}
 {cta_band()}"""
-    org = json.dumps({"@context":"https://schema.org","@type":"ProfessionalService","name":"Auto Solution","url":SITE+"/","logo":SITE+"/favicon.svg","image":SITE+"/assets/img/og-cover.png","email":EMAIL,"telephone":TEL,"foundingDate":"2022","address":{"@type":"PostalAddress","addressLocality":"Noida","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"areaServed":"Worldwide","founder":[{"@type":"Person","name":"Harsh Vardhan"},{"@type":"Person","name":"Anurag Maurya"}]})
-    write("/", page("/", "Auto Solution \u2014 AI agents & workflow automation for busy teams",
-        "Auto Solution builds AI agents and automations that take repetitive work off your team: reports, reconciliations, invoices and customer replies. Book a free 30-minute call.",
-        body, extra_js='<script src="/assets/js/field.js" defer></script>', schema=f'<script type="application/ld+json">{org}</script>'))
+    org = json.dumps({"@context":"https://schema.org","@type":"ProfessionalService","name":"Auto Solution","url":SITE+"/","logo":SITE+"/favicon.svg","image":SITE+"/assets/img/og-cover.png","email":EMAIL,"telephone":TEL,"foundingDate":"2026","address":{"@type":"PostalAddress","addressLocality":"Noida","addressRegion":"Uttar Pradesh","addressCountry":"IN"},"areaServed":"Worldwide","founder":[{"@type":"Person","name":"Harsh Vardhan"},{"@type":"Person","name":"Anurag Maurya"}]})
+    write("/", page("/", "Auto Solution \u2014 Your busywork, running on its own",
+        "Auto Solution builds AI agents and automation that take repetitive work off your team, plus AI products for payment fraud (PaySentinel), energy theft (GridSentinel) and fuel loss (FuelLedger).",
+        body, schema=f'<script type="application/ld+json">{org}</script>'))
 
 # ============================ SERVICES ============================
 def services():
@@ -256,7 +438,7 @@ def roi():
   <div><label for="c-hours">Hours each, per week <output id="o-hours" for="c-hours">10</output></label><input type="range" id="c-hours" min="1" max="40" value="10"></div>
   <div><label for="c-rate">Cost per hour <output id="o-rate" for="c-rate">₹400</output></label><div class="rate-row"><input type="range" id="c-rate" min="100" max="3000" step="50" value="400"><select id="c-cur" aria-label="Currency"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="AED">AED</option><option value="GBP">£ GBP</option></select></div></div>
   <div class="calc-out" aria-live="polite"><div><p class="v" id="r-hours">1,560</p><p>hours back per year</p></div><div><p class="v" id="r-money">₹6,24,000</p><p>in team time, per year</p></div></div>
-  <button type="submit" class="btn btn-primary btn-block">{wa_ic()}Send me this estimate on WhatsApp</button>
+  <button type="submit" class="btn btn-primary btn-block">Send me this estimate</button>
   <p class="note" id="calcNote">Opens WhatsApp with your numbers filled in.</p>
 </form>
 <div class="rv"><h2 class="h3" style="font-size:1.5rem">How the estimate works</h2>
@@ -280,7 +462,7 @@ def how():
 
 # ============================ ABOUT ============================
 def about():
-    body = phero("We give people their time back", "Auto Solution is an AI automation studio founded in 2022 and based in Noida, India. We build the agents and automations that take repetitive work off busy teams, for clients across India, the Middle East, Southeast Asia, Europe and the US.", [("Home","/"),("About",None)])
+    body = phero("We give people their time back", "Auto Solution is an AI company founded in 2026 and based in Noida, India. We build the agents and automations that take repetitive work off busy teams, for clients across India, the Middle East, Southeast Asia, Europe and the US.", [("Home","/"),("About",None)])
     body += f'''<section class="sec"><div class="wrap duo" style="align-items:start">
 <div class="rv"><p class="kicker">Our story</p><h2 class="h2">It started with a spreadsheet</h2></div>
 <div class="rv" style="color:var(--ink-2);font-size:1.1rem;line-height:1.75"><p>Our founders kept watching skilled people lose whole days to copy-paste reporting, manual reconciliation and Excel busywork, tasks a script could finish in seconds. So they built one. Then another. Then a studio around it.</p><p style="margin-top:18px">Today our team designs and ships AI agents, workflow automation, document AI and forecasting for finance, logistics, e-commerce, real estate and manufacturing teams. We measure ourselves the way our clients do: hours saved, errors removed, and how quickly a project goes from \u201cmanual mess\u201d to \u201cit just runs now.\u201d</p></div></div></section>
@@ -304,7 +486,7 @@ def about():
 <section class="sec white"><div class="wrap duo">
 <div class="rv"><p class="kicker">Global</p><h2 class="h2">Headquartered in Noida. Working in your time zone.</h2><p class="lede">We\u2019re remote-first, with overlap across India, the Gulf, Southeast Asia, the UK and the US.</p><p style="margin-top:22px;display:flex;gap:10px;align-items:center;color:var(--ink-2)"><span class="ico" style="margin:0;width:38px;height:38px">{ic("pin")}</span>{ADDRESS}</p></div>
 <div class="rv">{zones()}</div></div></section>''' + cta_band("Work with us")
-    write("/about/", page("/about/", "About us", "Auto Solution is an AI automation studio founded in 2022, based in Noida, India, with a 20-person senior engineering team.", body, active="company"))
+    write("/about/", page("/about/", "About us", "Auto Solution is an AI company founded in 2026 in Noida, India, building PaySentinel, GridSentinel and FuelLedger.", body, active="company"))
 
 # ============================ INSIGHTS ============================
 def insights():
@@ -314,7 +496,7 @@ def insights():
     write("/insights/", page("/insights/", "Insights", "Practical guides on workflow automation and AI agents from Auto Solution.", body, active="resources"))
     for p in POSTS:
         art = json.dumps({"@context":"https://schema.org","@type":"Article","headline":p["title"],"description":p["desc"],"author":{"@type":"Organization","name":"Auto Solution"},"publisher":{"@type":"Organization","name":"Auto Solution"}})
-        b = f'''<section class="phero dark"><div class="wrap" style="max-width:820px"><ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/insights/">Insights</a></li><li aria-current="page">{p["cat"]}</li></ol>
+        b = f'''<section class="phero"><div class="wrap" style="max-width:820px"><ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/insights/">Insights</a></li><li aria-current="page">{p["cat"]}</li></ol>
 <h1 class="h1">{p["title"]}</h1><p class="lede">{p["desc"]}</p><p class="meta"><span>Auto Solution team</span><span>{p["date"]}</span><span>{p["mins"]} min read</span></p></div></section>
 <section class="sec white"><article class="wrap prose">{p["body"]}</article></section>''' + cta_band()
         write(f"/insights/{p['slug']}/", page(f"/insights/{p['slug']}/", p["title"], p["desc"], b, active="resources", schema=f'<script type="application/ld+json">{art}</script>'))
@@ -324,7 +506,7 @@ JOBS = [("Python Automation Engineer","Full-time","Remote, 1\u20133 years","Buil
         ("ML Engineer (NLP / OCR)","Full-time","Remote, 2+ years","Design forecasting, classification and document-extraction models that plug straight into client workflows."),
         ("Business Development (Automation)","Full-time or contract","Remote, global clients","Find and close automation projects worldwide, and own the conversation from first chat to signed scope.")]
 def careers():
-    jobs = "".join(f'<article class="card rv" style="display:flex;flex-direction:column"><ul class="tags" style="margin:0 0 14px"><li class="tag">{t}</li><li class="tag">{m}</li></ul><h2 class="h3">{n}</h2><p style="margin-top:8px">{d}</p><a class="tlink" style="margin-top:auto;padding-top:20px" href="https://wa.me/{WA_NUM}?text=Hi%20Auto%20Solution!%20I%27d%20like%20to%20apply%20for%20the%20{n.replace(" ","%20")}%20role." target="_blank" rel="noopener">Apply on WhatsApp</a></article>' for n,t,m,d in JOBS)
+    jobs = "".join(f'<article class="card rv" style="display:flex;flex-direction:column"><ul class="tags" style="margin:0 0 14px"><li class="tag">{t}</li><li class="tag">{m}</li></ul><h2 class="h3">{n}</h2><p style="margin-top:8px">{d}</p><a class="tlink" style="margin-top:auto;padding-top:20px" href="mailto:{EMAIL}?subject=Application:%20{n.replace(" ","%20")}">Apply by email</a></article>' for n,t,m,d in JOBS)
     body = phero("Build automation that matters", "We\u2019re a remote-first team of senior engineers. Real client ownership, a flat structure and no busywork, which would be ironic.", [("Home","/"),("Careers",None)], actions=False)
     body += f'''<section class="sec"><div class="wrap"><div class="sec-head"><p class="kicker">Open roles</p><h2 class="h2">Current openings</h2></div><div class="grid-3">{jobs}</div></div></section>
 <section class="sec white"><div class="wrap duo"><div><p class="kicker">Why join</p><h2 class="h2">What you get</h2></div>{checks(["100% remote, flexible hours","Work directly with clients, not through layers","A learning budget for courses and conferences","Ship to production within your first weeks","A flat team where good ideas win"], "checks")}</div></section>
@@ -344,7 +526,7 @@ def contact():
 </div>
 <div>
   <ul class="contact-lines" style="margin-bottom:40px">
-    <li><span class="ico" style="background:#e6f9ee;color:var(--wa-ink)">{wa_ic(20)}</span><div><a href="{WA}" target="_blank" rel="noopener">WhatsApp {PHONE}</a><small>Fastest. Usually replies within minutes.</small></div></li>
+    <li><span class="ico">{ic("cal")}</span><div><a href="{CAL}" target="_blank" rel="noopener">Book a 30-minute call</a><small>Pick a time that suits you.</small></div></li>
     <li><span class="ico">{ic("mail")}</span><div><a href="mailto:{EMAIL}">{EMAIL}</a><small>For detailed briefs and documents.</small></div></li>
     <li><span class="ico">{ic("phone")}</span><div><a href="tel:{TEL}">{PHONE}</a><small>Mon\u2013Sat, 10am\u20137pm IST.</small></div></li>
     <li><span class="ico">{ic("pin")}</span><div><b>{ADDRESS}</b><small>Remote-first, working worldwide.</small></div></li>
@@ -359,7 +541,7 @@ def contact():
     <div class="f"><label for="f-service">Interested in</label><select id="f-service" name="service">{opts}</select></div>
     <div class="f"><label for="f-msg">What do you want automated?</label><textarea id="f-msg" name="message" rows="4" required aria-describedby="f-msg-e" placeholder="e.g. We build 50 Excel reports from ERP data every month."></textarea><span class="err" id="f-msg-e"></span></div>
     <button class="btn btn-primary btn-block" type="submit" id="sendBtn">Send message</button>
-    <p class="note">Goes straight to our inbox. We reply within 24 hours. Prefer WhatsApp? <a href="{WA}" target="_blank" rel="noopener">Message us there</a>.</p>
+    <p class="note">Goes straight to our inbox. We reply within 24 hours. Prefer to talk? <a href="{CAL}" target="_blank" rel="noopener">Book a call</a>.</p>
     <p class="ok-note" id="formStatus" role="status" aria-live="polite"></p>
   </form>
 </div></div></section>'''
@@ -422,12 +604,12 @@ TERMS = f"""<p>These terms cover your use of the Auto Solution website. Project 
 <h2>Contact</h2><p><a href="mailto:{EMAIL}">{EMAIL}</a></p>"""
 
 def notfound():
-    body = f'<section class="phero dark" style="min-height:80vh;display:flex;align-items:center"><div class="wrap" style="max-width:720px"><p class="kicker">404</p><h1 class="h1">This page doesn\u2019t exist</h1><p class="lede">The link may be old or mistyped. Try one of these instead.</p><div class="btns"><a class="btn btn-primary" href="/">Go to homepage</a><a class="btn btn-ghost" href="/services/">Our services</a><a class="btn btn-ghost" href="/contact/">Contact us</a></div></div></section>'
+    body = f'<section class="phero" style="min-height:80vh;display:flex;align-items:center"><div class="wrap" style="max-width:720px"><p class="kicker">404</p><h1 class="h1">This page doesn\u2019t exist</h1><p class="lede">The link may be old or mistyped. Try one of these instead.</p><div class="btns"><a class="btn btn-primary" href="/">Go to homepage</a><a class="btn btn-outline" href="/products/">Our products</a><a class="btn btn-outline" href="/contact/">Contact us</a></div></div></section>'
     write("/404.html", page("/404.html", "Page not found", "This page doesn't exist.", body))
 
 # ============================ RUN ============================
 if __name__ == "__main__":
-    home(); services(); industries(); cases(); roi(); how(); about(); insights(); careers(); contact(); security_page(); checklist()
+    home(); product_pages(); pilot_page(); request_demo(); services(); industries(); cases(); roi(); how(); about(); insights(); careers(); contact(); security_page(); checklist()
     legal("/privacy/", "Privacy policy", PRIVACY); legal("/terms/", "Terms of use", TERMS); notfound()
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url><loc>{SITE}{p}</loc></url>\n" for p in PAGES) + "</urlset>\n"
     open(os.path.join(OUT, "sitemap.xml"), "w").write(sm)

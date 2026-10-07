@@ -229,6 +229,107 @@
     });
   })();
 
+  (function () {
+    var form = $('#demoForm'); if (!form) return;
+    var q = new URLSearchParams(location.search).get('product'), sel = $('#r-product');
+    if (q && sel.querySelector('option[value="' + q + '"]')) sel.value = q;
+    var ty = new URLSearchParams(location.search).get('type'), tsel = $('#r-type-req');
+    if (tsel && ty === 'pilot') tsel.value = 'pilot';
+    var valid = validator(form), btn = $('button[type=submit]', form), status = $('#demoStatus');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); if (!valid()) return;
+      var fd = new FormData(form); if (fd.get('_honey')) return;
+      var kind = (tsel && tsel.value === 'pilot') ? 'Pilot request' : 'Demo request';
+      var data = { _subject: kind + ': ' + sel.options[sel.selectedIndex].text.split(':')[0] + ' from ' + fd.get('organisation'), _template: 'table' };
+      fd.forEach(function (v, k) { if (k !== '_honey') data[k] = v || '-'; });
+      btn.disabled = true; btn.textContent = 'Sending…';
+      post(form.dataset.endpoint, data).then(function () {
+        status.textContent = 'Thanks. Your ' + kind.toLowerCase() + ' is with us and we\u2019ll reply within one business day.'; form.reset();
+      }).catch(function () {
+        status.textContent = 'Our form is having trouble, so we\u2019ve opened WhatsApp with your request instead.';
+        window.open(wa('*' + kind + '*\n\nProduct: ' + data.product + '\nName: ' + data.name + '\nRole: ' + data.role + '\nOrganisation: ' + data.organisation + ' (' + data.org_type + ')\nEmail: ' + data.email + '\nPhone: ' + data.phone + '\n\n' + data.message), '_blank', 'noopener');
+      }).then(function () { btn.disabled = false; btn.textContent = 'Request demo'; });
+    });
+  })();
+
+  /* Tabs */
+  $$('.tabs').forEach(function (t) {
+    var tabs = $$('[role=tab]', t);
+    function sel(tab) {
+      tabs.forEach(function (x) { var on = x === tab; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { sel(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!k) return;
+        var n = tabs[(i + k + tabs.length) % tabs.length]; sel(n); n.focus(); e.preventDefault();
+      });
+    });
+  });
+
+  /* Live hero table (demo stream) */
+  (function () {
+    var tb = $('#liveTbl'); if (!tb || reduce) return;
+    var rails = ['UPI', 'Card', 'Netbank', 'Wallet'], n = 0x8F21F;
+    function row() {
+      var amt = Math.random() < .2 ? 20000 + Math.random() * 90000 : 200 + Math.random() * 9000;
+      var sc = Math.min(.99, Math.max(.01, (amt > 40000 ? .45 : .05) + Math.random() * (amt > 40000 ? .5 : .3)));
+      var d = sc > .7 ? ['bad', 'Decline'] : sc > .4 ? ['mid', 'Review'] : ['ok', 'Approve'];
+      var tr = document.createElement('tr'); tr.className = 'new';
+      tr.innerHTML = '<td>TXN ' + (n++).toString(16).toUpperCase() + '</td><td>\u20b9' + fmt(amt) + '</td><td>' + rails[Math.floor(Math.random() * 4)] + '</td><td class="mono">' + sc.toFixed(2) + '</td><td><span class="dec ' + d[0] + '">' + d[1] + '</span></td>';
+      tb.insertBefore(tr, tb.firstChild); if (tb.children.length > 5) tb.removeChild(tb.lastChild);
+    }
+    var iv = null;
+    new IntersectionObserver(function (e) { if (e[0].isIntersecting) { if (!iv) iv = setInterval(row, 1800); } else { clearInterval(iv); iv = null; } }).observe(tb);
+  })();
+
+  /* Hero collage tilt */
+  (function () {
+    var c = $('.collage'); if (!c || reduce || !matchMedia('(pointer:fine)').matches) return;
+    var hero = $('.hero-l');
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      $('.c-main', c).style.transform = 'rotateX(' + (-y * 5) + 'deg) rotateY(' + (x * 6) + 'deg)';
+      var l = $('.c-left', c), rt = $('.c-right', c);
+      if (l) l.style.transform = 'translateY(54px) rotateY(' + (8 + x * 6) + 'deg) rotateX(' + (-y * 4) + 'deg)';
+      if (rt) rt.style.transform = 'translateY(54px) rotateY(' + (-8 + x * 6) + 'deg) rotateX(' + (-y * 4) + 'deg)';
+    });
+    hero.addEventListener('pointerleave', function () { $$('.collage>div').forEach(function (d) { d.style.transform = ''; }); });
+  })();
+
+  /* Fraud score simulator (simplified illustrative model) */
+  (function () {
+    var f = $('#sim'); if (!f) return;
+    var amt = $('#s-amt'), hr = $('#s-hr'), vel = $('#s-vel'), cat = $('#s-cat'), nw = $('#s-new'), geo = $('#s-geo');
+    var CAT = { groceries: [-0.6, 'Low-risk merchant category'], travel: [0.2, 'Travel merchant'], electronics: [0.5, 'Electronics: resale target'], gaming: [0.7, 'Gaming merchant'], giftcards: [1.4, 'Gift cards: high-risk category'], crypto: [1.6, 'Crypto exchange: high-risk category'] };
+    function fill(x) { x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%'); }
+    function run() {
+      var a = +amt.value, h = +hr.value, v = +vel.value, parts = [];
+      var amtC = Math.max(-0.4, Math.log10(a / 5000) * 1.3); parts.push([amtC, a > 5000 ? 'Amount higher than usual' : 'Small, typical amount']);
+      var night = (h >= 0 && h < 5) ? 1.1 : (h >= 23 ? .6 : -0.2); parts.push([night, night > 0 ? 'Late-night transaction' : 'Normal hours']);
+      var velC = (v - 2) * 0.32; parts.push([velC, v > 3 ? v + ' payments from one device in an hour' : 'Normal device activity']);
+      parts.push(CAT[cat.value]);
+      if (nw.checked) parts.push([1.0, 'First time we\u2019ve seen this device']);
+      if (geo.checked) parts.push([1.2, 'Card country doesn\u2019t match location']);
+      var z = -2.4 + parts.reduce(function (s, p) { return s + p[0]; }, 0);
+      var sc = 1 / (1 + Math.exp(-z));
+      $('#so-amt').textContent = '\u20b9' + fmt(a); $('#so-hr').textContent = (h < 10 ? '0' : '') + h + ':00'; $('#so-vel').textContent = v;
+      $('#sScore').textContent = sc.toFixed(2);
+      $('#gArc').style.strokeDashoffset = 100 - sc * 100;
+      var d = sc > .7 ? ['bad', 'Decline'] : sc > .35 ? ['mid', 'Send to review'] : ['ok', 'Approve'];
+      var de = $('#sDec'); de.className = 'dec ' + d[0]; de.textContent = d[1];
+      var why = $('#sWhy'); why.innerHTML = '';
+      parts.sort(function (x, y) { return Math.abs(y[0]) - Math.abs(x[0]); }).slice(0, 3).forEach(function (p) {
+        var li = document.createElement('li'); var t = document.createElement('span'); t.textContent = p[1];
+        var b = document.createElement('b'); b.textContent = (p[0] >= 0 ? '+' : '\u2212') + Math.abs(p[0]).toFixed(1); if (p[0] < 0) b.className = 'neg';
+        li.appendChild(t); li.appendChild(b); why.appendChild(li);
+      });
+      [amt, hr, vel].forEach(fill);
+    }
+    [amt, hr, vel, cat, nw, geo].forEach(function (x) { x.addEventListener('input', run); x.addEventListener('change', run); });
+    run();
+  })();
+
   /* Time zones */
   (function () {
     var items = $$('.zones li[data-tz]'); if (!items.length) return;
