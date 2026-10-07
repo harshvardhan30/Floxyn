@@ -385,6 +385,28 @@
     run();
   })();
 
+  /* Product value estimators */
+  $$('form.roi').forEach(function (f) {
+    var kind = f.dataset.roi, ins = $$('input[type=range]', f);
+    function v(k) { return +$('#ri-' + k, f).value; }
+    function cr(n) { return n >= 1e7 ? '\u20b9' + (n / 1e7).toLocaleString('en-IN', { maximumFractionDigits: 1 }) + ' crore' : '\u20b9' + (n / 1e5).toLocaleString('en-IN', { maximumFractionDigits: 1 }) + ' lakh'; }
+    function run() {
+      ins.forEach(function (x) {
+        var u = x.dataset.unit, val = +x.value, t = u === '\u20b9' ? '\u20b9' + val.toLocaleString('en-IN') : (u === '%' ? val + '%' : val.toLocaleString('en-IN'));
+        $('#ro-' + x.dataset.k, f).textContent = t;
+        x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%');
+      });
+      var a = 0;
+      if (kind === 'paysentinel') a = v('tx') * 1e5 * 12 * v('tk') * v('fr') / 1e4;
+      if (kind === 'gridsentinel') a = v('mu') * 1e6 * v('cl') / 100 * v('tf');
+      if (kind === 'fuelledger') a = v('ol') * v('kl') * 1000 * 365 * v('lp') / 100 * v('pr');
+      $('#rr-a', f).textContent = cr(a);
+      $('#rr-b', f).textContent = cr(a * v('sh') / 100);
+    }
+    ins.forEach(function (x) { x.addEventListener('input', run); });
+    run();
+  });
+
   /* Time zones */
   (function () {
     var items = $$('.zones li[data-tz]'); if (!items.length) return;

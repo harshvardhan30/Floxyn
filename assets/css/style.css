@@ -723,3 +723,4 @@ a.card:hover{border-color:#d7dbea}
 .fl-row .ft{height:12px}
 .why li.ok b{color:#5ee89a}
 .bal b{font-size:1.3rem}
+.roi .calc-out .v{font-size:clamp(1.3rem,2.2vw,1.7rem);white-space:nowrap}

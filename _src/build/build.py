@@ -175,6 +175,26 @@ def fuel_sim():
   </div>
 </div></section>'''
 
+ROI = {
+ "paysentinel": dict(title="What is fraud costing you?", lede="Put in your own volumes. The share prevented is your assumption; a pilot measures the real figure on your data.",
+   inputs=[("tx","Monthly transactions (lakh)",1,500,1,50,""),("tk","Average ticket size (\u20b9)",100,20000,100,1500,"\u20b9"),("fr","Fraud rate (basis points)",1,50,1,8,""),("sh","Share of fraud prevented (your assumption, %)",5,60,5,30,"%")],
+   outs=[("Annual fraud exposure","a"),("Value at stake per year","b")]),
+ "gridsentinel": dict(title="What could loss reduction be worth?", lede="Enter your own figures. The recovery share is your assumption; a pilot measures what\u2019s achievable on your network.",
+   inputs=[("mu","Annual energy input (million units)",100,20000,100,2000,""),("cl","Commercial loss (%)",1,25,0.5,8,"%"),("tf","Average tariff (\u20b9 / kWh)",4,10,0.5,7,"\u20b9"),("sh","Share recovered (your assumption, %)",5,40,5,15,"%")],
+   outs=[("Commercial loss per year","a"),("Value at stake per year","b")]),
+ "fuelledger": dict(title="What is unexplained loss costing your network?", lede="Enter your own figures. The recovery share is your assumption; a pilot measures the real figure on your outlets.",
+   inputs=[("ol","Number of outlets",10,5000,10,200,""),("kl","Average daily sales per outlet (kL)",2,50,1,10,""),("lp","Unexplained loss (%)",0.05,1,0.05,0.2,"%"),("pr","Average price (\u20b9 / litre)",80,110,1,100,"\u20b9"),("sh","Share recovered (your assumption, %)",20,80,5,50,"%")],
+   outs=[("Unexplained loss per year","a"),("Value at stake per year","b")]),
+}
+def roi_block(slug):
+    r = ROI[slug]
+    ins = "".join(f'<div><label for="ri-{k}">{lab} <output id="ro-{k}"></output></label><input type="range" id="ri-{k}" data-k="{k}" data-unit="{u}" min="{mn}" max="{mx}" step="{st}" value="{dv}"></div>' for k,lab,mn,mx,st,dv,u in r["inputs"])
+    outs = "".join(f'<div><p class="v" id="rr-{k}">-</p><p>{lab}</p></div>' for lab,k in r["outs"])
+    return f'''<section class="sec white" aria-labelledby="roi-h"><div class="wrap duo" style="align-items:start">
+<div class="rv"><p class="kicker">Value estimate</p><h2 class="h2" id="roi-h">{r["title"]}</h2><p class="lede">{r["lede"]}</p><div class="btns"><a class="btn btn-primary" href="/request-demo/?product={slug}&amp;type=pilot">Measure it in a pilot</a></div></div>
+<form class="calc roi" data-roi="{slug}" onsubmit="return false">{ins}<div class="calc-out" aria-live="polite">{outs}</div><p class="note">Illustrative estimate based only on the inputs above. Not a guarantee of results.</p></form>
+</div></section>'''
+
 def architecture():
     return f'''<section class="sec dark arch-sec" aria-labelledby="arch-h"><div class="wrap">
   <div class="sec-head center"><p class="kicker">Under the hood</p><h2 class="h2" id="arch-h">From raw data to a decision you can trust</h2><p class="lede">Every Auto Solution product runs on the same production pipeline, built to be explainable, monitored and safe to change.</p></div>
@@ -227,6 +247,7 @@ def product_pages():
         b = hero + f'<section class="sec"><div class="wrap"><div class="sec-head"><p class="kicker">Capabilities</p><h2 class="h2">What {p["name"]} does</h2></div><div class="feat">{feats}</div></div></section>'
         how_title = "Four-way reconciliation, every outlet, every day" if p["slug"]=="fuelledger" else "How it works"
         b += {"paysentinel": simulator, "gridsentinel": grid_sim, "fuelledger": fuel_sim}[p["slug"]]()
+        b += roi_block(p["slug"])
         b += f'<section class="sec dark"><div class="wrap"><div class="sec-head"><p class="kicker">How it works</p><h2 class="h2">{how_title}</h2></div>{steps(p["how"])}</div></section>'
         who = "".join(f"<li>{x}</li>" for x in p["for_"])
         b += f'''<section class="sec white"><div class="wrap duo" style="align-items:start">
@@ -490,7 +511,7 @@ def roi():
 </form>
 <div class="rv"><h2 class="h3" style="font-size:1.5rem">How the estimate works</h2>
 <div style="margin-top:20px">{checks(["Hours per year = people \u00d7 hours per week \u00d7 52 weeks \u00d7 60%.","60% is a conservative share of repetitive work we typically automate. Some workflows reach far higher, some lower.","Cost uses the hourly figure you enter, so it reflects your team, not an average."])}</div>
-<p class="muted" style="margin-top:24px">Prefer to talk it through? We\u2019ll walk your real workflows on a free call and give you a proper number.</p><div class="btns">{btn_book()}</div></div></div></section>'''
+<p class="muted" style="margin-top:24px">Looking at our products? Each has its own value estimator: <a href="/products/paysentinel/#roi-h">PaySentinel</a>, <a href="/products/gridsentinel/#roi-h">GridSentinel</a>, <a href="/products/fuelledger/#roi-h">FuelLedger</a>.</p><p class="muted" style="margin-top:12px">Prefer to talk it through? We\u2019ll walk your real workflows on a free call and give you a proper number.</p><div class="btns">{btn_book()}</div></div></div></section>'''
     write("/roi-calculator/", page("/roi-calculator/", "Automation ROI calculator", "Estimate how many hours and how much money your team could save by automating repetitive work.", body))
 
 # ============================ HOW WE WORK ============================
