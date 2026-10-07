@@ -1,7 +1,7 @@
 """Shared layout + components for the Auto Solution static site."""
 from html import escape as e
 
-SITE = "https://www.autosolution.com"
+SITE = "https://autosoluation.com"
 CAL = "https://calendly.com/autosoluationai/30min"
 WA_NUM = "917303897496"
 WA = f"https://wa.me/{WA_NUM}?text=Hi%20Auto%20Solution!%20I%27d%20like%20to%20talk%20about%20automating%20some%20work."

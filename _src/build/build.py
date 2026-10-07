@@ -129,6 +129,52 @@ def simulator():
   <p style="text-align:center;margin-top:28px"><a class="tlink" href="/products/paysentinel/">How PaySentinel works</a></p>
 </div></section>'''
 
+def grid_sim():
+    leads=[("#44817","Night load, zero billed units for 3 cycles","Likely bypass","Inspect meter and incoming cable",0.34),
+           ("#30922","Billed as domestic, load profile matches a shop","Category misuse","Verify connection category on site",0.22),
+           ("#51203","Sudden 70% drop in consumption, meter seal event","Possible tampering","Check meter seal and terminal cover",0.18),
+           ("#28844","Readings missing for 9 days, then flat","Meter or comms fault","Send meter team, not vigilance",0.0),
+           ("#60117","Solar export higher than panel capacity allows","Net-metering misreport","Verify installed capacity",0.12)]
+    li="".join(f'<li data-share="{sh}"><div><b>Consumer {c}</b><span>{r}</span><em>{t}: {a}</em></div><strong class="mono rec">-</strong></li>' for c,r,t,a,sh in leads)
+    return f'''<section class="sec sim-sec" aria-labelledby="gsim-h"><div class="wrap">
+  <div class="sec-head center"><p class="kicker">Try it yourself</p><h2 class="h2" id="gsim-h">Balance a transformer the way GridSentinel does</h2><p class="lede">Set the energy that reached a distribution transformer and what its consumers were billed. See the unexplained loss, its value, and where to send field teams first.</p></div>
+  <div class="sim">
+    <form class="sim-in" id="gsim" onsubmit="return false">
+      <div><label for="g-in">Energy received at transformer (kWh / month) <output id="go-in">48,000</output></label><input type="range" id="g-in" min="10000" max="120000" step="500" value="48000"></div>
+      <div><label for="g-bill">Energy billed to its consumers (kWh) <output id="go-bill">38,500</output></label><input type="range" id="g-bill" min="5000" max="120000" step="500" value="38500"></div>
+      <div><label for="g-tech">Expected technical loss <output id="go-tech">6%</output></label><input type="range" id="g-tech" min="2" max="12" step="0.5" value="6"></div>
+      <div><label for="g-tar">Average tariff (\u20b9 / kWh) <output id="go-tar">\u20b97.0</output></label><input type="range" id="g-tar" min="3" max="12" step="0.5" value="7"></div>
+    </form>
+    <div class="sim-out" aria-live="polite">
+      <div class="bal"><div><span>Unexplained loss</span><b class="mono" id="gLoss">-</b></div><div><span>Value per month</span><b class="mono" id="gVal">-</b></div></div>
+      <p class="sim-dec"><span class="dec" id="gDec">-</span></p>
+      <h3 class="sim-h3">Ranked leads on this transformer</h3>
+      <ol class="leads" id="gLeads">{li}</ol>
+      <p class="sim-note">Illustrative sample. GridSentinel builds these leads from smart meter data and learns from your inspection results.</p>
+    </div>
+  </div>
+</div></section>'''
+
+def fuel_sim():
+    return f'''<section class="sec sim-sec" aria-labelledby="fsim-h"><div class="wrap">
+  <div class="sec-head center"><p class="kicker">Try it yourself</p><h2 class="h2" id="fsim-h">Reconcile one outlet\u2019s day, four ways</h2><p class="lede">Enter what the depot invoiced, what reached the tanks, what the nozzles sold and what money came in. FuelLedger flags every gap with its value and the action to take.</p></div>
+  <div class="sim">
+    <form class="sim-in" id="fsim" onsubmit="return false">
+      <div><label for="f-inv">Depot invoiced (litres) <output id="fo-inv">12,000</output></label><input type="range" id="f-inv" min="4000" max="24000" step="100" value="12000"></div>
+      <div><label for="f-rec">Received in tanks (litres) <output id="fo-rec">11,940</output></label><input type="range" id="f-rec" min="4000" max="24000" step="10" value="11940"></div>
+      <div><label for="f-sold">Sold at nozzles (litres) <output id="fo-sold">11,610</output></label><input type="range" id="f-sold" min="4000" max="24000" step="10" value="11610"></div>
+      <div><label for="f-cash">Money received (\u20b9 lakh) <output id="fo-cash">\u20b911.52 L</output></label><input type="range" id="f-cash" min="3" max="25" step="0.01" value="11.52"></div>
+      <div><label for="f-dens">Density deviation (kg/m\u00b3) <output id="fo-dens">1.0</output></label><input type="range" id="f-dens" min="0" max="10" step="0.5" value="1"></div>
+    </form>
+    <div class="sim-out" aria-live="polite">
+      <div class="fl-steps" id="fSteps"></div>
+      <h3 class="sim-h3">Flags for today</h3>
+      <ul class="why" id="fFlags"></ul>
+      <p class="sim-note">Illustrative model using a fixed price of \u20b9100 per litre and demo tolerances. FuelLedger uses your actual prices, tank calibration and tolerances.</p>
+    </div>
+  </div>
+</div></section>'''
+
 def architecture():
     return f'''<section class="sec dark arch-sec" aria-labelledby="arch-h"><div class="wrap">
   <div class="sec-head center"><p class="kicker">Under the hood</p><h2 class="h2" id="arch-h">From raw data to a decision you can trust</h2><p class="lede">Every Auto Solution product runs on the same production pipeline, built to be explainable, monitored and safe to change.</p></div>
@@ -176,17 +222,18 @@ def product_pages():
 <ol class="crumbs"><li><a href="/">Home</a></li><li><a href="/products/">Products</a></li><li aria-current="page">{p["name"]}</li></ol>
 <p class="pcat">{p["name"]}: {p["cat"]}</p><h1 class="h1">{p["tagline"]}</h1><p class="lede">{p["lede"]}</p>
 <div class="prod-row" style="margin-top:22px">{stage_tag(p)}</div>
-<div class="btns">{demo_btn(product=p["slug"])}{btn_book("Book a call","btn btn-outline")}</div></div><div>{UI[p["ui"]]()}</div></div></div></section>'''
+<div class="btns">{demo_btn(product=p["slug"])}<a class="btn btn-outline" href="/assets/downloads/{p["slug"]}-brochure.pdf" download>Download brochure (PDF)</a></div></div><div>{UI[p["ui"]]()}</div></div></div></section>'''
         feats = "".join(f'<div class="card rv"><div class="ico">{ic("check")}</div><h3 class="h3">{t}</h3><p>{d}</p></div>' for t, d in p["features"])
         b = hero + f'<section class="sec"><div class="wrap"><div class="sec-head"><p class="kicker">Capabilities</p><h2 class="h2">What {p["name"]} does</h2></div><div class="feat">{feats}</div></div></section>'
         how_title = "Four-way reconciliation, every outlet, every day" if p["slug"]=="fuelledger" else "How it works"
-        if p["slug"] == "paysentinel": b += simulator()
+        b += {"paysentinel": simulator, "gridsentinel": grid_sim, "fuelledger": fuel_sim}[p["slug"]]()
         b += f'<section class="sec dark"><div class="wrap"><div class="sec-head"><p class="kicker">How it works</p><h2 class="h2">{how_title}</h2></div>{steps(p["how"])}</div></section>'
         who = "".join(f"<li>{x}</li>" for x in p["for_"])
         b += f'''<section class="sec white"><div class="wrap duo" style="align-items:start">
 <div class="rv"><p class="kicker">Built for</p><h2 class="h2">Who it\u2019s for</h2><ul class="who" style="margin-top:24px">{who}</ul></div>
 <div class="rv"><p class="kicker">Getting started</p><h2 class="h2">What a pilot looks like</h2><div style="margin-top:24px">{checks(["6\u20138 weeks on your own historical data, inside your environment","Shadow mode: no impact on live systems","Success criteria agreed upfront, with a clear go or no-go at the end","Fixed fee, credited in full if you roll out"])}</div><a class="tlink" style="margin-top:20px" href="/pilot/">See the pilot program</a></div></div></section>'''
-        b += f'<section class="sec"><div class="wrap faq-wrap"><div><p class="kicker">FAQ</p><h2 class="h2">Questions about {p["name"]}</h2></div>{faq(p["faq"])}</div></section>'
+        art = {"paysentinel":("payment-fraud-detection-rules-vs-machine-learning","Rules vs machine learning for payment fraud"),"gridsentinel":("atc-losses-energy-theft-analytics","AT&amp;C losses explained"),"fuelledger":("fuel-retail-loss-four-way-reconciliation","Where fuel goes missing")}[p["slug"]]
+        b += f'<section class="sec"><div class="wrap faq-wrap"><div><p class="kicker">FAQ</p><h2 class="h2">Questions about {p["name"]}</h2><p class="muted" style="margin-top:18px">Further reading:</p><a class="tlink" href="/insights/{art[0]}/">{art[1]}</a></div>{faq(p["faq"])}</div></section>'
         others = [o for o in PRODUCTS if o["slug"] != p["slug"]]
         b += f'<section class="sec white tight"><div class="wrap"><div class="sec-head"><p class="kicker">More products</p><h2 class="h2" style="font-size:1.8rem">Also from Auto Solution</h2></div><div class="grid-2">{"".join(prod_card(o) for o in others)}</div></div></section>'
         b += cta_band(f"See {p['name']} in action", "We\u2019ll walk you through it on sample data, then talk about a pilot on your own.")

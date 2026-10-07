@@ -198,5 +198,115 @@ POSTS = [
 
 <h2>A realistic first step</h2>
 <p>Pick the report your team rebuilds most often from Tally exports. Automate just that, measure the hours saved, and use the result to decide what comes next.</p>
+"""), dict(slug="atc-losses-energy-theft-analytics", cat="Power distribution", mins=7, date="October 2026",
+  title="AT&C losses explained: where electricity goes missing, and how analytics finds it",
+  desc="A practical guide for distribution companies on separating technical losses, theft and billing errors using smart meter data.",
+  body="""
+<p>Every distribution company knows the gap between the energy it buys and the energy it gets paid for. The industry calls it AT&amp;C loss: aggregate technical and commercial loss. Reducing it is one of the fastest ways for a DISCOM to improve its finances, but only if you can tell what kind of loss you're looking at.</p>
+
+<h2>Three different problems under one number</h2>
+<ul>
+<li><strong>Technical losses</strong> are the physics of moving power: heat in lines and transformers. They can be reduced with network upgrades, but never to zero.</li>
+<li><strong>Commercial losses</strong> are energy that reached consumers but was never correctly billed: theft by hooking or meter bypass, tampering, wrong tariff categories, faulty meters and billing errors.</li>
+<li><strong>Collection losses</strong> are bills issued but not paid.</li>
+</ul>
+<p>Each needs a different response. Sending vigilance teams after what is really a faulty meter wastes time and damages trust with honest consumers.</p>
+
+<h2>Start at the distribution transformer</h2>
+<p>The most useful unit of analysis is the distribution transformer. If you know how much energy entered it and how much was billed to every consumer it serves, the difference, minus a realistic technical loss, is the unexplained loss for that small area. Smart meters on transformers and consumer premises make this energy balance possible every billing cycle instead of once a year.</p>
+
+<div class="callout"><strong>The key step:</strong> rank transformers by unexplained loss first, then look at individual consumers only on the worst ones. It turns a city-wide problem into a short, prioritised list.</div>
+
+<h2>What separates theft from faults</h2>
+<p>Within a high-loss transformer, consumer-level signals point to the likely cause:</p>
+<ul>
+<li>Load at night with very low billed units can suggest a bypass.</li>
+<li>A sudden, lasting drop in consumption after a tamper event points to meter interference.</li>
+<li>A load profile that looks commercial on a domestic connection suggests category misuse.</li>
+<li>Gaps in readings followed by flat values usually mean a meter or communication fault, not theft.</li>
+<li>Vacant premises explain low consumption without any wrongdoing.</li>
+</ul>
+
+<h2>Making leads field-ready</h2>
+<p>Field teams need more than a risk score. A good lead says which consumer, why they were flagged, and what to check on site. Inspection results should flow back into the system, so the model learns which signals actually led to recoveries in your network.</p>
+
+<h2>Where to begin</h2>
+<p>A pilot on 12 months of historical meter and billing data for a few feeders is usually enough to show whether transformer-level analytics will pay off, before any change to live operations.</p>
+<p><a href="/products/gridsentinel/">GridSentinel</a> is our product for exactly this workflow.</p>
+"""),
+ dict(slug="fuel-retail-loss-four-way-reconciliation", cat="Fuel retail", mins=6, date="October 2026",
+  title="Where fuel goes missing between the depot and the nozzle",
+  desc="Transit theft, tank leaks, short-dispensing, adulteration and cash shortfalls: how four-way reconciliation catches each one.",
+  body="""
+<p>A fuel retail outlet looks simple: fuel comes in, fuel goes out, money comes in. In practice there are several hand-offs between the depot and the customer, and loss can creep in at each of them. Small daily gaps add up quickly across a network of outlets.</p>
+
+<h2>The four numbers that should agree</h2>
+<ol>
+<li><strong>Invoiced:</strong> what the depot dispatched and billed.</li>
+<li><strong>Received:</strong> what actually reached the outlet's tanks.</li>
+<li><strong>Sold:</strong> what the nozzles dispensed.</li>
+<li><strong>Collected:</strong> what money and card payments came in.</li>
+</ol>
+<p>Comparing these every day, for every outlet, is what we mean by four-way reconciliation. Each gap points to a different problem and a different person to talk to.</p>
+
+<h2>What each gap usually means</h2>
+<table>
+<tr><th>Gap</th><th>Common causes</th><th>First action</th></tr>
+<tr><td>Invoiced vs received</td><td>Transit theft, short delivery</td><td>Check transporter seals and decanting records</td></tr>
+<tr><td>Received vs sold</td><td>Tank leaks, theft from tanks, calibration errors</td><td>Review night-time tank level drops and dip readings</td></tr>
+<tr><td>Sold vs dispensed correctly</td><td>Nozzle short-dispensing</td><td>Check dispenser calibration</td></tr>
+<tr><td>Sold vs collected</td><td>Cash shortfalls, fleet card misuse</td><td>Reconcile deposits and card settlements</td></tr>
+</table>
+
+<h2>Quality is a loss too</h2>
+<p>Adulteration doesn't show up as missing litres; it shows up as fuel that isn't what it should be. Monitoring density readings against expected values helps flag tanks that need a sample tested before more fuel is sold from them.</p>
+
+<div class="callout"><strong>Patterns across outlets matter.</strong> A transporter who short-delivers a little at many outlets can stay under every single outlet's tolerance. Looking across the network surfaces patterns no individual outlet would notice.</div>
+
+<h2>Making it practical</h2>
+<ul>
+<li>Use automatic tank gauge (ATG) data where available rather than manual dips alone.</li>
+<li>Agree tolerances per product and outlet, so normal evaporation and temperature effects don't trigger alerts.</li>
+<li>Give every flag a value in rupees and a specific next step, so area managers know what to do first.</li>
+</ul>
+<p><a href="/products/fuelledger/">FuelLedger</a> automates this reconciliation for every outlet, every day.</p>
+"""),
+ dict(slug="payment-fraud-detection-rules-vs-machine-learning", cat="Payments", mins=6, date="October 2026",
+  title="Real-time payment fraud detection: rules vs machine learning",
+  desc="Why static rules struggle with modern payment fraud, what machine learning adds, and how to introduce it without risking live approvals.",
+  body="""
+<p>Most payment businesses start fraud prevention with rules: block transactions above a limit, flag new devices, decline certain merchant categories at night. Rules are easy to understand and quick to deploy. They also have well-known limits.</p>
+
+<h2>Where rules struggle</h2>
+<ul>
+<li><strong>They're blunt.</strong> A limit that stops fraud also stops good customers making large, legitimate payments.</li>
+<li><strong>They're easy to learn.</strong> Fraudsters probe thresholds and stay just under them.</li>
+<li><strong>They pile up.</strong> Over time, hundreds of overlapping rules become hard to maintain and nobody is sure which ones still help.</li>
+</ul>
+
+<h2>What machine learning adds</h2>
+<p>A model looks at many signals together instead of one at a time, and weighs them based on your own history of good and fraudulent transactions:</p>
+<ul>
+<li>How many payments this device has made in the last hour</li>
+<li>Whether the amount is unusual for this customer or merchant</li>
+<li>Time of day and location consistency</li>
+<li>The risk history of the merchant category</li>
+</ul>
+<p>The result is a score for every transaction, which maps to approve, review or decline. Because the model sees combinations, a large payment from a trusted device at a normal hour can sail through while a modest one with several weak warning signs goes to review.</p>
+
+<div class="callout"><strong>Explainability matters.</strong> Every decision should come with the top reasons behind it, so analysts can review cases quickly and customers can be given a clear explanation.</div>
+
+<h2>Keeping models healthy</h2>
+<p>Fraud patterns change. A model that was accurate six months ago may drift as customer behaviour and attack methods shift. Production systems need monitoring for data drift and performance drift, versioned models, and the ability to roll back quickly if a new version misbehaves.</p>
+
+<h2>Introducing ML safely</h2>
+<ol>
+<li>Train on your historical transactions and known fraud outcomes.</li>
+<li>Run the model in shadow mode next to your current rules, without affecting approvals.</li>
+<li>Compare decisions: what it caught that rules missed, and where it would have blocked good customers.</li>
+<li>Agree thresholds, then roll out gradually.</li>
+</ol>
+<p>Rules don't have to disappear. Many teams keep a small set of hard rules for clear-cut cases and let the model handle the grey areas.</p>
+<p>Try our <a href="/#try">interactive fraud score demo</a>, or read about <a href="/products/paysentinel/">PaySentinel</a>.</p>
 """),
 ]

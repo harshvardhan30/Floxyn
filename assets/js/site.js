@@ -330,6 +330,61 @@
     run();
   })();
 
+  /* GridSentinel energy balance demo */
+  (function () {
+    var f = $('#gsim'); if (!f) return;
+    var I = $('#g-in'), B = $('#g-bill'), T = $('#g-tech'), R = $('#g-tar'), leads = $$('#gLeads li');
+    function fill(x) { x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%'); }
+    function run() {
+      var i = +I.value, b = +B.value, t = +T.value, r = +R.value;
+      var un = Math.max(0, i - b - i * t / 100), pct = un / i * 100;
+      $('#go-in').textContent = fmt(i); $('#go-bill').textContent = fmt(b); $('#go-tech').textContent = t + '%'; $('#go-tar').textContent = '\u20b9' + r.toFixed(1);
+      $('#gLoss').textContent = fmt(un) + ' kWh (' + pct.toFixed(1) + '%)';
+      $('#gVal').textContent = '\u20b9' + fmt(un * r);
+      var d = pct < 2 ? ['ok', 'Within expected loss: no action'] : pct < 8 ? ['mid', 'Watch list: review next cycle'] : ['bad', 'Priority for field inspection'];
+      var de = $('#gDec'); de.className = 'dec ' + d[0]; de.textContent = d[1];
+      leads.forEach(function (li) {
+        var sh = parseFloat(li.dataset.share), rec = $('.rec', li);
+        li.classList.toggle('fault', sh === 0); li.classList.toggle('dim', pct < 2);
+        rec.textContent = sh === 0 ? 'Not theft' : (fmt(un * sh) + ' kWh');
+      });
+      [I, B, T, R].forEach(fill);
+    }
+    [I, B, T, R].forEach(function (x) { x.addEventListener('input', run); });
+    run();
+  })();
+
+  /* FuelLedger four-way reconciliation demo */
+  (function () {
+    var f = $('#fsim'); if (!f) return;
+    var inv = $('#f-inv'), rec = $('#f-rec'), sold = $('#f-sold'), cash = $('#f-cash'), dens = $('#f-dens'), PRICE = 100;
+    function fill(x) { x.style.setProperty('--p', ((x.value - x.min) / (x.max - x.min) * 100) + '%'); }
+    function rs(n) { return '\u20b9' + fmt(n); }
+    function run() {
+      var a = +inv.value, b = +rec.value, c = +sold.value, m = +cash.value * 100000, dn = +dens.value;
+      $('#fo-inv').textContent = fmt(a); $('#fo-rec').textContent = fmt(b); $('#fo-sold').textContent = fmt(c); $('#fo-cash').textContent = '\u20b9' + (+cash.value).toFixed(2) + ' L'; $('#fo-dens').textContent = dn.toFixed(1);
+      var rows = [['Invoiced', a, fmt(a) + ' L'], ['Received', b, fmt(b) + ' L'], ['Sold', c, fmt(c) + ' L'], ['Collected', m / PRICE, '\u20b9' + (m / 100000).toFixed(2) + 'L']];
+      var mx = Math.max(a, b, c, m / PRICE);
+      $('#fSteps').innerHTML = rows.map(function (r) { return '<div class="fl-row"><span>' + r[0] + '</span><div class="ft"><i style="width:' + (r[1] / mx * 100).toFixed(1) + '%"></i></div><b>' + r[2] + '</b></div>'; }).join('');
+      var flags = [], tr = a - b, st = b - c, pay = c * PRICE - m;
+      if (tr > a * .003) flags.push(['bad', 'Transit gap ' + fmt(tr) + ' L', rs(tr * PRICE), 'Check transporter: seals and dip at decanting']);
+      if (st > b * .006) flags.push(['bad', 'Stock gap ' + fmt(st) + ' L', rs(st * PRICE), 'Check night-time tank level drops and nozzle calibration']);
+      if (pay > c * PRICE * .002) flags.push(['bad', 'Payment shortfall', rs(pay), 'Reconcile cash deposit and card settlements with the dealer']);
+      if (dn > 3) flags.push(['bad', 'Density off by ' + dn.toFixed(1) + ' kg/m\u00b3', 'Quality', 'Hold sales from this tank and test a sample']);
+      var ul = $('#fFlags'); ul.innerHTML = '';
+      if (!flags.length) flags.push(['ok', 'All four steps within tolerance', '\u2713', 'No action needed today']);
+      flags.forEach(function (fl) {
+        var li = document.createElement('li'); li.className = fl[0];
+        var t = document.createElement('span'); t.innerHTML = '<strong style="color:#fff;font-weight:600">' + fl[1] + '</strong><br><small style="color:var(--signal)">' + fl[3] + '</small>';
+        var v = document.createElement('b'); v.textContent = fl[2];
+        li.appendChild(t); li.appendChild(v); ul.appendChild(li);
+      });
+      [inv, rec, sold, cash, dens].forEach(fill);
+    }
+    [inv, rec, sold, cash, dens].forEach(function (x) { x.addEventListener('input', run); });
+    run();
+  })();
+
   /* Time zones */
   (function () {
     var items = $$('.zones li[data-tz]'); if (!items.length) return;
