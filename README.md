@@ -1,88 +1,62 @@
-# Auto Solution — Company Website
+# Auto Solution — website
 
-Marketing website for **Auto Solution**, an AI automation & analytics studio.
-Static site: plain HTML, CSS and JavaScript. No build step, no dependencies.
+Multi-page marketing site for Auto Solution (AI agents & workflow automation).
+Static HTML/CSS/JS, deployed on Vercel. No framework, no runtime dependencies.
 
-## Project structure
+## Structure
 
 ```
-.
-├── index.html              # Single landing page
-├── privacy.html            # Privacy policy
-├── 404.html                # Not-found page
-├── favicon.svg
-├── site.webmanifest
-├── robots.txt
-├── sitemap.xml
-├── .nojekyll               # Lets GitHub Pages serve files as-is
-└── assets/
-    ├── css/style.css       # All styles
-    ├── js/field.js         # Hero 3D particle field (plain WebGL, no libraries)
-    ├── js/main.js          # Header, scroll story, counters, savings estimate, forms
-    ├── fonts/              # Self-hosted Unbounded + Geist (no Google Fonts call)
-    └── img/                # OG share image, app icons
+/                     ← built site (what Vercel serves)
+├── index.html        Home
+├── services/         Services + 4 detail pages
+├── industries/       Industries + 6 detail pages
+├── case-studies/     Case studies + 6 detail pages
+├── insights/         Blog + articles
+├── roi-calculator/  how-we-work/  about/  careers/  contact/  privacy/  terms/
+├── assets/css/style.css   Design system
+├── assets/js/site.js      Menus, animations, calculator, forms, chat demo
+├── assets/js/field.js     Home page 3D particle hero (WebGL)
+└── _src/build/       Page generator (not deployed — see .vercelignore)
+    ├── content.py    Services, industries, case studies  ← edit text here
+    ├── posts.py      Blog articles
+    ├── layout.py     Header, footer, contact details, Calendly link
+    └── build.py      Page templates
 ```
+
+## Editing content
+
+1. Change text in `_src/build/content.py`, `posts.py` or `layout.py`
+   (email, phone, address and Calendly link are at the top of `layout.py`).
+2. Rebuild: `python3 _src/build/build.py`
+3. Commit and push. Vercel deploys automatically.
+
+Header, footer and design changes apply to every page at once.
 
 ## Run locally
 
-Any static server works:
-
 ```bash
-python3 -m http.server 8000
-# open http://localhost:8000
+python3 _src/build/build.py
+python3 -m http.server 8000   # open http://localhost:8000
 ```
 
-## Page structure
+## Contact & lead capture
 
-Hero (3D field) → integrations strip → scroll-driven automation run → results
-with case studies → AI agent demo → savings estimate → services → industries →
-engagement models → process → team & security → founder note & time zones →
-quotes → FAQ → contact.
+- **Book a call** buttons open Calendly: https://calendly.com/autosoluationai/30min (embedded on /contact/).
+- **Contact form** and **checklist download form** email leads to info@autosoluation.com via
+  FormSubmit (free, no account). If FormSubmit is unreachable, the contact form falls back to WhatsApp.
+  ⚠️ The first submission sends an *activation email* to info@autosoluation.com — click "Activate Form" once.
+- **ROI calculator** sends the estimate via WhatsApp (+91 73038 97496).
+- **Lead magnet:** /ai-automation-checklist/ → `assets/downloads/ai-automation-checklist.pdf`.
 
-The 3D field pauses when off-screen, and everything falls back to a static
-layout for visitors who set "reduce motion" in their OS.
+## Analytics
 
-## How the forms work
+Vercel Web Analytics script is included on every page. Turn it on once in
+Vercel → Project → Analytics → Enable. No cookies, so no cookie banner needed.
 
-The contact form and savings estimate don't use a backend. Submitting opens
-WhatsApp (`wa.me/917303897496`) with the details pre-filled. To change the
-number, edit `WA_NUMBER` at the top of `assets/js/main.js` and the `wa.me`
-links in `index.html`.
+## Content to review
 
-## Deploy
-
-**GitHub Pages:** repo → Settings → Pages → Source: *Deploy from a branch* →
-Branch: `main` / root → Save. The site appears at
-`https://<username>.github.io/<repo>/` within a minute or two.
-
-**Custom domain (autosolution.com):** in the same Pages screen, add the domain,
-then point DNS at GitHub Pages (A records to GitHub's IPs, or a CNAME for `www`).
-
-**Netlify / Vercel / Cloudflare Pages:** import the repo, no build command,
-publish directory = `/`.
-
-## Before going live — content checklist
-
-These need a decision from the team; the code can't verify them:
-
-- [ ] **Email address:** site uses `info@autosoluation.com` (note "solu**a**tion")
-      but the domain is `autosolution.com`. Confirm which is correct, then
-      find-and-replace across `index.html` and `privacy.html`.
-- [ ] **Savings estimate assumption:** assumes 60% of repetitive work is automatable
-      (`SHARE` in `assets/js/main.js`). Adjust to what your projects actually show.
-- [ ] **Founder note** is a draft written in Harsh's voice. Edit it so it sounds like him.
-- [ ] **Case study wording** ("The problem / What we built / The result") expands the
-      original one-line project descriptions. Check each matches what really happened.
-- [ ] **AI agent demo** uses a made-up property company ("Skyline Homes") and is labelled
-      "Example". Swap in a real (anonymised) conversation if you have one.
-- [ ] **"Recommended" badge** on the Project plan: change or remove if another plan suits most clients.
-- [ ] **Sample GST run figures** (1,247 / 1,238 / 9) are illustrative; swap in a real run if you have one.
-- [ ] **Claims to be able to back up:** IIT/NIT/BITS alumni, PayPal/Paytm/Pine Labs
-      experience, 15+ countries, 99.9% accuracy, 98% retention.
-- [ ] **Social links:** add real LinkedIn / X URLs in the footer (`.foot-social`).
-- [ ] **Insights articles:** cards have no links yet; link them when posts exist.
-- [ ] **Privacy policy:** have it reviewed for your jurisdiction (India DPDP Act,
-      GDPR if you have EU clients).
-- [ ] **Canonical / OG URLs:** if the final domain differs, update
-      `https://www.autosolution.com` in `index.html`, `privacy.html`,
-      `robots.txt` and `sitemap.xml`.
+- [ ] Founder note (Home + About) is written in Harsh's voice — edit `FOUNDER_NOTE` in `build.py` so it sounds like him.
+- [ ] Case study wording expands the original one-line descriptions — confirm each is accurate.
+- [ ] The AI agent demo ("Skyline Homes") is an illustrative example and is labelled as such.
+- [ ] Terms and privacy pages: have them reviewed for your jurisdiction.
+- [ ] Add LinkedIn / social links in `layout.py` footer when available.

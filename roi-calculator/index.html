@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Page not found | Auto Solution</title>
-<meta name="description" content="This page doesn&#x27;t exist.">
-<link rel="canonical" href="https://www.autosolution.com/404.html">
+<title>Automation ROI calculator | Auto Solution</title>
+<meta name="description" content="Estimate how many hours and how much money your team could save by automating repetitive work.">
+<link rel="canonical" href="https://www.autosolution.com/roi-calculator/">
 <meta name="theme-color" content="#0a0f2c">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Auto Solution">
-<meta property="og:title" content="Page not found | Auto Solution"><meta property="og:description" content="This page doesn&#x27;t exist.">
-<meta property="og:url" content="https://www.autosolution.com/404.html"><meta property="og:image" content="https://www.autosolution.com/assets/img/og-cover.png">
+<meta property="og:title" content="Automation ROI calculator | Auto Solution"><meta property="og:description" content="Estimate how many hours and how much money your team could save by automating repetitive work.">
+<meta property="og:url" content="https://www.autosolution.com/roi-calculator/"><meta property="og:image" content="https://www.autosolution.com/assets/img/og-cover.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -66,7 +66,18 @@
   <a class="btn btn-ghost" href="https://wa.me/917303897496?text=Hi%20Auto%20Solution!%20I%27d%20like%20to%20talk%20about%20automating%20some%20work." target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
 </nav>
 <main id="main">
-<section class="phero dark" style="min-height:80vh;display:flex;align-items:center"><div class="wrap" style="max-width:720px"><p class="kicker">404</p><h1 class="h1">This page doesn’t exist</h1><p class="lede">The link may be old or mistyped. Try one of these instead.</p><div class="btns"><a class="btn btn-primary" href="/">Go to homepage</a><a class="btn btn-ghost" href="/services/">Our services</a><a class="btn btn-ghost" href="/contact/">Contact us</a></div></div></section>
+<section class="phero dark"><div class="wrap"><div style="max-width:860px"><div><ol class="crumbs"><li><a href="/">Home</a></li><li aria-current="page">ROI calculator</li></ol><h1 class="h1">How many hours could your team get back?</h1><p class="lede">Move the sliders to match your team. We assume about 60% of repetitive work can be automated. Your free call gives the real number.</p></div></div></div></section><section class="sec"><div class="wrap duo" style="align-items:start">
+<form class="calc" id="calc" aria-describedby="calcNote">
+  <div><label for="c-people">People doing repetitive work <output id="o-people" for="c-people">5</output></label><input type="range" id="c-people" min="1" max="50" value="5"></div>
+  <div><label for="c-hours">Hours each, per week <output id="o-hours" for="c-hours">10</output></label><input type="range" id="c-hours" min="1" max="40" value="10"></div>
+  <div><label for="c-rate">Cost per hour <output id="o-rate" for="c-rate">₹400</output></label><div class="rate-row"><input type="range" id="c-rate" min="100" max="3000" step="50" value="400"><select id="c-cur" aria-label="Currency"><option value="INR" selected>₹ INR</option><option value="USD">$ USD</option><option value="AED">AED</option><option value="GBP">£ GBP</option></select></div></div>
+  <div class="calc-out" aria-live="polite"><div><p class="v" id="r-hours">1,560</p><p>hours back per year</p></div><div><p class="v" id="r-money">₹6,24,000</p><p>in team time, per year</p></div></div>
+  <button type="submit" class="btn btn-primary btn-block"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#i-wa"/></svg>Send me this estimate on WhatsApp</button>
+  <p class="note" id="calcNote">Opens WhatsApp with your numbers filled in.</p>
+</form>
+<div class="rv"><h2 class="h3" style="font-size:1.5rem">How the estimate works</h2>
+<div style="margin-top:20px"><ul class="checks"><li><svg class="" aria-hidden="true"><use href="#i-check"/></svg><span>Hours per year = people × hours per week × 52 weeks × 60%.</span></li><li><svg class="" aria-hidden="true"><use href="#i-check"/></svg><span>60% is a conservative share of repetitive work we typically automate. Some workflows reach far higher, some lower.</span></li><li><svg class="" aria-hidden="true"><use href="#i-check"/></svg><span>Cost uses the hourly figure you enter, so it reflects your team, not an average.</span></li></ul></div>
+<p class="muted" style="margin-top:24px">Prefer to talk it through? We’ll walk your real workflows on a free call and give you a proper number.</p><div class="btns"><a class="btn btn-primary" href="https://calendly.com/autosoluationai/30min" target="_blank" rel="noopener">Book a free 30-min call</a></div></div></div></section>
 </main>
 <footer class="ftr">
   <div class="wrap">
